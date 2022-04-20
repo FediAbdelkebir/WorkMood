@@ -1,0 +1,127 @@
+a, .post-meta span i, .entry-header .entry-title a:hover, .sidebar ul li a:hover{
+    color: #1fb79b;
+    transition: all ease 500ms;
+}
+
+.navbar-container .navbar-light .navbar-nav > li.active > a, .navbar-container .navbar-light .navbar-nav > li:hover > a,
+.slider-item .slider-content .slider-sub-title,
+ul.navbar-nav li .dropdown-menu li a:hover,
+.ts-service .ts-service-box .ts-service-box-info .ts-title a:hover,
+.recent-folio-menu ul li.active,
+.ts-footer .footer-left-widget ul li span,
+.ts-footer .footer-widget ul li a:hover,
+.copyright span a,
+.ts-latest-news .single-latest-news .single-news-content .ts-post-title a:hover,
+.ts-top-bar .top-bar .header-nav-right-info li i.fa,
+.ts-nav-classic .header-nav-right-info li i,
+.sidebar .widget .media-body .entry-title a:hover,
+.readmore-btn-area a,
+.section-title span,
+.testimonial-author-content .testimonial-text i,
+.wp-block-quote:before,
+.entry-content a{
+   color: #1fb79b;
+}
+
+
+.btn-primary,
+.recent-folio-menu ul li.active,
+.copyright .footer-social ul li a:hover,
+.testimonial-footer:after,
+.btn-border-dark:hover, 
+.ts-working-box:hover .working-icon-wrapper,
+blockquote.wp-block-quote, .wp-block-quote,
+.wp-block-quote:not(.is-large):not(.is-style-large),
+blockquote.wp-block-pullquote, .wp-block-quote.is-large,
+.wp-block-quote.is-style-large,
+.wp-block-pullquote:not(.is-style-solid-color),
+.not-found .input-group-btn{
+   border-color: #1fb79b;
+}
+.recent-folio-menu ul li.active:after,
+.ts-latest-news .single-latest-news,
+.woocommerce div.product .woocommerce-tabs ul.tabs li.active{
+   border-bottom-color: #1fb79b;
+}
+.nav-classic .main-logo a:after{
+   border-top-color: #1fb79b;
+}
+.btn-primary:hover{
+ background: #1fb79b;
+ border-color: #1fb79b;
+}
+
+
+ .single-intro-text .count-number, .sticky.post .meta-featured-post,
+.sidebar .widget .widget-title:before, .pagination li.active a, .pagination li:hover a,
+.pagination li.active a:hover, .pagination li:hover a:hover,
+.sidebar .widget.widget_search .input-group-btn, .tag-lists a:hover, .tagcloud a:hover,
+.BackTo, .ticket-btn.btn:hover,
+.navbar-container .navbar-light .navbar-nav > li > a:before,
+.nav-button,
+.btn-primary,
+.single-recent-work .link-more,
+.ts-team-slider .owl-nav .owl-prev:hover i, .ts-team-slider .owl-nav .owl-next:hover i,
+
+.ts-footer-info-box,
+.working-process-number,
+.copyright .footer-social ul li a:hover,
+.btn-border-dark:hover,
+.nav-classic .main-logo a:before,
+.main-logo,
+.navbar-toggler:not(:disabled):not(.disabled),
+.plan .plan-tag,
+.service-menu li a:hover,
+.woocommerce table.cart td.actions button.button,
+.woocommerce a.button,
+.woocommerce button.button.alt,
+.woocommerce ul.products li.product .added_to_cart,
+.woocommerce .woocommerce-Reviews #review_form #respond .form-submit input,
+.woocommerce div.product form.cart .button,
+.woocommerce .checkout-button.button.alt.wc-forward,
+.wp-block-quote cite::before,
+blockquote.wp-block-quote cite::before,
+.slider-item .slider-content .slider-sub-title sup,
+.hero-slider .features-slider .owl-nav .owl-prev:hover i, 
+.hero-slider .features-slider .owl-nav .owl-next:hover i,
+.not-found .input-group-btn{
+    background: #1fb79b;
+}
+.woocommerce table.cart td.actions button.button:hover, 
+.woocommerce a.button:hover,
+.woocommerce button.button.alt:hover,
+.woocommerce ul.products li.product .added_to_cart:hover,
+.woocommerce div.product form.cart .button:hover{
+    background: #1fb79b;
+}
+
+
+body{
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-attachment: inherit;
+    background-position: center top;
+}
+.body-innner-content.box-layout {
+    background: #fff;
+    max-width: 1330px;
+    margin: auto;
+}
+.body-box-layout{
+    background-color: #f0f2f3;
+    background-image:url();;
+}
+
+.ts-footer{
+    background-color: #101010;
+    padding-top:50px;
+    background-repeat:no-repeat;
+    background-size: cover;
+    background-image:url(https://demo.themewinter.com/wp/buildbench/wp-content/themes/buildbench/assets/images/footer_img.jpg);
+}
+.copyright {
+    background: #101010;
+}
+.copyright span{
+    color: #fff;
+}

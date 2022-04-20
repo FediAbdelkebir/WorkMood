@@ -13,6 +13,15 @@ import { OurproudComponent } from './ourproud/ourproud.component';
 import { OurfaqComponent } from './ourfaq/ourfaq.component';
 import { HeaderComponent } from './header/header.component';
 import { OurworkComponent } from './ourwork/ourwork.component';
+import { HomesliderComponent } from './homeslider/homeslider.component';
+import { EvenementsComponent } from './evenements/evenements.component';
+import { AddevenementComponent } from './addevenement/addevenement.component';
+import { UpdateevenementComponent } from './updateevenement/updateevenement.component';
+import { HeadComponent } from './head/head.component';
+import { ScriptsComponent } from './scripts/scripts.component';
+import { WorkinprogressComponent } from './workinprogress/workinprogress.component';
+import { ContactusComponent } from './contactus/contactus.component';
+import { LatestupdatesComponent } from './latestupdates/latestupdates.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +35,16 @@ import { OurworkComponent } from './ourwork/ourwork.component';
     OurproudComponent,
     OurfaqComponent,
     HeaderComponent,
-    OurworkComponent
+    OurworkComponent,
+    HomesliderComponent,
+    EvenementsComponent,
+    AddevenementComponent,
+    UpdateevenementComponent,
+    HeadComponent,
+    ScriptsComponent,
+    WorkinprogressComponent,
+    ContactusComponent,
+    LatestupdatesComponent
   ],
   imports: [
     BrowserModule,
