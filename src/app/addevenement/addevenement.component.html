@@ -11,7 +11,7 @@
                 <div _ngcontent-krf-c66="" _ngcontent-yjn-c66="" class="elementor-section-wrap">
                     <form _ngcontent-krf-c66="" novalidate="" _ngcontent-yjn-c66="" _ngcontent-kdb-c51=""
                             id="mc4wp-form-1" method="post" data-id="828" data-name=""
-                            class="mc4wp-form mc4wp-form-828 ng-untouched ng-pristine ng-valid">
+                            class="mc4wp-form mc4wp-form-828 ng-untouched ng-pristine ng-valid" (ngSubmit)="save()" #userForm="ngForm">
                     <div class="row">  
                         <div class="col-md-5 col-lg-1"> </div> 
                         
@@ -33,20 +33,20 @@
                                                 <div _ngcontent-krf-c66="" _ngcontent-yjn-c66="" _ngcontent-kdb-c51=""
                                                     class="col-md-12"><input _ngcontent-krf-c66="" type="text"
                                                         name="NAME" data-displayname="Event Name"
-                                                        placeholder="Event Name" required="" class="field"></div>
+                                                        placeholder="Event Name" required="" class="field" [(ngModel)]="event.id"></div>
                                             </div>
                                             <div _ngcontent-krf-c66="" _ngcontent-yjn-c66="" _ngcontent-kdb-c51=""
                                                 class="form-row form-row-second">
                                                 <div _ngcontent-krf-c66="" _ngcontent-yjn-c66="" _ngcontent-kdb-c51=""
                                                     class="col-md-12"><input _ngcontent-krf-c66="" type="text"
                                                         name="title" data-displayname="Event Title"
-                                                        placeholder="Event Title" required="" class="field"></div>
+                                                        placeholder="Event Title" required="" class="field" [(ngModel)]="event.title"></div>
                                             </div>
                                             <div _ngcontent-krf-c66="" class="form-row form-row-second">
                                                 <div _ngcontent-krf-c66="" class="col-md-12"><input
                                                         _ngcontent-krf-c66="" type="textarea" name="description"
                                                         data-displayname="Event Description"
-                                                        placeholder="Event Description" required=""></div>
+                                                        placeholder="Event Description" required="" [(ngModel)]="event.description"></div>
                                             </div>
                                             <div _ngcontent-krf-c66="" class="form-row form-row-second"><b
                                                     _ngcontent-krf-c66="">Event Starting Date :<br
@@ -54,7 +54,7 @@
                                                 <div _ngcontent-krf-c66="" class="col-md-12"><input
                                                         _ngcontent-krf-c66="" type="date" name="datestart"
                                                         data-displayname="Event Starting Date"
-                                                        placeholder="Event Starting Date" required=""></div>
+                                                        placeholder="Event Starting Date" required="" [(ngModel)]="event.dateStart"></div>
                                             </div>
                                             <div _ngcontent-krf-c66="" class="form-row form-row-second"><b
                                                     _ngcontent-krf-c66="">Event Ending Date :<br
@@ -62,7 +62,7 @@
                                                 <div _ngcontent-krf-c66="" class="col-md-12"><input
                                                         _ngcontent-krf-c66="" type="date" name="dateend"
                                                         data-displayname="Event Ending Date"
-                                                        placeholder="Event Ending Date" required=""></div>
+                                                        placeholder="Event Ending Date" required="" [(ngModel)]="event.dateEnd"></div>
                                             </div>
                                             <div _ngcontent-krf-c66="" class="form-row form-row-second"><b
                                                     _ngcontent-krf-c66="">Event Avariable Places :<br
@@ -70,7 +70,7 @@
                                                 <div _ngcontent-krf-c66="" class="col-md-12"><input
                                                         _ngcontent-krf-c66="" type="number" name="npDisponible"
                                                         data-displayname="npDisponible"
-                                                        placeholder="Event Avariable Places.." required=""></div>
+                                                        placeholder="Event Avariable Places.." required="" [(ngModel)]="event.npDisponible"></div>
                                             </div>
                                             
                                         </div>
@@ -98,20 +98,24 @@
                                             <div _ngcontent-krf-c66="" class="col-md-12"><input
                                                     _ngcontent-krf-c66="" type="number" name="npMax"
                                                     data-displayname="npMax" placeholder="Event Max Places.."
-                                                    required=""></div>
+                                                    required="" [(ngModel)]="event.npMax"></div>
                                         </div>
                                             <div class="form-row form-row-second"><b>Event Type:<br></b>
-                                                <div class="col-md-12"><input type="option" name="npMax" data-displayname="npMax" placeholder="Event Type.." required=""
-                                                        ></div>
+                                                <div class="col-md-12"><select>
+                                                    <option>--Choose Type--</option>
+                                                    <option *ngFor="let o of listeventtype" (click)="Type(o);">{{o}}</option>
+                                                 </select></div>
                                             </div>
                                             
                                             <div class="form-row form-row-second"><b>Event is With Troopy ?<br></b>
                                                 <div class="col-md-12"><input type="option" name="trouphy" data-displayname="trouphy" placeholder="Event Troophy.." required=""
-                                                        ></div>
+                                                        ></div> 
                                             </div>
                                             <div class="form-row form-row-second"><b>Event Tags:<br></b>
-                                                <div class="col-md-12"><input type="option" name="eventTags" data-displayname="eventTags" placeholder="Event Tags.." required=""
-                                                        ></div>
+                                                <div class="col-md-12"><select>
+                                                    <option>--Choose Tag--</option>
+                                                    <option *ngFor="let o of listeventtags" (click)="Tag(o);">{{o}}</option>
+                                                 </select></div>
                                             </div>
                                             <div class="form-row form-row-second"><b>Event Points:<br></b>
                                                 <div class="col-md-12"><input type="option" name="eventpoints" data-displayname="eventpoints" placeholder="Event points.." required=""
