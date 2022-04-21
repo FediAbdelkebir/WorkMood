@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
-import { AppRoutingModule } from './app-routing.module';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule,HTTP_INTERCEPTORS } from '@angular/common/http';
+import {RouterModule} from '@angular/router';
 import { AppComponent } from './app.component';
 import { FooterComponent } from './footer/footer.component';
 import { LatestmediaComponent } from './latestmedia/latestmedia.component';
@@ -22,10 +23,16 @@ import { ScriptsComponent } from './scripts/scripts.component';
 import { WorkinprogressComponent } from './workinprogress/workinprogress.component';
 import { ContactusComponent } from './contactus/contactus.component';
 import { LatestupdatesComponent } from './latestupdates/latestupdates.component';
+import { AppRoutingModule } from './app-routing.module';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { HomeComponent } from './home/home.component';
+import { AddeventsliderComponent } from './addeventslider/addeventslider.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    HomeComponent,
     FooterComponent,
     LatestmediaComponent,
     TopreviewsComponent,
@@ -44,11 +51,35 @@ import { LatestupdatesComponent } from './latestupdates/latestupdates.component'
     ScriptsComponent,
     WorkinprogressComponent,
     ContactusComponent,
-    LatestupdatesComponent
+    LatestupdatesComponent,
+    PagenotfoundComponent,
+    AddeventsliderComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    Ng2SearchPipeModule,
+    HttpClientModule,
+    RouterModule.forRoot([
+      {
+      path:'',
+        component:HomeComponent
+      },{
+      path:'Home',
+      component:HomeComponent
+      },
+      {
+        path:'AddEvent',
+          component:AddevenementComponent
+        }
+        ,
+        {
+          path:'404NotFound',
+            component:PagenotfoundComponent
+          },
+        {path: '**', redirectTo: '404NotFound'}
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]
