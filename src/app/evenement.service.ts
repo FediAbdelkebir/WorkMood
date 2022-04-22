@@ -19,16 +19,16 @@ export class EvenementService {
   customers!:any;
   private BackEndURL: string;
   constructor(private http: HttpClient,private router:Router) {
-   this.BackEndURL = 'http://127.0.0.1:8081/';
+   this.BackEndURL = 'http://localhost:8089/work-mood/Evenements/';
    }
 
    /*List des Evenement*/
    public FindAllEvenements(): Observable<any> {
-    return this.http.get(this.BackEndURL+"findall/")
+    return this.http.get(this.BackEndURL+"AddEvent")
   }
   /*Ajouter Evenement*/
   public save(Event: Event) {
-  return this.http.post<Event>(this.BackEndURL, Event);
+  return this.http.post<Event>(this.BackEndURL+"AddEvent", Event);
   }
   /*Supprimer Evenement*/
   DeleteEvenement(id:number){
