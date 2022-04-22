@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { EvenementService } from '../evenement.service';
-import { Event } from '../event';
-import { EventTags } from '../event-tags';
-import { EventType } from '../event-type';
+import { EvenementService } from '../../../Services/evenement.service';
+import { Event } from '../../../Models/event';
+import { EventTags } from '../../../Models/event-tags';
+import { EventType } from '../../../Models/event-type';
 @Component({
   selector: 'app-addevenement',
   templateUrl: './addevenement.component.html',

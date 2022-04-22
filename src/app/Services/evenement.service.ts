@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import { HttpClientModule,HttpHeaders,HttpClient } from '@angular/common/http'; 
 import { map } from 'rxjs/operators';
-import { Event } from './event';
+import { Event } from '../Models/event';
 import {Observable} from 'rxjs';
 import { Router } from '@angular/router';
-import { Roles } from './roles';
-import { EventTags } from './event-tags';
-import { EventType } from './event-type';
+import { Roles } from '../Models/roles';
+import { EventTags } from '../Models/event-tags';
+import { EventType } from '../Models/event-type';
 let httpOptions = { responseType: 'text' };
 @Injectable({
   providedIn: 'root'
