@@ -28,7 +28,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { PagenotfoundComponent } from '../app/Components/pagenotfound/pagenotfound.component';
 import { HomeComponent } from '../app/Components/home/home.component';
 import { AddeventsliderComponent } from '../app/Components/Evenements/addeventslider/addeventslider.component';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
     AppComponent,
@@ -57,6 +57,7 @@ import { AddeventsliderComponent } from '../app/Components/Evenements/addeventsl
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule ,
     AppRoutingModule,
     FormsModule,
     Ng2SearchPipeModule,
@@ -67,11 +68,11 @@ import { AddeventsliderComponent } from '../app/Components/Evenements/addeventsl
         component:HomeComponent
       },{
       path:'Home',
-      component:HomeComponent
+      component:HomeComponent, data: { animation: 'isLeft' } 
       },
       {
         path:'AddEvent',
-          component:AddevenementComponent
+          component:AddevenementComponent, data: { animation: 'isRight' } 
         }
         ,
         {
