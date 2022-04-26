@@ -7,7 +7,12 @@ import { Router } from '@angular/router';
 import { Roles } from '../Models/roles';
 import { EventTags } from '../Models/event-tags';
 import { EventType } from '../Models/event-type';
-let httpOptions = { responseType: 'text' };
+const httpOptions = {
+  headers: new HttpHeaders({
+    'Content-Type':  'application/json'
+  })
+};
+
 @Injectable({
   providedIn: 'root'
 })
@@ -24,11 +29,12 @@ export class EvenementService {
 
    /*List des Evenement*/
    public FindAllEvenements(): Observable<any> {
-    return this.http.get(this.BackEndURL+"AddEvent")
+    return this.http.get(this.BackEndURL+"Events")
   }
   /*Ajouter Evenement*/
-  public save(Event: Event) {
-  return this.http.post<Event>(this.BackEndURL+"AddEvent", Event);
+  public save(event: Event) {
+    console.log(Event);
+  return this.http.post<Event>(this.BackEndURL+"AddEvent",event);
   }
   /*Supprimer Evenement*/
   DeleteEvenement(id:number){

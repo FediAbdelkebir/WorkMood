@@ -4,6 +4,7 @@ import { EvenementService } from '../../../Services/evenement.service';
 import { Event } from '../../../Models/event';
 import { EventTags } from '../../../Models/event-tags';
 import { EventType } from '../../../Models/event-type';
+import { DatePipe, formatDate } from '@angular/common'
 @Component({
   selector: 'app-addevenement',
   templateUrl: './addevenement.component.html',
@@ -14,7 +15,7 @@ export class AddevenementComponent implements OnInit {
   event!:Event;
   listeventtype!:any;
   listeventtags!:any;
-  constructor(private router: Router,private PS:EvenementService) { 
+  constructor(private router: Router,private PS:EvenementService,private datepipe:DatePipe) { 
     this.event= new Event();
   }
 
@@ -26,6 +27,9 @@ export class AddevenementComponent implements OnInit {
       )
   }
   save() {
+ //this.event.dateStart =this.datepipe.transform(this.event.dateStart, 'yyyy-MM-dd');
+ //this.event.dateEnd =this.datepipe.transform(this.event.dateEnd, 'yyyy-MM-dd');
+    console.log(this.event)
     this.PS.save(this.event).subscribe(
       (data:any) => {
         console.log(data)

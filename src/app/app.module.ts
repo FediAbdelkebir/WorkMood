@@ -29,6 +29,7 @@ import { PagenotfoundComponent } from '../app/Components/pagenotfound/pagenotfou
 import { HomeComponent } from '../app/Components/home/home.component';
 import { AddeventsliderComponent } from '../app/Components/Evenements/addeventslider/addeventslider.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DatePipe } from '@angular/common'
 @NgModule({
   declarations: [
     AppComponent,
@@ -79,10 +80,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
           path:'404NotFound',
             component:PagenotfoundComponent
           },
+          
+      {
+        path:'Evenements',
+          component:EvenementsComponent, data: { animation: 'isRight' } 
+        },
         {path: '**', redirectTo: '404NotFound'}
     ])
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

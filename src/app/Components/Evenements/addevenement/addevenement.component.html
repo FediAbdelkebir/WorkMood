@@ -29,22 +29,15 @@
                                         <div _ngcontent-krf-c66="" _ngcontent-yjn-c66="" _ngcontent-kdb-c51=""
                                             id="ts-contactMe" class="contactMe small">
                                             <div _ngcontent-krf-c66="" _ngcontent-yjn-c66="" _ngcontent-kdb-c51=""
-                                                class="form-row">
-                                                <div _ngcontent-krf-c66="" _ngcontent-yjn-c66="" _ngcontent-kdb-c51=""
-                                                    class="col-md-12"><input _ngcontent-krf-c66="" type="text"
-                                                        name="NAME" data-displayname="Event Name"
-                                                        placeholder="Event Name" required="" class="field" [(ngModel)]="event.id"></div>
-                                            </div>
-                                            <div _ngcontent-krf-c66="" _ngcontent-yjn-c66="" _ngcontent-kdb-c51=""
                                                 class="form-row form-row-second">
                                                 <div _ngcontent-krf-c66="" _ngcontent-yjn-c66="" _ngcontent-kdb-c51=""
                                                     class="col-md-12"><input _ngcontent-krf-c66="" type="text"
-                                                        name="title" data-displayname="Event Title"
+                                                        name="event.title" data-displayname="Event Title"
                                                         placeholder="Event Title" required="" class="field" [(ngModel)]="event.title"></div>
                                             </div>
                                             <div _ngcontent-krf-c66="" class="form-row form-row-second">
                                                 <div _ngcontent-krf-c66="" class="col-md-12"><input
-                                                        _ngcontent-krf-c66="" type="textarea" name="description"
+                                                        _ngcontent-krf-c66="" type="textarea" name="event.description"
                                                         data-displayname="Event Description"
                                                         placeholder="Event Description" required="" [(ngModel)]="event.description"></div>
                                             </div>
@@ -52,7 +45,7 @@
                                                     _ngcontent-krf-c66="">Event Starting Date :<br
                                                         _ngcontent-krf-c66=""></b>
                                                 <div _ngcontent-krf-c66="" class="col-md-12"><input
-                                                        _ngcontent-krf-c66="" type="date" name="datestart"
+                                                        _ngcontent-krf-c66="" type="date" name="event.dateStart"
                                                         data-displayname="Event Starting Date"
                                                         placeholder="Event Starting Date" required="" [(ngModel)]="event.dateStart"></div>
                                             </div>
@@ -60,7 +53,7 @@
                                                     _ngcontent-krf-c66="">Event Ending Date :<br
                                                         _ngcontent-krf-c66=""></b>
                                                 <div _ngcontent-krf-c66="" class="col-md-12"><input
-                                                        _ngcontent-krf-c66="" type="date" name="dateend"
+                                                        _ngcontent-krf-c66="" type="date" name="event.dateEnd"
                                                         data-displayname="Event Ending Date"
                                                         placeholder="Event Ending Date" required="" [(ngModel)]="event.dateEnd"></div>
                                             </div>
@@ -68,7 +61,7 @@
                                                     _ngcontent-krf-c66="">Event Avariable Places :<br
                                                         _ngcontent-krf-c66=""></b>
                                                 <div _ngcontent-krf-c66="" class="col-md-12"><input
-                                                        _ngcontent-krf-c66="" type="number" name="npDisponible"
+                                                        _ngcontent-krf-c66="" type="number" name="event.npDisponible"
                                                         data-displayname="npDisponible"
                                                         placeholder="Event Avariable Places.." required="" [(ngModel)]="event.npDisponible"></div>
                                             </div>
@@ -96,8 +89,8 @@
                                                 _ngcontent-krf-c66="">Event Max Places :<br
                                                     _ngcontent-krf-c66=""></b>
                                             <div _ngcontent-krf-c66="" class="col-md-12"><input
-                                                    _ngcontent-krf-c66="" type="number" name="npMax"
-                                                    data-displayname="npMax" placeholder="Event Max Places.."
+                                                    _ngcontent-krf-c66="" type="number" name="event.npMax"
+                                                    data-displayname="event.npMax" placeholder="Event Max Places.."
                                                     required="" [(ngModel)]="event.npMax"></div>
                                         </div>
                                             <div class="form-row form-row-second"><b>Event Type:<br></b>
@@ -108,7 +101,7 @@
                                             </div>
                                             
                                             <div class="form-row form-row-second"><b>Event is With Troopy ?<br></b>
-                                                <div class="col-md-12"><input type="option" name="trouphy" data-displayname="trouphy" placeholder="Event Troophy.." required=""
+                                                <div class="col-md-12"><input type="option" name="event.npMax" data-displayname="trouphy" placeholder="Event Troophy.." required="" [(ngModel)]="event.trouphy"
                                                         ></div> 
                                             </div>
                                             <div class="form-row form-row-second"><b>Event Tags:<br></b>
@@ -118,7 +111,7 @@
                                                  </select></div>
                                             </div>
                                             <div class="form-row form-row-second"><b>Event Points:<br></b>
-                                                <div class="col-md-12"><input type="option" name="eventpoints" data-displayname="eventpoints" placeholder="Event points.." required=""
+                                                <div class="col-md-12"><input type="option" name="event.eventpoints" data-displayname="eventpoints" placeholder="Event points.." required="" [(ngModel)]="event.eventpoints"
                                                         ></div>
                                             </div>
                                             

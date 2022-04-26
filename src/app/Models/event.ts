@@ -7,8 +7,8 @@ export class Event {
     id!:number;
     title!:String;
     description!:String;
-    dateStart!:Date;
-    dateEnd!:Date;
+    dateStart!: any;
+    dateEnd!: any;
     npDisponible!:number;
     npMax!:number;
     nbrlikes!:number;
