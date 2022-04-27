@@ -14,11 +14,37 @@ export class EvenementsComponent implements OnInit {
   filterTerm:any;
   listevenements!:Event[];
   iduser=1;
+  showLoader = true;
   ngOnInit(): void {
+   
     this.es.FindAllEvenements().subscribe(
       (data)=>{
+        this.showLoader=false;
+        const Toast = Swal.mixin({
+          toast: true,
+          position: 'top-end',
+          showConfirmButton: false,
+          timer: 3000
+        });
+        
+        Toast.fire({
+          icon: 'success',
+          title: 'Events Successfully Loaded From The Database .'
+        })
         this.listevenements=data;
 console.log(data)
+      },(error)=>{
+        const Toast = Swal.mixin({
+          toast: true,
+          position: 'top-end',
+          showConfirmButton: false,
+          timer: 3000
+        });
+        
+        Toast.fire({
+          title: 'Events<strong> Failed </strong>To Load From The Database',
+          icon: 'error'
+        })
       }
     )
   }

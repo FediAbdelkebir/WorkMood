@@ -14,11 +14,36 @@ export class LikedeventsComponent implements OnInit {
   filterTerm:any;
   ListLiked!:Event[];
   iduser=1;
+  showLoader = true;
   ngOnInit(): void {
     this.es.LikedEventsByUserId(this.iduser).subscribe(
       (data)=>{
+        this.showLoader=false;
+        const Toast = Swal.mixin({
+          toast: true,
+          position: 'top-end',
+          showConfirmButton: false,
+          timer: 3000
+        });
+        
+        Toast.fire({
+          icon: 'success',
+          title: 'Liked Events Successfully Loaded From The Database .'
+        })
         this.ListLiked=data;
 console.log(data)
+      },(error)=>{
+        const Toast = Swal.mixin({
+          toast: true,
+          position: 'top-end',
+          showConfirmButton: false,
+          timer: 3000
+        });
+        
+        Toast.fire({
+          title: 'Your Liked Events<strong> Failed </strong>To Load From The Database',
+          icon: 'error'
+        })
       }
     )
   }

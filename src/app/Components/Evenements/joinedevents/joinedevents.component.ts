@@ -12,13 +12,38 @@ export class JoinedeventsComponent implements OnInit {
   filterTerm:any;
   ListJoined!:Event[];
   iduser=1;
+  showLoader = true;
   constructor(private router: Router,private route: ActivatedRoute,private es:EvenementService) { }
 
   ngOnInit(): void {
     this.es.UserJoinedEvents(this.iduser).subscribe(
       (data)=>{
+        this.showLoader=false;
+        const Toast = Swal.mixin({
+          toast: true,
+          position: 'top-end',
+          showConfirmButton: false,
+          timer: 3000
+        });
+        
+        Toast.fire({
+          icon: 'success',
+          title: 'Joined Events Successfully Loaded From The Database .'
+        })
         this.ListJoined=data;
 console.log(data)
+      },(error)=>{
+        const Toast = Swal.mixin({
+          toast: true,
+          position: 'top-end',
+          showConfirmButton: false,
+          timer: 3000
+        });
+        
+        Toast.fire({
+          title: 'Your Joined Events<strong> Failed </strong>To Load From The Database',
+          icon: 'error'
+        })
       }
     )
   }

@@ -57,7 +57,28 @@
                     <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-8fe6cdb" data-id="8fe6cdb" data-element_type="column">
                     <div class="elementor-column-wrap elementor-element-populated">
                             <div class="elementor-widget-wrap">
-                           
+                                <div *ngIf="showLoader"><!-- so this div containing img will be dislpayed only when the showLoader is equal to true-->
+                                    <div class='body' style="background-color: #1fb79b;">
+                                        <span>
+                                          <span></span>
+                                          <span></span>
+                                          <span></span>
+                                          <span></span>
+                                        </span>
+                                        <div class='base'>
+                                          <span></span>
+                                          <div class='face'></div>
+                                        </div>
+                                      </div>
+                                      <div class='longfazers'>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                      </div>
+                                      <h1>Loading Your Joined Events</h1>
+                                      
+                                </div>  
                         <div class="elementor-element elementor-element-1240ec5 elementor-widget elementor-widget-buildbench-latestnews" data-id="1240ec5" data-element_type="widget" data-widget_type="buildbench-latestnews.default">
                     <div class="elementor-widget-container">
                     <div class="row ts-latest-news  ">
