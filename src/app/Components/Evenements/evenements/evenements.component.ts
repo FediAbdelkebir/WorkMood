@@ -13,6 +13,7 @@ export class EvenementsComponent implements OnInit {
   constructor(private router: Router,private es:EvenementService) { }
   filterTerm:any;
   listevenements!:Event[];
+  iduser=1;
   ngOnInit(): void {
     this.es.FindAllEvenements().subscribe(
       (data)=>{
@@ -24,7 +25,7 @@ console.log(data)
   Home(){
     this.router.navigate(['Home']);
   }
-  JoinEvent(){
+  JoinEvent(idevent:any){
     Swal.fire({
       title: '<strong>Join This Event ?</strong>',
       icon: 'info',
@@ -44,6 +45,11 @@ console.log(data)
       cancelButtonAriaLabel: ''
     }).then((result) => {
       if (result.isConfirmed) {
+        this.es.AffecterEventToUser(idevent,this.iduser).subscribe(
+          (data)=>{
+    console.log(data)
+          }
+        )
         Swal.fire({
           title: '<strong>Success!</strong>',
           icon: 'success',
@@ -55,7 +61,7 @@ console.log(data)
     }
     )
   }
-  LikeEvent(){
+  LikeEvent(idevent:any){
     Swal.fire({
       title: '<strong>Like This Event ?</strong>',
       icon: 'info',
@@ -74,6 +80,11 @@ console.log(data)
       cancelButtonAriaLabel: ''
     }).then((result) => {
       if (result.isConfirmed) {
+        this.es.LikeEvent(idevent,this.iduser).subscribe(
+          (data)=>{
+    console.log(data)
+          }
+        )
         Swal.fire({
           title: '<strong>Success!</strong>',
           icon: 'success',

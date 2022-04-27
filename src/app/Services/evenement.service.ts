@@ -111,8 +111,8 @@ export class EvenementService {
     return this.http.get<Event>("http://127.0.0.1:8081/account/id/"+Tags); 
   }
    /* Find UserJoinedEvents  */
-  public UserJoinedEvents (userid:number){
-    return this.http.get<Event>("http://127.0.0.1:8081/account/id/"+userid); 
+  public UserJoinedEvents (userid:number): Observable<any> {
+    return this.http.get("http://127.0.0.1:8081/account/id/"+userid); 
   }
     /*TotalNumberEvents*/
     public  TotalNumberEvents (){

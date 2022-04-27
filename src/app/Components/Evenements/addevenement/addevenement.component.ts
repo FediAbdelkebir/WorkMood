@@ -5,6 +5,7 @@ import { Event } from '../../../Models/event';
 import { EventTags } from '../../../Models/event-tags';
 import { EventType } from '../../../Models/event-type';
 import { DatePipe, formatDate } from '@angular/common'
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-addevenement',
   templateUrl: './addevenement.component.html',
@@ -98,5 +99,36 @@ Type(item:EventType){
   }
   
   console.log(this.event.type)
+}
+AddEvent(){
+  Swal.fire({
+    title: '<strong>Add This Event ?</strong>',
+    icon: 'info',
+    html:
+      'You can <a href="/Evenements">Check your Posted Events</a> <b>later</b>, ',
+    showCloseButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    showCancelButton: true,
+    focusConfirm: false,
+    confirmButtonText:
+      '<i class="fa fa-heart"></i> Yes, Add it !',
+    confirmButtonAriaLabel: '',
+    cancelButtonText:
+      '<i class="fa fa-close"></i> No,I Changed My mind',
+    cancelButtonAriaLabel: ''
+  }).then((result) => {
+    if (result.isConfirmed) {
+      this.save();
+      Swal.fire({
+        title: '<strong>Success!</strong>',
+        icon: 'success',
+        html:
+          '<b>Congratulations !</b> You Added The Event ' 
+      }
+      )
+    } 
+  }
+  )
 }
 }

@@ -5,7 +5,7 @@
         <div data-elementor-type="wp-post" data-elementor-id="10" class="elementor elementor-10" data-elementor-settings="[]">
             <div class="elementor-inner">
                 <div class="elementor-section-wrap">
-                    <app-addeventslider></app-addeventslider>
+                    <app-evenementsslider></app-evenementsslider>
                     <section class="elementor-section elementor-top-section elementor-element elementor-element-3f8f733 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="3f8f733" data-element_type="section">
                         <div class="elementor-container elementor-column-gap-default">
                             <div class="elementor-row">
@@ -82,8 +82,8 @@
                             </div>
                               <h2 class="ts-post-title"><a href="https://demo.themewinter.com/wp/buildbench/blog/2019/03/21/support-development-for-more-experience-3/">{{x.description}}</a></h2>
                                
-                              <button href="javascript:void(0)" class="btn btn p-3" style="background-color: #1fb79b; color:white;width:48%;" (click)="JoinEvent()"> Join <i class="fa fa-plus"></i> </button>&nbsp;
-                              <button href="javascript:void(0)" class="btn btn"style="background-color: #21aea6; color:white;width:48%" (click)="LikeEvent()"> Like <i class="fa fa-heart"></i> </button><br><br>
+                              <button href="javascript:void(0)" class="btn btn p-3" style="background-color: #1fb79b; color:white;width:48%;" (click)="JoinEvent(x.id)"> Join <i class="fa fa-plus"></i> </button>&nbsp;
+                              <button href="javascript:void(0)" class="btn btn"style="background-color: #21aea6; color:white;width:48%" (click)="LikeEvent(x.id)"> Like <i class="fa fa-heart"></i> </button><br><br>
                               <button href="javascript:void(0)" class="btn btn"style="background-color: #193962; color:white;width:100%" [routerLink]="['/EventDetails',x.id]"> Details <i class="fa fa-list"></i> </button>
                               
                            </div>

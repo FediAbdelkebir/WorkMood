@@ -151,7 +151,7 @@
 <!-- hero table cell end -->
 </div>
 <!-- hero table end -->
-</div></div><div class="owl-item active" style="width: 1903px;"><div class="slider-item" style="background-image: url('assets/AddEventSlider.jpg');">
+</div></div><div class="owl-item active" style="width: 1903px;"><div class="slider-item" style="background-image: url('assets/Images/Evenements/AddEvent/AddEventSlider.jpg');">
 <div class="hero-table">
 <div class="hero-table-cell">
 <div class="container">
@@ -170,12 +170,15 @@
                  
                 </p>
                 <div class="btn-area">
-                                                           <a href="#" class="btn btn-primary slider-btn-1" target="_self" rel=""style="color:#fff">
-                       Events List                                            <i class="fa fa-arrow-right"></i>
+                                                           <a href="#" class="btn btn-primary slider-btn-1" target="_self" rel=""style="color:#fff" [routerLink]="['/Evenements']">
+                       Events List                                            <i class="fa fa-list"></i>
                     </a>
-                                                                                                    <a href="#" class="btn btn-border slider-btn-2" target="_self" rel="">
+                                                                                                    <a href="#" class="btn btn-border slider-btn-2" target="_self" rel="" [routerLink]="['/JoinedEvents']">
                      Joined Events                                            <i class="fa fa-arrow-right"></i>
                     </a>
+                    <a href="#" class="btn btn-border slider-btn-1" target="_self" rel="" [routerLink]="['/LikedEvents']">
+                        Liked Events                                            <i class="fa fa-heart"></i>
+                       </a>
                     
                 </div>
             </div> <!-- slider content end-->

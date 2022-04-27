@@ -30,7 +30,12 @@ import { HomeComponent } from '../app/Components/home/home.component';
 import { AddeventsliderComponent } from '../app/Components/Evenements/addeventslider/addeventslider.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DatePipe } from '@angular/common';
-import { EvenementdetailsComponent } from './evenementdetails/evenementdetails.component'
+import { EvenementdetailsComponent } from '../app/Components/Evenements/evenementdetails/evenementdetails.component';
+import { EvenementssliderComponent } from './Components/Evenements/evenementsslider/evenementsslider.component';
+import { JoinedeventsComponent } from './Components/Evenements/joinedevents/joinedevents.component';
+import { LikedeventsComponent } from './Components/Evenements//likedevents/likedevents.component';
+import { JoinedeventssliderComponent } from './Components/Evenements/joinedeventsslider/joinedeventsslider.component';
+import { LikedeventssliderComponent } from './Components/Evenements/likedeventsslider/likedeventsslider.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -56,7 +61,12 @@ import { EvenementdetailsComponent } from './evenementdetails/evenementdetails.c
     LatestupdatesComponent,
     PagenotfoundComponent,
     AddeventsliderComponent,
-    EvenementdetailsComponent
+    EvenementdetailsComponent,
+    EvenementssliderComponent,
+    JoinedeventsComponent,
+    LikedeventsComponent,
+    JoinedeventssliderComponent,
+    LikedeventssliderComponent
   ],
   imports: [
     BrowserModule,
@@ -90,6 +100,14 @@ import { EvenementdetailsComponent } from './evenementdetails/evenementdetails.c
         {
           path:'EventDetails/:id',
             component:EvenementdetailsComponent, data: { animation: 'isRight' } 
+          },
+        {
+          path:'JoinedEvents',
+            component:JoinedeventsComponent, data: { animation: 'isRight' } 
+          },
+        {
+          path:'LikedEvents',
+            component:LikedeventsComponent, data: { animation: 'isRight' } 
           },
         {path: '**', redirectTo: '404NotFound'}
     ])

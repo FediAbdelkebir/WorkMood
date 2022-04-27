@@ -1,0 +1,13 @@
+.avatar{
+    padding: 5px;
+background: #fff;
+width: 80px;
+float: left;
+border-radius: 50%;
+height: 80px;
+position: relative;
+border: 1px solid #ddd;
+}
+.avatar img {
+    border-radius: 50%;
+  }
