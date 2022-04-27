@@ -35,7 +35,7 @@ import { EvenementssliderComponent } from './Components/Evenements/evenementssli
 import { JoinedeventsComponent } from './Components/Evenements/joinedevents/joinedevents.component';
 import { LikedeventsComponent } from './Components/Evenements//likedevents/likedevents.component';
 import { JoinedeventssliderComponent } from './Components/Evenements/joinedeventsslider/joinedeventsslider.component';
-import { LikedeventssliderComponent } from './Components/Evenements/likedeventsslider/likedeventsslider.component'
+import { LikedeventssliderComponent } from './Components/Evenements/likedeventsslider/likedeventsslider.component';
 @NgModule({
   declarations: [
     AppComponent,

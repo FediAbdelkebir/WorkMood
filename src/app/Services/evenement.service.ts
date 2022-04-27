@@ -12,6 +12,9 @@ const httpOptions = {
     'Content-Type':  'application/json'
   })
 };
+const headers = new HttpHeaders()
+     .set('Content-Type', 'application/json;charset=UTF-8')  
+     let options = { headers : headers };
 
 @Injectable({
   providedIn: 'root'
@@ -34,7 +37,7 @@ export class EvenementService {
   /*Ajouter Evenement*/
   public save(event: Event) {
     console.log(Event);
-  return this.http.post<Event>(this.BackEndURL+"AddEvent",event);
+  return this.http.post<Event>(this.BackEndURL+"AddEvent",event,options);
   }
   /*Supprimer Evenement*/
   DeleteEvenement(id:number){

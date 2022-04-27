@@ -12,7 +12,10 @@ import Swal from 'sweetalert2';
   styleUrls: ['./addevenement.component.css']
 })
 export class AddevenementComponent implements OnInit {
-
+  Typetoggle = true;
+  Typestatus = 'Enable'; 
+  Tagtoggle = true;
+  Tagstatus = 'Enable'; 
   event!:Event;
   listeventtype!:any;
   listeventtags!:any;
@@ -33,15 +36,31 @@ export class AddevenementComponent implements OnInit {
     console.log(this.event)
     this.PS.save(this.event).subscribe(
       (data:any) => {
+        Swal.fire({
+          title: '<strong>Success!</strong>',
+          icon: 'success',
+          html:
+            '<b>Congratulations !</b> You Added The Event ' 
+        }
+        )
         console.log(data)
       },
       (error)=>{
+        Swal.fire({
+          title: '<strong>Error!</strong>',
+          icon: 'error',
+          html:
+            '<b>Something Is Wrong !</b> Check ' 
+        }
+        )
         console.log(error)
       }
       );
 
 }
 Tag(item:EventTags){
+  this.Tagtoggle = !this.Tagtoggle;
+  this.Tagstatus = this.Tagstatus ? 'Enable' : 'Disable';
   if(item.toString()=="Fun"){
     this.event.eventTags=EventTags.Fun;
   }
@@ -87,10 +106,12 @@ Tag(item:EventTags){
   if(item.toString()=="Online"){
     this.event.eventTags=EventTags.Online;
   }
-  console.log(this.event.eventTags)
+  console.log("EventTag"+this.event.eventTags)
 }
 
 Type(item:EventType){
+  this.Typetoggle = !this.Typetoggle;
+  this.Typestatus = this.Typestatus ? 'Enable' : 'Disable';
   if(item.toString()=="CHALLENGE"){
     this.event.type=EventType.CHALLENGE;
   }
@@ -98,7 +119,7 @@ Type(item:EventType){
     this.event.type=EventType.FORMATION;
   }
   
-  console.log(this.event.type)
+  console.log("EventType"+this.event.type)
 }
 AddEvent(){
   Swal.fire({
@@ -120,13 +141,7 @@ AddEvent(){
   }).then((result) => {
     if (result.isConfirmed) {
       this.save();
-      Swal.fire({
-        title: '<strong>Success!</strong>',
-        icon: 'success',
-        html:
-          '<b>Congratulations !</b> You Added The Event ' 
-      }
-      )
+    
     } 
   }
   )
