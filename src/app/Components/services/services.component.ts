@@ -13,7 +13,7 @@ export class ServicesComponent implements OnInit {
   ngOnInit(): void {
   }
   Events(){
-    this.router.navigate(['AddEvent']);
+    this.router.navigate(['Evenements']);
   }
 
 }

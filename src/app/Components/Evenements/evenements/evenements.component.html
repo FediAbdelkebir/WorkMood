@@ -83,8 +83,8 @@
                               <h2 class="ts-post-title"><a href="https://demo.themewinter.com/wp/buildbench/blog/2019/03/21/support-development-for-more-experience-3/">{{x.description}}</a></h2>
                                
                               <button href="javascript:void(0)" class="btn btn p-3" style="background-color: #1fb79b; color:white;width:48%;" (click)="JoinEvent()"> Join <i class="fa fa-plus"></i> </button>&nbsp;
-                              <button href="javascript:void(0)" class="btn btn"style="background-color: #21aea6; color:white;width:48%"> Like <i class="fa fa-heart"></i> </button><br><br>
-                              <button href="javascript:void(0)" class="btn btn"style="background-color: #193962; color:white;width:100%"> Details <i class="fa fa-list"></i> </button>
+                              <button href="javascript:void(0)" class="btn btn"style="background-color: #21aea6; color:white;width:48%" (click)="LikeEvent()"> Like <i class="fa fa-heart"></i> </button><br><br>
+                              <button href="javascript:void(0)" class="btn btn"style="background-color: #193962; color:white;width:100%" [routerLink]="['/EventDetails',x.id]"> Details <i class="fa fa-list"></i> </button>
                               
                            </div>
                         </div>

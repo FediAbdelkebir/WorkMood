@@ -29,7 +29,8 @@ import { PagenotfoundComponent } from '../app/Components/pagenotfound/pagenotfou
 import { HomeComponent } from '../app/Components/home/home.component';
 import { AddeventsliderComponent } from '../app/Components/Evenements/addeventslider/addeventslider.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { DatePipe } from '@angular/common'
+import { DatePipe } from '@angular/common';
+import { EvenementdetailsComponent } from './evenementdetails/evenementdetails.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -54,7 +55,8 @@ import { DatePipe } from '@angular/common'
     ContactusComponent,
     LatestupdatesComponent,
     PagenotfoundComponent,
-    AddeventsliderComponent
+    AddeventsliderComponent,
+    EvenementdetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -85,6 +87,10 @@ import { DatePipe } from '@angular/common'
         path:'Evenements',
           component:EvenementsComponent, data: { animation: 'isRight' } 
         },
+        {
+          path:'EventDetails/:id',
+            component:EvenementdetailsComponent, data: { animation: 'isRight' } 
+          },
         {path: '**', redirectTo: '404NotFound'}
     ])
   ],
