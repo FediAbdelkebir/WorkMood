@@ -1,0 +1,37 @@
+<p>add-review works!</p>
+
+<form #ss="ngForm">
+
+    
+
+   
+    <label>employeeName</label>
+    <input type="text" name="employeeName" ngModel/>
+    <label>Content</label>
+    <input type="text" name="contentReview" ngModel/>
+    
+    <label>Category</label>
+    <select id="key" name="key" [(ngModel)]="selected">
+        <option *ngFor="let key of keys" [value]="key" > 
+            {{categoryReviewEnum[key]}} 
+        </option>
+    </select> 
+
+    <label>Classification</label>
+    <select id="key2" name="key2" [(ngModel)]="selected2">
+        <option *ngFor="let key2 of keysclas" [value]="key2" > 
+            {{classfReviewEnum[key2]}} 
+        </option>
+    </select> 
+
+    <label>TypeReview</label>
+    <select id="key3" name="key3" [(ngModel)]="selected3">
+        <option *ngFor="let key3 of keystype" [value]="key3" > 
+            {{typeReviewEnum[key3]}} 
+        </option>
+    </select> 
+   
+
+
+    <input type="submit" value="save" (click)="addSurvey(ss.value)"/> 
+</form>

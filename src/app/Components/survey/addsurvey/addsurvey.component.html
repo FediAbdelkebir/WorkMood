@@ -1,0 +1,15 @@
+<p>add-survey works!</p>
+
+<form #ss="ngForm">
+
+    
+
+    <label>Content</label>
+    <input type="text" name="content" ngModel/>
+
+    <label>DateExp</label>
+    <input type="date" name="dateExp" ngModel/>
+
+
+    <input type="submit" value="save" (click)="addSurvey(ss.value)"/> 
+</form>

@@ -1,0 +1,36 @@
+<p>survey works!</p>
+
+<button class="btn btn-outline-warning mr-2" [routerLink]="['/addsurvey']" >Ajouter</button>
+
+<table class="table table-striped" >
+    <thead style="background-color: #c61bb2 ;">
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Content</th>
+          <th scope="col">dateExp</th>
+          
+          <th>Modify</th>
+          <th>Delete</th>
+          
+        </tr>
+      </thead>
+<tbody>
+<tr *ngFor="let m of SurveyQuestion">
+        
+    <td>
+        {{m.id}}
+    </td>
+    <td> 
+        {{m.content}}
+    </td>
+    <td>
+        {{m.dateExp}}
+    </td>
+    <td>
+        <button class="btn btn-outline-warning mr-2" (click)="UpdateRoute(m.id)" >Update</button>
+    </td>
+    <td><button class="btn btn-outline-danger mr-2" (click)="deleteSurvey(m)">Delete </button></td>
+    
+</tr>
+</tbody>
+</table>

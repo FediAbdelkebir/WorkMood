@@ -30,7 +30,8 @@ import { HomeComponent } from '../app/Components/home/home.component';
 import { AddeventsliderComponent } from '../app/Components/Evenements/addeventslider/addeventslider.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DatePipe } from '@angular/common';
-import { EvenementdetailsComponent } from './evenementdetails/evenementdetails.component'
+import { EvenementdetailsComponent } from './evenementdetails/evenementdetails.component';
+import { ReviewComponent } from './Components/review/review.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -56,7 +57,8 @@ import { EvenementdetailsComponent } from './evenementdetails/evenementdetails.c
     LatestupdatesComponent,
     PagenotfoundComponent,
     AddeventsliderComponent,
-    EvenementdetailsComponent
+    EvenementdetailsComponent,
+    ReviewComponent
   ],
   imports: [
     BrowserModule,
