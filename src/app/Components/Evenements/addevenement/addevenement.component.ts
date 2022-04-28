@@ -30,6 +30,12 @@ export class AddevenementComponent implements OnInit {
     this.listeventtags.push("Fun","Music","Dance","Mountains","Exploring","Event","Competition","Rewards","Challenges","Trouphies","CodingParty","Food","Buisness","VideoGames","Online"
       )
   }
+  Yes(){
+    this.event.trouphy=true;
+  }
+  No(){
+this.event.trouphy=false
+  }
   save() {
  //this.event.dateStart =this.datepipe.transform(this.event.dateStart, 'yyyy-MM-dd');
  //this.event.dateEnd =this.datepipe.transform(this.event.dateEnd, 'yyyy-MM-dd');

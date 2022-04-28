@@ -74,15 +74,17 @@ console.log(data)
         this.es.AffecterEventToUser(idevent,this.iduser).subscribe(
           (data)=>{
     console.log(data)
+          },(error)=>{
+            Swal.fire({
+              title: '<strong>Oops!</strong>',
+              icon: 'error',
+              html:
+                '<b>Error !</b> Something went wrong ' 
+            }
+            )
           }
         )
-        Swal.fire({
-          title: '<strong>Success!</strong>',
-          icon: 'success',
-          html:
-            '<b>Congratulations !</b> You Joined The Event ' 
-        }
-        )
+      
       } 
     }
     )
@@ -109,14 +111,15 @@ console.log(data)
         this.es.LikeEvent(idevent,this.iduser).subscribe(
           (data)=>{
     console.log(data)
+          },(error)=>{
+            Swal.fire({
+              title: '<strong>Oops!</strong>',
+              icon: 'error',
+              html:
+                '<b>Error !</b> Something went wrong ' 
+            }
+            )
           }
-        )
-        Swal.fire({
-          title: '<strong>Success!</strong>',
-          icon: 'success',
-          html:
-            '<b>Congratulations !</b> You Liked The Event ' 
-        }
         )
       } 
     }

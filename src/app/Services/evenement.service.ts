@@ -7,14 +7,11 @@ import { Router } from '@angular/router';
 import { Roles } from '../Models/roles';
 import { EventTags } from '../Models/event-tags';
 import { EventType } from '../Models/event-type';
-const httpOptions = {
-  headers: new HttpHeaders({
-    'Content-Type':  'application/json'
-  })
-};
 const headers = new HttpHeaders()
      .set('Content-Type', 'application/json;charset=UTF-8')  
      let options = { headers : headers };
+     
+let httpOptions = { responseType: 'text' };
 
 @Injectable({
   providedIn: 'root'
@@ -37,7 +34,7 @@ export class EvenementService {
   /*Ajouter Evenement*/
   public save(event: Event) {
     console.log(Event);
-  return this.http.post<Event>(this.BackEndURL+"AddEvent",event,options);
+  return this.http.post(this.BackEndURL+"AddEvent",event,{ ...options, responseType: 'text' });
   }
   /*Supprimer Evenement*/
   DeleteEvenement(id:number){
@@ -95,7 +92,7 @@ export class EvenementService {
   }
    /* Like Event*/
   public LikeEvent(idevent:number,iduser:number){
-    return this.http.post("http://127.0.0.1:8081/account/id/"+idevent+"/"+iduser,httpOptions); 
+    return this.http.post(this.BackEndURL+"LikeEvent/"+idevent+"/"+iduser,httpOptions); 
   }
    /* DisLike Event*/
   public DisLike(idevent:number,iduser:number){

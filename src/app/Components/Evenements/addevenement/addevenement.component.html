@@ -48,9 +48,9 @@
                         </div>
                         <p class='field half'>
                             <label class='label' for='select'>Event Has a Trouphy Reward ?</label>
-                            <select class='select' id='select' [(ngModel)]="event.trouphy" name="trouphy">
-                              <option value='1'>Yes</option>
-                              <option value='0'>No</option>
+                            <select class='select' id='select' >
+                              <option value='1' (click)="Yes()">Yes</option>
+                              <option value='0' (click)="No()">No</option>
                             </select>
                           </p>
                         <p class='field'>
