@@ -38,7 +38,7 @@ export class EvenementService {
   }
   /*Supprimer Evenement*/
   DeleteEvenement(id:number){
-      return this.http.delete('http://localhost:8081/account/delete/'+id).pipe(
+      return this.http.delete('http://localhost:8089/work-mood/Evenements/'+id).pipe(
         map(
           userData => {
             

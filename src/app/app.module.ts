@@ -36,6 +36,16 @@ import { JoinedeventsComponent } from './Components/Evenements/joinedevents/join
 import { LikedeventsComponent } from './Components/Evenements//likedevents/likedevents.component';
 import { JoinedeventssliderComponent } from './Components/Evenements/joinedeventsslider/joinedeventsslider.component';
 import { LikedeventssliderComponent } from './Components/Evenements/likedeventsslider/likedeventsslider.component';
+import { AddEventComponent } from './BackEnd/Events/add-event/add-event.component';
+import { DeleteeventlistComponent } from './BackEnd/Events/deleteeventlist/deleteeventlist.component';
+import { UpdateeventComponent } from './BackEnd/Events/updateevent/updateevent.component';
+import { UpdateeventlistComponent } from './BackEnd/Events/updateeventlist/updateeventlist.component';
+import { LandingComponent } from './BackEnd/landing/landing.component';
+import { ManagementComponent } from './BackEnd/management/management.component';
+import { NavComponent } from './BackEnd/nav/nav.component';
+import { StatistiquesComponent } from './BackEnd/statistiques/statistiques.component';
+import { StatsGlobalComponent } from './BackEnd/stats-global/stats-global.component';
+import { DashboardcssComponent } from './BackEnd/dashboardcss/dashboardcss.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -66,7 +76,20 @@ import { LikedeventssliderComponent } from './Components/Evenements/likedeventss
     JoinedeventsComponent,
     LikedeventsComponent,
     JoinedeventssliderComponent,
-    LikedeventssliderComponent
+    LikedeventssliderComponent,
+    HomeComponent,
+    NavComponent,
+    ManagementComponent,
+    StatistiquesComponent,
+    StatsGlobalComponent,
+    FooterComponent,
+    AddEventComponent,
+    PagenotfoundComponent,
+    UpdateeventComponent,
+    UpdateeventlistComponent,
+    DeleteeventlistComponent,
+    LandingComponent,
+    DashboardcssComponent 
   ],
   imports: [
     BrowserModule,
