@@ -46,6 +46,7 @@ import { NavComponent } from './BackEnd/nav/nav.component';
 import { StatistiquesComponent } from './BackEnd/statistiques/statistiques.component';
 import { StatsGlobalComponent } from './BackEnd/stats-global/stats-global.component';
 import { DashboardcssComponent } from './BackEnd/dashboardcss/dashboardcss.component';
+import { DashboardfooterComponent } from './BackEnd/dashboardfooter/dashboardfooter.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -89,7 +90,8 @@ import { DashboardcssComponent } from './BackEnd/dashboardcss/dashboardcss.compo
     UpdateeventlistComponent,
     DeleteeventlistComponent,
     LandingComponent,
-    DashboardcssComponent 
+    DashboardcssComponent,
+    DashboardfooterComponent 
   ],
   imports: [
     BrowserModule,
