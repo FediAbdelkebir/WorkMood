@@ -7,7 +7,17 @@ import { UpdateeventComponent } from './BackEnd/Events/updateevent/updateevent.c
 import { UpdateeventlistComponent } from './BackEnd/Events/updateeventlist/updateeventlist.component';
 import { StatsGlobalComponent } from './BackEnd/stats-global/stats-global.component';
 import { HomeComponent } from './Components/home/home.component';
+import { AddOfferComponent } from './Components/offer/add-offer/add-offer.component';
+import { DeleteOfferComponent } from './Components/offer/delete-offer/delete-offer.component';
+import { ListOffersComponent } from './Components/offer/list-offers/list-offers.component';
+import { MyOffersComponent } from './Components/offer/my-offers/my-offers.component';
+import { ShowOfferComponent } from './Components/offer/show-offer/show-offer.component';
+import { UpdateOfferComponent } from './Components/offer/update-offer/update-offer.component';
 import { PagenotfoundComponent } from './Components/pagenotfound/pagenotfound.component';
+import { AddReclamationComponent } from './Components/reclamation/add-reclamation/add-reclamation.component';
+import { DeleteReclamationComponent } from './Components/reclamation/delete-reclamation/delete-reclamation.component';
+import { ListReclamationsByUserComponent } from './Components/reclamation/list-reclamations-by-user/list-reclamations-by-user.component';
+import { ShowReclamationComponent } from './Components/reclamation/show-reclamation/show-reclamation.component';
 const routes: Routes = [
   {
     path:'Dashboard',
@@ -42,6 +52,18 @@ const routes: Routes = [
     path:'Dashboard/UpdateEvent/:id',
       component:UpdateeventComponent  
   } ,
+  
+  {path: 'Offers', component:ListOffersComponent},
+  {path: 'MyOffers', component:MyOffersComponent},
+  {path: 'Offers/Delete/:id', component:DeleteOfferComponent},
+  {path: 'Offers/Add', component:AddOfferComponent},
+  {path: 'Offers/Update/:id', component:UpdateOfferComponent},
+  {path: 'Offers/Show/:id', component:ShowOfferComponent},
+
+  {path: 'Reclamations', component:ListReclamationsByUserComponent}, //ReclamationsByUser
+  {path: 'Reclamations/Delete/:id', component:DeleteReclamationComponent},
+  {path: 'Reclamations/Add', component:AddReclamationComponent},
+  {path: 'Reclamations/Show/:id', component:ShowReclamationComponent},
     {path: 'Dashboard/**', redirectTo: '404NotFound'}
 
 ];

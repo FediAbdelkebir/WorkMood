@@ -47,6 +47,17 @@ import { StatistiquesComponent } from './BackEnd/statistiques/statistiques.compo
 import { StatsGlobalComponent } from './BackEnd/stats-global/stats-global.component';
 import { DashboardcssComponent } from './BackEnd/dashboardcss/dashboardcss.component';
 import { DashboardfooterComponent } from './BackEnd/dashboardfooter/dashboardfooter.component';
+import { AddOfferComponent } from './Components/offer/add-offer/add-offer.component';
+import { DeleteOfferComponent } from './Components/offer/delete-offer/delete-offer.component';
+import { ListOffersComponent } from './Components/offer/list-offers/list-offers.component';
+import { MyOffersComponent } from './Components/offer/my-offers/my-offers.component';
+import { ShowOfferComponent } from './Components/offer/show-offer/show-offer.component';
+import { UpdateOfferComponent } from './Components/offer/update-offer/update-offer.component';
+import { AddReclamationComponent } from './Components/reclamation/add-reclamation/add-reclamation.component';
+import { DeleteReclamationComponent } from './Components/reclamation/delete-reclamation/delete-reclamation.component';
+import { ListReclamationsByUserComponent } from './Components/reclamation/list-reclamations-by-user/list-reclamations-by-user.component';
+import { ListReclamationsComponent } from './Components/reclamation/list-reclamations/list-reclamations.component';
+import { ShowReclamationComponent } from './Components/reclamation/show-reclamation/show-reclamation.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -91,7 +102,20 @@ import { DashboardfooterComponent } from './BackEnd/dashboardfooter/dashboardfoo
     DeleteeventlistComponent,
     LandingComponent,
     DashboardcssComponent,
-    DashboardfooterComponent 
+    DashboardfooterComponent ,
+
+    
+    ListOffersComponent,
+    AddOfferComponent,
+    DeleteOfferComponent,
+    UpdateOfferComponent,
+    ShowOfferComponent,
+    AddReclamationComponent,
+    DeleteReclamationComponent,
+    ListReclamationsComponent,
+    ShowReclamationComponent,
+    ListReclamationsByUserComponent,
+    MyOffersComponent
   ],
   imports: [
     BrowserModule,

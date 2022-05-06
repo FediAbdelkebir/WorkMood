@@ -1,0 +1,96 @@
+import { Component, OnInit } from '@angular/core';
+import { Reclamation } from 'src/app/Models/reclamation';
+import { StatusReclamation } from 'src/app/Models/status-reclamation';
+import { ReclamationService } from 'src/app/Services/reclamation.service';
+
+@Component({
+  selector: 'app-list-reclamations-by-user',
+  templateUrl: './list-reclamations-by-user.component.html',
+  styleUrls: ['./list-reclamations-by-user.component.css']
+})
+export class ListReclamationsByUserComponent implements OnInit {
+
+  reclamations!: Reclamation[];
+  statusReclamationEnum: any = StatusReclamation;
+  keys: string[]=[];
+  status!: StatusReclamation;
+  id!: number;
+
+  constructor(private s: ReclamationService) {
+    this.keys = Object.keys(this.statusReclamationEnum);
+  }
+
+  ngOnInit(): void {
+    this.getAllByUser();
+  }
+
+  getAllByUser(){
+    let idUser=1; 
+    this.s.findByUser(idUser).subscribe(
+      (d)=>{
+        this.reclamations=d;
+      }
+    );
+  }
+
+  getByStatus(c: StatusReclamation){
+    let id=1;
+    console.log(c);
+    console.log(this.status);
+    
+    this.s.findByType(c, id).subscribe(
+      (d)=>{
+        this.reclamations=d;
+        console.log(d);
+        
+      }
+    );
+  }
+  onChange(){
+    let id=1;
+    this.s.findByType(this.status, id).subscribe(
+      (d)=>{
+        this.reclamations=d;
+        console.log(d);
+      }
+    );
+  }
+
+  sortByCreationDateAsc(){
+    this.s.findByCreationDateAsc().subscribe(
+      (e)=>{
+        this.reclamations=e;
+        console.log(e);
+        
+      }
+    );
+  }
+  sortByCreationDateDesc(){
+    this.s.findByCreationDateDesc().subscribe(
+      (e)=>{
+        this.reclamations=e;
+        console.log(e);
+        
+      }
+    );
+  }
+  sortByProcessingDateAsc(){
+    this.s.findByProcessingDateAsc().subscribe(
+      (e)=>{
+        this.reclamations=e;
+        console.log(e);
+        
+      }
+    );
+  }
+  sortByProcessingDateDesc(){
+    this.s.findByProcessingDateDesc().subscribe(
+      (e)=>{
+        this.reclamations=e;
+        console.log(e);
+        
+      }
+    );
+  }
+
+}

@@ -1,0 +1,210 @@
+<app-head></app-head>
+<app-header></app-header>
+
+<div class="body-innner-content ">
+    <div id="banner-area" class="banner-area bg-overlay banner-bg">
+        <div class="container-fluid p-0 ">
+            <div class="banner-heading banner-heading-full"
+                style="background-image:url(//demo.themewinter.com/wp/buildbench/wp-content/uploads/2019/03/image07-min.png);">
+                <h3 class="banner-title mt-192 ">
+                    Reclamations
+                </h3>
+            </div>
+        </div>
+    </div>
+    <section id="main-content" class="blog main-container" role="main">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-12">
+                    <aside id="sidebar" class="sidebar" role="complementary">
+                        <div id="search-2" class="widget widget_search">
+                            <form method="get" action="https://demo.themewinter.com/wp/buildbench/"
+                                class="buildbench-serach xs-search-group">
+                                <div class="input-group">
+                                    <input type="search" class="form-control" name="s" placeholder="Search" value="">
+                                    <button class="input-group-btn search-button"><i
+                                            class="icon icon-search1"></i></button>
+                                </div>
+                            </form>
+                        </div>
+                        <div id="categories-2" class="widget widget_categories">
+                            <h3 class="widget-title">Status</h3>
+                            <select id="key" name="key" [(ngModel)]="status" (change)="onChange()">
+                                <option value='' disabled selected>Status</option>
+                                <option *ngFor="let key of keys" [value]="key" (click)="getByStatus(status)">
+                                    {{statusReclamationEnum[key]}}
+                                </option>
+                            </select>
+                            <br />
+                            <hr>
+                            <h3 class="widget-title">Sort By Date</h3>
+                            <ul>
+                                <li><a (click)="sortByCreationDateAsc()">Creation Date Ascending</a>
+                                </li>
+                                <li><a (click)="sortByCreationDateDesc()">Creation Date Descending</a>
+                                </li>
+                                <li><a (click)="sortByProcessingDateAsc()">Processing Date Ascending</a>
+                                </li>
+                                <li><a (click)="sortByProcessingDateDesc()">Processing Date Descending</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </aside> <!-- #sidebar -->
+                </div><!-- Sidebar col end -->
+                <div class="col-lg-8 col-md-12">
+                    <article
+                        class="post-1953 post type-post status-publish format-video has-post-thumbnail hentry category-house tag-building tag-construction tag-contracting tag-design tag-project tag-safety post_format-post-format-video">
+                        <div class="post-body clearfix" *ngFor="let r of reclamations">
+                            <div class="entry-header">
+                                <h2 class="entry-title">
+                                    <a
+                                        href="https://demo.themewinter.com/wp/buildbench/blog/2019/03/21/support-development-for-more-experience-2/">
+                                        {{r.objet}}
+                                    </a>
+                                </h2>
+                            </div>
+                            <div class="post-content">
+                                <div class="entry-content">
+                                    {{r.message}}
+                                </div>
+                                <div align="right">
+                                    {{r.creationDate}}
+                                </div>
+                                <div align="right">
+                                    {{r.status}}
+                                </div>
+                                <div align="center">
+                                    <a class="readmore" [routerLink]="['/Reclamations/Show/',r.idReclamation]">
+                                        <h3>View Response</h3>
+                                    </a>
+                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                                        view 
+                                      </button>
+
+                                </div>
+                                <!--<div class="post-footer readmore-btn-area" align="center">
+                                    <a class="readmore" (click)="treatReclamation()">
+                                        <h3>Treat Reclamation</h3>
+                                    </a>
+                                </div>-->
+                                <!--<div align="center">
+                                    <div class="post-body clearfix" style="width:90%;">
+                                        response
+                                    </div>
+                                </div>-->
+
+                            </div>
+                            <!-- Post content right-->
+                        </div>
+                        <!-- post-body end-->
+                    </article>
+                </div><!-- .col-md-8 -->
+
+            </div><!-- .row -->
+        </div><!-- .container -->
+    </section><!-- #main-content -->
+
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              ...
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <script>(function () {
+            function maybePrefixUrlField() {
+                if (this.value.trim() !== '' && this.value.indexOf('http') !== 0) {
+                    this.value = "http://" + this.value;
+                }
+            }
+
+            var urlFields = document.querySelectorAll('.mc4wp-form input[type="url"]');
+            if (urlFields) {
+                for (var j = 0; j < urlFields.length; j++) {
+                    urlFields[j].addEventListener('blur', maybePrefixUrlField);
+                }
+            }
+        })();</script>
+    <script type="text/javascript"
+        src="https://demo.themewinter.com/wp/buildbench/wp-includes/js/dist/vendor/regenerator-runtime.min.js?ver=0.13.7"
+        id="regenerator-runtime-js"></script>
+    <script type="text/javascript"
+        src="https://demo.themewinter.com/wp/buildbench/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=3.15.0"
+        id="wp-polyfill-js"></script>
+    <script type="text/javascript" id="contact-form-7-js-extra">
+        /* <![CDATA[ */
+        var wpcf7 = { "api": { "root": "https:\/\/demo.themewinter.com\/wp\/buildbench\/wp-json\/", "namespace": "contact-form-7\/v1" } };
+    /* ]]> */
+    </script>
+    <script type="text/javascript"
+        src="https://demo.themewinter.com/wp/buildbench/wp-content/plugins/contact-form-7/includes/js/index.js?ver=5.5.3"
+        id="contact-form-7-js"></script>
+    <script type="text/javascript"
+        src="https://demo.themewinter.com/wp/buildbench/wp-content/themes/buildbench/assets/js/bootstrap.min.js?ver=2.1.0"
+        id="bootstrap-js"></script>
+    <script type="text/javascript"
+        src="https://demo.themewinter.com/wp/buildbench/wp-content/themes/buildbench/assets/js/popper.min.js?ver=2.1.0"
+        id="popper-js"></script>
+    <script type="text/javascript"
+        src="https://demo.themewinter.com/wp/buildbench/wp-content/themes/buildbench/assets/js/jquery.magnific-popup.min.js?ver=2.1.0"
+        id="jquery-magnific-popup-js"></script>
+    <script type="text/javascript"
+        src="https://demo.themewinter.com/wp/buildbench/wp-content/themes/buildbench/assets/js/jquery.countdown.min.js?ver=2.1.0"
+        id="jquery-countdown-js"></script>
+    <script type="text/javascript"
+        src="https://demo.themewinter.com/wp/buildbench/wp-content/themes/buildbench/assets/js/jquery.appear.min.js?ver=2.1.0"
+        id="jquery-appear-js"></script>
+    <script type="text/javascript"
+        src="https://demo.themewinter.com/wp/buildbench/wp-content/themes/buildbench/assets/js/jquery-mixtub.js?ver=2.1.0"
+        id="jquery-mixtub-js"></script>
+    <script type="text/javascript"
+        src="https://demo.themewinter.com/wp/buildbench/wp-content/themes/buildbench/assets/js/owl.carousel.min.js?ver=2.1.0"
+        id="owl-carousel-js"></script>
+    <script type="text/javascript"
+        src="https://demo.themewinter.com/wp/buildbench/wp-content/themes/buildbench/assets/js/script.js?ver=2.1.0"
+        id="buildbench-script-js"></script>
+    <script type="text/javascript"
+        src="https://demo.themewinter.com/wp/buildbench/wp-includes/js/wp-embed.min.js?ver=5.8.4"
+        id="wp-embed-js"></script>
+    <script type="text/javascript" defer=""
+        src="https://demo.themewinter.com/wp/buildbench/wp-content/plugins/mailchimp-for-wp/assets/js/forms.js?ver=4.8.6"
+        id="mc4wp-forms-api-js"></script>
+
+</div>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+<app-footer></app-footer>
+<app-scripts></app-scripts>
+
+<p>list-reclamations works!</p>
+<select id="key" name="key" [(ngModel)]="status" (change)="onChange()">
+    <option value='' disabled selected>Categoy</option>
+    <option *ngFor="let key of keys" [value]="key" (click)="getByStatus(status)">
+        {{statusReclamationEnum[key]}}
+    </option>
+</select>
+<div *ngFor="let r of reclamations">
+    {{r.objet}}
+    {{r.message}}
+    <a [routerLink]="['/Reclamations/Show/',r.idReclamation]">Detail</a>
+    <a [routerLink]="['/Reclamations/Delete/',r.idReclamation]">Delete</a>
+</div>
+<a [routerLink]="['/Reclamations/Add/']">Add</a>

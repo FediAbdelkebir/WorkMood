@@ -4,7 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { EventTags } from 'src/app/Models/event-tags';
 import { EventType } from 'src/app/Models/event-type';
 import { EvenementService } from 'src/app/Services/evenement.service';
-import {Event} from '../../Models/event';
+import {Event} from 'src/app/Models/event'
 import Swal from 'sweetalert2';
 
 @Component({

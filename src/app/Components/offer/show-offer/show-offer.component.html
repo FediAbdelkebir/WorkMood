@@ -1,0 +1,60 @@
+<app-head></app-head>
+<app-header></app-header>
+
+<body>
+    <div class="container ">
+        <div class="left">
+            <div class="item">
+                <p>Adress<i class="fa-solid fa-location-dot"></i></p>
+                {{offer.address}}
+            </div>
+            <div class="item">
+                <p>Category<i class="fa-solid fa-location-dot"></i></p>
+                {{offer.category}}
+            </div>
+            <div class="item">
+                <p>Expiration Date<i class="fa-solid fa-location-dot"></i></p>
+                {{offer.dateExp}}
+            </div>
+            <div class="item">
+                <p>Limited Number<i class="fa-solid fa-location-dot"></i></p>
+                {{offer.limitedNumber}}
+            </div>
+            <div class="item">
+                <p>Persons Number<i class="fa-solid fa-location-dot"></i></p>
+                {{offer.personsNumber}}
+            </div>
+            <div class="item">
+                <p>Point<i class="fa-solid fa-location-dot"></i></p>
+                {{offer.point}}
+            </div>
+        </div>
+        <div class="right">
+            <div class="item">
+                {{offer.title}}
+            </div>
+            <div class="item">
+                {{offer.description}}
+            </div>
+            <div class="item">
+                {{offer.image}}
+            </div>
+        </div>
+    </div>
+    <a (click)="getCoupon()">get coupon</a>
+    <div class="elementor-element elementor-element-3137f14 elementor-position-left elementor-vertical-align-top elementor-widget elementor-widget-image-box"
+        >
+        <div class="elementor-widget-container">
+            <div class="elementor-image-box-wrapper">
+                <button (click)="getCoupon()">pddf</button>
+                <!-- <figure class="elementor-image-box-img"><a  (click)="getCoupon()"><img width="52" height="52"
+                            src="https://demo.themewinter.com/wp/buildbench/wp-content/uploads/2019/03/pdf_img.png"
+                            class="attachment-thumbnail size-thumbnail" alt="" loading="lazy"></a></figure>
+                Download coupon -->
+            </div>
+        </div>
+    </div>
+</body>
+
+<app-footer></app-footer>
+<app-scripts></app-scripts>
