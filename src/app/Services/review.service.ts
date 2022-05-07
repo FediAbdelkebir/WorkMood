@@ -33,6 +33,12 @@ export class ReviewService {
   getReviewByUsers (id:any): Observable<Review[]> {
     return this.http.get<Review[]>('http://localhost:8089/work-mood/review/FindReviewByUsers/'+id);
   }
+  getReviewGoodByUsers (id:any): Observable<Review[]> {
+    return this.http.get<Review[]>('http://localhost:8089/work-mood/review/FindReviewByUsersGood/'+id);
+  }
+  getReviewBadByUsers (id:any): Observable<Review[]> {
+    return this.http.get<Review[]>('http://localhost:8089/work-mood/review/FindReviewByUsersBad/'+id);
+  }
 
   getReviewByClass (classf:Classification): Observable<Classification[]> {
     return this.http.get<Classification[]>('http://localhost:8089/work-mood/review/ReviewClass?classf= /'+classf);

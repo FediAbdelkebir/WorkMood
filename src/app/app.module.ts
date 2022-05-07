@@ -31,7 +31,19 @@ import { AddeventsliderComponent } from '../app/Components/Evenements/addeventsl
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DatePipe } from '@angular/common';
 import { EvenementdetailsComponent } from './evenementdetails/evenementdetails.component';
-import { ReviewComponent } from './Components/review/review.component'
+import { ReviewComponent } from './Components/review/review.component';
+import { AddreviewetAffecterEComponent } from './Components/review/addreviewet-affecter-e/addreviewet-affecter-e.component';
+import { AddreviewetAffecterSComponent } from './Components/review/addreviewet-affecter-s/addreviewet-affecter-s.component';
+import { GetReviewByUsersComponent } from './Components/review/get-review-by-users/get-review-by-users.component';
+import { AddsurveyComponent } from './Components/survey/addsurvey/addsurvey.component';
+import { GetByIdsurveyComponent } from './Components/survey/get-by-idsurvey/get-by-idsurvey.component';
+import { SurveyComponent } from './Components/survey/survey.component';
+import { UpdatesurveyComponent } from './Components/survey/updatesurvey/updatesurvey.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { GetreviewBadbyusersComponent } from './Components/review/getreview-badbyusers/getreview-badbyusers.component';
+import { GetreviewGoodbyusersComponent } from './Components/review/getreview-goodbyusers/getreview-goodbyusers.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -58,7 +70,21 @@ import { ReviewComponent } from './Components/review/review.component'
     PagenotfoundComponent,
     AddeventsliderComponent,
     EvenementdetailsComponent,
-    ReviewComponent
+    ReviewComponent,
+    SurveyComponent,
+    AddsurveyComponent,
+    UpdatesurveyComponent,
+    GetByIdsurveyComponent,
+    AddreviewetAffecterEComponent,
+
+    AddreviewetAffecterSComponent,
+    GetReviewByUsersComponent,
+    GetreviewBadbyusersComponent,
+    GetreviewGoodbyusersComponent,
+ 
+   
+    
+    
   ],
   imports: [
     BrowserModule,
@@ -67,6 +93,7 @@ import { ReviewComponent } from './Components/review/review.component'
     FormsModule,
     Ng2SearchPipeModule,
     HttpClientModule,
+    
     RouterModule.forRoot([
       {
       path:'',
@@ -94,7 +121,8 @@ import { ReviewComponent } from './Components/review/review.component'
             component:EvenementdetailsComponent, data: { animation: 'isRight' } 
           },
         {path: '**', redirectTo: '404NotFound'}
-    ])
+    ]),
+    FontAwesomeModule
   ],
   providers: [DatePipe],
   bootstrap: [AppComponent]

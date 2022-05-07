@@ -4,6 +4,7 @@ import { CategoryReview } from 'src/app/Models/category-review';
 import { Classification } from 'src/app/Models/classification';
 import { TypeReview } from 'src/app/Models/type-review';
 import { ReviewService } from 'src/app/Services/review.service';
+import {faAngleDown} from '@fortawesome/free-solid-svg-icons';
 
 
 @Component({
@@ -16,6 +17,7 @@ export class AddreviewetAffecterEComponent implements OnInit {
   categoryReviewEnum: any = CategoryReview;
   classfReviewEnum: any = Classification;
   typeReviewEnum: any = TypeReview;
+  faAngleDown = faAngleDown;
   keys: string[] = [];
   keysclas: string[] = [];
   keystype: string[] = [];

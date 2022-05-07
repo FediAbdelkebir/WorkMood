@@ -1,11 +1,30 @@
+<!-- 
+<div class="container"> 
+    <div class="overlay">
+      <div class="content"> 
+     
+      <p>pppppppppppp</p>
+            
+          
+        
+       
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+</div> -->
 
-<!-- societeName : {{Review.societeName}}<br>
-employeeName : {{Review.employeeName}}<br>
-contentReview : {{Review.contentReview}}<br>
-category : {{Review.category}}<br>
-review : {{Review.review}}<br>
-classf : {{Review.classf}}<br> -->
-<table style="border: 1px solid;">
+
+
+
+<!--
+ <table style="border: 1px solid;">
     <th></th>
     <tr *ngFor="let rev of Review">
         <td>id: {{rev.id}}</td>
@@ -17,3 +36,77 @@ classf : {{Review.classf}}<br> -->
         <td>classf : {{rev.classf}}</td>
     </tr>
 </table>
+-->
+<app-head></app-head>
+<app-header></app-header>
+  
+
+
+
+  <!-- flip-card-container -->
+  <div *ngFor="let rev of Review " class="flip-card-container" style="--hue: 170;margin-top: 180px;" >
+    <div class="flip-card" >
+  
+      <div class="card-front">
+        <figure>
+          <div class="img-bg"></div>
+          <img src="../../../../assets/add.jpg" alt="Image 2">
+          <figcaption>{{rev.classf}}</figcaption>
+        </figure>
+  
+        <ul style="margin-top:10px ;">
+            
+          <li >{{rev.employeeName}}</li>
+          <li>{{rev.societeName}}</li>
+        
+        </ul>
+      </div>
+  
+      <div class="card-back">
+        <figure>
+          <div class="img-bg"></div>
+          <img src="../../../../assets/add.jpg" alt="image-2">
+        </figure>
+  
+        <button>{{rev.contentReview}}</button>
+  
+        <div class="design-container">
+          <span class="design design--1"></span>
+          <span class="design design--2"></span>
+          <span class="design design--3"></span>
+          <span class="design design--4"></span>
+          <span class="design design--5"></span>
+          <span class="design design--6"></span>
+          <span class="design design--7"></span>
+          <span class="design design--8"></span>
+        </div>
+      </div>
+  
+    </div>
+  </div>
+  <!-- /flip-card-container -->
+  
+  
+  
+
+          
+        
+            
+
+            
+
+
+           
+
+
+            
+           
+
+            
+
+
+
+
+
+            
+
