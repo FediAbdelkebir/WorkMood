@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {LandingComponent} from '../app/BackEnd/landing/landing.component'
 import { AddEventComponent } from './BackEnd/Events/add-event/add-event.component';
-import { DeleteeventlistComponent } from './BackEnd/Events/deleteeventlist/deleteeventlist.component';
+import { StatsEventsComponent } from './BackEnd/Events/stats-events/stats-events.component';
 import { UpdateeventComponent } from './BackEnd/Events/updateevent/updateevent.component';
 import { UpdateeventlistComponent } from './BackEnd/Events/updateeventlist/updateeventlist.component';
 import { StatsGlobalComponent } from './BackEnd/stats-global/stats-global.component';
@@ -26,10 +26,6 @@ const routes: Routes = [
       component:AddEventComponent
     },
   {
-    path:'Dashboard/DeleteEventList',
-      component:DeleteeventlistComponent  
-  } ,
-  {
     path:'Dashboard/UpdateEventList',
       component:UpdateeventlistComponent  
   } ,
@@ -38,6 +34,10 @@ const routes: Routes = [
     path:'Dashboard/Statistiques',
       component:StatsGlobalComponent
   } ,
+  {
+    path:'Dashboard/StatsEvents',
+      component:StatsEventsComponent
+  },
   {
     path:'Dashboard/UpdateEvent/:id',
       component:UpdateeventComponent  

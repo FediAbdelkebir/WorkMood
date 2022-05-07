@@ -37,7 +37,6 @@ import { LikedeventsComponent } from './Components/Evenements//likedevents/liked
 import { JoinedeventssliderComponent } from './Components/Evenements/joinedeventsslider/joinedeventsslider.component';
 import { LikedeventssliderComponent } from './Components/Evenements/likedeventsslider/likedeventsslider.component';
 import { AddEventComponent } from './BackEnd/Events/add-event/add-event.component';
-import { DeleteeventlistComponent } from './BackEnd/Events/deleteeventlist/deleteeventlist.component';
 import { UpdateeventComponent } from './BackEnd/Events/updateevent/updateevent.component';
 import { UpdateeventlistComponent } from './BackEnd/Events/updateeventlist/updateeventlist.component';
 import { LandingComponent } from './BackEnd/landing/landing.component';
@@ -47,6 +46,7 @@ import { StatistiquesComponent } from './BackEnd/statistiques/statistiques.compo
 import { StatsGlobalComponent } from './BackEnd/stats-global/stats-global.component';
 import { DashboardcssComponent } from './BackEnd/dashboardcss/dashboardcss.component';
 import { DashboardfooterComponent } from './BackEnd/dashboardfooter/dashboardfooter.component';
+import { StatsEventsComponent } from './BackEnd/Events/stats-events/stats-events.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -88,10 +88,10 @@ import { DashboardfooterComponent } from './BackEnd/dashboardfooter/dashboardfoo
     PagenotfoundComponent,
     UpdateeventComponent,
     UpdateeventlistComponent,
-    DeleteeventlistComponent,
     LandingComponent,
     DashboardcssComponent,
-    DashboardfooterComponent 
+    DashboardfooterComponent,
+    StatsEventsComponent 
   ],
   imports: [
     BrowserModule,

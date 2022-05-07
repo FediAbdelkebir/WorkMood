@@ -38,7 +38,7 @@ export class EvenementService {
   }
   /*Supprimer Evenement*/
   DeleteEvenement(id:number){
-      return this.http.delete('http://localhost:8089/work-mood/Evenements/'+id).pipe(
+      return this.http.delete(this.BackEndURL+'DeleteEvent/'+id).pipe(
         map(
           userData => {
             
@@ -50,7 +50,7 @@ export class EvenementService {
     }
 	/* Update Evenement */
 	UpdateEvenement(event:Event){
-       return this.http.post('http://localhost:8081/account/',event).pipe(
+       return this.http.put(this.BackEndURL+'UpdateEvent',event).pipe(
           map(
             userData => {
             }
@@ -60,35 +60,35 @@ export class EvenementService {
     }
 	/* Find Evenement By Id*/
 	public FindEvenementById(id:number): Observable<any>{
-    return this.http.get<Event>("http://127.0.0.1:8081/account/id/"+id); 
+    return this.http.get<Event>(this.BackEndURL+'FindEvent/'+id); 
   }
   /* Find Evenement By Title*/
   public FindEvenementByTitle(title:String): Observable<any>{
-    return this.http.get<Event>("http://127.0.0.1:8081/account/id/"+title); 
+    return this.http.get<Event>(this.BackEndURL+'FindEvent/Title/'+title); 
   }
   /* Find Evenement By StartDate*/
   public FindEvenementByStartDate(StartDate:Date): Observable<any>{
-    return this.http.get<Event>("http://127.0.0.1:8081/account/id/"+StartDate); 
+    return this.http.get<Event>(this.BackEndURL+'FindEvent/DateStart/'+StartDate); 
   }
   /* Find Evenement By EndDate*/
   public FindEvenementByEndDate(EndDate:Date): Observable<any>{
-    return this.http.get<Event>("http://127.0.0.1:8081/account/id/"+EndDate); 
+    return this.http.get<Event>(this.BackEndURL+'FindEvent/DateEnd/'+EndDate); 
   }
   /* Find Evenement By Type*/
   public FindEvenementByType(EndDate:Date): Observable<any>{
-    return this.http.get<Event>("http://127.0.0.1:8081/account/id/"+EndDate); 
+    return this.http.get<Event>(this.BackEndURL+'FindEvent/Type/'+EndDate); 
   }
   /* Affect User To Evenement*/
   public AffecterEventToUser(iduser:number,idevent:number){
-    return this.http.post<Event>("http://127.0.0.1:8081/account/id/"+iduser+"/"+idevent,httpOptions); 
+    return this.http.post<Event>(this.BackEndURL+'AffecterEventToUser/'+iduser+"/"+idevent,httpOptions); 
   }
    /* Evennement Winners*/
   public EventWinners(){
-    return this.http.post("http://127.0.0.1:8081/account/id/",httpOptions); 
+    return this.http.post(this.BackEndURL+'SendRewards',httpOptions); 
   }
    /* Remove User From Event*/
   public RemoveUserFromEvent(iduser:number,idevent:number){
-    return this.http.post("http://127.0.0.1:8081/account/id/"+idevent+"/"+iduser,httpOptions); 
+    return this.http.post(this.BackEndURL+'RemoveUserFromEvent/'+idevent+"/"+iduser,httpOptions); 
   }
    /* Like Event*/
   public LikeEvent(idevent:number,iduser:number){
@@ -96,137 +96,137 @@ export class EvenementService {
   }
    /* DisLike Event*/
   public DisLike(idevent:number,iduser:number){
-    return this.http.post("http://127.0.0.1:8081/account/id/"+idevent+"/"+iduser,httpOptions); 
+    return this.http.post(this.BackEndURL+'DisLikeEvent/'+idevent+"/"+iduser,httpOptions); 
   }
    /* LikedEvents By UserId */
   public LikedEventsByUserId(iduser:number): Observable<any>{
-    return this.http.get<Event>("http://127.0.0.1:8081/account/id/"+iduser); 
+    return this.http.get<Event>(this.BackEndURL+'LikedEventById/'+iduser); 
   }
    /* LikedUsersByEventId */
   public LikedUsersByEventId(idevent:number): Observable<any>{
-    return this.http.get<Event>("http://127.0.0.1:8081/account/id/"+idevent); 
+    return this.http.get<Event>(this.BackEndURL+'LikedUsersByEventId/'+idevent); 
   }
    /* RecommendedEvents By Tags */
   public RecommendedEvents(Tags:EventTags){
-    return this.http.get<Event>("http://127.0.0.1:8081/account/id/"+Tags); 
+    return this.http.get<Event>(this.BackEndURL+Tags); 
   }
    /* Find UserJoinedEvents  */
   public UserJoinedEvents (userid:number): Observable<any> {
-    return this.http.get("http://127.0.0.1:8081/account/id/"+userid); 
+    return this.http.get(this.BackEndURL+'RecomendedEvents/'+userid); 
   }
     /*TotalNumberEvents*/
     public  TotalNumberEvents (){
-	return this.http.get("http://127.0.0.1:8081/account/id/"); 
+	return this.http.get(this.BackEndURL+'TotalNumberEvents'); 
   }
     /*TotalNumberEventsChallenge*/
     public  TotalNumberEventsChallenge (){
-	return this.http.get("http://127.0.0.1:8081/account/id/"); 
+	return this.http.get(this.BackEndURL+'TotalNumberEventsChallenge'); 
   }
     /*TotalNumberEventsFormation*/
     public  TotalNumberEventsFormation (){
-	return this.http.get("http://127.0.0.1:8081/account/id/"); 
+	return this.http.get(this.BackEndURL+'TotalNumberEventsFormation'); 
   }
     /*TotalNumberEventsTrouphyTrue*/
     public  TotalNumberEventsTrouphyTrue (){
-	return this.http.get("http://127.0.0.1:8081/account/id/"); 
+	return this.http.get(this.BackEndURL+'TotalNumberEventsTrouphyTrue'); 
   }
      /*TotalNumberEventsTrouphyFalse*/
     public  TotalNumberEventsTrouphyFalse(){
-	return this.http.get("http://127.0.0.1:8081/account/id/"); 
+	return this.http.get(this.BackEndURL+'TotalNumberEventsTrouphyFalse'); 
   }
   //Multiple Critére Search 
 	/*Events By StartDate And EndDate*/
     public findByDateStartAndDateEnd (StartDate:Date,DateEnd:Date){
-	return this.http.get<Event>("http://127.0.0.1:8081/account/id/"+StartDate+"/"+DateEnd); 
+	return this.http.get<Event>(this.BackEndURL+'findByDateStartAndDateEnd/'+StartDate+"/"+DateEnd); 
   }
   /*Events By StartDate And Trouphy*/
     public findByDateStartAndTrouphy (StartDate:Date,troophy:any){
-	return this.http.get<Event>("http://127.0.0.1:8081/account/id/"+StartDate+"/"+troophy); 
+	return this.http.get<Event>(this.BackEndURL+'findByDateStartAndTrouphy/'+StartDate+"/"+troophy); 
   }
    /*Events By StartDate And Trouphy*/
     public findByDateEndAndTrouphy (DateEnd:Date,troophy:any){
-	return this.http.get<Event>("http://127.0.0.1:8081/account/id/"+DateEnd+"/"+troophy); 
+	return this.http.get<Event>(this.BackEndURL+'findByDateEndAndTrouphy/'+DateEnd+"/"+troophy); 
   }
     /*Events By Type And Trouphy*/
     public findByTypeAndTrouphy (Type:EventType,troophy:any){
-	return this.http.get<Event>("http://127.0.0.1:8081/account/id/"+Type+"/"+troophy); 
+	return this.http.get<Event>(this.BackEndURL+'findByTypeAndTrouphy/'+Type+"/"+troophy); 
   }
     /*Events By DateStart And Type*/
     public  findByDateStartAndType (DateStart:Date,Type:EventType){
-	return this.http.get<Event>("http://127.0.0.1:8081/account/id/"+DateStart+"/"+Type); 
+	return this.http.get<Event>(this.BackEndURL+'findByDateStartAndType/'+DateStart+"/"+Type); 
   }
     /*Events By DateEnd And Type*/
     public  FindByDateEndAndType (DateEnd:Date,Type:EventType){
-	return this.http.get<Event>("http://127.0.0.1:8081/account/id/"+DateEnd+"/"+Type); 
+	return this.http.get<Event>(this.BackEndURL+'FindByDateEndAndType/'+DateEnd+"/"+Type); 
   }
    /*Events By StartDate And EndDate And Trouphy*/
     public findByDateStartAndDateEndAndTrouphy (DateStart:Date,DateEnd:Date,troophy:any){
-	return this.http.get<Event>("http://127.0.0.1:8081/account/id/"+DateStart+"/"+DateEnd+"/"+troophy); 
+	return this.http.get<Event>(this.BackEndURL+'findByDateStartAndDateEndAndTrouphy/'+DateStart+"/"+DateEnd+"/"+troophy); 
   }
      /*Events By StartDate And EndDate And Trouphy And Type*/
     public findByDateStartAndDateEndAndTrouphyAndType (DateStart:Date,DateEnd:Date,troophy:any,Type:EventType){
-	return this.http.get<Event>("http://127.0.0.1:8081/account/id/"+DateStart+"/"+DateEnd+"/"+troophy+"/"+Type); 
+	return this.http.get<Event>(this.BackEndURL+'findByDateStartAndDateEndAndTrouphyAndType/'+DateStart+"/"+DateEnd+"/"+troophy+"/"+Type); 
   }
     /*findAllByDateStartGreaterThanEqualAndDateEndLessThanEqual*/
     public  findAllByDateStartGreaterThanEqualAndDateEndLessThanEqual (StartDate:Date,EndDate:Date){
-	return this.http.get<Event>("http://127.0.0.1:8081/account/id/"+StartDate+"/"+EndDate); 
+	return this.http.get<Event>(this.BackEndURL+'findAllByDateStartGreaterThanEqualAndDateEndLessThanEqual/'+StartDate+"/"+EndDate); 
   }
   /*Sorts And Statistiques*/
 	//SortEventsByIdAsc
 	  public SortEventsByIdAsc(){
-      return this.http.get<Event>("http://127.0.0.1:8081/account/id/"); 
+      return this.http.get<Event>(this.BackEndURL+'SortEventsByIdAsc'); 
   }
   //SortEventsByIdDesc
-  	  public SortEventsByIdDesc(){return this.http.get<Event>("http://127.0.0.1:8081/account/id/"); 
+  	  public SortEventsByIdDesc(){return this.http.get<Event>(this.BackEndURL+'SortEventsByIdDesc'); 
   }
   //SortEventsByTitleAsc
-  	  public SortEventsByTitleAsc(){return this.http.get<Event>("http://127.0.0.1:8081/account/id/"); 
+  	  public SortEventsByTitleAsc(){return this.http.get<Event>(this.BackEndURL+'SortEventsByTitleAsc'); 
   }
   // SortEventsByTitleDesc
-  	  public SortEventsByTitleDesc(){return this.http.get<Event>("http://127.0.0.1:8081/account/id/"); 
+  	  public SortEventsByTitleDesc(){return this.http.get<Event>(this.BackEndURL+'SortEventsByTitleDesc'); 
   }
   // SortEventsByDateStartAsc
-  	  public SortEventsByDateStartAsc(){return this.http.get<Event>("http://127.0.0.1:8081/account/id/"); 
+  	  public SortEventsByDateStartAsc(){return this.http.get<Event>(this.BackEndURL+'SortEventsByDateStartAsc'); 
   }
   // SortEventsByDateStartDesc
-  	  public SortEventsByDateStartDesc(){return this.http.get<Event>("http://127.0.0.1:8081/account/id/"); 
+  	  public SortEventsByDateStartDesc(){return this.http.get<Event>(this.BackEndURL+'SortEventsByDateStartDesc'); 
   }
   // SortEventsByDateEndAsc
-  	  public SortEventsByDateEndAsc(){return this.http.get<Event>("http://127.0.0.1:8081/account/id/"); 
+  	  public SortEventsByDateEndAsc(){return this.http.get<Event>(this.BackEndURL+'SortEventsByDateEndAsc'); 
   }
   // SortEventsByDateEndDesc
-  	  public SortEventsByDateEndDesc(){return this.http.get<Event>("http://127.0.0.1:8081/account/id/"); 
+  	  public SortEventsByDateEndDesc(){return this.http.get<Event>(this.BackEndURL+'SortEventsByDateEndDesc'); 
   }
   // SortEventsByNbrplaceAsc
-  	  public SortEventsByNbrplaceAsc(){return this.http.get<Event>("http://127.0.0.1:8081/account/id/"); 
+  	  public SortEventsByNbrplaceAsc(){return this.http.get<Event>(this.BackEndURL+'SortEventsByNbrplaceAsc'); 
   }
   // SortEventsByNbrplaceDesc
-  	  public SortEventsByNbrplaceDesc(){return this.http.get<Event>("http://127.0.0.1:8081/account/id/"); 
+  	  public SortEventsByNbrplaceDesc(){return this.http.get<Event>(this.BackEndURL+'SortEventsByNbrplaceDesc'); 
   }
   // SortEventsByTypeAsc
-  	  public SortEventsByTypeAsc(){return this.http.get<Event>("http://127.0.0.1:8081/account/id/"); 
+  	  public SortEventsByTypeAsc(){return this.http.get<Event>(this.BackEndURL+'SortEventsByTypeAsc'); 
   }
   // SortEventsByTypeDesc
-  	  public SortEventsByTypeDesc(){return this.http.get<Event>("http://127.0.0.1:8081/account/id/"); 
+  	  public SortEventsByTypeDesc(){return this.http.get<Event>(this.BackEndURL+'SortEventsByTypeDesc'); 
   }
   // SortEventsByTrouphyAsc
-  	  public SortEventsByTrouphyAsc(){return this.http.get<Event>("http://127.0.0.1:8081/account/id/"); 
+  	  public SortEventsByTrouphyAsc(){return this.http.get<Event>(this.BackEndURL+'SortEventsByTrouphyAsc'); 
   }
   // SortEventsByTrouphyDesc
-  	  public SortEventsByTrouphyDesc(){return this.http.get<Event>("http://127.0.0.1:8081/account/id/"); 
+  	  public SortEventsByTrouphyDesc(){return this.http.get<Event>(this.BackEndURL+'SortEventsByTrouphyDesc'); 
   }
   // SortEventsByDescriptionAsc
-  	  public SortEventsByDescriptionAsc(){return this.http.get<Event>("http://127.0.0.1:8081/account/id/"); 
+  	  public SortEventsByDescriptionAsc(){return this.http.get<Event>(this.BackEndURL+'SortEventsByDescriptionAsc'); 
   }
   // SortEventsByDescriptionDesc
-  	  public SortEventsByDescriptionDesc(){return this.http.get<Event>("http://127.0.0.1:8081/account/id/"); 
+  	  public SortEventsByDescriptionDesc(){return this.http.get<Event>(this.BackEndURL+'SortEventsByDescriptionDesc'); 
   }
   // SortEventsTop10ByOrderByTitleAsc
-  	  public SortEventsTop10ByOrderByTitleAsc(){return this.http.get<Event>("http://127.0.0.1:8081/account/id/"); 
+  	  public SortEventsTop10ByOrderByTitleAsc(){return this.http.get<Event>(this.BackEndURL+'SortEventsTop10ByOrderByTitleAsc'); 
   }
   // SortEventsTop10ByOrderByTitleDesc
   	  public SortEventsTop10ByOrderByTitleDesc(){
-        return this.http.get<Event>("http://127.0.0.1:8081/account/id/"); 
+        return this.http.get<Event>(this.BackEndURL+'SortEventsTop10ByOrderByTitleDesc'); 
   }
     /*Sorts And Statistiques*/
 	

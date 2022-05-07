@@ -10,12 +10,15 @@ h1 {
   top: 58%;
   margin-left: -20px;
 }
+button{
+  width:20%;
+}
+
 
 .body {
   position: absolute;
-  top: 50%;
   margin-left: -50px;
-  left: 50%;
+  left: 42%;
   animation: speeder 0.4s linear infinite;
 }
 .body > span {

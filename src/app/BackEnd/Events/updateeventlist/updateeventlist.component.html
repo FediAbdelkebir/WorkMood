@@ -1,26 +1,34 @@
+<app-nav></app-nav>
+<div class="app-content content">
+    <div class="content-overlay"></div>
+    <div class="header-navbar-shadow"></div>
+    <div class="content-wrapper">
+        <div class="content-header row">
+        </div>
+        <div class="content-body">     
+            <div *ngIf="showLoader"><!-- so this div containing img will be dislpayed only when the showLoader is equal to true-->
+                <div class='body' style="background-color: #1fb79b;">
+                    <span>
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                    </span>
+                    <div class='base'>
+                      <span></span>
+                      <div class='face'></div>
+                    </div>
+                  </div>
+                  <div class='longfazers'>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </div>
+                  <h1>Loading Events</h1>
+                  
+            </div> 
 <section _ngcontent-nwj-c61="" class="data-list-view-header">
-    <div *ngIf="showLoader"><!-- so this div containing img will be dislpayed only when the showLoader is equal to true-->
-        <div class='body' style="background-color: #1fb79b;">
-            <span>
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-            </span>
-            <div class='base'>
-              <span></span>
-              <div class='face'></div>
-            </div>
-          </div>
-          <div class='longfazers'>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-          <h1>Loading Events</h1>
-          
-    </div> 
     <div _ngcontent-nwj-c61="" class="table-responsive">
         <div _ngcontent-nwj-c61="" id="DataTables_Table_0_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
             <table _ngcontent-nwj-c61="" id="DataTables_Table_0" role="grid"
@@ -31,9 +39,6 @@
                             colspan="1" data-col="0" aria-label=""
                             class="dt-checkboxes-cell dt-checkboxes-select-all sorting_disabled"
                             style="width: 52.65px;"><input _ngcontent-nwj-c61="" type="checkbox"></th>
-                        <th _ngcontent-nwj-c61="" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
-                            colspan="1" aria-sort="ascending" aria-label="id: activate to sort column descending"
-                            class="sorting_asc" style="width: 663.733px;">id</th>
                         <th _ngcontent-nwj-c61="" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
                             colspan="1" aria-label="title: activate to sort column ascending" class="sorting"
                             style="width: 162.917px;">title</th>
@@ -75,7 +80,10 @@
                             style="width: 122.233px;">UsersLiked</th>
                         <th _ngcontent-nwj-c61="" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
                             colspan="1" aria-label="ACTION: activate to sort column ascending" class="sorting"
-                            style="width: 92.6833px;">ACTION</th>
+                            style="width: 92.6833px;">Update</th>
+                            <th _ngcontent-nwj-c61="" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
+                            colspan="1" aria-label="ACTION: activate to sort column ascending" class="sorting"
+                            style="width: 92.6833px;">Delete</th>
                     </tr>
                 </thead>
                 
@@ -85,9 +93,6 @@
                             colspan="1" data-col="0" aria-label=""
                             class="dt-checkboxes-cell dt-checkboxes-select-all sorting_disabled"
                             style="width: 52.65px;"><input _ngcontent-nwj-c61="" type="checkbox"></td>
-                        <td _ngcontent-nwj-c61="" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
-                            colspan="1" aria-sort="ascending" aria-label="id: activate to sort column descending"
-                            class="sorting_asc" style="width: 663.733px;">{{x.id}}</td>
                         <td _ngcontent-nwj-c61="" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
                             colspan="1" aria-label="title: activate to sort column ascending" class="sorting"
                             style="width: 162.917px;">{{x.title}}</td >
@@ -129,7 +134,16 @@
                             style="width: 122.233px;">{{x.UsersLiked}}</td >
                         <td  _ngcontent-nwj-c61="" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
                             colspan="1" aria-label="ACTION: activate to sort column ascending" class="sorting"
-                            style="width: 92.6833px;"><button class="btn btn-warning" [routerLink]="['/UpdateEvent',x.id]"><i class="feather icon-edit"></i></button></td >
+                            style="width: 92.6833px;">
+                            <button class="btn btn-warning" [routerLink]="['/UpdateEvent',x.id]"><i class="feather icon-edit d-flex justify-content-center"></i></button>
+                             </td >
+                             <td  _ngcontent-nwj-c61="" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
+                             colspan="1" aria-label="ACTION: activate to sort column ascending" class="sorting"
+                             style="width: 92.6833px;">
+                           
+                        <button class="btn btn-danger" (click)="delete(x.id)"><i class="feather icon-trash d-flex justify-content-center"></i></button>
+                              </td >
+                   
                     </tr>
                    
                 </tbody>
@@ -140,3 +154,6 @@
         </div>
     </div>
 </section>
+  
+</div>
+</div>
