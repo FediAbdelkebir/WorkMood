@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+import { Review } from 'src/app/Models/review';
 import { ReviewService } from 'src/app/Services/review.service';
 
 @Component({
@@ -9,9 +10,23 @@ import { ReviewService } from 'src/app/Services/review.service';
 })
 export class GetreviewGoodbyusersComponent implements OnInit {
 
+  Review !: Review [];
+  iid!:any;
+
   constructor(private r : ReviewService,private router: Router,private activate: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.getreviewGoodByusers();
+    console.log("review", this.Review);
   }
+  getreviewGoodByusers(){
 
+this.r.getReviewGoodByUsers(Number(localStorage.getItem('idUser'))).subscribe(
+      (re)=>{
+        console.log("test",re[0]);
+        
+        this.Review=re;
+      }
+    )
+  }
 }

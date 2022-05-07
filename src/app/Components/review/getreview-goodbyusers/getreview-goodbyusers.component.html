@@ -1,1 +1,14 @@
 <p>getreview-goodbyusers works!</p>
+
+<table style="border: 1px solid;">
+    <th></th>
+    <tr *ngFor="let rev of Review">
+        <td>id: {{rev.id}}</td>
+        <td>societeName : {{rev.societeName}}</td>
+        <td>employeeName : {{rev.employeeName}}</td>
+        <td>contentrev : {{rev.contentReview}}</td>
+        <td>category : {{rev.category}}</td>
+        <td>rev : {{rev.review}}</td>
+        <td>classf : {{rev.classf}}</td>
+    </tr>
+</table>
