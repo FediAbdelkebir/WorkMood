@@ -43,6 +43,8 @@ import { GetByIdArticleComponent } from './Components/article/get-by-id-article/
 import { PostComponent } from './Components/article/post/post.component';
 import { AddPostComponent } from './Components/article/add-post/add-post.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { CommentaireComponent } from './Components/commentaire/commentaire.component';
+import { AddCommentaireComponent } from './Components/add-commentaire/add-commentaire.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -79,7 +81,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     UpdateArticleComponent,
     GetByIdArticleComponent,
     PostComponent,
-    AddPostComponent
+    AddPostComponent,
+    CommentaireComponent,
+    AddCommentaireComponent
   ],
   imports: [
     BrowserModule,

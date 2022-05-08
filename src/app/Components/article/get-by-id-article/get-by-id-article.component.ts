@@ -3,6 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { ArticleService } from 'src/app/Services/article.service';
 import {faAngleRight} from '@fortawesome/free-solid-svg-icons';
 import {faCalendarAlt} from '@fortawesome/free-solid-svg-icons';
+import { Article } from 'src/app/Models/article.model';
+import { ArticleCategory } from 'src/app/Models/article-category.moel';
 
 @Component({
   selector: 'app-get-by-id-article',
@@ -14,10 +16,13 @@ export class GetByIdArticleComponent implements OnInit {
   idd!:any;
   faAngleRight=faAngleRight;
   faCalendarAlt=faCalendarAlt;
+ // articlee!: Article[];
   constructor(private articleservice:ArticleService,private activate:ActivatedRoute ) { }
 
   ngOnInit(): void {
     this.getById();
+    //this.getByCategory(this.article.category);
+
   }
   getById(){
     this.idd=this.activate.snapshot.params['idArticle']
@@ -27,5 +32,16 @@ export class GetByIdArticleComponent implements OnInit {
       }
     )
   }
+
+ // getByCategory(c: ArticleCategory){
+   // console.log(c);
+    //this.articleservice.getArticleByCatg(c).subscribe(
+      //(e)=>{
+        //this.articlee=e;
+        //console.log(e);
+
+      //}
+    //);
+//}
 
 }
