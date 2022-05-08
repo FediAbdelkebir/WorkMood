@@ -59,6 +59,7 @@ import { ListReclamationsByUserComponent } from './Components/reclamation/list-r
 import { ListReclamationsComponent } from './Components/reclamation/list-reclamations/list-reclamations.component';
 import { ShowReclamationComponent } from './Components/reclamation/show-reclamation/show-reclamation.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
   declarations: [
     AppComponent,
@@ -159,7 +160,8 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
             component:LikedeventsComponent, data: { animation: 'isRight' } 
           },
         {path: '**', redirectTo: '404NotFound'}
-    ])
+    ]),
+    NgbModule
   ],
   providers: [DatePipe],
   bootstrap: [AppComponent]

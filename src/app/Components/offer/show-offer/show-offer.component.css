@@ -11,7 +11,7 @@
 {
     width:30%; 
     background-color: aqua; 
-    height:100px; 
+    height:auto; 
     display: flex; 
     flex-direction: column; 
     align-items: center; 
@@ -25,5 +25,5 @@
 {
     width: 60%; 
     background-color: red; 
-    height:100px;
+    height:auto; 
 }

@@ -1,5 +1,28 @@
 <app-head></app-head>
 <app-header></app-header>
+
+<div>
+    <div class="top_part">
+        <div class="overlay">
+            <h2
+                style="z-index: 10; position: absolute; top: 60%; left: 20%; font-size: 50px; font-weight: 600; margin-left: 381px;">
+                Offers
+            </h2>
+        </div>
+        <div class="filter_part">
+            <!--<div class="filter_caat">
+                <input type="text" name="recherche" placeholder="search" class="recherche">
+                <input type="submit" value="search" name="search" class="submit_bt">
+            </div>-->
+            <button style="font-size: 20x; font-weight: 700; margin-left: 200px;" [routerLink]="['/Offers']">All
+                Offers</button>
+            <button style="font-size: 20x; font-weight: 700; margin-left: 200px;" [routerLink]="['/MyOffers']">My
+                Offers</button>
+        </div>
+    </div>
+</div>
+
+
 <div class="home page-template page-template-template page-template-homepage-template page-template-templatehomepage-template-php page page-id-10 sidebar-active elementor-default elementor-kit-2411 elementor-page elementor-page-10 e--ua-firefox"
     data-elementor-device-mode="desktop">
     <div class="body-innner-content ">
@@ -7,49 +30,16 @@
             data-elementor-settings="[]">
             <div class="elementor-inner">
                 <div class="elementor-section-wrap">
-                    <!-- Title -->
-                    <section
-                        class="elementor-section elementor-top-section elementor-element elementor-element-3f8f733 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
-                        data-id="3f8f733" data-element_type="section">
-                        <div class="elementor-container elementor-column-gap-default">
-                            <div class="elementor-row">
-                                <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-c123984"
-                                    data-id="c123984" data-element_type="column">
-                                    <div class="elementor-column-wrap elementor-element-populated">
-                                        <div class="elementor-widget-wrap">
-                                            <div class="elementor-element elementor-element-f140bdf elementor-widget elementor-widget-buildbench-title"
-                                                data-id="f140bdf" data-element_type="widget"
-                                                data-widget_type="buildbench-title.default">
-                                                <div class="elementor-widget-container">
-                                                    <div class="section-heading-content">
-                                                        <h2 class="section-title">
-                                                            Our Offers
-                                                        </h2>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
                     <!-- Offers -->
                     <section
                         class="elementor-section elementor-top-section elementor-element elementor-element-b30ff9d elementor-section-boxed elementor-section-height-default elementor-section-height-default animated fadeInUp"
                         data-id="b30ff9d" data-element_type="section"
-                        data-settings="{&quot;animation_delay&quot;:350,&quot;animation&quot;:&quot;fadeInUp&quot;}">
+                        data-settings="{&quot;animation_delay&quot;:350,&quot;animation&quot;:&quot;fadeInUp&quot;}"
+                        style="margin-top: 90px;">
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="recent-folio-menu" style="margin-bottom: 0px;">
-                                    <ul>
-                                        <li class="filter  active" data-filter="all">
-                                            <a [routerLink]="['/Offers']">All Offers</a>
-                                        </li>
-                                        <li class="filter" data-filter="my">
-                                            <a [routerLink]="['/MyOffers']">My Offers</a>
-                                        </li>
-                                    </ul>
+
                                     <div class="container">
                                         <div class="row">
                                             <div class="col col-md-8" style="margin-top: 15px;">
@@ -147,21 +137,6 @@
     </div>
 
 </div>
-<div>Some tags before</div>
-<!--<owl-carousel-o [options]="customOptions">
-    <ng-container *ngFor="let slide of similarOffers">
-      <ng-template carouselSlide [id]="slide.id">
-        <img [src]="slide.src" [alt]="slide.alt" [title]="slide.title">
-      </ng-template>
-    </ng-container>
-  </owl-carousel-o>-->
-<owl-carousel-o [options]="customOptions">
-    <ng-template carouselSlide>Slide 1</ng-template>
-    <ng-template carouselSlide>Slide 2</ng-template>
-    <ng-template carouselSlide>Slide 3</ng-template>
-</owl-carousel-o>
-<div>Some tags after</div>
-
 <app-footer></app-footer>
 <app-scripts></app-scripts>
 
@@ -181,7 +156,7 @@
 <a (click)="sortByPointDesc()">Sorting Descending by Point </a>
 
 
-<div *ngFor="let o of similarOffers">
+<div *ngFor="let o of offers">
     {{o.description}}
     {{o.category}}
     {{o.dateExp}}

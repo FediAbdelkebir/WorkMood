@@ -2,6 +2,7 @@
 <app-header></app-header>
 
 <body>
+
     <div class="container ">
         <div class="left">
             <div class="item">
@@ -41,10 +42,22 @@
             </div>
         </div>
     </div>
-    <a (click)="getCoupon()">get coupon</a>
-    <div class="elementor-element elementor-element-3137f14 elementor-position-left elementor-vertical-align-top elementor-widget elementor-widget-image-box"
-        >
+    <br>
+    <div class="col-xl-12" style="max-width:1200px;margin:0 auto;">
+        <owl-carousel-o [options]="customOptions" class="cardCarousel">
+            <ng-container *ngFor="let slide of similarOffers">
+                <ng-template carouselSlide [id]="slide.title" >
+                    {{slide.title}}
+                </ng-template>
+            </ng-container>
+        </owl-carousel-o>
+    </div>
+
+
+    <div
+        class="elementor-element elementor-element-3137f14 elementor-position-left elementor-vertical-align-top elementor-widget elementor-widget-image-box">
         <div class="elementor-widget-container">
+            <a (click)="getCoupon()">get coupon</a>
             <div class="elementor-image-box-wrapper">
                 <button (click)="getCoupon()">pddf</button>
                 <!-- <figure class="elementor-image-box-img"><a  (click)="getCoupon()"><img width="52" height="52"
@@ -54,7 +67,24 @@
             </div>
         </div>
     </div>
+
+    <<!--owl-carousel-o [options]="customOptions">
+    <ng-container *ngFor="let slide of similarOffers">
+      <ng-template carouselSlide [id]="slide.title">
+          {{slide.title}}
+      </ng-template>
+    </ng-container>
+  </owl-carousel-o>-->
 </body>
+
 
 <app-footer></app-footer>
 <app-scripts></app-scripts>
+
+<div class="col-xl-12" style="max-width:1200px;margin:0 auto;">
+    <owl-carousel-o [options]="customOptions" class="cardCarousel">
+            <ng-template carouselSlide *ngFor="let slide of similarOffers">
+                {{slide.title}}
+            </ng-template>
+    </owl-carousel-o>
+</div>

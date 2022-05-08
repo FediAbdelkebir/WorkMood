@@ -53,8 +53,8 @@ const routes: Routes = [
       component:UpdateeventComponent  
   } ,
   
-  {path: 'Offers', component:ListOffersComponent},
-  {path: 'MyOffers', component:MyOffersComponent},
+  {path: 'Offers', component:ListOffersComponent, data: { animation: 'isRight' } },
+  {path: 'MyOffers', component:MyOffersComponent, data: { animation: 'isLeft' } },
   {path: 'Offers/Delete/:id', component:DeleteOfferComponent},
   {path: 'Offers/Add', component:AddOfferComponent},
   {path: 'Offers/Update/:id', component:UpdateOfferComponent},
