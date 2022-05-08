@@ -23,12 +23,13 @@ const routes: Routes = [
    //REview
    { path: "afficherreview", component:ReviewComponent},
    { path: "deletereview/:id", component:ReviewComponent},
-   { path: "afficherreviewbyuser", component:GetReviewByUsersComponent},
-   { path: "afficherreviewGoodbyuser", component:GetreviewGoodbyusersComponent},
-   { path: "afficherreviewBadbyuser", component:GetreviewBadbyusersComponent},
+   { path: "afficherreviewbyuser", component:GetReviewByUsersComponent,data: { animation: 'isLeft' }},
+   { path: "afficherreviewGoodbyuser", component:GetreviewGoodbyusersComponent, data: { animation: 'isTop' }},
+   { path: "afficherreviewBadbyuser", component:GetreviewBadbyusersComponent, data: { animation: 'isRight' }},
    { path: "AddreviewEmpl", component:AddreviewetAffecterEComponent},
    { path: "AddreviewCompany", component:AddreviewetAffecterSComponent},
    { path: "ChoiceAddreview", component:AddchoiceCompanyorEmployeeComponent},
+   
 ];
 
 @NgModule({

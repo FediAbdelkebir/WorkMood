@@ -45,7 +45,7 @@
 <div >
   <div class="top_part">
     <div class="overlay">
-      <!--<h2 style="z-index: 10;position: absolute;top:50%;left: 20%;">Le Blog Workmood</h2>-->
+      <h2 style="z-index: 10;position: absolute;top:60%;left: 20%;font-size:50px;font-weight: 600;margin-left: 230px;">Received Review</h2>
     </div>
     <div class="filter_part">
       
@@ -57,8 +57,8 @@
   
        
     </div>
-    <button style="font-size:10px;font-weight: 900;margin-left:70px;" >Select to show Good reviews only</button>
-    <button style="font-size:10px;font-weight: 900;margin-left:90px;" >Select to show Bad reviews only</button>
+    <button style="font-size:10px;font-weight: 900;margin-left:70px;" [routerLink]="['/afficherreviewGoodbyuser']" >Select to show Good reviews only</button>
+    <button style="font-size:10px;font-weight: 900;margin-left:90px;" [routerLink]="['/afficherreviewBadbyuser']" >Select to show Bad reviews only</button>
     </div>
   </div>
 
