@@ -64,7 +64,8 @@ const routes: Routes = [
   {path: 'Reclamations/Delete/:id', component:DeleteReclamationComponent},
   {path: 'Reclamations/Add', component:AddReclamationComponent},
   {path: 'Reclamations/Show/:id', component:ShowReclamationComponent},
-    {path: 'Dashboard/**', redirectTo: '404NotFound'}
+  
+  {path: 'Dashboard/**', redirectTo: '404NotFound'}
 
 ];
 

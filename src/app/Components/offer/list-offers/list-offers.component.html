@@ -43,16 +43,16 @@
                             <div class="col-lg-12">
                                 <div class="recent-folio-menu" style="margin-bottom: 0px;">
                                     <ul>
-                                        <li class="filter active" data-filter="all">
-                                            <a [routerLink]="['Offers']">All Offers</a>
+                                        <li class="filter  active" data-filter="all">
+                                            <a [routerLink]="['/Offers']">All Offers</a>
                                         </li>
                                         <li class="filter" data-filter="my">
-                                            <a [routerLink]="['MyOffers']">My Offers</a>
+                                            <a [routerLink]="['/MyOffers']">My Offers</a>
                                         </li>
                                     </ul>
                                     <div class="container">
                                         <div class="row">
-                                            <div class="col col-md-8" style="margin-top: 15px;" >
+                                            <div class="col col-md-8" style="margin-top: 15px;">
                                                 <select id="key" name="key" [(ngModel)]="category"
                                                     (change)="onChange()">
                                                     <option value='' disabled selected>Categoy</option>
@@ -145,7 +145,23 @@
             </div>
         </div>
     </div>
+
 </div>
+<div>Some tags before</div>
+<!--<owl-carousel-o [options]="customOptions">
+    <ng-container *ngFor="let slide of similarOffers">
+      <ng-template carouselSlide [id]="slide.id">
+        <img [src]="slide.src" [alt]="slide.alt" [title]="slide.title">
+      </ng-template>
+    </ng-container>
+  </owl-carousel-o>-->
+<owl-carousel-o [options]="customOptions">
+    <ng-template carouselSlide>Slide 1</ng-template>
+    <ng-template carouselSlide>Slide 2</ng-template>
+    <ng-template carouselSlide>Slide 3</ng-template>
+</owl-carousel-o>
+<div>Some tags after</div>
+
 <app-footer></app-footer>
 <app-scripts></app-scripts>
 
@@ -165,7 +181,7 @@
 <a (click)="sortByPointDesc()">Sorting Descending by Point </a>
 
 
-<div *ngFor="let o of offers">
+<div *ngFor="let o of similarOffers">
     {{o.description}}
     {{o.category}}
     {{o.dateExp}}

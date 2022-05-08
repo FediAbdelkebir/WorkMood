@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { OwlOptions } from 'ngx-owl-carousel-o';
 import { map } from 'rxjs/operators';
 import { CategoryOffer } from 'src/app/Models/category-offer';
 import { Offer } from 'src/app/Models/offer';
@@ -10,11 +11,37 @@ import { OfferService } from 'src/app/Services/offer.service';
   styleUrls: ['./list-offers.component.css']
 })
 export class ListOffersComponent implements OnInit {
+  customOptions: OwlOptions = {
+    loop: true,
+    mouseDrag: true,
+    touchDrag: true,
+    pullDrag: true,
+    dots: true,
+    navSpeed: 700,
+    navText: ['', ''],
+    responsive: {
+      0: {
+        items: 1
+      },
+      400: {
+        items: 2
+      },
+      740: {
+        items: 3
+      },
+      940: {
+        items: 1
+      }
+    },
+    nav: true
+  }
 
   offers!: Offer[];
   categoryOfferEnum: any = CategoryOffer;
   keys: string[] = [];
   category!: CategoryOffer;
+  id!: number;
+  similarOffers!: Offer[];
 
   constructor(private s: OfferService) {
     this.keys = Object.keys(this.categoryOfferEnum);
@@ -83,6 +110,17 @@ export class ListOffersComponent implements OnInit {
       (e)=>{
         this.offers=e;
         console.log(e);
+      }
+    );
+  }
+
+  allSimilarOffers(){
+    let idUser = 1;
+    console.log(this.id);
+    this.s.findSimilarOffers(this.id, idUser).subscribe(
+      (e)=>{
+        console.log("idOffer"+this.id);
+        this.similarOffers=e;
       }
     );
   }

@@ -58,6 +58,7 @@ import { DeleteReclamationComponent } from './Components/reclamation/delete-recl
 import { ListReclamationsByUserComponent } from './Components/reclamation/list-reclamations-by-user/list-reclamations-by-user.component';
 import { ListReclamationsComponent } from './Components/reclamation/list-reclamations/list-reclamations.component';
 import { ShowReclamationComponent } from './Components/reclamation/show-reclamation/show-reclamation.component';
+import { CarouselModule } from 'ngx-owl-carousel-o';
 @NgModule({
   declarations: [
     AppComponent,
@@ -103,8 +104,6 @@ import { ShowReclamationComponent } from './Components/reclamation/show-reclamat
     LandingComponent,
     DashboardcssComponent,
     DashboardfooterComponent ,
-
-    
     ListOffersComponent,
     AddOfferComponent,
     DeleteOfferComponent,
@@ -124,6 +123,7 @@ import { ShowReclamationComponent } from './Components/reclamation/show-reclamat
     FormsModule,
     Ng2SearchPipeModule,
     HttpClientModule,
+    CarouselModule,
     RouterModule.forRoot([
       {
       path:'',

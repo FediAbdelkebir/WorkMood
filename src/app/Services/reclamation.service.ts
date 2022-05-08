@@ -44,6 +44,8 @@ export class ReclamationService {
   findByUser(id: number):Observable<Reclamation[]>{
     return this.http.get<Reclamation[]>(this.apiUrl+'/ShowReclamationByUser/'+id);
   }
+  // ReclamationsByUser
+  
 
   showByKeyword(keyword: string):Observable<Reclamation[]>{
     return this.http.get<Reclamation[]>(this.apiUrl+'/ShowByKeyword/'+keyword);
