@@ -1,0 +1,21 @@
+<p>add-post works!</p>
+<form #post="ngForm" >
+  <div class="form-group" style="max-width: 50%;" class="d-flex flex-column justify-content-center">
+
+    <label>Contenu</label>
+    <textarea  row="4" name="Contenu" class="form-control" ngModel></textarea>
+
+    <label>Image</label>
+    <input type="text" name="image" class="form-control" ngModel>
+
+    <label>Date-Creation</label>
+    <input type="Date" name="datecreation" class="form-control" ngModel>
+
+    <input  type="submit" value="save" (click)="addPost(post.value)">
+
+  </div>
+
+
+
+</form>
+

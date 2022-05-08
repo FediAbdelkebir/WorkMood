@@ -1,0 +1,55 @@
+<app-head></app-head>
+<app-header></app-header>
+<div class="" style="margin:100px;">
+  <div class="" style="">
+    <nav style="margin: 0 auto;">
+      <a href='/afficher-article/' class="mr-2">Articles</a>
+      <span class="mr-2"><fa-icon [icon]="faAngleRight"></fa-icon></span>
+      <a class="mr-2">{{article.category}}</a>
+      <span class="mr-2"><fa-icon [icon]="faAngleRight"></fa-icon></span>
+      {{article.title}}
+    </nav>
+  </div>
+
+  <div class="d-flex flex-column ">
+    <div class="row col-lg-12 mt-5">
+      <img style="width:70%;border-radius:10px;margin:20px 0 ;" src="../../../../assets/annie-spratt-hCb3lIB8L8E-unsplash.jpg">
+    </div>
+    <div >
+      <h3 style="font-size: 30px;">{{article.title}}</h3>
+      <p>{{article.category}}
+        <span style="margin-left: 15px;margin-right: 10px;"><fa-icon style="color: #21aba5;" [icon]="faCalendarAlt"></fa-icon></span>
+        <span style="font-size:14px;color:#666">{{article.dateCreation | date}}</span></p>
+      <p>{{article.description}}</p>
+    </div>
+  </div>
+
+
+
+  <div class="comment-section" style="width:70%">
+    <h3 style="margin-top: 50px;">Add Your Comment</h3>
+    <div class="height:100px;width:80%;border-radius:10px;padding:10px;">
+      <textarea style="width:70%;
+      background-color: #f8f8f8;
+      border-radius: 3px;
+      border: 1px solid #d8d8d8;padding:10px;" class="" id="commentaire" rows="5"></textarea>
+    </div>
+
+
+  </div>
+
+  <!--<div class="meme_cate">
+    <h2>In The Same Category</h2>
+    <div>
+
+    </div>
+
+  </div>
+-->
+
+</div>
+
+
+<app-footer></app-footer>
+<app-scripts></app-scripts>
+

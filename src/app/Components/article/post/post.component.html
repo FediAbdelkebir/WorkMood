@@ -1,0 +1,33 @@
+<p>post works!</p>
+<div class="d-flex flex-column">
+  <button class="btn btn-primary" [routerLink]="['/add-posts']">Ajouter article</button>
+</div>
+<div class="card" *ngFor="let p of postes">
+  <div class="card-header">
+    <img src="https://c0.wallpaperflare.com/preview/483/210/436/car-green-4x4-jeep.jpg" alt="rover" />
+  </div>
+  <div class="card-body">
+    <span class="tag tag-teal">{{p.contenu}}</span>
+    <h4>
+      {{p.timeCreation}}
+    </h4>
+    <p>
+      {{p.Images}}
+    </p>
+    <p>
+      {{p.nbLike}}
+    </p>
+  </div>
+  <div>
+    <button (click)="deletePost(p.idPost)" class="btn btn-danger mx-2">Delete</button>
+  </div>
+
+    <!--<div class="user">
+      <img src="https://yt3.ggpht.com/a/AGF-l7-0J1G0Ue0mcZMw-99kMeVuBmRxiPjyvIYONg=s900-c-k-c0xffffffff-no-rj-mo" alt="user" />
+      <div class="user-info">
+        <h5>July Dec</h5>
+        <small>2h ago</small>
+      </div>
+    </div>-->
+
+

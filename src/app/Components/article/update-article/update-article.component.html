@@ -1,0 +1,26 @@
+<p>update-article works!</p>
+<p>this is update </p>
+<form #f="ngForm" >
+  <div class="form-group" style="max-width: 50%;" class="d-flex flex-column justify-content-center">
+    <label>Title</label>
+    <input type="text" name="title" class="form-control" ngModel [(ngModel)]="article.title">
+
+    <label>Description</label>
+    <input type="text" name="description"  class="form-control" ngModel [(ngModel)]="article.description">
+
+    <label>category</label>
+    <input type="text" name="category" class="form-control"ngModel [(ngModel)]="article.category">
+
+    <label>Image</label>
+    <input type="text" name="image" class="form-control" ngModel [(ngModel)]="article.image">
+
+    <label>Date-Creation</label>
+    <input type="Date" name="datecreation" class="form-control" ngModel [(ngModel)]="article.dateCreation">
+    <input  type="submit" value="save" (click)="save(f.value)">
+
+  </div>
+
+
+
+</form>
+

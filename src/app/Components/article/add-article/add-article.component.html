@@ -1,0 +1,28 @@
+<p>add-article works!</p>
+<form #article="ngForm" >
+  <div class="form-group" style="max-width: 50%;" class="d-flex flex-column justify-content-center">
+    <label>Title</label>
+    <input type="text" name="title" class="form-control" ngModel>
+
+    <label>Description</label>
+    <input type="text" name="description"  class="form-control" ngModel>
+
+    <label>category</label>
+    <!--<input type="text" name="category" class="form-control"ngModel>-->
+    <select id="key" name="key"  [(ngModel)]="selected">
+      <option *ngFor="let key of keys" [value]="key" >
+          {{categoryArti[key]}}
+      </option>
+  </select>
+
+    <label>Image</label>
+    <input type="text" name="image" class="form-control" ngModel>
+
+    <label>Date-Creation</label>
+    <input type="Date" name="datecreation" class="form-control" ngModel>
+    <input  type="submit" value="save" (click)="addArticle(article.value)">
+  </div>
+
+
+
+</form>

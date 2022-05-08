@@ -36,6 +36,13 @@ import { JoinedeventsComponent } from './Components/Evenements/joinedevents/join
 import { LikedeventsComponent } from './Components/Evenements//likedevents/likedevents.component';
 import { JoinedeventssliderComponent } from './Components/Evenements/joinedeventsslider/joinedeventsslider.component';
 import { LikedeventssliderComponent } from './Components/Evenements/likedeventsslider/likedeventsslider.component';
+import { ArticleComponent } from './Components/article/article/article.component';
+import { AddArticleComponent } from './Components/article/add-article/add-article.component';
+import { UpdateArticleComponent } from './Components/article/update-article/update-article.component';
+import { GetByIdArticleComponent } from './Components/article/get-by-id-article/get-by-id-article.component';
+import { PostComponent } from './Components/article/post/post.component';
+import { AddPostComponent } from './Components/article/add-post/add-post.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 @NgModule({
   declarations: [
     AppComponent,
@@ -66,7 +73,13 @@ import { LikedeventssliderComponent } from './Components/Evenements/likedeventss
     JoinedeventsComponent,
     LikedeventsComponent,
     JoinedeventssliderComponent,
-    LikedeventssliderComponent
+    LikedeventssliderComponent,
+    ArticleComponent,
+    AddArticleComponent,
+    UpdateArticleComponent,
+    GetByIdArticleComponent,
+    PostComponent,
+    AddPostComponent
   ],
   imports: [
     BrowserModule,
@@ -81,36 +94,37 @@ import { LikedeventssliderComponent } from './Components/Evenements/likedeventss
         component:HomeComponent
       },{
       path:'Home',
-      component:HomeComponent, data: { animation: 'isLeft' } 
+      component:HomeComponent, data: { animation: 'isLeft' }
       },
       {
         path:'AddEvent',
-          component:AddevenementComponent, data: { animation: 'isRight' } 
+          component:AddevenementComponent, data: { animation: 'isRight' }
         }
         ,
         {
           path:'404NotFound',
             component:PagenotfoundComponent
           },
-          
+
       {
         path:'Evenements',
-          component:EvenementsComponent, data: { animation: 'isRight' } 
+          component:EvenementsComponent, data: { animation: 'isRight' }
         },
         {
           path:'EventDetails/:id',
-            component:EvenementdetailsComponent, data: { animation: 'isRight' } 
+            component:EvenementdetailsComponent, data: { animation: 'isRight' }
           },
         {
           path:'JoinedEvents',
-            component:JoinedeventsComponent, data: { animation: 'isRight' } 
+            component:JoinedeventsComponent, data: { animation: 'isRight' }
           },
         {
           path:'LikedEvents',
-            component:LikedeventsComponent, data: { animation: 'isRight' } 
+            component:LikedeventsComponent, data: { animation: 'isRight' }
           },
         {path: '**', redirectTo: '404NotFound'}
-    ])
+    ]),
+    FontAwesomeModule
   ],
   providers: [DatePipe],
   bootstrap: [AppComponent]

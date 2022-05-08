@@ -1,0 +1,123 @@
+<!--<div class="container">
+  <select id="key" name="key" [(ngModel)]="category" (change)="onChange()">
+    <option value='' disabled selected>Category</option>
+    <option *ngFor="let key of keys" [value]="key" (click)="getByCategory(category)" >
+        {{categoryArti[key]}}
+    </option>
+</select>
+  <div class="card" *ngFor="let a of article">
+    <div class="card-header">
+      <img src="https://c0.wallpaperflare.com/preview/483/210/436/car-green-4x4-jeep.jpg" alt="rover" />
+    </div>
+    <div class="card-body">
+      <span class="tag tag-teal">{{a.category}}</span>
+      <h4>
+        {{a.title}}
+      </h4>
+      <p>
+        {{a.Description}}
+      </p>
+
+    -->
+      <!--<div class="user">
+        <img src="https://yt3.ggpht.com/a/AGF-l7-0J1G0Ue0mcZMw-99kMeVuBmRxiPjyvIYONg=s900-c-k-c0xffffffff-no-rj-mo" alt="user" />
+        <div class="user-info">
+          <h5>July Dec</h5>
+          <small>2h ago</small>
+        </div>
+      </div>-->
+      <!--
+      <div class="mb-2">
+        <button [routerLink]="['/update',a.idArticle]" class="btn btn-secondary ">update</button>
+        <button (click)="deleteArticle(a.idArticle)" class="btn btn-danger mx-2">Delete</button>
+      </div>
+
+      <button [routerLink]="['/afficher-articlebyid/',a.idArticle]" class="btn btn-secondary ">show details</button>
+
+    </div>
+  </div><br>
+  <div class="d-flex flex-column">
+    <button class="btn btn-primary" [routerLink]="['/add-article']">Ajouter article</button>
+  </div>
+-->
+
+
+<!--<div>
+  <table>
+    <thead>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Date Creation</th>
+      <th>Category</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let a of listarticle">
+        <td> {{a.title}}</td>
+        <td> {{a.description}}</td>
+        <td> {{a.dateCreation}}</td>
+        <td> {{a.category}}</td>
+        <td>
+          <button [routerLink]="['/update']" class="btn btn-dark">update</button>
+          <button (click)="deleteArticle(a.idArticle)" class="btn btn-danger ">Delete</button>
+          <button [routerLink]="['/afficher-articlebyid/{{a.idArticle}}']" class="btn btn-secondary ">show details</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div>
+  <button class="" [routerLink]="['/add-article']">Ajouter article</button>
+</div>
+-->
+<app-head></app-head>
+<app-header></app-header>
+<div >
+<div class="top_part">
+  <div class="overlay">
+    <!--<h2 style="z-index: 10;position: absolute;top:50%;left: 20%;">Le Blog Workmood</h2>-->
+  </div>
+  <div class="filter_part">
+    <div class="filter_caat">
+      <p style="font-size:18px;font-weight: 600;">Select Your Category<span><fa-icon class="ml-2" style="color: #21aba5;" [icon]="faListAlt"></fa-icon></span></p>
+      <select class="categ_sel"  placeid="key" name="key" [(ngModel)]="category" (change)="onChange()">
+        <option value="" disabled selected>Select your option</option>
+        <option *ngFor="let key of keys" [value]="key" (click)="getByCategory(category)" >
+            {{categoryArti[key]}}
+        </option>
+    </select>
+    <input type="text" name="recherche" placeholder="search" class="recherche">
+    <input type="submit" value="search" name="search" class="submit_bt">
+    </div>
+
+  </div>
+</div>
+
+
+  <div class="container">
+    <div class="carousel" *ngFor="let a of article">
+        <div class="carousel_img">
+
+        </div>
+       <div class="carousel_content"  >
+          <h3>
+            {{a.title}}
+          </h3>
+          <p>
+            {{a.description}}
+          </p>
+
+          <div class="partie_louta">
+            <!--[ngStyle]="{'background-color':a.category==='Education' ? 'red' :'none' }"-->
+            <p style="font-size: 14px;" >{{a.category}}</p>
+            <span style="padding: 5px;"><a [routerLink]="['/afficher-articlebyid/',a.idArticle]" style="font-size:14px;">Show More<span><fa-icon style="color: #666;" [icon]="faAngleRight"></fa-icon></span></a></span>
+          </div>
+
+       </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>
+<app-scripts></app-scripts>
+
+
+
