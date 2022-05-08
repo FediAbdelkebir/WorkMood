@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AddchoiceCompanyorEmployeeComponent } from './Components/review/addchoice-companyor-employee/addchoice-companyor-employee.component';
 import { AddreviewetAffecterEComponent } from './Components/review/addreviewet-affecter-e/addreviewet-affecter-e.component';
 import { AddreviewetAffecterSComponent } from './Components/review/addreviewet-affecter-s/addreviewet-affecter-s.component';
 import { GetReviewByUsersComponent } from './Components/review/get-review-by-users/get-review-by-users.component';
@@ -27,6 +28,7 @@ const routes: Routes = [
    { path: "afficherreviewBadbyuser", component:GetreviewBadbyusersComponent},
    { path: "AddreviewEmpl", component:AddreviewetAffecterEComponent},
    { path: "AddreviewCompany", component:AddreviewetAffecterSComponent},
+   { path: "ChoiceAddreview", component:AddchoiceCompanyorEmployeeComponent},
 ];
 
 @NgModule({

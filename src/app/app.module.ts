@@ -42,6 +42,7 @@ import { UpdatesurveyComponent } from './Components/survey/updatesurvey/updatesu
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { GetreviewBadbyusersComponent } from './Components/review/getreview-badbyusers/getreview-badbyusers.component';
 import { GetreviewGoodbyusersComponent } from './Components/review/getreview-goodbyusers/getreview-goodbyusers.component';
+import { AddchoiceCompanyorEmployeeComponent } from './Components/review/addchoice-companyor-employee/addchoice-companyor-employee.component';
 
 
 @NgModule({
@@ -81,6 +82,7 @@ import { GetreviewGoodbyusersComponent } from './Components/review/getreview-goo
     GetReviewByUsersComponent,
     GetreviewBadbyusersComponent,
     GetreviewGoodbyusersComponent,
+    AddchoiceCompanyorEmployeeComponent,
  
    
     

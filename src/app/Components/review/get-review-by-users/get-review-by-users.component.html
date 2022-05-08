@@ -42,9 +42,31 @@
   
 
 
+<div >
+  <div class="top_part">
+    <div class="overlay">
+      <!--<h2 style="z-index: 10;position: absolute;top:50%;left: 20%;">Le Blog Workmood</h2>-->
+    </div>
+    <div class="filter_part">
+      
+      <div class="filter_caat">
+        
+      <input type="text" name="recherche" placeholder="search" class="recherche">
+      <input type="submit" value="search" name="search" class="submit_bt">
+      <!-- <p style="font-size:18px;font-weight: 600;">Select Your Category<span><fa-icon class="ml-2" style="color: #21aba5;" ></fa-icon></span></p> -->
+  
+       
+    </div>
+    <button style="font-size:10px;font-weight: 900;margin-left:70px;" >Select to show Good reviews only</button>
+    <button style="font-size:10px;font-weight: 900;margin-left:90px;" >Select to show Bad reviews only</button>
+    </div>
+  </div>
+
+
 
   <!-- flip-card-container -->
-  <div *ngFor="let rev of Review " class="flip-card-container" style="--hue: 170;margin-top: 180px;" >
+<div style="display:flex;flex-wrap:wrap;margin-left: 184px;margin-top: 110px;">
+  <div *ngFor="let rev of Review " class="flip-card-container" style="--hue: 170;" >
     <div class="flip-card" >
   
       <div class="card-front">
@@ -84,6 +106,7 @@
   
     </div>
   </div>
+</div>
   <!-- /flip-card-container -->
   
   

@@ -1,16 +1,18 @@
-<p>review works!</p>
+<app-head></app-head>
+<app-header></app-header>
+<br><br><br>
+
+
+
+
 
 <!-- <button class="btn btn-outline-warning mr-2" [routerLink]="['/addsurvey']" >Ajouter</button> -->
 
-<select id="key" name="key" [(ngModel)]="category" (change)="onChange()">
-    <option value='' disabled selected>Category</option>
-    <option *ngFor="let key of keys" [value]="key" (click)="getByCategory(category)" > 
-        {{categoryReviewEnum[key]}} 
-    </option>
-</select>
+<h2>Review Table </h2>
 
-<table class="table table-striped" >
-    <thead style="background-color: #371bc6b2 ;">
+<div class="table-wrapper">
+<table class="fl-table" >
+    <thead >
         <tr>
           <th scope="col">ID</th>
           <th scope="col">SocieteName</th>
@@ -54,3 +56,13 @@
 </tr>
 </tbody>
 </table>
+</div>
+
+<select id="key" name="key" [(ngModel)]="category" (change)="onChange()">
+    <option value='' disabled selected>Category</option>
+    <option *ngFor="let key of keys" [value]="key" (click)="getByCategory(category)" > 
+        {{categoryReviewEnum[key]}} 
+    </option>
+</select>
+<app-footer></app-footer>
+<app-scripts></app-scripts>
