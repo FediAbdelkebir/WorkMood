@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DeleteBadgeUserComponent } from './delete-badge-user.component';
+import { UserBadgesComponent } from './user-badges.component';
 
-describe('DeleteBadgeUserComponent', () => {
-  let component: DeleteBadgeUserComponent;
-  let fixture: ComponentFixture<DeleteBadgeUserComponent>;
+describe('UserBadgesComponent', () => {
+  let component: UserBadgesComponent;
+  let fixture: ComponentFixture<UserBadgesComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DeleteBadgeUserComponent ]
+      declarations: [ UserBadgesComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DeleteBadgeUserComponent);
+    fixture = TestBed.createComponent(UserBadgesComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

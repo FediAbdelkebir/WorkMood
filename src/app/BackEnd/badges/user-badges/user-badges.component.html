@@ -48,49 +48,52 @@
                             style="width: 52.65px;"><input _ngcontent-nwj-c61="" type="checkbox"></th>
                         <th _ngcontent-nwj-c61="" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
                             colspan="1" aria-label="title: activate to sort column ascending" class="sorting"
-                            style="width: 162.917px;">Title</th>
+                            style="width: 162.917px;">FirstName</th>
                         <th _ngcontent-nwj-c61="" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
                             colspan="1" aria-label="dateStart: activate to sort column ascending" class="sorting"
-                            style="width: 144.667px;">Cost</th>
+                            style="width: 144.667px;">Name</th>
                         <th _ngcontent-nwj-c61="" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
                             colspan="1" aria-label="dateEnd: activate to sort column ascending" class="sorting"
-                            style="width: 169.017px;">Description</th>
-                        
+                            style="width: 169.017px;">EmailAddress</th>
+                        <th _ngcontent-nwj-c61="" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
+                            colspan="1" aria-label="dateEnd: activate to sort column ascending" class="sorting"
+                            style="width: 169.017px;">UserName</th>
+                        <th _ngcontent-nwj-c61="" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
+                            colspan="1" aria-label="dateEnd: activate to sort column ascending" class="sorting"
+                            style="width: 169.017px;">PhoneNumber</th>
                         <th _ngcontent-nwj-c61="" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
                             colspan="1" aria-label="ACTION: activate to sort column ascending" class="sorting"
-                            style="width: 92.6833px;">Update</th>
-                            <th _ngcontent-nwj-c61="" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
-                            colspan="1" aria-label="ACTION: activate to sort column ascending" class="sorting"
-                            style="width: 92.6833px;">Delete</th>
+                            style="width: 92.6833px;">Manage</th>
+                       
                     </tr>
                 </thead>
                 
                 <tbody _ngcontent-nwj-c61="">
-                    <tr _ngcontent-nwj-c61="" role="row" *ngFor="let x of listevenements | filter: filterTerm;">
+                    <tr _ngcontent-nwj-c61="" role="row" *ngFor="let x of listusers | filter: filterTerm;">
                         <td _ngcontent-nwj-c61="" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
                             colspan="1" data-col="0" aria-label=""
                             class="dt-checkboxes-cell dt-checkboxes-select-all sorting_disabled"
                             style="width: 52.65px;"><input _ngcontent-nwj-c61="" type="checkbox"></td>
                         <td _ngcontent-nwj-c61="" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
                             colspan="1" aria-label="title: activate to sort column ascending" class="sorting"
-                            style="width: 162.917px;">{{x.title}}</td >
+                            style="width: 162.917px;">{{x.firstname}}</td >
                         <td  _ngcontent-nwj-c61="" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
                             colspan="1" aria-label="dateStart: activate to sort column ascending" class="sorting"
-                            style="width: 144.667px;">{{x.cost}}</td >
+                            style="width: 144.667px;">{{x.name}}</td >
                         <td  _ngcontent-nwj-c61="" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
                             colspan="1" aria-label="dateEnd: activate to sort column ascending" class="sorting"
-                            style="width: 169.017px;">{{x.description}}</td >
+                            style="width: 169.017px;">{{x.emailAddress}}</td >
+                            <td  _ngcontent-nwj-c61="" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
+                            colspan="1" aria-label="dateEnd: activate to sort column ascending" class="sorting"
+                            style="width: 169.017px;">{{x.username}}</td >
+                            <td  _ngcontent-nwj-c61="" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
+                            colspan="1" aria-label="dateEnd: activate to sort column ascending" class="sorting"
+                            style="width: 169.017px;">{{x.phoneNumber}}</td >
                         <td  _ngcontent-nwj-c61="" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
                             colspan="1" aria-label="ACTION: activate to sort column ascending" class="sorting"
                             style="width: 92.6833px;">
-                            <button class="btn btn-warning" [routerLink]="['/Dashboard/UpdateBadge',x.id]"><i class="feather icon-edit d-flex justify-content-center"></i></button>
+                            <button class="btn btn-warning" [routerLink]="['/Dashboard/ShowUserBadges',x.idUser]"><i class="feather icon-settings d-flex justify-content-center"></i></button>
                              </td >
-                             <td  _ngcontent-nwj-c61="" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
-                             colspan="1" aria-label="ACTION: activate to sort column ascending" class="sorting"
-                             style="width: 92.6833px;">
-                           
-                        <button class="btn btn-danger" (click)="delete(x.id)"><i class="feather icon-trash d-flex justify-content-center"></i></button>
-                              </td >
                    
                     </tr>
                    

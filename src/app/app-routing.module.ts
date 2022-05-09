@@ -3,7 +3,9 @@ import { RouterModule, Routes } from '@angular/router';
 import {LandingComponent} from '../app/BackEnd/landing/landing.component'
 import { AddBadgesComponent } from './BackEnd/badges/add-badges/add-badges.component';
 import { BadgesComponent } from './BackEnd/badges/badges.component';
+import { ShowUserBadgesComponent } from './BackEnd/badges/show-user-badges/show-user-badges.component';
 import { UpdateBadgesComponent } from './BackEnd/badges/update-badges/update-badges.component';
+import { UserBadgesComponent } from './BackEnd/badges/user-badges/user-badges.component';
 import { AddEventComponent } from './BackEnd/Events/add-event/add-event.component';
 import { StatsEventsComponent } from './BackEnd/Events/stats-events/stats-events.component';
 import { UpdateeventComponent } from './BackEnd/Events/updateevent/updateevent.component';
@@ -56,6 +58,14 @@ const routes: Routes = [
   {
     path:'Dashboard/Badges',
       component:BadgesComponent
+  },
+  {
+    path:'Dashboard/UserBadges',
+      component:UserBadgesComponent
+  },
+  {
+    path:'Dashboard/ShowUserBadges/:id',
+      component:ShowUserBadgesComponent
   },
     {path: 'Dashboard/**', redirectTo: '404NotFound'}
 

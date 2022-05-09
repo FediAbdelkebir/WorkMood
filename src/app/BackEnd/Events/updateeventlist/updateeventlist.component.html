@@ -5,7 +5,14 @@
     <div class="content-wrapper">
         <div class="content-header row">
         </div>
-        <div class="content-body">     
+        <div class="content-body">   
+            <div class="col-lg-12">
+                <input
+                type="text"
+                class="form-control"
+                placeholder="Search..."
+                [(ngModel)]="filterTerm"
+              />    
             <div *ngIf="showLoader"><!-- so this div containing img will be dislpayed only when the showLoader is equal to true-->
                 <div class='body' style="background-color: #1fb79b;">
                     <span>
@@ -73,12 +80,6 @@
                             colspan="1" aria-label="description: activate to sort column ascending" class="sorting"
                             style="width: 122.233px;">description</th>
                         <th _ngcontent-nwj-c61="" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
-                            colspan="1" aria-label="users: activate to sort column ascending" class="sorting"
-                            style="width: 122.233px;">users</th>
-                        <th _ngcontent-nwj-c61="" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
-                            colspan="1" aria-label="UsersLiked: activate to sort column ascending" class="sorting"
-                            style="width: 122.233px;">UsersLiked</th>
-                        <th _ngcontent-nwj-c61="" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
                             colspan="1" aria-label="ACTION: activate to sort column ascending" class="sorting"
                             style="width: 92.6833px;">Update</th>
                             <th _ngcontent-nwj-c61="" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
@@ -88,7 +89,7 @@
                 </thead>
                 
                 <tbody _ngcontent-nwj-c61="">
-                    <tr _ngcontent-nwj-c61="" role="row" *ngFor="let x of listevenements">
+                    <tr _ngcontent-nwj-c61="" role="row" *ngFor="let x of listevenements | filter: filterTerm;">
                         <td _ngcontent-nwj-c61="" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
                             colspan="1" data-col="0" aria-label=""
                             class="dt-checkboxes-cell dt-checkboxes-select-all sorting_disabled"
@@ -126,12 +127,6 @@
                         <td  _ngcontent-nwj-c61="" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
                             colspan="1" aria-label="description: activate to sort column ascending" class="sorting"
                             style="width: 122.233px;">{{x.description}}</td >
-                        <td  _ngcontent-nwj-c61="" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
-                            colspan="1" aria-label="users: activate to sort column ascending" class="sorting"
-                            style="width: 122.233px;">{{x.users}}</td >
-                        <td  _ngcontent-nwj-c61="" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
-                            colspan="1" aria-label="UsersLiked: activate to sort column ascending" class="sorting"
-                            style="width: 122.233px;">{{x.usersLiked}}</td >
                         <td  _ngcontent-nwj-c61="" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
                             colspan="1" aria-label="ACTION: activate to sort column ascending" class="sorting"
                             style="width: 92.6833px;">

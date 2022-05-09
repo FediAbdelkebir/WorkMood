@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AffectBadgeUserComponent } from './affect-badge-user.component';
+import { ShowUserBadgesComponent } from './show-user-badges.component';
 
-describe('AffectBadgeUserComponent', () => {
-  let component: AffectBadgeUserComponent;
-  let fixture: ComponentFixture<AffectBadgeUserComponent>;
+describe('ShowUserBadgesComponent', () => {
+  let component: ShowUserBadgesComponent;
+  let fixture: ComponentFixture<ShowUserBadgesComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AffectBadgeUserComponent ]
+      declarations: [ ShowUserBadgesComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AffectBadgeUserComponent);
+    fixture = TestBed.createComponent(ShowUserBadgesComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

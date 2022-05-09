@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { User } from '../BackEnd/Models/user';
 import { Badge } from '../Models/badge';
 const headers = new HttpHeaders()
      .set('Content-Type', 'application/json;charset=UTF-8')  
@@ -13,6 +14,8 @@ let httpOptions = { responseType: 'text' };
   providedIn: 'root'
 })
 export class BadgesService {
+  
+  
   id:any;
   item!:any;
   private BackEndURL: string;
@@ -23,6 +26,12 @@ export class BadgesService {
    /*List des Badge*/
    public FindAllBadges(): Observable<any> {
     return this.http.get(this.BackEndURL+"Badges")
+  }
+  FindAllUsers(): Observable<any> {
+    return this.http.get("http://localhost:8089/work-mood/get-all-users")
+  }
+  FindUserById(userid: any) {
+    return this.http.get("http://localhost:8089/work-mood/get-user/"+userid)
   }
   /*Ajouter Badge*/
   public save(badge: Badge) {
