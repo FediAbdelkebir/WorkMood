@@ -17,6 +17,6 @@ export class Event {
     trouphy!:Boolean;
     eventpoints!:number;
     users!:User[];
-    UsersLiked!:User[];
+    usersLiked!:User[];
     
 }

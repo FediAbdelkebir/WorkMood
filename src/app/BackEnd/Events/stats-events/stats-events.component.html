@@ -1,1 +1,156 @@
-<p>stats-events works!</p>
+<app-nav ></app-nav>
+<div class="app-content content">
+    <div class="content-overlay"></div>
+    <div class="header-navbar-shadow"></div>
+    <div class="content-wrapper">
+        <div class="content-header row">
+        </div>
+        <div class="content-body">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12" >
+                    <div class="card bg-analytics text-white" style="background: linear-gradient(118deg, #193962, #1e5772);">
+                        <div class="card-content">
+                            <div class="card-body text-center">
+                                <img src="/assets/app-assets/images/elements/decore-left.png" class="img-left" alt="
+        card-img-left">
+                                <img src="/assets/app-assets/images/elements/decore-right.png" class="img-right" alt="
+        card-img-right">
+                                <div class="avatar avatar-xl bg-primary shadow mt-0">
+                                    <div class="avatar-content">
+                                        <i class="feather icon-award white font-large-1"></i>
+                                    </div>
+                                </div>
+                                <div class="text-center">
+                                    <h1 class="mb-2 text-white">Events Stats</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-12">
+                    <div class="card" >
+                        <div class="card-header d-flex flex-column align-items-start pb-0" >
+                            <div class="avatar bg-rgba-primary p-50 m-0">
+                                <div class="avatar-content">
+                                    <i class="feather icon-users text-primary font-medium-5"></i>
+                                </div>
+                            </div>
+                            <h2 class="text-bold-700 mt-1 mb-25">Nbr_Events</h2>
+                            <p class="mb-0">Total Events </p>
+                        </div>
+                        <div class="card-content">
+                            <div id="subscribe-gain-chart"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-12">
+                    <div class="card">
+                        <div class="card-header d-flex flex-column align-items-start pb-0">
+                            <div class="avatar bg-rgba-warning p-50 m-0">
+                                <div class="avatar-content">
+                                    <i class="feather icon-package text-warning font-medium-5"></i>
+                                </div>
+                            </div>
+                            <h2 class="text-bold-700 mt-1 mb-25">nbr_Challenges</h2>
+                            <p class="mb-0">Total Challenges</p>
+                        </div>
+                        <div class="card-content">
+                            <div id="orders-received-chart"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-12">
+                    <div class="card">
+                        <div class="card-header d-flex flex-column align-items-start pb-0">
+                            <div class="avatar bg-rgba-warning p-50 m-0">
+                                <div class="avatar-content">
+                                    <i class="feather icon-package text-warning font-medium-5"></i>
+                                </div>
+                            </div>
+                            <h2 class="text-bold-700 mt-1 mb-25">nbr_Challenges</h2>
+                            <p class="mb-0">Total Challenges</p>
+                        </div>
+                        <div class="card-content">
+                            
+                            <div id="orders-received-charts"></div>
+
+
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="row match-height">
+                <div class="col-lg-6 col-12">
+                    <div class="card">
+                        <div class="card-header d-flex justify-content-between pb-0">
+                            <h4>Product Orders</h4>
+                            <div class="dropdown chart-dropdown">
+                                <button class="btn btn-sm border-0 dropdown-toggle p-0" type="button" id="dropdownItem2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Last 7 Days
+                                </button>
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownItem2">
+                                    <a class="dropdown-item" href="#">Last 28 Days</a>
+                                    <a class="dropdown-item" href="#">Last Month</a>
+                                    <a class="dropdown-item" href="#">Last Year</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-body">
+                                <div id="product-order-chart" class="mb-3"></div>
+                                <div class="chart-info d-flex justify-content-between mb-1">
+                                    <div class="series-info d-flex align-items-center">
+                                        <i class="fa fa-circle-o text-bold-700 text-primary"></i>
+                                        <span class="text-bold-600 ml-50">Total</span>
+                                    </div>
+                                    <div class="product-result">
+                                        <span>23043</span>
+                                    </div>
+                                </div>
+                                <div class="chart-info d-flex justify-content-between mb-1">
+                                    <div class="series-info d-flex align-items-center">
+                                        <i class="fa fa-circle-o text-bold-700 text-warning"></i>
+                                        <span class="text-bold-600 ml-50">Pending</span>
+                                    </div>
+                                    <div class="product-result">
+                                        <span>14658</span>
+                                    </div>
+                                </div>
+                                <div class="chart-info d-flex justify-content-between mb-75">
+                                    <div class="series-info d-flex align-items-center">
+                                        <i class="fa fa-circle-o text-bold-700 text-danger"></i>
+                                        <span class="text-bold-600 ml-50">Rejected</span>
+                                    </div>
+                                    <div class="product-result">
+                                        <span>4758</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-12">
+                    <div class="card">
+                        <div class="card-header d-flex justify-content-between align-items-start">
+                            <div>
+                                <h4 class="card-title">Sales Stats</h4>
+                                <p class="text-muted mt-25 mb-0">Last 6 months</p>
+                            </div>
+                            <p class="mb-0"><i class="feather icon-more-vertical font-medium-3 text-muted cursor-pointer"></i></p>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-body px-0">
+                                <div id="sales-chart"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+           
+</div>
+</div>
+</div>

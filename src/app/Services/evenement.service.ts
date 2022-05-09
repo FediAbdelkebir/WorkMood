@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
 import { Roles } from '../Models/roles';
 import { EventTags } from '../Models/event-tags';
 import { EventType } from '../Models/event-type';
+import { User } from '../Models/user';
 const headers = new HttpHeaders()
      .set('Content-Type', 'application/json;charset=UTF-8')  
      let options = { headers : headers };
@@ -79,8 +80,8 @@ export class EvenementService {
     return this.http.get<Event>(this.BackEndURL+'FindEvent/Type/'+EndDate); 
   }
   /* Affect User To Evenement*/
-  public AffecterEventToUser(iduser:number,idevent:number){
-    return this.http.post<Event>(this.BackEndURL+'AffecterEventToUser/'+iduser+"/"+idevent,httpOptions); 
+  public AffecterEventToUser(idevent:number,iduser:number){
+    return this.http.post(this.BackEndURL+'AffecterEventToUser/'+idevent+'/'+iduser,httpOptions); 
   }
    /* Evennement Winners*/
   public EventWinners(){
@@ -88,7 +89,7 @@ export class EvenementService {
   }
    /* Remove User From Event*/
   public RemoveUserFromEvent(iduser:number,idevent:number){
-    return this.http.post(this.BackEndURL+'RemoveUserFromEvent/'+idevent+"/"+iduser,httpOptions); 
+    return this.http.delete(this.BackEndURL+'RemoveUserFromEvent/'+idevent+"/"+iduser); 
   }
    /* Like Event*/
   public LikeEvent(idevent:number,iduser:number){
@@ -96,7 +97,7 @@ export class EvenementService {
   }
    /* DisLike Event*/
   public DisLike(idevent:number,iduser:number){
-    return this.http.post(this.BackEndURL+'DisLikeEvent/'+idevent+"/"+iduser,httpOptions); 
+    return this.http.delete(this.BackEndURL+'DisLikeEvent/'+idevent+"/"+iduser); 
   }
    /* LikedEvents By UserId */
   public LikedEventsByUserId(iduser:number): Observable<any>{
