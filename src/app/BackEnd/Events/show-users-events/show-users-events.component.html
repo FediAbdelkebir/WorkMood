@@ -48,16 +48,21 @@
                             style="width: 52.65px;"><input _ngcontent-nwj-c61="" type="checkbox"></th>
                         <th _ngcontent-nwj-c61="" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
                             colspan="1" aria-label="title: activate to sort column ascending" class="sorting"
-                            style="width: 162.917px;">Title</th>
+                            style="width: 162.917px;">title</th>
                         <th _ngcontent-nwj-c61="" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
+                            colspan="1" aria-label="dateStart: activate to sort column ascending" class="sorting"
+                            style="width: 144.667px;">dateStart</th>
+                        <th _ngcontent-nwj-c61="" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
+                            colspan="1" aria-label="dateEnd: activate to sort column ascending" class="sorting"
+                            style="width: 169.017px;">dateEnd</th>
+                            <th _ngcontent-nwj-c61="" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
                             colspan="1" aria-label="ACTION: activate to sort column ascending" class="sorting"
-                            style="width: 92.6833px;">Manage</th>
-                       
+                            style="width: 92.6833px;">Delete</th>
                     </tr>
                 </thead>
                 
                 <tbody _ngcontent-nwj-c61="">
-                    <tr _ngcontent-nwj-c61="" role="row" *ngFor="let x of listuserbadges | filter: filterTerm;">
+                    <tr _ngcontent-nwj-c61="" role="row" *ngFor="let x of listuserevents | filter: filterTerm;">
                         <td _ngcontent-nwj-c61="" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
                             colspan="1" data-col="0" aria-label=""
                             class="dt-checkboxes-cell dt-checkboxes-select-all sorting_disabled"
@@ -66,10 +71,17 @@
                             colspan="1" aria-label="title: activate to sort column ascending" class="sorting"
                             style="width: 162.917px;">{{x.title}}</td >
                         <td  _ngcontent-nwj-c61="" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
-                            colspan="1" aria-label="ACTION: activate to sort column ascending" class="sorting"
-                            style="width: 92.6833px;">
-                            <button class="btn btn-danger" (click)="Remove(x.id)"><i class="feather icon-trash d-flex justify-content-center"></i></button>
-                             </td >
+                            colspan="1" aria-label="dateStart: activate to sort column ascending" class="sorting"
+                            style="width: 144.667px;">{{x.dateStart}}</td >
+                        <td  _ngcontent-nwj-c61="" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
+                            colspan="1" aria-label="dateEnd: activate to sort column ascending" class="sorting"
+                            style="width: 169.017px;">{{x.dateEnd}}</td >
+                             <td  _ngcontent-nwj-c61="" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
+                             colspan="1" aria-label="ACTION: activate to sort column ascending" class="sorting"
+                             style="width: 92.6833px;">
+                           
+                        <button class="btn btn-danger" (click)="delete(x.id)"><i class="feather icon-trash d-flex justify-content-center"></i></button>
+                              </td >
                    
                     </tr>
                    
@@ -91,7 +103,7 @@
     <p>Note: User Must have Enought Points to affect </p><div class="row">
         
     <select>
-        <option *ngFor="let x of listbadges| filter: filterTerm;" (click)="SelectBadge(x.id)">{{x.title}} (Costs {{x.cost}}) Points</option>
+        <option *ngFor="let x of listevents | filter: filterTerm;" (click)="SelectEvent(x.id)">{{x.title}}</option>
     </select>
     <button class="btn btn-success col-lg-1" (click)="Affect()"><i class="feather icon-check-circle d-flex justify-content-center"></i></button>
     </div>

@@ -18,6 +18,7 @@ let httpOptions = { responseType: 'text' };
   providedIn: 'root'
 })
 export class EvenementService {
+
   id:any;
   Roleuser!:Roles;
   item!:any;
@@ -31,6 +32,12 @@ export class EvenementService {
    /*List des Evenement*/
    public FindAllEvenements(): Observable<any> {
     return this.http.get(this.BackEndURL+"Events")
+  }
+  FindAllUsers(): Observable<any> {
+    return this.http.get("http://localhost:8089/work-mood/get-all-users")
+  }
+  FindUserById(userid: any) {
+    return this.http.get("http://localhost:8089/work-mood/get-user/"+userid)
   }
   /*Ajouter Evenement*/
   public save(event: Event) {
@@ -63,6 +70,7 @@ export class EvenementService {
 	public FindEvenementById(id:number): Observable<any>{
     return this.http.get<Event>(this.BackEndURL+'FindEvent/'+id); 
   }
+  
   /* Find Evenement By Title*/
   public FindEvenementByTitle(title:String): Observable<any>{
     return this.http.get<Event>(this.BackEndURL+'FindEvent/Title/'+title); 
@@ -88,7 +96,7 @@ export class EvenementService {
     return this.http.post(this.BackEndURL+'SendRewards',httpOptions); 
   }
    /* Remove User From Event*/
-  public RemoveUserFromEvent(iduser:number,idevent:number){
+  public RemoveUserFromEvent(idevent:number,iduser:number){
     return this.http.delete(this.BackEndURL+'RemoveUserFromEvent/'+idevent+"/"+iduser); 
   }
    /* Like Event*/
@@ -111,9 +119,13 @@ export class EvenementService {
   public RecommendedEvents(Tags:EventTags){
     return this.http.get<Event>(this.BackEndURL+Tags); 
   }
-   /* Find UserJoinedEvents  */
-  public UserJoinedEvents (userid:number): Observable<any> {
+   /* Find RecomendedEvents  */
+  public RecomendedEvents (userid:number): Observable<any> {
     return this.http.get(this.BackEndURL+'RecomendedEvents/'+userid); 
+  }
+   /* Find UserJoinedEvents  */
+   public UserJoinedEvents (userid:number): Observable<any> {
+    return this.http.get(this.BackEndURL+'UserJoinedEvents/'+userid); 
   }
     /*TotalNumberEvents*/
     public  TotalNumberEvents (){

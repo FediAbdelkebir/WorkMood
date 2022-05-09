@@ -52,6 +52,8 @@ import { UpdateBadgesComponent } from './BackEnd/badges/update-badges/update-bad
 import { AddBadgesComponent } from './BackEnd/badges/add-badges/add-badges.component';
 import { UserBadgesComponent } from './BackEnd/badges/user-badges/user-badges.component';
 import { ShowUserBadgesComponent } from './BackEnd/badges/show-user-badges/show-user-badges.component';
+import { UsersEventsComponent } from './BackEnd/Events/users-events/users-events.component';
+import { ShowUsersEventsComponent } from './BackEnd/Events/show-users-events/show-users-events.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -101,7 +103,9 @@ import { ShowUserBadgesComponent } from './BackEnd/badges/show-user-badges/show-
     UpdateBadgesComponent,
     AddBadgesComponent,
     UserBadgesComponent,
-    ShowUserBadgesComponent
+    ShowUserBadgesComponent,
+    UsersEventsComponent,
+    ShowUsersEventsComponent
   ],
   imports: [
     BrowserModule,

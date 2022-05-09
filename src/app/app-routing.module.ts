@@ -7,9 +7,11 @@ import { ShowUserBadgesComponent } from './BackEnd/badges/show-user-badges/show-
 import { UpdateBadgesComponent } from './BackEnd/badges/update-badges/update-badges.component';
 import { UserBadgesComponent } from './BackEnd/badges/user-badges/user-badges.component';
 import { AddEventComponent } from './BackEnd/Events/add-event/add-event.component';
+import { ShowUsersEventsComponent } from './BackEnd/Events/show-users-events/show-users-events.component';
 import { StatsEventsComponent } from './BackEnd/Events/stats-events/stats-events.component';
 import { UpdateeventComponent } from './BackEnd/Events/updateevent/updateevent.component';
 import { UpdateeventlistComponent } from './BackEnd/Events/updateeventlist/updateeventlist.component';
+import { UsersEventsComponent } from './BackEnd/Events/users-events/users-events.component';
 import { StatsGlobalComponent } from './BackEnd/stats-global/stats-global.component';
 import { HomeComponent } from './Components/home/home.component';
 import { PagenotfoundComponent } from './Components/pagenotfound/pagenotfound.component';
@@ -66,6 +68,15 @@ const routes: Routes = [
   {
     path:'Dashboard/ShowUserBadges/:id',
       component:ShowUserBadgesComponent
+  },
+  {
+    path:'Dashboard/ShowUserEvents/:id',
+      component:ShowUsersEventsComponent
+  }
+  ,
+  {
+    path:'Dashboard/UserEvents',
+      component:UsersEventsComponent
   },
     {path: 'Dashboard/**', redirectTo: '404NotFound'}
 
