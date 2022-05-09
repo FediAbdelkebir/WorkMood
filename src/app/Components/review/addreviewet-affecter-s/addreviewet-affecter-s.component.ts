@@ -33,7 +33,7 @@ export class AddreviewetAffecterSComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  addSurvey(rr:any){   
+  addReview(rr:any){   
     let id= 1;
     rr.category = this.selected;
     rr.classf = this.selected2;

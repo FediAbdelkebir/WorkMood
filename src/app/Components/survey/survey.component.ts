@@ -32,7 +32,7 @@ export class SurveyComponent implements OnInit {
     
   }
   UpdateRoute(id:any){
-    this.router.navigate(['updatesurvey',id]);
+    this.router.navigate(['reponsesurvey',id]);
   }
   
 

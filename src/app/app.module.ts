@@ -44,6 +44,9 @@ import { GetreviewBadbyusersComponent } from './Components/review/getreview-badb
 import { GetreviewGoodbyusersComponent } from './Components/review/getreview-goodbyusers/getreview-goodbyusers.component';
 import { AddchoiceCompanyorEmployeeComponent } from './Components/review/addchoice-companyor-employee/addchoice-companyor-employee.component';
 import { ListaddEmplorcompanyComponent } from './Components/review/listadd-emplorcompany/listadd-emplorcompany.component';
+import { AddreponseComponent } from './Components/survey/addreponse/addreponse.component';
+import { AnswerSurveyComponent } from './Components/answer-survey/answer-survey.component';
+
 
 
 @NgModule({
@@ -85,6 +88,9 @@ import { ListaddEmplorcompanyComponent } from './Components/review/listadd-emplo
     GetreviewGoodbyusersComponent,
     AddchoiceCompanyorEmployeeComponent,
     ListaddEmplorcompanyComponent,
+    AddreponseComponent,
+    AnswerSurveyComponent,
+    
  
    
     

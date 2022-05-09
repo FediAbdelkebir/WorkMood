@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AnswerSurveyComponent } from './Components/answer-survey/answer-survey.component';
 import { AddchoiceCompanyorEmployeeComponent } from './Components/review/addchoice-companyor-employee/addchoice-companyor-employee.component';
 import { AddreviewetAffecterEComponent } from './Components/review/addreviewet-affecter-e/addreviewet-affecter-e.component';
 import { AddreviewetAffecterSComponent } from './Components/review/addreviewet-affecter-s/addreviewet-affecter-s.component';
@@ -17,10 +18,10 @@ const routes: Routes = [
    //Survey
    { path: "affichersurvey", component:SurveyComponent},
    { path: "deleteSurvey/:id", component:SurveyComponent},
-   // { path: "affichersurvey/:id", Component:SurveyComponents},
    { path: "addsurvey", component:AddsurveyComponent},
    { path: "updatesurvey/:id", component:UpdatesurveyComponent},
    { path: "affichersurveybyid/:id", component:GetByIdsurveyComponent},
+   { path: "reponsesurvey/:id", component:GetByIdsurveyComponent},
    //REview
    { path: "afficherreview", component:ReviewComponent},
    { path: "deletereview/:id", component:ReviewComponent},
@@ -31,6 +32,8 @@ const routes: Routes = [
    { path: "AddreviewCompany", component:AddreviewetAffecterSComponent},
    { path: "review", component:AddchoiceCompanyorEmployeeComponent},
    { path: "choiceadd", component:ListaddEmplorcompanyComponent},
+   //Answer
+   { path: "Answer", component:AnswerSurveyComponent},
 ];
 
 @NgModule({

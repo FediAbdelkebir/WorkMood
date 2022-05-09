@@ -1,3 +1,23 @@
-id: {{SurveyQuestion.id}}<br>
-content: {{SurveyQuestion.content}} <br>
-dateExp: {{SurveyQuestion.dateExp}} 
+
+
+
+id: {{idServQuest}}<br>
+content: {{content}} <br>
+dateExp: {{dateExp}} <br>
+<!-- Answer: {{SurveyQuestion.surveyAnswer}} -->
+Answer:
+<!-- <select class="form-control" placeholder="TypeReview" id="key3" name="key3"  [(ngModel)]="selected" >
+                                                        
+    <option *ngFor="let key of keys" [value]="key" >      
+        {{AnswerEnum[key]}} 
+    </option>
+</select>  -->
+<div  >
+    <select class="box"  [(ngModel)]="selectedOption" >
+      <option *ngFor="let m of SurveyAnswer" value={{m.id}} >{{m.answer}} {{m.id}} </option>
+    </select>
+    <button (click)="test()">Click me</button>
+</div>
+
+
+<button class="btn btn-outline-warning mr-2" (click)="ajouterReponse(SurveyQuestion)" >Ajouter</button>

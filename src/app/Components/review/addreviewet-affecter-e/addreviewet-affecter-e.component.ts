@@ -34,7 +34,7 @@ export class AddreviewetAffecterEComponent implements OnInit {
    
   }
 
-  addSurvey(rr:any){   
+  addReview(rr:any){   
     let id= 1;
     rr.category = this.selected;
     rr.classf = this.selected2;
