@@ -5,6 +5,14 @@ import { saveAs } from 'file-saver';
 import { throwError } from 'rxjs';
 import { Offer } from 'src/app/Models/offer';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
+import { faRectangleList } from '@fortawesome/free-solid-svg-icons';
+import { faClock } from '@fortawesome/free-regular-svg-icons';
+import { faCoins } from '@fortawesome/free-solid-svg-icons';
+import { faUsers } from '@fortawesome/free-solid-svg-icons';
+import { faUserLock } from '@fortawesome/free-solid-svg-icons';
+import { faFilePdf } from '@fortawesome/free-solid-svg-icons';
+
 @Component({
   selector: 'app-show-offer',
   templateUrl: './show-offer.component.html',
@@ -15,6 +23,14 @@ export class ShowOfferComponent implements OnInit {
   id!: number;
   offer!: any;
   similarOffers!: Offer[];
+
+  faLocationDot=faLocationDot;
+  faRectangleList=faRectangleList;
+  faCalendar=faClock;
+  faCoins=faCoins;
+  faUser=faUsers;
+  faUserLock=faUserLock;
+  faFilePdf=faFilePdf;
 
   customOptions: OwlOptions = {
     loop: true,
@@ -75,13 +91,21 @@ export class ShowOfferComponent implements OnInit {
   
   allSimilarOffers(){
     let idUser = 1;
+    this.id=this.activate.snapshot.params['id'];
+    this.s.findSimilarOffers(this.id, idUser).subscribe(
+      (e)=>{
+        console.log("idOffer"+this.id);
+        this.similarOffers=e;
+      }
+    );
+    /*let idUser = 1;
     console.log("idOffer",this.id);
     this.s.findSimilarOffers(18, idUser).subscribe(
       (e)=>{
         console.log("idOffer"+this.id);
         this.similarOffers=e;
       }
-    );
+    );*/
   }
 
 }

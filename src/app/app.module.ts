@@ -60,6 +60,7 @@ import { ListReclamationsComponent } from './Components/reclamation/list-reclama
 import { ShowReclamationComponent } from './Components/reclamation/show-reclamation/show-reclamation.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 @NgModule({
   declarations: [
     AppComponent,
@@ -125,6 +126,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     Ng2SearchPipeModule,
     HttpClientModule,
     CarouselModule,
+    FontAwesomeModule,
     RouterModule.forRoot([
       {
       path:'',
@@ -161,7 +163,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
           },
         {path: '**', redirectTo: '404NotFound'}
     ]),
-    NgbModule
+    NgbModule,
+    FontAwesomeModule
   ],
   providers: [DatePipe],
   bootstrap: [AppComponent]

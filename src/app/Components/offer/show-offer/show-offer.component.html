@@ -1,80 +1,133 @@
 <app-head></app-head>
 <app-header></app-header>
 
-<body>
-
+<body style="background-color:white">
     <div class="container ">
         <div class="left">
-            <div class="item">
-                <p>Adress<i class="fa-solid fa-location-dot"></i></p>
-                {{offer.address}}
+            <!-- Image -->
+            <div class="elementor-element elementor-element-9904392 elementor-widget elementor-widget-image"
+                data-id="9904392" data-element_type="widget" data-widget_type="image.default">
+                <div class="elementor-widget-container">
+                    <div class="elementor-image">
+                        <img width="825" height="450"
+                            src="https://demo.themewinter.com/wp/buildbench/wp-content/uploads/2019/03/project_details.jpg"
+                            class="attachment-full size-full" alt="" loading="lazy"
+                            srcset="https://demo.themewinter.com/wp/buildbench/wp-content/uploads/2019/03/project_details.jpg 825w, https://demo.themewinter.com/wp/buildbench/wp-content/uploads/2019/03/project_details-300x164.jpg 300w, https://demo.themewinter.com/wp/buildbench/wp-content/uploads/2019/03/project_details-768x419.jpg 768w"
+                            sizes="(max-width: 825px) 100vw, 825px">
+                    </div>
+                </div>
             </div>
-            <div class="item">
-                <p>Category<i class="fa-solid fa-location-dot"></i></p>
-                {{offer.category}}
+            <div align="center">
+                <h1 class="display1">
+                    {{offer.title}}
+                </h1>
             </div>
-            <div class="item">
-                <p>Expiration Date<i class="fa-solid fa-location-dot"></i></p>
-                {{offer.dateExp}}
+            <div align="center">
+                <p>{{offer.description}}</p>
             </div>
-            <div class="item">
-                <p>Limited Number<i class="fa-solid fa-location-dot"></i></p>
-                {{offer.limitedNumber}}
-            </div>
-            <div class="item">
-                <p>Persons Number<i class="fa-solid fa-location-dot"></i></p>
-                {{offer.personsNumber}}
-            </div>
-            <div class="item">
-                <p>Point<i class="fa-solid fa-location-dot"></i></p>
-                {{offer.point}}
+            <br>
+            <div
+                class="elementor-element elementor-element-3137f14 elementor-position-left elementor-vertical-align-top elementor-widget elementor-widget-image-box">
+                <div class="elementor-widget-container" align="center">
+                    <!--<a (click)="getCoupon()">get coupon</a>-->
+                        <div>
+                            <img src="../../../../assets/Images/downloadCoupon.png" style="height:150px;" (click)="getCoupon()"/>
+                        </div>
+                        <!--<button (click)="getCoupon()">
+                            <fa-icon [icon]="faFilePdf" style="font-size: 30px;padding-right: 20px;"></fa-icon>
+                            Get this offer
+                        </button>-->
+                        
+                        <!-- <figure class="elementor-image-box-img"><a  (click)="getCoupon()"><img width="52" height="52"
+                            src="https://demo.themewinter.com/wp/buildbench/wp-content/uploads/2019/03/pdf_img.png"
+                            class="attachment-thumbnail size-thumbnail" alt="" loading="lazy"></a></figure>
+                Download coupon -->
+                    
+                </div>
             </div>
         </div>
         <div class="right">
             <div class="item">
-                {{offer.title}}
+                <h5>
+                    <fa-icon [icon]="faLocationDot" style="color: #1fb79b;"></fa-icon>
+                    Address
+                </h5>
+                <div align="center">{{offer.address}}</div>
             </div>
             <div class="item">
-                {{offer.description}}
+                <h5>
+                    <fa-icon [icon]="faRectangleList" style="color: #1fb79b;"></fa-icon> Category
+                </h5>
+                {{offer.category}}
             </div>
             <div class="item">
-                {{offer.image}}
+                <h5>
+                    <fa-icon [icon]="faCalendar" style="color: #1fb79b;"></fa-icon> Expiration Date
+                </h5>
+                <div>{{offer.dateExp}}</div>
+            </div>
+            <div class="item">
+                <h5>
+                    <fa-icon [icon]="faUserLock" style="color: #1fb79b;"></fa-icon> Limited Number
+                </h5>
+                <div>{{offer.limitedNumber}}</div>
+            </div>
+            <div class="item">
+                <h5>
+                    <fa-icon [icon]="faUser" style="color: #1fb79b;"></fa-icon> Persons Number
+                </h5>
+                <div>{{offer.personsNumber}}</div>
+            </div>
+            <div class="item">
+                <h5>
+                    <fa-icon [icon]="faCoins" style="color: #1fb79b;"></fa-icon> Point
+                </h5>
+                <div>{{offer.point}}</div>
             </div>
         </div>
+
     </div>
     <br>
-    <div class="col-xl-12" style="max-width:1200px;margin:0 auto;">
+    <!-- Coupon Offer -->
+
+
+    <!--<div class="col-xl-12" style="max-width:1200px;margin:0 auto;">
         <owl-carousel-o [options]="customOptions" class="cardCarousel">
             <ng-container *ngFor="let slide of similarOffers">
-                <ng-template carouselSlide [id]="slide.title" >
+                <ng-template carouselSlide [id]="slide.title">
                     {{slide.title}}
                 </ng-template>
             </ng-container>
         </owl-carousel-o>
+    </div>-->
+    <!--<div class="col-xl-12" style="max-width:1200px;margin:0 auto;width:60%">-->
+
+    <!-- Carousel -->
+    <div style="margin-left:200px; margin-right: 300px;">
+        <owl-carousel-o [options]="customOptions" class="containerC">
+
+            <ng-template carouselSlide *ngFor="let slide of similarOffers">
+                <div class="cardC">
+                    <h4 class="title">{{slide.title}}</h4>
+                    <h6 style="line-height:110px;">{{slide.point}}</h6>
+
+                    <div class="circle">
+                        <button>Show this offer</button>
+                    </div>
+                </div>
+            </ng-template>
+        </owl-carousel-o>
     </div>
 
 
-    <div
-        class="elementor-element elementor-element-3137f14 elementor-position-left elementor-vertical-align-top elementor-widget elementor-widget-image-box">
-        <div class="elementor-widget-container">
-            <a (click)="getCoupon()">get coupon</a>
-            <div class="elementor-image-box-wrapper">
-                <button (click)="getCoupon()">pddf</button>
-                <!-- <figure class="elementor-image-box-img"><a  (click)="getCoupon()"><img width="52" height="52"
-                            src="https://demo.themewinter.com/wp/buildbench/wp-content/uploads/2019/03/pdf_img.png"
-                            class="attachment-thumbnail size-thumbnail" alt="" loading="lazy"></a></figure>
-                Download coupon -->
-            </div>
-        </div>
-    </div>
+    <!--owl-carousel-o [options]="customOptions">
+        <ng-container *ngFor="let slide of similarOffers">
+            <ng-template carouselSlide [id]="slide.title">
+                {{slide.title}}
+            </ng-template>
+        </ng-container>
+        </owl-carousel-o>-->
 
-    <<!--owl-carousel-o [options]="customOptions">
-    <ng-container *ngFor="let slide of similarOffers">
-      <ng-template carouselSlide [id]="slide.title">
-          {{slide.title}}
-      </ng-template>
-    </ng-container>
-  </owl-carousel-o>-->
 </body>
 
 
@@ -83,8 +136,8 @@
 
 <div class="col-xl-12" style="max-width:1200px;margin:0 auto;">
     <owl-carousel-o [options]="customOptions" class="cardCarousel">
-            <ng-template carouselSlide *ngFor="let slide of similarOffers">
-                {{slide.title}}
-            </ng-template>
+        <ng-template carouselSlide *ngFor="let slide of similarOffers">
+            {{slide.title}}
+        </ng-template>
     </owl-carousel-o>
 </div>
