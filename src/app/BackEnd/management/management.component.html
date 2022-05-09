@@ -89,11 +89,9 @@
         </li>
         <li class=" nav-item"><a href="javascript:void(0);"><i class="feather icon-list"></i><span class="menu-title" data-i18n="Charts">CRUD</span><span class="badge badge badge-pill badge-success float-right mr-2">List</span></a>
             <ul class="menu-content">
-                <li><a href="chart-apex.html"><i class="feather icon-plus-circle"></i><span class="menu-item" data-i18n="Apex">Add Badges</span></a>
+                <li><a [routerLink]="['/Dashboard/AddBadges']"><i class="feather icon-plus-circle"></i><span class="menu-item" data-i18n="Apex">Add Badges</span></a>
                 </li>
-                <li><a href="javascript(void);"><i class="feather icon-refresh-ccw"></i><span class="menu-item" data-i18n="Chartjs">Update Badges</span></a>
-                </li>
-                <li><a href="javascript(void);"><i class="feather icon-trash"></i><span class="menu-item" data-i18n="Echarts">Delete Badges</span></a>
+                <li><a [routerLink]="['/Dashboard/Badges']"><i class="feather icon-refresh-ccw"></i><span class="menu-item" data-i18n="Chartjs">Badges</span></a>
                 </li>
             </ul>
         </li>

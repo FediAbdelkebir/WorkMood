@@ -1,0 +1,100 @@
+<app-nav></app-nav>
+<div class="app-content content">
+    <div class="content-overlay"></div>
+    <div class="header-navbar-shadow"></div>
+    <div class="content-wrapper">
+        <div class="content-header row">
+        </div>
+        <div class="content-body">     
+            <div *ngIf="showLoader"><!-- so this div containing img will be dislpayed only when the showLoader is equal to true-->
+                <div class='body' style="background-color: #1fb79b;">
+                    <span>
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                    </span>
+                    <div class='base'>
+                      <span></span>
+                      <div class='face'></div>
+                    </div>
+                  </div>
+                  <div class='longfazers'>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </div>
+                  <h1>Loading Events</h1>
+                  
+            </div> 
+<section _ngcontent-nwj-c61="" class="data-list-view-header">
+    <div _ngcontent-nwj-c61="" class="table-responsive">
+        <div _ngcontent-nwj-c61="" id="DataTables_Table_0_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
+            <table _ngcontent-nwj-c61="" id="DataTables_Table_0" role="grid"
+                class="table data-list-view dataTable no-footer dt-checkboxes-select">
+                <thead _ngcontent-nwj-c61="">
+                    <tr _ngcontent-nwj-c61="" role="row">
+                        <th _ngcontent-nwj-c61="" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
+                            colspan="1" data-col="0" aria-label=""
+                            class="dt-checkboxes-cell dt-checkboxes-select-all sorting_disabled"
+                            style="width: 52.65px;"><input _ngcontent-nwj-c61="" type="checkbox"></th>
+                        <th _ngcontent-nwj-c61="" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
+                            colspan="1" aria-label="title: activate to sort column ascending" class="sorting"
+                            style="width: 162.917px;">Title</th>
+                        <th _ngcontent-nwj-c61="" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
+                            colspan="1" aria-label="dateStart: activate to sort column ascending" class="sorting"
+                            style="width: 144.667px;">Cost</th>
+                        <th _ngcontent-nwj-c61="" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
+                            colspan="1" aria-label="dateEnd: activate to sort column ascending" class="sorting"
+                            style="width: 169.017px;">Description</th>
+                        
+                        <th _ngcontent-nwj-c61="" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
+                            colspan="1" aria-label="ACTION: activate to sort column ascending" class="sorting"
+                            style="width: 92.6833px;">Update</th>
+                            <th _ngcontent-nwj-c61="" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
+                            colspan="1" aria-label="ACTION: activate to sort column ascending" class="sorting"
+                            style="width: 92.6833px;">Delete</th>
+                    </tr>
+                </thead>
+                
+                <tbody _ngcontent-nwj-c61="">
+                    <tr _ngcontent-nwj-c61="" role="row" *ngFor="let x of listevenements">
+                        <td _ngcontent-nwj-c61="" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
+                            colspan="1" data-col="0" aria-label=""
+                            class="dt-checkboxes-cell dt-checkboxes-select-all sorting_disabled"
+                            style="width: 52.65px;"><input _ngcontent-nwj-c61="" type="checkbox"></td>
+                        <td _ngcontent-nwj-c61="" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
+                            colspan="1" aria-label="title: activate to sort column ascending" class="sorting"
+                            style="width: 162.917px;">{{x.title}}</td >
+                        <td  _ngcontent-nwj-c61="" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
+                            colspan="1" aria-label="dateStart: activate to sort column ascending" class="sorting"
+                            style="width: 144.667px;">{{x.cost}}</td >
+                        <td  _ngcontent-nwj-c61="" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
+                            colspan="1" aria-label="dateEnd: activate to sort column ascending" class="sorting"
+                            style="width: 169.017px;">{{x.description}}</td >
+                        <td  _ngcontent-nwj-c61="" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
+                            colspan="1" aria-label="ACTION: activate to sort column ascending" class="sorting"
+                            style="width: 92.6833px;">
+                            <button class="btn btn-warning" [routerLink]="['/Dashboard/UpdateBadge',x.id]"><i class="feather icon-edit d-flex justify-content-center"></i></button>
+                             </td >
+                             <td  _ngcontent-nwj-c61="" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
+                             colspan="1" aria-label="ACTION: activate to sort column ascending" class="sorting"
+                             style="width: 92.6833px;">
+                           
+                        <button class="btn btn-danger" (click)="delete(x.id)"><i class="feather icon-trash d-flex justify-content-center"></i></button>
+                              </td >
+                   
+                    </tr>
+                   
+                </tbody>
+            </table>
+            <div _ngcontent-nwj-c61="" class="bottom">
+                <div _ngcontent-nwj-c61="" class="actions"></div>
+            </div>
+        </div>
+    </div>
+</section>
+  
+</div>
+</div>

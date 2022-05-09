@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {LandingComponent} from '../app/BackEnd/landing/landing.component'
+import { AddBadgesComponent } from './BackEnd/badges/add-badges/add-badges.component';
+import { BadgesComponent } from './BackEnd/badges/badges.component';
+import { UpdateBadgesComponent } from './BackEnd/badges/update-badges/update-badges.component';
 import { AddEventComponent } from './BackEnd/Events/add-event/add-event.component';
 import { StatsEventsComponent } from './BackEnd/Events/stats-events/stats-events.component';
 import { UpdateeventComponent } from './BackEnd/Events/updateevent/updateevent.component';
@@ -42,6 +45,18 @@ const routes: Routes = [
     path:'Dashboard/UpdateEvent/:id',
       component:UpdateeventComponent  
   } ,
+  {
+    path:'Dashboard/AddBadges',
+      component:AddBadgesComponent 
+  },
+  {
+    path:'Dashboard/UpdateBadge/:id',
+      component:UpdateBadgesComponent
+  },
+  {
+    path:'Dashboard/Badges',
+      component:BadgesComponent
+  },
     {path: 'Dashboard/**', redirectTo: '404NotFound'}
 
 ];

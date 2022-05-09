@@ -1,0 +1,101 @@
+
+<app-dashboardcss></app-dashboardcss>
+<div class="app-content content">
+    <div class="content-overlay"></div>
+    <div class="header-navbar-shadow"></div>
+    <div class="content-wrapper">
+        <div class="content-header row">
+        </div>
+        <div class="content-body">
+            <div class="row">
+                <div class="col-md-6 col-12">
+                    <div class="card" style="height: 100%;">
+                        <div class="card-header">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-body">
+                                <form class="form form-horizontal" (ngSubmit)="UpdateBadge()">
+                                    <div class="form-body">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="form-group row">
+                                                    <div class="col-md-4">
+                                                        <span>Badge Title</span>
+                                                    </div>
+                                                    <div class="col-md-8">
+                                                        <div class="position-relative has-icon-left">
+                                                            <input type="text" class="form-control" placeholder="Badge Title"  id='name' name='name' required  [(ngModel)]="badge.title">
+                                                            <div class="form-control-position">
+                                                                <i class="feather icon-user"></i>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="form-group row">
+                                                    <div class="col-md-4">
+                                                        <span>Badge Cost</span>
+                                                    </div>
+                                                    <div class="col-md-8">
+                                                        <div class="position-relative has-icon-left">
+                                                            <input type="number" id="pass-icon"  value="badge.cost"class="form-control" name="contact-icon" [(ngModel)]="badge.cost" placeholder="Badge Price is {{badge.cost}}" > 
+                                                            <div class="form-control-position" >
+                                                                <i class="feather icon-dollar-sign"></i>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="form-group row">
+                                                    <div class="col-md-4">
+                                                        <span>Badge Description</span>
+                                                    </div>
+                                                    <div class="col-md-8">
+                                                        <div class="position-relative has-icon-left">
+                                                            <input type="text" id="pass-icon" class="form-control" name="contact-icon" [(ngModel)]="badge.description" placeholder="Badge Description">
+                                                            <div class="form-control-position">
+                                                                <i class="feather icon-users"></i>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-8 offset-md-4">
+                                                <button type="submit" class="btn btn-primary mr-1 mb-1 waves-effect waves-light">Update Badge</button>
+                                                <button type="reset" class="btn btn-outline-warning mr-1 mb-1 waves-effect waves-light">Reset</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12 col-sm-12" >
+                    <div class="card bg-analytics text-white" style="background: linear-gradient(118deg, #193962, #1e5772);">
+                        <div class="card-content">
+                            <div class="card-body text-center">
+                                <img src="/assets/app-assets/images/elements/decore-left.png" class="img-left" alt="
+                card-img-left">
+                                <img src="/assets/app-assets/images/elements/decore-right.png" class="img-right" alt="
+                card-img-right">
+                                <div class="avatar avatar-xl bg-primary shadow mt-0">
+                                    <div class="avatar-content">
+                                        <i class="feather icon-award white font-large-1"></i>
+                                    </div>
+                                </div>
+                                <div class="text-center">
+                                    <h1 class="mb-2 text-white">Welcome to Updare Badge</h1>
+                                    <p class="m-auto w-75">You Can Update A Badge by filling this form </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                </div>
+<app-dashboardfooter></app-dashboardfooter>
+</div>
+</div>
+</div>

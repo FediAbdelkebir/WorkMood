@@ -47,6 +47,11 @@ import { StatsGlobalComponent } from './BackEnd/stats-global/stats-global.compon
 import { DashboardcssComponent } from './BackEnd/dashboardcss/dashboardcss.component';
 import { DashboardfooterComponent } from './BackEnd/dashboardfooter/dashboardfooter.component';
 import { StatsEventsComponent } from './BackEnd/Events/stats-events/stats-events.component';
+import { BadgesComponent } from './BackEnd/badges/badges.component';
+import { DeleteBadgeUserComponent } from './BackEnd/badges/delete-badge-user/delete-badge-user.component';
+import { AffectBadgeUserComponent } from './BackEnd/badges/affect-badge-user/affect-badge-user.component';
+import { UpdateBadgesComponent } from './BackEnd/badges/update-badges/update-badges.component';
+import { AddBadgesComponent } from './BackEnd/badges/add-badges/add-badges.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -91,7 +96,12 @@ import { StatsEventsComponent } from './BackEnd/Events/stats-events/stats-events
     LandingComponent,
     DashboardcssComponent,
     DashboardfooterComponent,
-    StatsEventsComponent 
+    StatsEventsComponent,
+    BadgesComponent,
+    UpdateBadgesComponent,
+    AddBadgesComponent,
+    AffectBadgeUserComponent,
+    DeleteBadgeUserComponent 
   ],
   imports: [
     BrowserModule,

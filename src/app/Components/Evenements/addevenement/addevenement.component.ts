@@ -37,6 +37,7 @@ export class AddevenementComponent implements OnInit {
 this.event.trouphy=false
   }
   save() {
+    this.event.coverimage = this.event.coverimage.replace(/C:\\fakepath\\/, '');
  //this.event.dateStart =this.datepipe.transform(this.event.dateStart, 'yyyy-MM-dd');
  //this.event.dateEnd =this.datepipe.transform(this.event.dateEnd, 'yyyy-MM-dd');
     console.log(this.event)

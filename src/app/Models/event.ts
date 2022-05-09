@@ -7,6 +7,7 @@ export class Event {
     id!:number;
     title!:String;
     description!:String;
+    coverimage!:String;
     dateStart!: any;
     dateEnd!: any;
     npDisponible!:number;
