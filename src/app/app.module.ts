@@ -126,6 +126,11 @@ import { AddCommentaireComponent } from './Components/add-commentaire/add-commen
           path:'LikedEvents',
             component:LikedeventsComponent, data: { animation: 'isRight' }
           },
+          {
+            path:'add-article',
+            component:LikedeventsComponent, data: { animation: 'isLeft' }
+          },
+
         {path: '**', redirectTo: '404NotFound'}
     ]),
     FontAwesomeModule

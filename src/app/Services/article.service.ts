@@ -34,4 +34,8 @@ export class ArticleService {
   getArticleByCatg (categorie:ArticleCategory): Observable<Article[]> {
     return this.http.get<Article[]>('http://localhost:8089/WorkMood/article/articleCat?category='+categorie);
   }
+
+  rechercheArticle (article:Article): Observable<Article[]> {
+    return this.http.get<Article[]>('http://localhost:8089/WorkMood/article/search-title/'+article);
+  }
 }

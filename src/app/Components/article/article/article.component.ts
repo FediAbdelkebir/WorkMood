@@ -22,7 +22,8 @@ export class ArticleComponent implements OnInit {
     category!:ArticleCategory;
    keys:string[]=[];
    categoryArti:any = ArticleCategory;
-
+  title!:any;
+  searchText!:any;
   constructor(private articleService: ArticleService,private router:Router) {
     this.keys=Object.keys(this.categoryArti); }
 
@@ -55,6 +56,17 @@ export class ArticleComponent implements OnInit {
       }
     );
 }
+
+// hethi recherche bel consomation mch bel pipe
+getArticleSearch(title:any){
+ this.articleService.rechercheArticle(title).subscribe(
+  (e)=>{
+    this.listarticle=e;
+    console.log(e);
+
+  }
+ )
+}
 onChange(){
   this.articleService.getArticleByCatg(this.category).subscribe(
     (e)=>{
@@ -63,6 +75,8 @@ onChange(){
     }
   )
   }
+
+
  /* getColorCat(){
      if(this.category==='Technology'){
        return 'red';

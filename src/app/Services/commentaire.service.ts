@@ -12,10 +12,11 @@ export class CommentaireService {
   constructor(private http:HttpClient) { }
 
   public AddCommentArticle(comment:Commentaire,iduser:any,idArticle:Article):Observable<Commentaire[]>{
-    return this.http.post<Commentaire[]>('http://localhost:8089/WorkMood/article/add-article/'+iduser+'/'+idArticle,comment);
+    return this.http.post<Commentaire[]>('http://localhost:8089/WorkMood/comment/add-comment-inarticle/'+iduser+'/'+idArticle,comment);
   }
 
-  public getCommentByArticle(idArticle:any):Observable<Article>{
-    return this.http.get<Article>('http://localhost:8089/WorkMood/comment/retrieve-commentaire/article/'+idArticle);
+  public getCommentByArticle(idArticle:any):Observable<Commentaire>{
+    return this.http.get<Commentaire>('http://localhost:8089/WorkMood/comment/retrieve-commentaire/article/'+idArticle);
   }
+  
 }

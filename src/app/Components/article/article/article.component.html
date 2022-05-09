@@ -85,8 +85,8 @@
             {{categoryArti[key]}}
         </option>
     </select>
-    <input type="text" name="recherche" placeholder="search" class="recherche">
-    <input type="submit" value="search" name="search" class="submit_bt">
+    <input type="text" name="recherche" placeholder="search" [(ngModel)]="searchText" class="recherche">
+    <input type="submit" value="search" (click)="getArticleSearch(title)" name="search" class="submit_bt">
     </div>
 
   </div>
@@ -94,7 +94,7 @@
 
 
   <div class="container">
-    <div class="carousel" *ngFor="let a of article">
+    <div class="carousel" *ngFor="let a of article | filter:searchText">
         <div class="carousel_img">
 
         </div>
@@ -115,6 +115,33 @@
        </div>
     </div>
   </div>
+</div>
+<div style="    margin: auto;
+display: flex;
+flex-wrap: wrap;
+flex-direction: column;
+/* align-content: space-between; */
+align-items: center;">
+  <h3 style="font-weight: 400;font-size:25px;margin-bottom: 20px;">Add your own article</h3>
+  <div style="display:flex;
+  justify-content: center;
+  align-items: center;">
+    <div style="width:20%;">
+      <img [routerLink]="['/add-article']" src="../../../../assets/undraw_Add_post_re_174w.png">
+    </div>
+    <button class="" style="background-color: #00bfa6;
+    padding: 15px 20px;
+    border: none;
+
+    margin-left: -84px;
+    margin-top: 89px;
+    border-radius: 5px;
+    color: white;
+    font-size: 17px;
+    font-weight: 500;
+    font-family: 'Montserrat';" [routerLink]="['/add-article']">Ajouter article</button>
+  </div>
+
 </div>
 <app-footer></app-footer>
 <app-scripts></app-scripts>

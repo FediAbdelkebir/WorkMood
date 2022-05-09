@@ -12,6 +12,10 @@ export class CommentaireComponent implements OnInit {
   constructor(private commetaire: CommentaireService,private router:Router) { }
 
   ngOnInit(): void {
+
   }
+
+  
+
 
 }
