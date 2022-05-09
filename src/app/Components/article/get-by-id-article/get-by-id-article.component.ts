@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ArticleService } from 'src/app/Services/article.service';
 import {faAngleRight} from '@fortawesome/free-solid-svg-icons';
 import {faCalendarAlt} from '@fortawesome/free-solid-svg-icons';
 import { Article } from 'src/app/Models/article.model';
 import { ArticleCategory } from 'src/app/Models/article-category.moel';
+import { CommentaireService } from 'src/app/Services/commentaire.service';
+import { Commentaire } from 'src/app/Models/commentaire';
 
 @Component({
   selector: 'app-get-by-id-article',
@@ -16,14 +18,37 @@ export class GetByIdArticleComponent implements OnInit {
   idd!:any;
   faAngleRight=faAngleRight;
   faCalendarAlt=faCalendarAlt;
+  listcomment!:any;
  // articlee!: Article[];
-  constructor(private articleservice:ArticleService,private activate:ActivatedRoute ) { }
+  constructor(private articleservice:ArticleService,private commentaireservice : CommentaireService, private activate:ActivatedRoute ,private router:Router ) { }
 
   ngOnInit(): void {
     this.getById();
     //this.getByCategory(this.article.category);
+   this.getcommentarticle(this.idd);
+  }
+
+  Addcommentairearticle(c:Commentaire){
+    let id=2;
+    this.commentaireservice.AddCommentArticle(c,id,this.idd).subscribe(
+      res=>{
+        this.router.navigate(['afficher-article'])
+      });
+  }
+
+  getcommentarticle(idArticle:any){
+    this.commentaireservice.getCommentByArticle(idArticle).subscribe(
+
+      (d)=>{
+        this.listcomment=d;
+        console.log(this.listcomment);
+      }
+    );
+
+
 
   }
+
   getById(){
     this.idd=this.activate.snapshot.params['idArticle']
     this.articleservice.getArticleById(this.idd).subscribe(

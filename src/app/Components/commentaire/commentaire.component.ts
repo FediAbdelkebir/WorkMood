@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Commentaire } from 'src/app/Models/commentaire';
 import { CommentaireService } from 'src/app/Services/commentaire.service';
 
 @Component({
@@ -8,14 +9,16 @@ import { CommentaireService } from 'src/app/Services/commentaire.service';
   styleUrls: ['./commentaire.component.css']
 })
 export class CommentaireComponent implements OnInit {
-
-  constructor(private commetaire: CommentaireService,private router:Router) { }
+  commentaire!: Commentaire[];
+  constructor(private commetaireservice: CommentaireService,private router:Router) { }
 
   ngOnInit(): void {
 
   }
 
-  
+  getCommentByArticle(){
+
+  }
 
 
 }

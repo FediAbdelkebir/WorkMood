@@ -3,5 +3,28 @@
 
 .img_block
 {
-  
+
+}
+.personal_comment
+{
+
+    margin: 50px 0;
+    width: 70%;
+    background-color: #f8f8f8;
+    height: 130px;
+    max-height: 150px;
+    border-radius: 10px;
+    box-shadow: 0 2px 15px 0 rgb(27 27 27 / 11%);
+    display:flex;
+    align-items: center;
+}
+.comment_img
+{
+  margin:10px;
+  width:60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: aquamarine;
+  background-image: url('../../../../assets/man.png');
+
 }

@@ -28,11 +28,33 @@
 
   <div class="comment-section" style="width:70%">
     <h3 style="margin-top: 50px;">Add Your Comment</h3>
-    <div class="height:100px;width:80%;border-radius:10px;padding:10px;">
-      <textarea style="width:70%;
-      background-color: #f8f8f8;
-      border-radius: 3px;
-      border: 1px solid #d8d8d8;padding:10px;" placeholder="Tap Here" class="" id="commentaire" rows="5"></textarea>
+    <form #comment="ngForm" >
+      <div class="height:100px;width:80%;border-radius:10px;padding:10px;">
+        <textarea style="width:75%;
+        background-color: #f8f8f8;
+        border-radius: 3px;
+        border: 1px solid #d8d8d8;padding:10px;" placeholder="Tap Here" class="" id="description" name="description" rows="5" ngModel></textarea>
+
+    </div>
+    <input  type="submit" value="save" (click)="Addcommentairearticle(comment.value)">
+    </form>
+
+
+
+    <div *ngFor="let c of listcomment" class="personal_comment">
+      <div class="comment_img">
+
+      </div>
+       <!--<p style="font-size:14px;font-weight:600;">Oussema Jebari</p>-->
+
+      <div>
+        <p style="font-weight: 300;margin:0 20px;">{{c.description}}</p>
+      </div>
+      <div>
+        <p>{{c.dateComment}}</p><fa-icon style="color: #21aba5;" [icon]="faCalendarAlt"></fa-icon>
+      </div>
+      <!--<p>{{c.description}}</p>-->
+
     </div>
 
 
