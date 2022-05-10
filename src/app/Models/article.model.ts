@@ -7,4 +7,5 @@ export class Article {
   dateCreation!:Date;
   Image!:string;
   category!:ArticleCategory;
+  nbLike!:any;
 }

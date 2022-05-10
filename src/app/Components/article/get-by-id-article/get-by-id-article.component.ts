@@ -7,6 +7,11 @@ import { Article } from 'src/app/Models/article.model';
 import { ArticleCategory } from 'src/app/Models/article-category.moel';
 import { CommentaireService } from 'src/app/Services/commentaire.service';
 import { Commentaire } from 'src/app/Models/commentaire';
+import { LikeArticleService } from 'src/app/Services/like-article.service';
+import { LikeArticle } from 'src/app/Models/like-article';
+import { faHeart } from '@fortawesome/free-regular-svg-icons';
+import { faThumbsUp } from '@fortawesome/free-solid-svg-icons';
+import { faThumbsDown } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-get-by-id-article',
@@ -18,9 +23,12 @@ export class GetByIdArticleComponent implements OnInit {
   idd!:any;
   faAngleRight=faAngleRight;
   faCalendarAlt=faCalendarAlt;
+  faHeart=faHeart;
+  faThumbsUp=faThumbsUp;
+  faThumbsDown=faThumbsDown;
   listcomment!:any;
  // articlee!: Article[];
-  constructor(private articleservice:ArticleService,private commentaireservice : CommentaireService, private activate:ActivatedRoute ,private router:Router ) { }
+  constructor(private articleservice:ArticleService,private commentaireservice : CommentaireService,private likeservice : LikeArticleService, private activate:ActivatedRoute ,private router:Router ) { }
 
   ngOnInit(): void {
     this.getById();
@@ -31,6 +39,14 @@ export class GetByIdArticleComponent implements OnInit {
   Addcommentairearticle(c:Commentaire){
     let id=2;
     this.commentaireservice.AddCommentArticle(c,id,this.idd).subscribe(
+      res=>{
+        this.router.navigate(['afficher-article'])
+      });
+  }
+
+  Addlikearticle(a:LikeArticle){
+    let id=3;
+    this.likeservice.AddLikeArticle(a,this.idd,id).subscribe(
       res=>{
         this.router.navigate(['afficher-article'])
       });

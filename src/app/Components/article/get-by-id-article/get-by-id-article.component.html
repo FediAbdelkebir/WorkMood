@@ -15,13 +15,30 @@
     <div class="row col-lg-12 mt-5">
       <img style="width:70%;border-radius:10px;margin:20px 0 ;" src="../../../../assets/annie-spratt-hCb3lIB8L8E-unsplash.jpg">
     </div>
-    <div >
-      <h3 style="font-size: 30px;">{{article.title}}</h3>
+    <div>
+      <div style="display: flex;width: 65%;max-width: 70%;justify-content: space-between; align-items: baseline;">
+        <h3 style="font-size: 30px;">{{article.title}}</h3>
+        <div style="display: flex;align-items: baseline;">
+          <p style="font-size: 22px;font-weight:500;margin:0 10px">{{article.nbLike}}</p>
+          <span><fa-icon style="font-size: 22px"[icon]="faHeart"></fa-icon></span>
+        </div>
+
+      </div>
       <p>{{article.category}}
         <span style="margin-left: 15px;margin-right: 10px;"><fa-icon style="color: #21aba5;" [icon]="faCalendarAlt"></fa-icon></span>
         <span style="font-size:14px;color:#666">{{article.dateCreation | date}}</span></p>
       <p>{{article.description}}</p>
+
     </div>
+    <form  #like="ngForm">
+      <button  type="submit" value="like"  class="btn-secondary butn_like" (click)="Addlikearticle(like.value)">
+        <fa-icon [icon]="faThumbsUp" style="color: white;font-size: 18px;"></fa-icon> Like
+      </button>
+      <button type="submit" value="" style="margin:0 20px;" class="rmv_like">
+        Remove Like <fa-icon [icon]="faThumbsDown" style="color: white;font-size: 18px;"></fa-icon>
+      </button>
+    </form>
+
   </div>
 
 
@@ -36,7 +53,10 @@
         border: 1px solid #d8d8d8;padding:10px;" placeholder="Tap Here" class="" id="description" name="description" rows="5" ngModel></textarea>
 
     </div>
-    <input  type="submit" value="save" (click)="Addcommentairearticle(comment.value)">
+    <div>
+      <input  type="submit" value="save" class="butn_cmt" (click)="Addcommentairearticle(comment.value)">
+    </div>
+
     </form>
 
 

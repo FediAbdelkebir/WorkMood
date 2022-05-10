@@ -45,6 +45,7 @@ import { AddPostComponent } from './Components/article/add-post/add-post.compone
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CommentaireComponent } from './Components/commentaire/commentaire.component';
 import { AddCommentaireComponent } from './Components/add-commentaire/add-commentaire.component';
+import { LikeArticleComponent } from './Components/like-article/like-article.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -83,7 +84,8 @@ import { AddCommentaireComponent } from './Components/add-commentaire/add-commen
     PostComponent,
     AddPostComponent,
     CommentaireComponent,
-    AddCommentaireComponent
+    AddCommentaireComponent,
+    LikeArticleComponent
   ],
   imports: [
     BrowserModule,
