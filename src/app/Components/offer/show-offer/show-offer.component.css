@@ -30,6 +30,15 @@
 .left {
   width: 60%;
   height: auto;
+  margin-top: 15px;
+}
+
+.label{
+  font-style: oblique;
+}
+.fa-icon{
+  padding-right: 10px;
+  color: #1fb79b;
 }
 /*-----*/
 /* dots color */
@@ -80,18 +89,7 @@ height: 200px;
   top: 10px;
   left: calc(50% - 300px);
   display: flex;
-}
- ::ng-deep .owl-item .ng-tns-c144-1 .ng-trigger .ng-trigger-autoHeight .cloned .ng-star-inserted{
-    display: flex;
-  height: 250px;
-  width: 250px;
-  border-radius: 10px;
-  box-shadow: -1rem 0 3rem #000;
-  margin-left: 35%;
-  transition: 0.4s ease-out;
-  position: relative;
-  left: -20px;
- }*/
+}*/
 
 .containerC {
   /* height: 200px; */
@@ -99,9 +97,39 @@ height: 200px;
   top: 60px;
   left: calc(50% - 300px);
   display: flex;
+  background-color: white;
+}
+::ng-deep .cardC.ng-star-inserted{
+  display: flex;
+  height: 250px;
+  width: 250px;
+  border-radius: 10px;
+  box-shadow: 0rem 0 3rem #000;
+  margin-left: 35%;
+  transition: 0.4s ease-out;
+  position: relative;
+  left: 80px;right: 80px;
+ }
+ ::ng-deep .cardC .ng-star-inserted{
+  left: 80px;right: 80px;
+ }
+ ::ng-deep .cardC.ng-star-inserted:not(:first-child) {
+  margin-left: -50px;
 }
 
-.cardC , ::ng-depp .ng-star-inserted{
+::ng-deep .cardC.ng-star-inserted:hover {
+  transform: translateY(-50px);
+  transition: 0.4s ease-out;
+}
+
+::ng-deep .cardC.ng-star-inserted:hover ~ .cardC {
+  position: relative;
+  left: 50px;
+  transition: 0.4s ease-out;
+}
+
+ /* first one carousel*/
+.cardC{
   display: flex;
   height: 250px;
   /*width: 250px;*/
@@ -109,11 +137,11 @@ height: 200px;
   padding: 20px;
   background-color: #f8f8f8;
   border-radius: 10px;
-  box-shadow: -1rem 0 3rem #000;
+  box-shadow: 0rem 0 3rem #000;
   margin-left: 20px;
   transition: 0.4s ease-out;
   position: relative;
-  left: -20px;
+  left: -15px;
 }
 
 ::ng-deep .owl-stage-outer .ng-star-inserted{
@@ -143,57 +171,9 @@ height: 200px;
   top: 15px;
 }
 
-.bar {
-  position: absolute;
-  top: 100px;
-  left: 20px;
-  height: 5px;
-  width: 150px;
-}
-
-.emptybar {
-  background-color: #2e3033;
-  width: 100%;
-  height: 100%;
-}
-
-.filledbar {
-  position: absolute;
-  top: 0px;
-  z-index: 3;
-  width: 0px;
-  height: 100%;
-  background: rgb(0, 154, 217);
-  background: linear-gradient(
-    90deg,
-    rgba(0, 154, 217, 1) 0%,
-    rgba(217, 147, 0, 1) 65%,
-    rgba(255, 186, 0, 1) 100%
-  );
-  transition: 0.6s ease-out;
-}
-
 .cardC:hover .filledbar {
   width: 120px;
   transition: 0.4s ease-out;
-}
-
-.circle {
-  position: absolute;
-  top: 150px;
-  left: calc(50% - 60px);
-}
-
-.stroke {
-  stroke: white;
-  stroke-dasharray: 360;
-  stroke-dashoffset: 360;
-  transition: 0.6s ease-out;
-}
-
-svg {
-  fill: #17141d;
-  stroke-width: 2px;
 }
 
 .cardC:hover .stroke {
@@ -201,41 +181,64 @@ svg {
   transition: 0.6s ease-out;
 }
 
-
-/** coupon file **/
-button {
-  padding: 0.8em 1.8em;
-  border: 0px solid #17c3b2;
-  position: relative;
-  overflow: hidden;
-  background-color: transparent;
-  text-align: center;
-  text-transform: uppercase;
-  font-size: 16px;
-  transition: 0.3s;
-  z-index: 1;
-  font-family: inherit;
-  color: #17c3b2;
+/* test carousel black **/ 
+.bodyTest {
+  background-color: #100e17;
+  font-family: 'Open Sans', sans-serif;
 }
 
-button::before {
-  content: "";
-  width: 0;
-  height: 300%;
+.containerTest , :ng-depp .owl-stage-outer.ng-star-inserted{
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) rotate(45deg);
-  background: #17c3b2;
-  transition: 0.5s ease;
-  display: block;
-  z-index: -1;
+  height: 300px;
+  width: 600px;
+  top: 60px;
+  left: calc(50% - 300px);
+  display: flex;
 }
 
-button:hover::before {
-  width: 105%;
+.cardTest {
+  display: flex;
+  height: 280px;
+  width: 200px;
+  background-color: #17141d; /* */ 
+  border-radius: 10px; /* */ 
+  box-shadow: -1rem 0 3rem #000;
+/*   margin-left: -50px; */
+  transition: 0.4s ease-out;
+  position: relative; /* */ 
+  left: 10px; /* */
 }
 
-button:hover {
-  color: #111;
+.cardTest:not(:first-child) {
+    margin-left: -50px;
 }
+
+.cardTest:hover {
+  transform: translateY(-20px);
+  transition: 0.4s ease-out;
+}
+
+.cardTest:hover ~ .cardTest {
+  position: relative;
+  left: 50px;
+  transition: 0.4s ease-out;
+}
+
+.titleTest {
+  color: white;
+  font-weight: 300;
+  position: absolute;
+  left: 20px;
+  top: 15px;
+}
+
+.cardTest:hover{
+  width: 120px;
+  transition: 0.4s ease-out;
+}
+
+.cardTest:hover{
+  stroke-dashoffset: 100;
+  transition: 0.6s ease-out;
+}
+/* form */ 

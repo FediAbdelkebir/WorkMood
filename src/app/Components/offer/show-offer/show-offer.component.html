@@ -29,63 +29,52 @@
             <div
                 class="elementor-element elementor-element-3137f14 elementor-position-left elementor-vertical-align-top elementor-widget elementor-widget-image-box">
                 <div class="elementor-widget-container" align="center">
-                    <!--<a (click)="getCoupon()">get coupon</a>-->
-                        <div>
-                            <img src="../../../../assets/Images/downloadCoupon.png" style="height:150px;" (click)="getCoupon()"/>
-                        </div>
-                        <!--<button (click)="getCoupon()">
-                            <fa-icon [icon]="faFilePdf" style="font-size: 30px;padding-right: 20px;"></fa-icon>
-                            Get this offer
-                        </button>-->
-                        
-                        <!-- <figure class="elementor-image-box-img"><a  (click)="getCoupon()"><img width="52" height="52"
-                            src="https://demo.themewinter.com/wp/buildbench/wp-content/uploads/2019/03/pdf_img.png"
-                            class="attachment-thumbnail size-thumbnail" alt="" loading="lazy"></a></figure>
-                Download coupon -->
-                    
+                    <div *ngIf="offer.personsNumber != offer.limitedNumber">
+                        <img src="../../../../assets/Images/downloadCoupon.png" style="height:150px;"
+                            (click)="getCoupon()"/>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="right">
             <div class="item">
-                <h5>
-                    <fa-icon [icon]="faLocationDot" style="color: #1fb79b;"></fa-icon>
+                <h6>
+                    <fa-icon [icon]="faLocationDot" class="fa-icon"></fa-icon>
                     Address
-                </h5>
-                <div align="center">{{offer.address}}</div>
+                </h6>
+                <div class="label" align="center">{{offer.address}}</div>
             </div>
             <div class="item">
-                <h5>
-                    <fa-icon [icon]="faRectangleList" style="color: #1fb79b;"></fa-icon> Category
-                </h5>
-                {{offer.category}}
+                <h6>
+                    <fa-icon [icon]="faRectangleList" class="fa-icon"></fa-icon> Category
+                </h6>
+                <div class="label" align="center">{{offer.category}}</div>
             </div>
             <div class="item">
-                <h5>
-                    <fa-icon [icon]="faCalendar" style="color: #1fb79b;"></fa-icon> Expiration Date
-                </h5>
-                <div>{{offer.dateExp}}</div>
+                <h6>
+                    <fa-icon [icon]="faCalendar" class="fa-icon"></fa-icon> Expiration Date
+                </h6>
+                <div class="label" align="center">{{offer.dateExp}}</div>
             </div>
             <div class="item">
-                <h5>
-                    <fa-icon [icon]="faUserLock" style="color: #1fb79b;"></fa-icon> Limited Number
-                </h5>
-                <div>{{offer.limitedNumber}}</div>
+                <h6>
+                    <fa-icon [icon]="faUserLock" class="fa-icon"></fa-icon> Limited Number
+                </h6>
+                <div class="label" align="center">{{offer.limitedNumber}} persons</div>
             </div>
             <div class="item">
-                <h5>
-                    <fa-icon [icon]="faUser" style="color: #1fb79b;"></fa-icon> Persons Number
-                </h5>
-                <div>{{offer.personsNumber}}</div>
+                <h6>
+                    <fa-icon [icon]="faUser" class="fa-icon"></fa-icon> Persons Number
+                </h6>
+                <div class="label" align="center">{{offer.personsNumber}} persons</div>
             </div>
             <div class="item">
-                <h5>
-                    <fa-icon [icon]="faCoins" style="color: #1fb79b;"></fa-icon> Point
-                </h5>
-                <div>{{offer.point}}</div>
+                <h6>
+                    <fa-icon [icon]="faCoins" class="fa-icon"></fa-icon> Points
+                </h6>
+                <div class="label" align="center">{{offer.point}} point</div>
             </div>
         </div>
-
     </div>
     <br>
     <!-- Coupon Offer -->
@@ -118,7 +107,7 @@
             </ng-template>
         </owl-carousel-o>
     </div>
-
+    
 
     <!--owl-carousel-o [options]="customOptions">
         <ng-container *ngFor="let slide of similarOffers">

@@ -35,14 +35,12 @@ button:hover {
   color: #111;
 }
 
-/* From uiverse.io by @nikk7007 */
-
-
+/* Image */
 .top_part {
   width: 100%;
   height: 450px;
   background-color: #eee;
-  background-image: url("../../../../assets/Images/reclamation.jpg");
+  background-image: url("../../../../assets/Images/offree.jpg");
   background-position: center;
   position: relative;
 }
@@ -51,8 +49,6 @@ button:hover {
   position: sticky !important;
   width: 100%;
   height: 100%;
-
-  background-color: rgba(0,0,0,0.6);
   z-index: 2;
 
 }
@@ -66,7 +62,7 @@ button:hover {
     box-shadow: 0 -1px 4px 0 rgb(26 26 26 / 8%), 0 4px 8px 0 rgb(26 26 26 / 12%);
     right: 300px;
     padding: 30px;
-    z-index: 99;
+    z-index: 10;
     border-radius: 5px;
 }
 
