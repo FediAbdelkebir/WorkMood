@@ -3,7 +3,6 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { User } from '../BackEnd/Models/user';
 import { Badge } from '../Models/badge';
 const headers = new HttpHeaders()
      .set('Content-Type', 'application/json;charset=UTF-8')  

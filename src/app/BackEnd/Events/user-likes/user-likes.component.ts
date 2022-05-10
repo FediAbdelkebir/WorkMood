@@ -1,23 +1,23 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/Models/user';
-import { BadgesService } from 'src/app/Services/badges.service';
+import { EvenementService } from 'src/app/Services/evenement.service';
 import Swal from 'sweetalert2';
-
 @Component({
-  selector: 'app-user-badges',
-  templateUrl: './user-badges.component.html',
-  styleUrls: ['./user-badges.component.css']
+  selector: 'app-user-likes',
+  templateUrl: './user-likes.component.html',
+  styleUrls: ['./user-likes.component.css']
 })
-export class UserBadgesComponent implements OnInit {
+export class UserLikesComponent implements OnInit {
 
+ 
   filterTerm:any;
   listusers!:User[];
   iduser=1;
   showLoader = true;
-  constructor(private bs:BadgesService) { }
+  constructor(private es:EvenementService) { }
 
   ngOnInit(): void {
-    this.bs.FindAllUsers().subscribe(
+    this.es.FindAllUsers().subscribe(
       (data)=>{
         this.showLoader=false;
         const Toast = Swal.mixin({
@@ -48,5 +48,4 @@ console.log(data)
       }
     )
   }
-
 }

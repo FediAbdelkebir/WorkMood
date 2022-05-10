@@ -17,9 +17,11 @@ export class EvenementsComponent implements OnInit {
   listevenements!:Event[];
   iduser=1;
   showLoader = true;
-  ngOnInit(): void {
-   
-    this.es.FindAllEvenements().subscribe(
+  public async ngOnInit(): Promise<void> {
+   this.FindAll()
+  }
+  async FindAll(){
+    await this.es.FindAllEvenements().subscribe(
       (data)=>{
         this.showLoader=false;
         const Toast = Swal.mixin({
@@ -126,10 +128,11 @@ console.log(data)
               title: 'Events<strong> Failed </strong>To Join The event',
               icon: 'error'
             })
+            this.ngOnInit();
           }
         )
       
-        this.ngOnInit();
+        
         this.ngOnInit();
       } 
     }
@@ -177,9 +180,9 @@ console.log(data)
               title: 'Events<strong> Failed </strong>To Quit From The Event',
               icon: 'error'
             })
+            this.ngOnInit();
           }
         )
-        this.ngOnInit();
         this.ngOnInit();
       } 
     }
@@ -226,9 +229,9 @@ console.log(data)
               title: 'Events<strong> Failed </strong>To Like Event',
               icon: 'error'
             })
+            this.ngOnInit();
           }
         )
-      this.ngOnInit();
       this.ngOnInit();
       } 
     }
@@ -276,9 +279,9 @@ console.log(data)
               title: 'Events<strong> Failed </strong>To Dislike Event',
               icon: 'error'
             })
+            this.ngOnInit();
           }
         )
-        this.ngOnInit();
         this.ngOnInit();
       } 
       

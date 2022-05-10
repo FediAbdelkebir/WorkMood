@@ -8,9 +8,11 @@ import { UpdateBadgesComponent } from './BackEnd/badges/update-badges/update-bad
 import { UserBadgesComponent } from './BackEnd/badges/user-badges/user-badges.component';
 import { AddEventComponent } from './BackEnd/Events/add-event/add-event.component';
 import { ShowUsersEventsComponent } from './BackEnd/Events/show-users-events/show-users-events.component';
+import { ShowUsersLikesComponent } from './BackEnd/Events/show-users-likes/show-users-likes.component';
 import { StatsEventsComponent } from './BackEnd/Events/stats-events/stats-events.component';
 import { UpdateeventComponent } from './BackEnd/Events/updateevent/updateevent.component';
 import { UpdateeventlistComponent } from './BackEnd/Events/updateeventlist/updateeventlist.component';
+import { UserLikesComponent } from './BackEnd/Events/user-likes/user-likes.component';
 import { UsersEventsComponent } from './BackEnd/Events/users-events/users-events.component';
 import { StatsGlobalComponent } from './BackEnd/stats-global/stats-global.component';
 import { HomeComponent } from './Components/home/home.component';
@@ -72,11 +74,19 @@ const routes: Routes = [
   {
     path:'Dashboard/ShowUserEvents/:id',
       component:ShowUsersEventsComponent
+  },
+  {
+    path:'Dashboard/ShowUserLikes/:id',
+      component:ShowUsersLikesComponent
   }
   ,
   {
     path:'Dashboard/UserEvents',
       component:UsersEventsComponent
+  },
+  {
+    path:'Dashboard/UserLikes',
+      component:UserLikesComponent
   },
     {path: 'Dashboard/**', redirectTo: '404NotFound'}
 
