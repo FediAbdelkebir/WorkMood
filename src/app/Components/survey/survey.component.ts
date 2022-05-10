@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Answer } from 'src/app/Models/answer';
+import { SurveyAnswer } from 'src/app/Models/survey-answer';
 import { SurveyQuestion } from 'src/app/Models/survey-question';
+import { AnswerService } from 'src/app/Services/answer.service';
 import { SurveyService } from 'src/app/Services/survey.service';
 
 
@@ -14,11 +17,24 @@ export class SurveyComponent implements OnInit {
 
   SurveyQuestion !: SurveyQuestion[];
   
+  idServQuest : any;
+  content : any
+  dateExp : any
+  idd!:any;
+  idreponse!:any;
+  SurveyAnswer !: SurveyAnswer[];
+  AnswerEnum: any = Answer;
+  keys: string[] = [];
+  selected!:  Answer;
 
-  constructor(private ms : SurveyService, private router: Router) { }
+  selectedOption: any;
+  
+
+  constructor(private ms : SurveyService,private router: Router) { }
 
   ngOnInit(): void {
    this.getList();
+   
    
 
   }
@@ -45,3 +61,4 @@ export class SurveyComponent implements OnInit {
   }
   
 }
+

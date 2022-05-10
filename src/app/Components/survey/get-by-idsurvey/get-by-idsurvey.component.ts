@@ -30,9 +30,8 @@ export class GetByIdsurveyComponent implements OnInit {
   constructor(private ms : SurveyService,private mm : AnswerService, private router: Router,private activate: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.keys = Object.keys(this.AnswerEnum);
+    
     this.getById();
-    // this.getreponseById();
     this.getList();
    
   }
@@ -61,21 +60,7 @@ export class GetByIdsurveyComponent implements OnInit {
      );
      
    }
-  //  getreponseById(){
-     
-  //   this.AnswerEnum = this.selected;
-    
-  //   this.idreponse=this.activate.snapshot.params['id']
   
-    
-  //   this.ms.getAnswerById(this.idreponse).subscribe(
-  //     (d)=>{
-  //       console.log(this.idreponse);
-  //       this.SurveyAnswer=d;
-  //     }
-  //   );
-  // }
-
   ajouterReponse(f: SurveyQuestion){
   
   console.log(f);

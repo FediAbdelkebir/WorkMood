@@ -46,6 +46,7 @@ import { AddchoiceCompanyorEmployeeComponent } from './Components/review/addchoi
 import { ListaddEmplorcompanyComponent } from './Components/review/listadd-emplorcompany/listadd-emplorcompany.component';
 import { AddreponseComponent } from './Components/survey/addreponse/addreponse.component';
 import { AnswerSurveyComponent } from './Components/answer-survey/answer-survey.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 
@@ -132,7 +133,8 @@ import { AnswerSurveyComponent } from './Components/answer-survey/answer-survey.
           },
         {path: '**', redirectTo: '404NotFound'}
     ]),
-    FontAwesomeModule
+    FontAwesomeModule,
+    NgbModule
   ],
   providers: [DatePipe],
   bootstrap: [AppComponent]

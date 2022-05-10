@@ -1,23 +1,126 @@
-
+<!-- 
 
 
 id: {{idServQuest}}<br>
 content: {{content}} <br>
 dateExp: {{dateExp}} <br>
-<!-- Answer: {{SurveyQuestion.surveyAnswer}} -->
-Answer:
-<!-- <select class="form-control" placeholder="TypeReview" id="key3" name="key3"  [(ngModel)]="selected" >
-                                                        
-    <option *ngFor="let key of keys" [value]="key" >      
-        {{AnswerEnum[key]}} 
-    </option>
-</select>  -->
+
 <div  >
     <select class="box"  [(ngModel)]="selectedOption" >
       <option *ngFor="let m of SurveyAnswer" value={{m.id}} >{{m.answer}} {{m.id}} </option>
     </select>
-    <button (click)="test()">Click me</button>
+    
 </div>
 
 
-<button class="btn btn-outline-warning mr-2" (click)="ajouterReponse(SurveyQuestion)" >Ajouter</button>
+<button class="btn btn-outline-warning mr-2" (click)="ajouterReponse(SurveyQuestion)" >Ajouter</button> -->
+
+
+
+<!-- Tabda mn hneee  -->
+
+<app-head></app-head>
+<app-header></app-header>
+<br><br><br>
+
+
+
+
+
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>Contact Form 03</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	<!-- <link rel="stylesheet" href="css/style.css"> -->
+
+	</head>
+	<body>
+	<section class="ftco-section">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-6 text-center mb-5">
+					<h2 class="heading-section">Complete the Task to answer the question! </h2>
+				</div>
+			</div>
+			<div class="row justify-content-center">
+				<div class="col-md-12">
+					<div class="wrapper">
+						
+					
+						<div class="row no-gutters">
+							<div class="col-md-7">
+								<div class="contact-wrap w-100 p-md-5 p-4">
+									
+									
+				      	
+									<form method="POST" id="contactForm" name="contactForm" class="contactForm" #ss="ngForm">
+										<div class="row">
+											<div class="col-md-6">
+												<div class="form-group">
+													<label class="label" for="name"> Question {{idServQuest}}:</label>
+                                                                 
+													<!-- <input type="date" class="form-control"  id="name" name="dateExp" ngModel placeholder="Name"> -->
+												</div>
+											</div>
+                   						
+											<div class="col-md-12">
+												<div class="form-group">
+													<label class="label" for="#">{{content}}</label>
+													<!-- <textarea name="message" class="form-control" id="message" cols="20" rows="2" name="content" ngModel placeholder="fill your question"></textarea> -->
+												</div>
+											</div>
+                                            <div class="col-md-12">
+												<div class="form-group">
+													<label class="label" for="#">Expiration date: &nbsp; {{dateExp}}</label>
+													<!-- <textarea name="message" class="form-control" id="message" cols="20" rows="2" name="content" ngModel placeholder="fill your question"></textarea> -->
+												</div>
+											</div>
+                                            <div class="col-md-12">
+												<div class="form-group" >
+													<label class="label" for="#">Choice Your Answer! </label><br>
+                                                    <select class="form-control"   [(ngModel)]="selectedOption" >
+                                                        <option [disabled]="true" disabled selected>choice one of answers</option>
+                                                        <option *ngFor="let m of SurveyAnswer" value={{m.id}} >{{m.answer}} </option>
+                                                      </select>
+													<!-- <textarea name="message" class="form-control" id="message" cols="20" rows="2" name="content" ngModel placeholder="fill your question"></textarea> -->
+												</div>
+											</div>
+											<div class="col-md-12">
+												<div class="form-group" style="display:flex;justify-content:center;margin-top: 10px ">
+                                                    <input type="submit"  style="margin: 0 auto; " value="Add your Survey " class="btn btn-primary" (click)="ajouterReponse(SurveyQuestion)"/> 
+												
+													<div class="submitting"></div>
+												</div>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+							<div class="col-md-5 d-flex align-items-stretch">
+								<div class="info-wrap w-100 p-5 img" style="background-image: url(../../../../assets/sv.jpg);">
+			          </div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+
+	</body>
+</html>
+
+
+<app-footer></app-footer>
+<app-scripts></app-scripts>
