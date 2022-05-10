@@ -31,7 +31,7 @@
                 <div class="elementor-widget-container" align="center">
                     <div *ngIf="offer.personsNumber != offer.limitedNumber">
                         <img src="../../../../assets/Images/downloadCoupon.png" style="height:150px;"
-                            (click)="getCoupon()"/>
+                            (click)="getCoupon(offer.idOffer)"/>
                     </div>
                 </div>
             </div>

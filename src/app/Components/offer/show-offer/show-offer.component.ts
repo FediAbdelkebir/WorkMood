@@ -70,15 +70,14 @@ export class ShowOfferComponent implements OnInit {
     });
   }
 
-  getCoupon() {
+  getCoupon(id: number) {
     var mediaType = 'application/pdf';
-    console.log('btnnnnnn');
     let idUser = 1;
     this.id = this.activate.snapshot.params['id'];
-    this.s.getCoupon().subscribe(
+    this.s.getCoupon(idUser,id).subscribe(
       (response) => {
         var blob = new Blob([response], { type: mediaType });
-        saveAs(blob, 'report.pdf');
+        saveAs(blob, 'Coupon.pdf');
         this.router.navigate(['Offers']);
       },
       (e) => {
