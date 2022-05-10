@@ -56,6 +56,7 @@ import { UsersEventsComponent } from './BackEnd/Events/users-events/users-events
 import { ShowUsersEventsComponent } from './BackEnd/Events/show-users-events/show-users-events.component';
 import { UserLikesComponent } from './BackEnd/Events/user-likes/user-likes.component';
 import { ShowUsersLikesComponent } from './BackEnd/Events/show-users-likes/show-users-likes.component';
+import { SendRewardsComponent } from './BackEnd/Events/send-rewards/send-rewards.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -109,7 +110,8 @@ import { ShowUsersLikesComponent } from './BackEnd/Events/show-users-likes/show-
     UsersEventsComponent,
     ShowUsersEventsComponent,
     UserLikesComponent,
-    ShowUsersLikesComponent
+    ShowUsersLikesComponent,
+    SendRewardsComponent
   ],
   imports: [
     BrowserModule,

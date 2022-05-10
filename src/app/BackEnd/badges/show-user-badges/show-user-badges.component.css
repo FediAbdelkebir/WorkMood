@@ -250,3 +250,8 @@ button{
     opacity: 0;
   }
 }
+.knowledge-base-bg {
+  background: url(/assets/Images/Evenements/Access.jpg) no-repeat;
+    background-size: auto;
+  background-size: cover;
+}

@@ -7,6 +7,7 @@ import { ShowUserBadgesComponent } from './BackEnd/badges/show-user-badges/show-
 import { UpdateBadgesComponent } from './BackEnd/badges/update-badges/update-badges.component';
 import { UserBadgesComponent } from './BackEnd/badges/user-badges/user-badges.component';
 import { AddEventComponent } from './BackEnd/Events/add-event/add-event.component';
+import { SendRewardsComponent } from './BackEnd/Events/send-rewards/send-rewards.component';
 import { ShowUsersEventsComponent } from './BackEnd/Events/show-users-events/show-users-events.component';
 import { ShowUsersLikesComponent } from './BackEnd/Events/show-users-likes/show-users-likes.component';
 import { StatsEventsComponent } from './BackEnd/Events/stats-events/stats-events.component';
@@ -87,6 +88,10 @@ const routes: Routes = [
   {
     path:'Dashboard/UserLikes',
       component:UserLikesComponent
+  },
+  {
+    path:'Dashboard/SendRewards',
+      component:SendRewardsComponent
   },
     {path: 'Dashboard/**', redirectTo: '404NotFound'}
 
