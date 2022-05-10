@@ -103,9 +103,9 @@
                             </div>
                               <h2 class="ts-post-title"><a href="https://demo.themewinter.com/wp/buildbench/blog/2019/03/21/support-development-for-more-experience-3/">{{x.description}}</a></h2>
                                
-                              <button href="javascript:void(0)" class="btn btn p-3" style="background-color: red; color:white;width:48%;" (click)="QuitEvent(x.id)"> QuitEvent <i class="fa fa-plus"></i> </button>&nbsp;
+                              <button href="javascript:void(0)" class="btn btn-danger p-3" style="background-color: red; color:white;width:48%;" (click)="QuitEvent(x.id)"> QuitEvent <i class="fa fa-minus"></i> </button>&nbsp;
                               <button href="javascript:void(0)" class="btn btn"style="background-color: #21aea6; color:white;width:48%" (click)="LikeEvent(x.id)" *ngIf="!checknolike(x)" name="{{x.id}}"> Like <i class="fa fa-heart"></i> </button>
-                              <button href="javascript:void(0)" class="btn btn"style="background-color: red; color:white;width:48%" (click)="DisLikeEvent(x.id)" *ngIf="checknolike(x)" name="{{x.title}}"> DisLike <i class="fa fa-heart"></i> </button>
+                              <button href="javascript:void(0)" class="btn btn-danger p-3"style="background-color: red; color:white;width:48%" (click)="DisLikeEvent(x.id)" *ngIf="checknolike(x)" name="{{x.title}}"> DisLike <i class="fa fa-thumbs-down"></i> </button>
                               <button href="javascript:void(0)" class="btn btn"style="background-color: #193962; color:white;width:100%" [routerLink]="['/EventDetails',x.id]"> Details <i class="fa fa-list"></i> </button>
                               
                            </div>
