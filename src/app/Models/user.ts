@@ -31,7 +31,7 @@ export class User {
     reclamations!:Reclamation[];
     events!:Event[];
     LikedEvent!:Event[];
-    AcquiredBadges!:Badge[];
+    acquiredBadges!:Badge[];
     Comments!:Comments[];
     likeArticle!:LikeArticle[];
 }

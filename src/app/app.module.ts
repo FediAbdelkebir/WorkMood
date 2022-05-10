@@ -57,6 +57,7 @@ import { ShowUsersEventsComponent } from './BackEnd/Events/show-users-events/sho
 import { UserLikesComponent } from './BackEnd/Events/user-likes/user-likes.component';
 import { ShowUsersLikesComponent } from './BackEnd/Events/show-users-likes/show-users-likes.component';
 import { SendRewardsComponent } from './BackEnd/Events/send-rewards/send-rewards.component';
+import { BadgesEventComponent } from './Components/badges-event/badges-event.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -111,7 +112,8 @@ import { SendRewardsComponent } from './BackEnd/Events/send-rewards/send-rewards
     ShowUsersEventsComponent,
     UserLikesComponent,
     ShowUsersLikesComponent,
-    SendRewardsComponent
+    SendRewardsComponent,
+    BadgesEventComponent
   ],
   imports: [
     BrowserModule,
@@ -121,40 +123,7 @@ import { SendRewardsComponent } from './BackEnd/Events/send-rewards/send-rewards
     Ng2SearchPipeModule,
     HttpClientModule,
     RouterModule.forRoot([
-      {
-      path:'',
-        component:HomeComponent
-      },{
-      path:'Home',
-      component:HomeComponent, data: { animation: 'isLeft' } 
-      },
-      {
-        path:'AddEvent',
-          component:AddevenementComponent, data: { animation: 'isRight' } 
-        }
-        ,
-        {
-          path:'404NotFound',
-            component:PagenotfoundComponent
-          },
-          
-      {
-        path:'Evenements',
-          component:EvenementsComponent, data: { animation: 'isRight' } 
-        },
-        {
-          path:'EventDetails/:id',
-            component:EvenementdetailsComponent, data: { animation: 'isRight' } 
-          },
-        {
-          path:'JoinedEvents',
-            component:JoinedeventsComponent, data: { animation: 'isRight' } 
-          },
-        {
-          path:'LikedEvents',
-            component:LikedeventsComponent, data: { animation: 'isRight' } 
-          },
-        {path: '**', redirectTo: '404NotFound'}
+     
     ])
   ],
   providers: [DatePipe],

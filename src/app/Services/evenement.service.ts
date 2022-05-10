@@ -37,7 +37,7 @@ export class EvenementService {
     return this.http.get("http://localhost:8089/work-mood/get-all-users")
   }
   FindUserById(userid: any) {
-    return this.http.get("http://localhost:8089/work-mood/get-user/"+userid)
+    return this.http.get<User>("http://localhost:8089/work-mood/get-user/"+userid)
   }
   /*Ajouter Evenement*/
   public save(event: Event) {

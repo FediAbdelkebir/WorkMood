@@ -16,6 +16,12 @@ import { UpdateeventlistComponent } from './BackEnd/Events/updateeventlist/updat
 import { UserLikesComponent } from './BackEnd/Events/user-likes/user-likes.component';
 import { UsersEventsComponent } from './BackEnd/Events/users-events/users-events.component';
 import { StatsGlobalComponent } from './BackEnd/stats-global/stats-global.component';
+import { BadgesEventComponent } from './Components/badges-event/badges-event.component';
+import { AddevenementComponent } from './Components/Evenements/addevenement/addevenement.component';
+import { EvenementdetailsComponent } from './Components/Evenements/evenementdetails/evenementdetails.component';
+import { EvenementsComponent } from './Components/Evenements/evenements/evenements.component';
+import { JoinedeventsComponent } from './Components/Evenements/joinedevents/joinedevents.component';
+import { LikedeventsComponent } from './Components/Evenements/likedevents/likedevents.component';
 import { HomeComponent } from './Components/home/home.component';
 import { PagenotfoundComponent } from './Components/pagenotfound/pagenotfound.component';
 const routes: Routes = [
@@ -93,6 +99,45 @@ const routes: Routes = [
     path:'Dashboard/SendRewards',
       component:SendRewardsComponent
   },
+  {
+    path:'',
+      component:HomeComponent
+    },
+    {
+    path:'Home',
+    component:HomeComponent, data: { animation: 'isLeft' } 
+    },
+    {
+    path:'Badges',
+    component:BadgesEventComponent, data: { animation: 'isLeft' } 
+    },
+    {
+      path:'AddEvent',
+        component:AddevenementComponent, data: { animation: 'isRight' } 
+      }
+      ,
+      {
+        path:'404NotFound',
+          component:PagenotfoundComponent
+        },
+        
+    {
+      path:'Evenements',
+        component:EvenementsComponent, data: { animation: 'isRight' } 
+      },
+      {
+        path:'EventDetails/:id',
+          component:EvenementdetailsComponent, data: { animation: 'isRight' } 
+        },
+      {
+        path:'JoinedEvents',
+          component:JoinedeventsComponent, data: { animation: 'isRight' } 
+        },
+      {
+        path:'LikedEvents',
+          component:LikedeventsComponent, data: { animation: 'isRight' } 
+        },
+      {path: '**', redirectTo: '404NotFound'},
     {path: 'Dashboard/**', redirectTo: '404NotFound'}
 
 ];
