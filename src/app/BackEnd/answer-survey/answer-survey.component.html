@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Titre du document</title>
+    <style>
+      .box {
+        width: 120px;
+        height: 30px;
+        border: 1px solid #999;
+        font-size: 18px;
+        color: #21aba5;
+        background-color: #eee;
+        border-radius: 5px;
+        box-shadow: 4px 4px #ccc;
+      }
+    </style>
+  </head>
+  <body>
+    <div  >
+    <select class="box" >
+      <option *ngFor="let m of SurveyAnswer"  >{{m.answer}} </option>
+      
+    </select>
+</div>
+  </body>
+</html>

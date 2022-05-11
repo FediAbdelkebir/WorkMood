@@ -161,54 +161,27 @@
         </li>
             </ul>
         </li>
-        <li class=" navigation-header"><span>Reviews Management</span>
-        </li>
-        <li class=" nav-item"><a href="javascript:void(0);"><i class="feather icon-list"></i><span class="menu-title" data-i18n="Charts">CRUD E</span><span class="badge badge badge-pill badge-success float-right mr-2">List</span></a>
-            <ul class="menu-content">
-                <li><a href="chart-apex.html"><i class="feather icon-plus-circle"></i><span class="menu-item" data-i18n="Apex">Add Review E</span></a>
-                </li>
-                <li><a href="javascript(void);"><i class="feather icon-refresh-ccw"></i><span class="menu-item" data-i18n="Chartjs">Update Review E</span></a>
-                </li>
-                <li><a href="javascript(void);"><i class="feather icon-trash"></i><span class="menu-item" data-i18n="Echarts">Delete Review E</span></a>
-                </li>
-            </ul>
-        </li>
-        <li class=" nav-item"><a href="javascript:void(0);"><i class="feather icon-list"></i><span class="menu-title" data-i18n="Charts">CRUD C</span><span class="badge badge badge-pill badge-success float-right mr-2">List</span></a>
-            <ul class="menu-content">
-                <li><a href="chart-apex.html"><i class="feather icon-plus-circle"></i><span class="menu-item" data-i18n="Apex">Add Review C</span></a>
-                </li>
-                <li><a href="javascript(void);"><i class="feather icon-refresh-ccw"></i><span class="menu-item" data-i18n="Chartjs">Update Review C</span></a>
-                </li>
-                <li><a href="javascript(void);"><i class="feather icon-trash"></i><span class="menu-item" data-i18n="Echarts">Delete Review C</span></a>
-                </li>
-            </ul>
-        </li>
-        <li class=" nav-item"><a href="javascript:void(0);"><i class="feather icon-settings"></i><span class="menu-title" data-i18n="Charts">Features</span><span class="badge badge badge-pill badge-warning float-right mr-2">Hot</span></a>
-        <ul class="menu-content">     
-        <li class=" nav-item"><a href="chart-apex.html"><i class="feather icon-plus-square"></i><span class="menu-item" data-i18n="Apex">Add Review and Affect E </span></a>
-        </li>
-        <li class=" nav-item"><a href="chart-apex.html"><i class="feather icon-plus-square"></i><span class="menu-item" data-i18n="Apex">Add Review and Affect C  </span></a>
-        </li>
-            </ul>
-        </li>
         <li class=" navigation-header"><span>Surveys Management</span>
         </li>
-        <li class=" nav-item"><a href="javascript:void(0);"><i class="feather icon-list"></i><span class="menu-title" data-i18n="Charts">CRUD</span><span class="badge badge badge-pill badge-success float-right mr-2">List</span></a>
-            <ul class="menu-content">
-                <li><a href="chart-apex.html"><i class="feather icon-plus-circle"></i><span class="menu-item" data-i18n="Apex">Add Survey</span></a>
-                </li>
-                <li><a href="javascript(void);"><i class="feather icon-refresh-ccw"></i><span class="menu-item" data-i18n="Chartjs">Update Survey</span></a>
-                </li>
-                <li><a href="javascript(void);"><i class="feather icon-trash"></i><span class="menu-item" data-i18n="Echarts">Delete Survey</span></a>
-                </li>
+        <li class=" nav-item" [routerLink]="['/Dashboard/addsurvey']"><a href="javascript:void(0);"><i class="feather icon-list"></i><span class="menu-title" data-i18n="Charts"> Add Survey</span><span class="badge badge badge-pill badge-success float-right mr-2">List</span></a>
+            <ul class="menu-content">   
             </ul>
         </li>
-        <li class=" nav-item"><a href="javascript:void(0);"><i class="feather icon-settings"></i><span class="menu-title" data-i18n="Charts">Features</span><span class="badge badge badge-pill badge-warning float-right mr-2">Hot</span></a>
-            <ul class="menu-content">     
-                <li class=" nav-item"><a href="form-wizard.html"><i class="feather icon-plus-square"></i><span class="menu-title" data-i18n="Form Wizard">Add User Response to Question</span></a>
-                </li>
-                </ul>
-            </li>
+        <li class=" nav-item" [routerLink]="['/Dashboard/affichesurvey']"><a href="javascript:void(0);"><i class="feather icon-list"></i><span class="menu-title" data-i18n="Charts"> Afficher Survey</span><span class="badge badge badge-pill badge-success float-right mr-2">List</span></a>
+            <ul class="menu-content">   
+            </ul>
+        </li>
+        <li class=" navigation-header"><span>Reviews Management</span>
+        </li>
+        <li class=" nav-item" [routerLink]="['/Dashboard/afficherreview']"><a href="javascript:void(0);"><i class="feather icon-list"></i><span class="menu-title" data-i18n="Charts"> AfficheReview</span><span class="badge badge badge-pill badge-success float-right mr-2">List</span></a>
+            <ul class="menu-content">   
+            </ul>
+        </li>
+
+        
+        
+        
+        
         
         
     </ul>

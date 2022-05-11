@@ -1,0 +1,132 @@
+<app-head></app-head>
+<app-header></app-header>
+<!-- tabda mn hneeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee -->
+
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+
+
+
+    <!-- CUSTOM STYLE -->
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,700,900&amp;subset=latin-ext"
+        rel="stylesheet">
+    <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+</head>
+
+<body class="size-1280">
+
+
+    <!-- MAIN -->
+    <main role="main">
+        <!-- Header -->
+        <header class="section-top-padding background-image text-center"
+            style="background-image:url(../../../assets/zz.jpg)">
+            <h1
+                class="text-extra-thin text-white text-s-size-30 text-m-size-40 text-size-50 text-line-height-1 margin-bottom-40 margin-top-130">
+                Save your Time and Keep Calm
+            </h1>
+            <!-- Image -->
+            <!-- <img class="margin-top-20 center" src="img/app.png" alt=""> -->
+
+
+        </header>
+
+
+
+        <!-- Section 2 -->
+
+        <section class="section-top-padding background-white">
+            <div class="line text-center">
+                <i class="icon-sli-heart text-primary text-size-40 " style="color: #21ABA5;"></i>
+                <h2 class="text-dark text-size-50 text-m-size-40">Survey <b>Question</b></h2>
+                <hr class="break background-primary break-small break-center margin-bottom-50">
+            </div>
+            <div style="display:flex;flex-direction: row;">
+
+                <div class="line">
+                    <div class="margin2x" *ngFor="let m of SurveyQuestion">
+                        <div class="s-12 m-6 l-4 margin-bottom-60">
+                            <div class="float-left">
+                                <i class="icon-sli-layers text-primary text-size-40 text-line-height-1"></i>
+
+                            </div>
+                            <div class="margin-left-60">
+                                <h3 class="text-strong text-size-20 text-line-height-1 margin-bottom-20">Question:</h3>
+                                <p style="font-size: x-large;margin-bottom: 10px;"> {{m.content}} <br></p>
+                                <p style="font-size: -large;">NB:</p>
+                                <p> question will be removed in this date if
+                                    you are interessed please answer before that : <br>
+                                    {{m.dateExp}}</p>
+                                <a class="text-more-info text-primary" style="color: #21ABA5;"  data-toggle="modal"
+                                    data-target="#exampleModal" >ajouterReponse </a>
+                                   
+                            </div>
+                            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog" role="document" style="margin: 19.75rem auto;">
+                                            <div class="modal-content">
+                                                <h1>Status = </h1>
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">
+                                                        Response of reclamation
+                                                    </h5>
+                                                    <button type="button" class="close" data-dismiss="modal"
+                                                        aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div  align="right">
+                                                    
+                                                </div>
+                                                <div class="modal-body">
+                                                    response
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary"
+                                                        data-dismiss="modal">Close</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+
+
+                    
+
+            </div>
+        
+            
+
+        </section>
+
+
+
+
+
+
+
+
+
+
+    </main>
+
+
+    <script type="text/javascript" src="js/responsee.js"></script>
+    <script type="text/javascript" src="owl-carousel/owl.carousel.js"></script>
+    <script type="text/javascript" src="js/template-scripts.js"></script>
+</body>
+
+</html>
+<app-footer></app-footer>
+<app-scripts></app-scripts>

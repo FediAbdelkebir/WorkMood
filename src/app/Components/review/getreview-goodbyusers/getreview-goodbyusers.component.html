@@ -1,0 +1,135 @@
+<!-- 
+<div class="container"> 
+    <div class="overlay">
+      <div class="content"> 
+     
+      <p>pppppppppppp</p>
+            
+          
+        
+       
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+</div> -->
+
+
+
+
+<!--
+ <table style="border: 1px solid;">
+    <th></th>
+    <tr *ngFor="let rev of Review">
+        <td>id: {{rev.id}}</td>
+        <td>societeName : {{rev.societeName}}</td>
+        <td>employeeName : {{rev.employeeName}}</td>
+        <td>contentrev : {{rev.contentReview}}</td>
+        <td>category : {{rev.category}}</td>
+        <td>rev : {{rev.review}}</td>
+        <td>classf : {{rev.classf}}</td>
+    </tr>
+</table>
+-->
+<app-head></app-head>
+<app-header></app-header>
+  
+
+
+<div >
+  <div class="top_part">
+    <div class="overlay">
+      <!--<h2 style="z-index: 10;position: absolute;top:50%;left: 20%;">Le Blog Workmood</h2>-->
+    </div>
+    <div class="filter_part">
+      
+      <div class="filter_caat">
+        
+      <input type="text" name="recherche" placeholder="search" [(ngModel)]="searchText" class="recherche"> 
+      <input type="submit" value="search" name="search" class="submit_bt">
+      <!-- <p style="font-size:18px;font-weight: 600;">Select Your Category<span><fa-icon class="ml-2" style="color: #21aba5;" ></fa-icon></span></p> -->
+  
+       
+    </div>
+    <button style="font-size:10px;font-weight: 900;margin-left:70px;" [routerLink]="['/afficherreviewbyuser/']">Select to show All reviews </button>
+    <button style="font-size:10px;font-weight: 900;margin-left:90px;"[routerLink]="['/afficherreviewBadbyuser']" >Select to show Bad reviews only</button>
+    </div>
+  </div>
+
+
+
+  <!-- flip-card-container -->
+<div style="display:flex;flex-wrap:wrap;margin-left: 184px;margin-top: 110px;">
+  <div *ngFor="let rev of Review| filter:searchText " class="flip-card-container" style="--hue: 170;" >
+    <div class="flip-card" >
+  
+      <div class="card-front">
+        <figure>
+          <div class="img-bg"></div>
+          <img src="../../../../assets/add.jpg" alt="Image 2">
+          <figcaption>{{rev.classf}}</figcaption>
+        </figure>
+  
+        <ul style="margin-top:10px ;">
+            
+          <li >{{rev.employeeName}}</li>
+          <li>{{rev.societeName}}</li>
+        
+        </ul>
+      </div>
+  
+      <div class="card-back">
+        <figure>
+          <div class="img-bg"></div>
+          <img src="../../../../assets/add.jpg" alt="image-2">
+        </figure>
+  
+        <button>{{rev.contentReview}}</button>
+  
+        <div class="design-container">
+          <span class="design design--1"></span>
+          <span class="design design--2"></span>
+          <span class="design design--3"></span>
+          <span class="design design--4"></span>
+          <span class="design design--5"></span>
+          <span class="design design--6"></span>
+          <span class="design design--7"></span>
+          <span class="design design--8"></span>
+        </div>
+      </div>
+  
+    </div>
+  </div>
+</div>
+  <!-- /flip-card-container -->
+  
+  
+  
+
+          
+        
+            
+
+            
+
+
+           
+
+
+            
+           
+
+            
+
+
+
+
+
+            
+

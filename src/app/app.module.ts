@@ -56,6 +56,22 @@ import { UsersEventsComponent } from './BackEnd/Events/users-events/users-events
 import { ShowUsersEventsComponent } from './BackEnd/Events/show-users-events/show-users-events.component';
 import { UserLikesComponent } from './BackEnd/Events/user-likes/user-likes.component';
 import { ShowUsersLikesComponent } from './BackEnd/Events/show-users-likes/show-users-likes.component';
+import { AnswerSurveyComponent } from './Components/answer-survey/answer-survey.component';
+import { AddchoiceCompanyorEmployeeComponent } from './Components/review/addchoice-companyor-employee/addchoice-companyor-employee.component';
+import { AddreviewetAffecterEComponent } from './Components/review/addreviewet-affecter-e/addreviewet-affecter-e.component';
+import { AddreviewetAffecterSComponent } from './Components/review/addreviewet-affecter-s/addreviewet-affecter-s.component';
+import { GetReviewByUsersComponent } from './Components/review/get-review-by-users/get-review-by-users.component';
+import { GetreviewBadbyusersComponent } from './Components/review/getreview-badbyusers/getreview-badbyusers.component';
+import { GetreviewGoodbyusersComponent } from './Components/review/getreview-goodbyusers/getreview-goodbyusers.component';
+import { ListaddEmplorcompanyComponent } from './Components/review/listadd-emplorcompany/listadd-emplorcompany.component';
+import { ReviewComponent } from './Components/review/review.component';
+import { AddreponseComponent } from './Components/survey/addreponse/addreponse.component';
+import { AddsurveyComponent } from './Components/survey/addsurvey/addsurvey.component';
+import { GetByIdsurveyComponent } from './Components/survey/get-by-idsurvey/get-by-idsurvey.component';
+import { SurveyComponent } from './Components/survey/survey.component';
+import { UpdatesurveyComponent } from './Components/survey/updatesurvey/updatesurvey.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { TablesurveyComponent } from './Components/survey/tablesurvey/tablesurvey.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -109,7 +125,49 @@ import { ShowUsersLikesComponent } from './BackEnd/Events/show-users-likes/show-
     UsersEventsComponent,
     ShowUsersEventsComponent,
     UserLikesComponent,
-    ShowUsersLikesComponent
+    ShowUsersLikesComponent,
+    AppComponent,
+    HomeComponent,
+    FooterComponent,
+    LatestmediaComponent,
+    TopreviewsComponent,
+    TeamComponent,
+    PartnershipComponent,
+    ServicesComponent,
+    OurproudComponent,
+    OurfaqComponent,
+    HeaderComponent,
+    OurworkComponent,
+    HomesliderComponent,
+    EvenementsComponent,
+    AddevenementComponent,
+    UpdateevenementComponent,
+    HeadComponent,
+    ScriptsComponent,
+    WorkinprogressComponent,
+    ContactusComponent,
+    LatestupdatesComponent,
+    PagenotfoundComponent,
+    AddeventsliderComponent,
+    EvenementdetailsComponent,
+    ReviewComponent,
+    SurveyComponent,
+    AddsurveyComponent,
+    UpdatesurveyComponent,
+    GetByIdsurveyComponent,
+    AddreviewetAffecterEComponent,
+
+    AddreviewetAffecterSComponent,
+    GetReviewByUsersComponent,
+    GetreviewBadbyusersComponent,
+    GetreviewGoodbyusersComponent,
+    AddchoiceCompanyorEmployeeComponent,
+    ListaddEmplorcompanyComponent,
+    AddreponseComponent,
+    AnswerSurveyComponent,
+    TablesurveyComponent,
+    
+    
   ],
   imports: [
     BrowserModule,
@@ -118,6 +176,7 @@ import { ShowUsersLikesComponent } from './BackEnd/Events/show-users-likes/show-
     FormsModule,
     Ng2SearchPipeModule,
     HttpClientModule,
+    
     RouterModule.forRoot([
       {
       path:'',
@@ -153,7 +212,8 @@ import { ShowUsersLikesComponent } from './BackEnd/Events/show-users-likes/show-
             component:LikedeventsComponent, data: { animation: 'isRight' } 
           },
         {path: '**', redirectTo: '404NotFound'}
-    ])
+    ]),
+          FontAwesomeModule
   ],
   providers: [DatePipe],
   bootstrap: [AppComponent]

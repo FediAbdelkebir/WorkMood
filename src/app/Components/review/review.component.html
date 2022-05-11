@@ -1,0 +1,82 @@
+
+
+
+
+
+
+<!-- <button class="btn btn-outline-warning mr-2" [routerLink]="['/addsurvey']" >Ajouter</button> -->
+<app-nav></app-nav>
+<h2>Review Table </h2>
+<div >
+    <div class="top_part">
+      <div class="filter_part">
+        
+        <div class="filter_caat">
+          
+        
+        <input type="text" name="recherche" placeholder="search" [(ngModel)]="searchText" class="recherche"> 
+        <input type="submit" value="search" name="search" class="submit_bt">
+        <!-- <p style="font-size:18px;font-weight: 600;">Select Your Category<span><fa-icon class="ml-2" style="color: #21aba5;" ></fa-icon></span></p> -->
+    
+         
+      </div>
+      <select  style="font-size:10px;font-weight: 900;margin-left:70px;" id="key" name="key" [(ngModel)]="category" (change)="onChange()">
+        <option value='' disabled selected>Category</option>
+        <option *ngFor="let key of keys" [value]="key" (click)="getByCategory(category)" > 
+            {{categoryReviewEnum[key]}} 
+        </option>
+    </select>
+      <!-- <button style="font-size:10px;font-weight: 900;margin-left:70px;" [routerLink]="['/afficherreviewGoodbyuser']" >Select to show Good reviews only</button> -->
+      <button style="font-size:10px;font-weight: 900;margin-left:90px;" [routerLink]="['/afficherreviewBadbyuser']" >Select to show Bad reviews only</button>
+      </div>
+    </div>
+
+<div class="table-wrapper">
+<table class="fl-table" >
+    <thead >
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">SocieteName</th>
+          <th scope="col">EmployeeName</th>
+          <th scope="col">ContentReview</th>
+          <th scope="col">category</th>
+          <th scope="col">review</th>
+          <th scope="col">classf</th>
+          <th>Delete</th>
+          
+        </tr>
+      </thead>
+<tbody>
+<tr *ngFor="let r of Review | filter:searchText">
+        
+    <td>
+        {{r.id}}
+    </td>
+    <td> 
+        {{r.societeName}}
+    </td>
+    <td>
+        {{r.employeeName}}
+    </td>
+    <td>
+        {{r.contentReview}}
+    </td>
+    <td>
+        {{r.category}}
+    </td>
+    <td>
+        {{r.review}}
+    </td>
+    <td>
+        {{r.classf}}
+    </td>
+
+   
+    <td><button class="btn btn-outline-danger mr-2" (click)="deleteReview(r)">Delete </button></td>
+    
+</tr>
+</tbody>
+</table>
+</div>
+<app-dashboardfooter></app-dashboardfooter>
+

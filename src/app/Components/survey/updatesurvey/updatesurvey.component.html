@@ -1,0 +1,11 @@
+<form #s="ngForm">
+
+
+    <label>content:</label>
+    <input type="text" name="content" ngModel [(ngModel)]="SurveyQuestion.content"/>  
+
+    <label>DateExp:</label>
+    <input type="date" name="dateExp" ngModel [(ngModel)]="SurveyQuestion.dateExp"/>
+
+    <input type="submit" value="save" (click)="save(s.value)"/> 
+</form>
