@@ -10,7 +10,7 @@
 
                     <div class="post-media post-image">
                         <img class="img-fluid"
-                            src="https://demo.themewinter.com/wp/buildbench/wp-content/uploads/2019/03/news_full2.jpg"
+                            src="/assets/Images/Evenements/AddEvent/{{event.coverimage}}"
                             alt=" Riding with friend is the best feeling">
                     </div>
 
@@ -20,15 +20,15 @@
                         <header class="entry-header clearfix">
                             <div class="post-meta">
                                 <span class="post-author"><i class="icon icon-user"></i> <a
-                                        href="https://demo.themewinter.com/wp/buildbench/blog/author/wptwuser/">wptwuser</a></span><span
+                                        href="https://demo.themewinter.com/wp/buildbench/blog/author/wptwuser/">{{event.title}}</a></span><span
                                     class="post-meta-date">
                                     <i class="icon icon-clock"></i>
-                                    March 21, 2019</span><span class="meta-categories post-cat">
+                                   {{event.dateStart}}</span><span class="meta-categories post-cat">
                                     <i class="icon icon-folder"></i>
                                     <a href="https://demo.themewinter.com/wp/buildbench/blog/category/building/"
-                                        rel="category tag">Building</a>
+                                        rel="category tag">{{event.eventTags}}</a>
                                 </span> <span class="post-comment"><i class="icon icon-comment"></i><a href="#"
-                                        class="comments-link"></a>0</span>
+                                        class="comments-link"></a>{{event.npDisponible}}</span>
                             </div>
                             <h2 class="entry-title">
                                 Riding with friend is the best feeling </h2>
@@ -60,37 +60,17 @@
 
 
 
-                            <h3>Check your car regularly and stay safe.</h3>
-
-
+                            <h3>{{event.description}}</h3>
 
                             <p>Many families look to the college years for children/grandchildren with mixed emotions
                                 excitement and trepidation. These two words rarely go together, but when it comes to
                                 college, it seems to be a perfect match.This does not surprise us as Bitcoin has been
                                 mentioned in the news</p>
-
-
-
-                            <p>Many families look to the college years for children/grandchildren with mixed emotions
-                                excitement and trepidation. These two words rarely go together, but when it comes to
-                                college, it seems to be a perfect match.</p>
                             <div class="post-footer clearfix">
                                 <div class="post-tag-container">
                                     <div class="tag-lists"><span>Tags: </span><a
                                             href="https://demo.themewinter.com/wp/buildbench/blog/tag/building/"
-                                            rel="tag">Building</a> <a
-                                            href="https://demo.themewinter.com/wp/buildbench/blog/tag/construction/"
-                                            rel="tag">Construction</a> <a
-                                            href="https://demo.themewinter.com/wp/buildbench/blog/tag/contracting/"
-                                            rel="tag">Contracting</a> <a
-                                            href="https://demo.themewinter.com/wp/buildbench/blog/tag/design/"
-                                            rel="tag">Design</a> <a
-                                            href="https://demo.themewinter.com/wp/buildbench/blog/tag/planning/"
-                                            rel="tag">Planning</a> <a
-                                            href="https://demo.themewinter.com/wp/buildbench/blog/tag/project/"
-                                            rel="tag">Project</a> <a
-                                            href="https://demo.themewinter.com/wp/buildbench/blog/tag/safety/"
-                                            rel="tag">Safety</a></div>
+                                            rel="tag">{{event.eventTags}}</a> </div>
                                 </div>
                             </div> <!-- .entry-footer -->
 

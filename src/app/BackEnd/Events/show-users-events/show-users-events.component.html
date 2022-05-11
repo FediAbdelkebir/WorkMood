@@ -30,28 +30,6 @@
                 placeholder="Search..."
                 [(ngModel)]="filterTerm"
               />   
-            <div *ngIf="showLoader"><!-- so this div containing img will be dislpayed only when the showLoader is equal to true-->
-                <div class='body' style="background-color: #1fb79b;">
-                    <span>
-                      <span></span>
-                      <span></span>
-                      <span></span>
-                      <span></span>
-                    </span>
-                    <div class='base'>
-                      <span></span>
-                      <div class='face'></div>
-                    </div>
-                  </div>
-                  <div class='longfazers'>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                  </div>
-                  <h1>Loading Events</h1>
-                  
-            </div> 
 <section _ngcontent-nwj-c61="" class="data-list-view-header">
     <div _ngcontent-nwj-c61="" class="table-responsive">
         <div _ngcontent-nwj-c61="" id="DataTables_Table_0_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
@@ -125,6 +103,27 @@
     <button class="btn btn-success col-lg-1" (click)="Affect()"><i class="feather icon-check-circle d-flex justify-content-center"></i></button>
     </div>
 </div>
-
+<div *ngIf="showLoader"><!-- so this div containing img will be dislpayed only when the showLoader is equal to true-->
+    <div class='body' style="background-color: #1fb79b;">
+        <span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+        <div class='base'>
+          <span></span>
+          <div class='face'></div>
+        </div>
+      </div>
+      <div class='longfazers'>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <h1>Loading Events</h1>
+      
+</div> 
 </div>
 </div>

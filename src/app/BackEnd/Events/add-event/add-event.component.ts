@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Route, Router, RouterLink } from '@angular/router';
 import { DatePipe, formatDate } from '@angular/common'
 import Swal from 'sweetalert2';
 import { EventTags } from 'src/app/Models/event-tags';
@@ -50,6 +50,7 @@ this.event.trouphy=false
         }
         )
         console.log(data) 
+        this.router.navigateByUrl('/Dashboard/UpdateEventList')
       },
       (error)=>{
         Swal.fire({

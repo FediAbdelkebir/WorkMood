@@ -129,23 +129,23 @@ export class EvenementService {
   }
     /*TotalNumberEvents*/
     public  TotalNumberEvents (){
-	return this.http.get(this.BackEndURL+'TotalNumberEvents'); 
+	return this.http.get<number>(this.BackEndURL+'TotalNumberEvents'); 
   }
     /*TotalNumberEventsChallenge*/
     public  TotalNumberEventsChallenge (){
-	return this.http.get(this.BackEndURL+'TotalNumberEventsChallenge'); 
+	return this.http.get<number>(this.BackEndURL+'TotalNumberEventsChallenge'); 
   }
     /*TotalNumberEventsFormation*/
     public  TotalNumberEventsFormation (){
-	return this.http.get(this.BackEndURL+'TotalNumberEventsFormation'); 
+	return this.http.get<number>(this.BackEndURL+'TotalNumberEventsFORMATION'); 
   }
     /*TotalNumberEventsTrouphyTrue*/
     public  TotalNumberEventsTrouphyTrue (){
-	return this.http.get(this.BackEndURL+'TotalNumberEventsTrouphyTrue'); 
+	return this.http.get<number>(this.BackEndURL+'TotalNumberEventsTrouphyTrue'); 
   }
      /*TotalNumberEventsTrouphyFalse*/
     public  TotalNumberEventsTrouphyFalse(){
-	return this.http.get(this.BackEndURL+'TotalNumberEventsTrouphyFalse'); 
+	return this.http.get<number>(this.BackEndURL+'TotalNumberEventsTrouphyFalse'); 
   }
   //Multiple Critére Search 
 	/*Events By StartDate And EndDate*/

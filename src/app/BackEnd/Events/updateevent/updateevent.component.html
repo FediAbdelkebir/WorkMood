@@ -1,217 +1,229 @@
-<div class="row">
-    <div class="col-md-6 col-12">
-        <div class="card" style="height: 100%;">
-            <div class="card-header">
-            </div>
-            <div class="card-content">
-                <div class="card-body">
-                    <form class="form form-horizontal" (ngSubmit)="UpdateEvent()">
-                        <div class="form-body">
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="form-group row">
-                                        <div class="col-md-4">
-                                            <span>Event Title</span>
-                                        </div>
-                                        <div class="col-md-8">
-                                            <div class="position-relative has-icon-left">
-                                                <input type="text" class="form-control" placeholder="First Name"  id='name' name='name' required  [(ngModel)]="event.title" value="{{event.title}}">
-                                                <div class="form-control-position">
-                                                    <i class="feather icon-user"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="form-group row">
-                                        <div class="col-md-4">
-                                            <span>Starting Date</span>
-                                        </div>
-                                        <div class="col-md-8">
-                                            <div class="position-relative has-icon-left">
-                                                <input type="date" id="email-icon" class="form-control" name="email-id-icon" required [(ngModel)]="event.dateStart" value="{{event.dateStart}}">
-                                                <div class="form-control-position">
-                                                    <i class="feather icon-calendar"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="form-group row">
-                                        <div class="col-md-4">
-                                            <span>Ending Date</span>
-                                        </div>
-                                        <div class="col-md-8">
-                                            <div class="position-relative has-icon-left">
-                                                <input type="date" id="date-icon" class="form-control" name="date-icon" [(ngModel)]="event.dateEnd" value="{{event.dateEnd}}">
-                                                <div class="form-control-position">
-                                                    <i class="feather icon-calendar"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="form-group row">
-                                        <div class="col-md-4">
-                                            <span>Event Points</span>
-                                        </div>
-                                        <div class="col-md-8">
-                                            <div class="position-relative has-icon-left">
-                                                <input type="number" id="pass-icon" class="form-control" name="contact-icon" [(ngModel)]="event.eventpoints" placeholder="Event Rewards" value="{{event.eventpoints}}">
-                                                <div class="form-control-position">
-                                                    <i class="feather icon-dollar-sign"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="form-group row">
-                                        <div class="col-md-4">
-                                            <span>Avariable Places</span>
-                                        </div>
-                                        <div class="col-md-8">
-                                            <div class="position-relative has-icon-left">
-                                                <input type="number" id="pass-icon" class="form-control" name="contact-icon" [(ngModel)]="event.npMax" placeholder="Event Avariable Places" value="{{event.npDisponible}}">
-                                                <div class="form-control-position">
-                                                    <i class="feather icon-users"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="form-group row">
-                                        <div class="col-md-4">
-                                            <span>Event Type</span>
-                                        </div>
-                                        <div class="col-md-8">
-                                            <ul class='checkboxes'>
-                                                <div class="row">
-                                                    <li class="d-inline-block mr-2" *ngFor="let x of listeventtype"(click)="Type(x)" name="select" id="select" [ngClass]="{'green' : Typetoggle, 'red': !Typetoggle}">
-                                                        <fieldset>
-                                                            <div class="vs-radio-con vs-radio-info">
-                                                                <input type="radio" name="eventtype" value="false">
-                                                                <span class="vs-radio">
-                                                                    <span class="vs-radio--border"></span>
-                                                                    <span class="vs-radio--circle"></span>
-                                                                </span>
-                                                                <span class=""> {{x}}</span>
+<app-nav></app-nav>
+<div class="app-content content">
+    <div class="content-overlay"></div>
+    <div class="header-navbar-shadow"></div>
+    <div class="content-wrapper">
+        <div class="content-header row">
+        </div>
+        <div class="content-body">
+            <div class="row">
+                <div class="col-md-6 col-12">
+                    <div class="card" style="height: 100%;">
+                        <div class="card-header">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-body">
+                                <form class="form form-horizontal" (ngSubmit)="UpdateEvent()">
+                                    <div class="form-body">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="form-group row">
+                                                    <div class="col-md-4">
+                                                        <span>Event Title</span>
+                                                    </div>
+                                                    <div class="col-md-8">
+                                                        <div class="position-relative has-icon-left">
+                                                            <input type="text" class="form-control" placeholder="First Name"  id='name' name='name' required  [(ngModel)]="event.title" value="event.title">
+                                                            <div class="form-control-position">
+                                                                <i class="feather icon-user"></i>
                                                             </div>
-                                                        </fieldset>
-                                                    </li>
-                                            </div>
-                                              </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="form-group row">
-                                        <div class="col-md-4">
-                                            <span>Event Tag</span>
-                                        </div>
-                                        <div class="col-md-8">
-                                            
-                                            <ul class='options' >
-                                                <div class="row">
-                                                    <li class="d-inline-block mr-2" *ngFor="let x of listeventtags" (click)="Tag(x)" name="x" id="x" [ngClass]="{'green' : Tagtoggle, 'red': !Tagtoggle}">
-                                                        <fieldset>
-                                                            <div class="vs-radio-con vs-radio-success">
-                                                                <input type="radio" name="eventtag" value="false">
-                                                                <span class="vs-radio">
-                                                                    <span class="vs-radio--border"></span>
-                                                                    <span class="vs-radio--circle"></span>
-                                                                </span>
-                                                                <span class="" > {{x}}</span>
-                                                            </div>
-                                                        </fieldset>
-                                                    </li>
-                                            </div>
-                                              </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="form-group row">
-                                        <div class="col-md-4">
-                                            <span>Event Has Trouphy Reward ?</span>
-                                        </div>
-                                        <div class="col-md-8">
-                                              
-                                                <li class="d-inline-block mr-2" >
-                                                    <fieldset>
-                                                        <div class="row">
-                                                        <div class="vs-radio-con vs-radio-warning">
-                                                            <input type="radio" name="eventtrouphy" value="false">
-                                                            <span class="vs-radio">
-                                                                <span class="vs-radio--border"></span>
-                                                                <span class="vs-radio--circle"></span>
-                                                            </span>
-                                                            <span value='1' (click)="Yes()"> Yes</span>
-                                                        </div>
-                                                        <div class="vs-radio-con vs-radio-warning">
-                                                            <input type="radio" name="eventtrouphy" value="false">
-                                                            <span class="vs-radio">
-                                                                <span class="vs-radio--border"></span>
-                                                                <span class="vs-radio--circle"></span>
-                                                            </span>
-                                                            <span value='0' (click)="No()"> No</span>
                                                         </div>
                                                     </div>
-                                                    </fieldset>
-                                                </li>
-                                       
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="form-group row">
-                                        <div class="col-md-4">
-                                            <span>Event Description</span>
-                                        </div>
-                                        <div class="col-md-8">
-                                            <div class="position-relative has-icon-left">
-                                                <textarea type="textarea" id="pass-icon" class="form-control" name='description' rows='4'cols='50' [(ngModel)]="event.description" placeholder="A Detailed description about the event"></textarea>
-                                                <div class="form-control-position">
-                                                    <i class="feather icon-edit"></i>
                                                 </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="form-group row">
+                                                    <div class="col-md-4">
+                                                        <span>Starting Date</span>
+                                                    </div>
+                                                    <div class="col-md-8">
+                                                        <div class="position-relative has-icon-left">
+                                                            <input type="date" id="email-icon" class="form-control" name="email-id-icon" required [(ngModel)]="event.dateStart">
+                                                            <div class="form-control-position">
+                                                                <i class="feather icon-calendar"></i>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="form-group row">
+                                                    <div class="col-md-4">
+                                                        <span>Ending Date</span>
+                                                    </div>
+                                                    <div class="col-md-8">
+                                                        <div class="position-relative has-icon-left">
+                                                            <input type="date" id="contact-icon" class="form-control" name="contact-icon" [(ngModel)]="event.dateEnd">
+                                                            <div class="form-control-position">
+                                                                <i class="feather icon-calendar"></i>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="form-group row">
+                                                    <div class="col-md-4">
+                                                        <span>Event Points</span>
+                                                    </div>
+                                                    <div class="col-md-8">
+                                                        <div class="position-relative has-icon-left">
+                                                            <input type="number" id="pass-icon" class="form-control" name="contaersq" [(ngModel)]="event.eventpoints" placeholder="Event Rewards">
+                                                            <div class="form-control-position">
+                                                                <i class="feather icon-dollar-sign"></i>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="form-group row">
+                                                    <div class="col-md-4">
+                                                        <span>Avariable Places</span>
+                                                    </div>
+                                                    <div class="col-md-8">
+                                                        <div class="position-relative has-icon-left">
+                                                            <input type="number" id="psqdqs" class="form-control" name="conter" [(ngModel)]="event.npMax" placeholder="Event Avariable Places">
+                                                            <div class="form-control-position">
+                                                                <i class="feather icon-users"></i>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="form-group row">
+                                                    <div class="col-md-4">
+                                                        <span>Event Type</span>
+                                                    </div>
+                                                    <div class="col-md-8">
+                                                        <ul class='checkboxes'>
+                                                            <div class="row">
+                                                                <li class="d-inline-block mr-2" *ngFor="let x of listeventtype"(click)="Type(x)" name="select" id="select" [ngClass]="{'green' : Typetoggle, 'red': !Typetoggle}">
+                                                                    <fieldset>
+                                                                        <div class="vs-radio-con vs-radio-info">
+                                                                            <input type="radio" name="eventtype" value="false">
+                                                                            <span class="vs-radio">
+                                                                                <span class="vs-radio--border"></span>
+                                                                                <span class="vs-radio--circle"></span>
+                                                                            </span>
+                                                                            <span class=""> {{x}}</span>
+                                                                        </div>
+                                                                    </fieldset>
+                                                                </li>
+                                                        </div>
+                                                          </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="form-group row">
+                                                    <div class="col-md-4">
+                                                        <span>Event Tag</span>
+                                                    </div>
+                                                    <div class="col-md-8">
+                                                        
+                                                        <ul class='options' >
+                                                            <div class="row">
+                                                                <li class="d-inline-block mr-2" *ngFor="let x of listeventtags" (click)="Tag(x)" name="x" id="x" [ngClass]="{'green' : Tagtoggle, 'red': !Tagtoggle}">
+                                                                    <fieldset>
+                                                                        <div class="vs-radio-con vs-radio-success">
+                                                                            <input type="radio" name="eventtag" value="false">
+                                                                            <span class="vs-radio">
+                                                                                <span class="vs-radio--border"></span>
+                                                                                <span class="vs-radio--circle"></span>
+                                                                            </span>
+                                                                            <span class=""> {{x}}</span>
+                                                                        </div>
+                                                                    </fieldset>
+                                                                </li>
+                                                        </div>
+                                                          </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="form-group row">
+                                                    <div class="col-md-4">
+                                                        <span>Event Has Trouphy Reward ?</span>
+                                                    </div>
+                                                    <div class="col-md-8">
+                                                          
+                                                            <li class="d-inline-block mr-2" >
+                                                                <fieldset>
+                                                                    <div class="row">
+                                                                    <div class="vs-radio-con vs-radio-warning">
+                                                                        <input type="radio" name="eventtrouphy" value="false">
+                                                                        <span class="vs-radio">
+                                                                            <span class="vs-radio--border"></span>
+                                                                            <span class="vs-radio--circle"></span>
+                                                                        </span>
+                                                                        <span value='1' (click)="Yes()"> Yes</span>
+                                                                    </div>
+                                                                    <div class="vs-radio-con vs-radio-warning">
+                                                                        <input type="radio" name="eventtrouphy" value="false">
+                                                                        <span class="vs-radio">
+                                                                            <span class="vs-radio--border"></span>
+                                                                            <span class="vs-radio--circle"></span>
+                                                                        </span>
+                                                                        <span value='0' (click)="No()"> No</span>
+                                                                    </div>
+                                                                </div>
+                                                                </fieldset>
+                                                            </li>
+                                                   
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="form-group row">
+                                                    <div class="col-md-4">
+                                                        <span>Event Description</span>
+                                                    </div>
+                                                    <div class="col-md-8">
+                                                        <div class="position-relative has-icon-left">
+                                                            <textarea type="textarea" id="pass-icon" class="form-control" name='description' rows='4'cols='50' [(ngModel)]="event.description" placeholder="A Detailed description about the event"></textarea>
+                                                            <div class="form-control-position">
+                                                                <i class="feather icon-edit"></i>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-8 offset-md-4">
+                                                <button type="submit" class="btn btn-primary mr-1 mb-1 waves-effect waves-light">Update Event</button>
+                                                <button type="reset" class="btn btn-outline-warning mr-1 mb-1 waves-effect waves-light">Reset</button>
                                             </div>
                                         </div>
                                     </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12 col-sm-12" >
+                    <div class="card bg-analytics text-white" style="background: linear-gradient(118deg, #193962, #1e5772);">
+                        <div class="card-content">
+                            <div class="card-body text-center">
+                                <img src="/assets/app-assets/images/elements/decore-left.png" class="img-left" alt="
+                card-img-left">
+                                <img src="/assets/app-assets/images/elements/decore-right.png" class="img-right" alt="
+                card-img-right">
+                                <div class="avatar avatar-xl bg-primary shadow mt-0">
+                                    <div class="avatar-content">
+                                        <i class="feather icon-award white font-large-1"></i>
+                                    </div>
                                 </div>
-                                <div class="col-md-8 offset-md-4">
-                                    <button type="submit" class="btn btn-primary mr-1 mb-1 waves-effect waves-light">Add Event</button>
-                                    <button type="reset" class="btn btn-outline-warning mr-1 mb-1 waves-effect waves-light">Reset</button>
+                                <div class="text-center">
+                                    <h1 class="mb-2 text-white">Welcome to Update Event</h1>
+                                    <p class="m-auto w-75">You have done <strong>57.6%</strong> more sales today. Check your new badge in your profile.</p>
                                 </div>
                             </div>
                         </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-lg-6 col-md-12 col-sm-12" >
-        <div class="card bg-analytics text-white" style="background: linear-gradient(118deg, #193962, #1e5772);">
-            <div class="card-content">
-                <div class="card-body text-center">
-                    <img src="/assets/app-assets/images/elements/decore-left.png" class="img-left" alt="
-    card-img-left">
-                    <img src="/assets/app-assets/images/elements/decore-right.png" class="img-right" alt="
-    card-img-right">
-                    <div class="avatar avatar-xl bg-primary shadow mt-0">
-                        <div class="avatar-content">
-                            <i class="feather icon-award white font-large-1"></i>
-                        </div>
                     </div>
-                    <div class="text-center">
-                        <h1 class="mb-2 text-white">Welcome to Add Event</h1>
-                        <p class="m-auto w-75">You have done <strong>57.6%</strong> more sales today. Check your new badge in your profile.</p>
-                    </div>
+                </div> 
                 </div>
-            </div>
-        </div>
-    </div> 
-    </div>
+<app-dashboardfooter></app-dashboardfooter>
+</div>
+</div>
+</div>
