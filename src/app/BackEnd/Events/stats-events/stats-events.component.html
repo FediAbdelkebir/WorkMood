@@ -30,53 +30,44 @@
             </div>
             <div class="row">
                 <div class="col-lg-4 col-md-6 col-12">
-                    <div class="card" >
-                        <div class="card-header d-flex flex-column align-items-start pb-0" >
-                            <div class="avatar bg-rgba-primary p-50 m-0">
-                                <div class="avatar-content">
-                                    <i class="feather icon-users text-primary font-medium-5"></i>
-                                </div>
-                            </div>
-                            <h2 class="text-bold-700 mt-1 mb-25">Nbr_Events</h2>
-                            <p class="mb-0">Total Events </p>
+                    <div class="card">
+                        <div class="card-header d-flex flex-column align-items-start pb-0">
+                            <canvas baseChart width="400" height="400"
+                          [type]="'line'"
+                          [data]="ChartEvents"
+                          [options]="lineChartOptions"
+                          [legend]="lineChartLegend"
+                          [plugins]="lineChartPlugins">
+                        </canvas>
                         </div>
                         <div class="card-content">
-                            <div id="subscribe-gain-chart"></div>
+                            <div><B>Total Number of</B></div>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 col-12">
                     <div class="card">
                         <div class="card-header d-flex flex-column align-items-start pb-0">
-                            <div class="avatar bg-rgba-warning p-50 m-0">
-                                <div class="avatar-content">
-                                    <i class="feather icon-package text-warning font-medium-5"></i>
-                                </div>
-                            </div>
-                            <h2 class="text-bold-700 mt-1 mb-25">nbr_Challenges</h2>
-                            <p class="mb-0">Total Challenges</p>
-                        </div>
-                        <div class="card-content">
-                            <div id="orders-received-chart"></div>
+                            <canvas baseChart width="400" height="400"
+                          [type]="'line'"
+                          [data]="ChartEvents"
+                          [options]="lineChartOptions"
+                          [legend]="lineChartLegend"
+                          [plugins]="lineChartPlugins">
+                        </canvas>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 col-12">
                     <div class="card">
                         <div class="card-header d-flex flex-column align-items-start pb-0">
-                            <div class="avatar bg-rgba-warning p-50 m-0">
-                                <div class="avatar-content">
-                                    <i class="feather icon-package text-warning font-medium-5"></i>
-                                </div>
-                            </div>
-                            <h2 class="text-bold-700 mt-1 mb-25">nbr_Challenges</h2>
-                            <p class="mb-0">Total Challenges</p>
-                        </div>
-                        <div class="card-content">
-                            
-                            <div id="orders-received-charts"></div>
-
-
+                            <canvas baseChart width="400" height="400"
+                          [type]="'line'"
+                          [data]="ChartEvents"
+                          [options]="lineChartOptions"
+                          [legend]="lineChartLegend"
+                          [plugins]="lineChartPlugins">
+                        </canvas>
                         </div>
                     </div>
                 </div>

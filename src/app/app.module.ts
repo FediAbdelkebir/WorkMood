@@ -58,6 +58,8 @@ import { UserLikesComponent } from './BackEnd/Events/user-likes/user-likes.compo
 import { ShowUsersLikesComponent } from './BackEnd/Events/show-users-likes/show-users-likes.component';
 import { SendRewardsComponent } from './BackEnd/Events/send-rewards/send-rewards.component';
 import { BadgesEventComponent } from './Components/badges-event/badges-event.component';
+import { NgChartsModule } from 'ng2-charts';
+import { Chart } from 'chart.js';
 @NgModule({
   declarations: [
     AppComponent,
@@ -122,6 +124,7 @@ import { BadgesEventComponent } from './Components/badges-event/badges-event.com
     FormsModule,
     Ng2SearchPipeModule,
     HttpClientModule,
+    NgChartsModule,
     RouterModule.forRoot([
      
     ])
