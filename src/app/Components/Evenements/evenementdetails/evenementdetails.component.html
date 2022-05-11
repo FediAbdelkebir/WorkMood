@@ -11,7 +11,7 @@
                     <div class="post-media post-image">
                         <img class="img-fluid"
                             src="/assets/Images/Evenements/AddEvent/{{event.coverimage}}"
-                            alt=" Riding with friend is the best feeling">
+                            >
                     </div>
 
                     <div class="post-body clearfix">
@@ -186,68 +186,21 @@
             </div> <!-- .col-md-8 -->
             <div class="col-lg-4 col-md-12">
                 <aside id="sidebar" class="sidebar" role="complementary">
-                   <div id="xs-recent-post-3" class="widget buildbench-widget"><h3 class="widget-title">Popular Events</h3>		<div class="widget-posts">
-                                          <div class="widget-post media">
-                                  <a href="https://demo.themewinter.com/wp/buildbench/blog/2016/03/24/methodology-of-road-traffic-crash-investigation/"><img src="https://demo.themewinter.com/wp/buildbench/wp-content/uploads/2019/03/img_2.png" alt="thumb"></a>						<div class="media-body">
+                   <div id="xs-recent-post-3" class="widget buildbench-widget"><h3 class="widget-title">Recommended Events</h3>	
+                    	<div class="widget-posts">
+                                          <div class="widget-post media" *ngFor="let x of listrecommended">
+                                  <a href=""><img src="/assets/Images/Evenements/AddEvent/{{x.coverimage}}" name="{{x.coverimage}}" id="{{x.coverimage}}"></a>						<div class="media-body">
                                       <span class="post-date"> 
-                                          24 Mar, 2016							</span>
+                                          {{x.dateStart}}							</span>
                                       <h4 class="entry-title">
-                                          <a href="https://demo.themewinter.com/wp/buildbench/blog/2016/03/24/methodology-of-road-traffic-crash-investigation/">Methodology of road traffic crash investigation</a>
+                                          <a href="">{{x.title}}</a>
                                       </h4>
                                   
                                   </div>
                               </div>
-          
-                                              <div class="widget-post media">
-                                  <a href="https://demo.themewinter.com/wp/buildbench/blog/2016/03/24/consonantia-supplies-it-with-the-necessary-regelialia/"><img src="https://demo.themewinter.com/wp/buildbench/wp-content/uploads/2016/03/img_1.png" alt="thumb"></a>						<div class="media-body">
-                                      <span class="post-date"> 
-                                          24 Mar, 2016							</span>
-                                      <h4 class="entry-title">
-                                          <a href="https://demo.themewinter.com/wp/buildbench/blog/2016/03/24/consonantia-supplies-it-with-the-necessary-regelialia/">Consonantia, supplies it with the necessary regelialia</a>
-                                      </h4>
-                                  
-                                  </div>
-                              </div>
-          
-                                              <div class="widget-post media">
-                                  <a href="https://demo.themewinter.com/wp/buildbench/blog/2017/03/13/support-development-for-more-experience/"><img src="https://demo.themewinter.com/wp/buildbench/wp-content/uploads/2019/03/news_full1.jpg" alt="thumb"></a>						<div class="media-body">
-                                      <span class="post-date"> 
-                                          13 Mar, 2017							</span>
-                                      <h4 class="entry-title">
-                                          <a href="https://demo.themewinter.com/wp/buildbench/blog/2017/03/13/support-development-for-more-experience/">Support Each of my children attends</a>
-                                      </h4>
-                                  
-                                  </div>
-                              </div>
-          
-                                        
+                 
                       </div>
-                  </div><div id="categories-2" class="widget widget_categories"><h3 class="widget-title">Categories</h3>
-                      <ul>
-                              <li class="cat-item cat-item-13 current-cat"><a aria-current="page" href="https://demo.themewinter.com/wp/buildbench/blog/category/building/">Building</a> (3)
-          </li>
-              <li class="cat-item cat-item-5"><a href="https://demo.themewinter.com/wp/buildbench/blog/category/house/">House</a> (3)
-          </li>
-              <li class="cat-item cat-item-14"><a href="https://demo.themewinter.com/wp/buildbench/blog/category/repearing/">Repearing</a> (1)
-          </li>
-                      </ul>
-          
-                      </div><div id="archives-2" class="widget widget_archive"><h3 class="widget-title">Archives</h3>
-                      <ul>
-                              <li><a href="https://demo.themewinter.com/wp/buildbench/blog/2019/03/">March 2019</a></li>
-              <li><a href="https://demo.themewinter.com/wp/buildbench/blog/2018/03/">March 2018</a></li>
-              <li><a href="https://demo.themewinter.com/wp/buildbench/blog/2017/03/">March 2017</a></li>
-              <li><a href="https://demo.themewinter.com/wp/buildbench/blog/2016/03/">March 2016</a></li>
-                      </ul>
-          
-                      </div><div id="tag_cloud-2" class="widget widget_tag_cloud"><h3 class="widget-title">Tags</h3><div class="tagcloud"><a href="https://demo.themewinter.com/wp/buildbench/blog/tag/building/" class="tag-cloud-link tag-link-12 tag-link-position-1" style="font-size: 22pt;" aria-label="Building (7 items)">Building</a>
-          <a href="https://demo.themewinter.com/wp/buildbench/blog/tag/construction/" class="tag-cloud-link tag-link-11 tag-link-position-2" style="font-size: 22pt;" aria-label="Construction (7 items)">Construction</a>
-          <a href="https://demo.themewinter.com/wp/buildbench/blog/tag/contracting/" class="tag-cloud-link tag-link-20 tag-link-position-3" style="font-size: 22pt;" aria-label="Contracting (7 items)">Contracting</a>
-          <a href="https://demo.themewinter.com/wp/buildbench/blog/tag/design/" class="tag-cloud-link tag-link-18 tag-link-position-4" style="font-size: 15.333333333333pt;" aria-label="Design (4 items)">Design</a>
-          <a href="https://demo.themewinter.com/wp/buildbench/blog/tag/planning/" class="tag-cloud-link tag-link-22 tag-link-position-5" style="font-size: 8pt;" aria-label="Planning (2 items)">Planning</a>
-          <a href="https://demo.themewinter.com/wp/buildbench/blog/tag/project/" class="tag-cloud-link tag-link-19 tag-link-position-6" style="font-size: 15.333333333333pt;" aria-label="Project (4 items)">Project</a>
-          <a href="https://demo.themewinter.com/wp/buildbench/blog/tag/safety/" class="tag-cloud-link tag-link-21 tag-link-position-7" style="font-size: 22pt;" aria-label="Safety (7 items)">Safety</a></div>
-          </div>      </aside> <!-- #sidebar --> 
+                  </div>     </aside> <!-- #sidebar --> 
              </div>
 
         </div> <!-- .row -->

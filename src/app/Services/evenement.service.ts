@@ -116,8 +116,8 @@ export class EvenementService {
     return this.http.get<Event>(this.BackEndURL+'LikedUsersByEventId/'+idevent); 
   }
    /* RecommendedEvents By Tags */
-  public RecommendedEvents(Tags:EventTags){
-    return this.http.get<Event>(this.BackEndURL+Tags); 
+  public RecommendedEvents(Tags:any){
+    return this.http.get<Event>(this.BackEndURL+"RecomendedEvents/"+Tags); 
   }
    /* Find RecomendedEvents  */
   public RecomendedEvents (userid:number): Observable<any> {
