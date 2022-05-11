@@ -184,5 +184,45 @@ AddUserEvent(id:number){
     }
     )
   }
-
+  
+  SortTitle(){
+    
+    this.listuserevents.sort((a:any,b:any)=>(a.title>b.title ? 1:1))
+    const Toast = Swal.mixin({
+      toast: true,
+      position: 'top-end',
+      showConfirmButton: false,
+      timer: 3000
+    });
+    Toast.fire({
+      icon: 'success',
+      title: 'Successfully Sorted the list by Title.'
+    })
+      }
+      SortDateStart(){
+        this.listuserevents.sort((a:any,b:any)=>(a.dateStart>b.dateStart ? 1:1))
+    const Toast = Swal.mixin({
+      toast: true,
+      position: 'top-end',
+      showConfirmButton: false,
+      timer: 3000
+    });
+    Toast.fire({
+      icon: 'success',
+      title: 'Successfully Sorted the list by DateStart.'
+    })
+      }
+      SortDateEnd(){ 
+        this.listuserevents.sort((a:any,b:any)=>(a.dateEnd>b.dateEnd ? 1:1))
+        const Toast = Swal.mixin({
+          toast: true,
+          position: 'top-end',
+          showConfirmButton: false,
+          timer: 3000
+        });
+        Toast.fire({
+          icon: 'success',
+          title: 'Successfully Sorted the list by DateStart.'
+        })
+      }
 }

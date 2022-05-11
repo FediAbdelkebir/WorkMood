@@ -12,7 +12,7 @@ export class UpdateeventlistComponent implements OnInit {
 
   constructor(private router: Router,private es:EvenementService) { }
   filterTerm:any;
-  listevenements!:Event[];
+  listevenements!:any;
   iduser=1;
   showLoader = true;
   ngOnInit(): void {
@@ -47,6 +47,114 @@ console.log(data)
         })
       }
     )
+  }
+  SortTitle(){
+this.es.SortEventsByTitleAsc().subscribe((data)=>{
+  this.listevenements=data
+  const Toast = Swal.mixin({
+    toast: true,
+    position: 'top-end',
+    showConfirmButton: false,
+    timer: 3000
+  });
+  Toast.fire({
+    icon: 'success',
+    title: 'Successfully Sorted the list by Title.'
+  })
+})
+  }
+  SortDateStart(){
+    this.es.SortEventsByDateStartAsc().subscribe((data)=>{
+      this.listevenements=data
+      const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 3000
+      });
+      Toast.fire({
+        icon: 'success',
+        title: 'Successfully Sorted the list by DateStart.'
+      })
+    })
+  }
+  SortDateEnd(){
+    this.es.SortEventsByDateEndAsc().subscribe((data)=>{
+      this.listevenements=data
+      const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 3000
+      });
+      Toast.fire({
+        icon: 'success',
+        title: 'Successfully Sorted the list by DateEnd.'
+      })
+    })
+  }
+  SortnpDisponible(){
+    this.es.SortEventsByNbrplaceAsc().subscribe((data)=>{
+      this.listevenements=data
+      const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 3000
+      });
+      Toast.fire({
+        icon: 'success',
+        title: 'Successfully Sorted the list by nPdisponible.'
+      })
+    })
+  }
+  SortnpMax(){
+    console.log('famech minha :)')
+  }
+  Sortnbrlikes(){
+    console.log('famech minha :)')
+  }
+  SortType(){
+    this.es.SortEventsByTypeAsc().subscribe((data)=>{
+      this.listevenements=data
+      const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 3000
+      });
+      Toast.fire({
+        icon: 'success',
+        title: 'Successfully Sorted the list by Type.'
+      })
+    })
+  }
+  SortEventTags(){
+    
+    console.log('famech minha :)')
+  }
+  SortTrouphy(){
+    this.es.SortEventsByTrouphyAsc().subscribe((data)=>{
+      this.listevenements=data
+      const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 3000
+      });
+      Toast.fire({
+        icon: 'success',
+        title: 'Successfully Sorted the list by Trouphy.'
+      })
+    })
+  }
+  SortEventPoints(){
+    console.log('famech minha :)')
+  }
+  SortDescription(){
+    this.es.SortEventsByDescriptionAsc().subscribe((data)=>{
+      this.listevenements=data
+    })
   }
   delete(id:any){
     Swal.fire({

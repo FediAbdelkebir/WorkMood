@@ -18,8 +18,9 @@ listevents:any;
 show=false;
 affectid!:number;
 public async ngOnInit(): Promise<void> {
-    this.FindAllEvents()
+    this.FindAllEvents();
     this.userid=this.route.snapshot.paramMap.get('id');
+    /*
     this.bs.LikedEventsByUserId(this.userid).subscribe(
       (data:any) => {
         this.showLoader=false;
@@ -40,7 +41,10 @@ public async ngOnInit(): Promise<void> {
       (error)=>{
         console.log(error)
       }
-      );
+      );*/
+      this.bs.FindUserById(this.userid).subscribe((data)=>{
+        this.listuserlikedevents=data.LikedEvent
+      })
   }
   async FindAllEvents(){
   await this.bs.FindAllEvenements().subscribe((data)=>{
@@ -184,5 +188,46 @@ AddUserEvent(id:number){
     }
     )
   }
+  
+  SortTitle(){
+    
+    this.listuserlikedevents.sort((a:any,b:any)=>(a.title>b.title ? 1:1))
+    const Toast = Swal.mixin({
+      toast: true,
+      position: 'top-end',
+      showConfirmButton: false,
+      timer: 3000
+    });
+    Toast.fire({
+      icon: 'success',
+      title: 'Successfully Sorted the list by Title.'
+    })
+      }
+      SortDateStart(){
+        this.listuserlikedevents.sort((a:any,b:any)=>(a.dateStart>b.dateStart ? 1:1))
+    const Toast = Swal.mixin({
+      toast: true,
+      position: 'top-end',
+      showConfirmButton: false,
+      timer: 3000
+    });
+    Toast.fire({
+      icon: 'success',
+      title: 'Successfully Sorted the list by DateStart.'
+    })
+      }
+      SortDateEnd(){ 
+        this.listuserlikedevents.sort((a:any,b:any)=>(a.dateEnd>b.dateEnd ? 1:1))
+        const Toast = Swal.mixin({
+          toast: true,
+          position: 'top-end',
+          showConfirmButton: false,
+          timer: 3000
+        });
+        Toast.fire({
+          icon: 'success',
+          title: 'Successfully Sorted the list by DateStart.'
+        })
+      }
 
 }
