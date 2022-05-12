@@ -34,5 +34,11 @@ export class SurveyService {
   getAnswerById (id:any): Observable<SurveyAnswer[]> {
     return this.http.get<SurveyAnswer[]>('http://localhost:8089/work-mood/Answer/retrieve-Answer/'+id);
   }
+  getSurveyByDateAsc (): Observable<SurveyQuestion[]> {
+    return this.http.get<SurveyQuestion[]>('http://localhost:8089/work-mood/survey/retrieve-Surveybydateasc');
+  }
+  getSurveyByDateDesc (): Observable<SurveyQuestion[]> {
+    return this.http.get<SurveyQuestion[]>('http://localhost:8089/work-mood/survey/retrieve-Surveybydatedesc');
+  }
 
 }

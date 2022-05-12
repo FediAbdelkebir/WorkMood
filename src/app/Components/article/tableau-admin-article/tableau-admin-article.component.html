@@ -1,0 +1,79 @@
+<p>tableau-admin-article works!</p>
+
+<!-- <button class="btn btn-outline-warning mr-2" [routerLink]="['/addsurvey']" >Ajouter</button> -->
+<app-nav></app-nav>
+<h2>Review Table </h2>
+<div >
+    <div class="top_part">
+      <div class="filter_part">
+
+        <div class="filter_caat">
+
+
+         <input type="text" name="recherche" placeholder="search" [(ngModel)]="searchText" class="recherche">
+        <input type="submit" value="search" name="search" class="submit_bt">
+        <!-- <p style="font-size:18px;font-weight: 600;">Select Your Category<span><fa-icon class="ml-2" style="color: #21aba5;" ></fa-icon></span></p> -->
+  
+          <select class="categ_sel"  placeid="key" name="key" [(ngModel)]="category" (change)="onChange()">
+            <option value="" disabled selected>Select your option</option>
+            <option *ngFor="let key of keys" [value]="key" (click)="getByCategory(category)" >
+                {{categoryArti[key]}}
+            </option>
+        </select>
+
+
+        <!-- <button style="font-size:10px;font-weight: 900;margin-left:446px;"  >DateExpAsc</button>
+        <button style="font-size:10px;font-weight: 900;margin-left:90px;"  >DateExpDesc</button> -->
+
+      </div>
+
+
+
+      </div>
+    </div>
+
+<div class="table-wrapper">
+<table class="fl-table" >
+    <thead >
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">title</th>
+          <th scope="col">description</th>
+          <th scope="col">category</th>
+          <th>update</th>
+          <th>Delete</th>
+
+        </tr>
+      </thead>
+<tbody>
+<tr *ngFor="let a of article| filter:searchText | paginate: { itemsPerPage: 4, currentPage: pages }">
+
+
+
+  <td>
+    {{a.idArticle}}
+</td>
+    <td>
+        {{a.title}}
+    </td>
+    <td>
+        {{a.description}}
+    </td>
+    <td>
+        {{a.category}}
+    </td>
+
+
+
+    <td><button class="btn btn-outline-danger mr-2"  [routerLink]="['/update-admin-article/',a.idArticle]">update </button></td>
+    <td><button class="btn btn-outline-danger mr-2" (click)="deleteArticle(a.idArticle)">Delete </button></td>
+
+
+</tr>
+</tbody>
+</table>
+</div>
+<pagination-controls (pageChange)="pages = $event" style="text-align: center;padding: 10px;border: 1px solid black;padding: 10px;">
+</pagination-controls>
+<app-dashboardfooter></app-dashboardfooter>
+

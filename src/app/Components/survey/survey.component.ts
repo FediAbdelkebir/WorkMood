@@ -27,7 +27,7 @@ export class SurveyComponent implements OnInit {
   keys: string[] = [];
   selected!:  Answer;
 
-  selectedOption: any;
+  
   
 
   constructor(private ms : SurveyService,private router: Router) { }
@@ -59,6 +59,8 @@ export class SurveyComponent implements OnInit {
       this.getList();
     });
   }
+  
+  
   
 }
 

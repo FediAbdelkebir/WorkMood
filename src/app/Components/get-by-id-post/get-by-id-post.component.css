@@ -1,0 +1,49 @@
+body
+{
+  font-family: 'Montserrat', sans-serif;
+}
+
+.post_img
+{
+  margin:10px;
+  width:45px;
+  height: 45px;
+  border-radius: 50%;
+  background-color: aquamarine;
+  background-position: center;
+  background-image: url('../../../assets/userr.png');
+}
+.publication :hover {
+   cursor: pointer;
+}
+.personal_comment
+{
+
+    margin: 50px 0;
+    width: 70%;
+    background-color: white;
+    height: 130px;
+    max-height: 150px;
+    border-radius: 100px;
+    box-shadow: 0 2px 15px 0 rgb(27 27 27 / 11%);
+    display:flex;
+    align-items: center;
+}
+.comment_img
+{
+  margin:10px;
+  width:60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: aquamarine;
+  background-image: url('../../../assets/man.png');
+
+}
+.butn_cmt
+{
+  border:none;
+  padding: 10px 20px;
+  background-color: #1fb79b;
+  color:white;
+  margin:10px;
+}

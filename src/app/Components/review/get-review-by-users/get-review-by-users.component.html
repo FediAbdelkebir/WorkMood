@@ -76,11 +76,21 @@
           <img src="../../../../assets/add.jpg" alt="Image 2">
           <figcaption>{{rev.classf}}</figcaption>
         </figure>
-  
+          <!-- if annonyme -->
+          <!-- <div style="font-size: 14px;" *ngIf="rev.review=='ANNONYME'">
+            <p style="background-color:#f3b7f9; padding: 5px 7px;
+            border-radius: 10px;
+            font-weight: 500; ">{{rev.review}}</p>
+          </div> -->
         <ul style="margin-top:10px ;">
             
-          <li >{{rev.employeeName}}</li>
-          <li>{{rev.societeName}}</li>
+          <li *ngIf="rev.review=='ANNONYME'" style="display: none;">{{rev.employeeName}}</li>
+          <li *ngIf="rev.review=='ANNONYME'" style="display: none;">{{rev.societeName}}</li>
+          <li *ngIf="rev.review=='ANNONYME'">{{rev.review}}</li>
+
+          <li *ngIf="rev.review=='NORMAL'" >{{rev.employeeName}}</li>
+          <li *ngIf="rev.review=='NORMAL'" >{{rev.societeName}}</li>
+          <li *ngIf="rev.review=='NORMAL'">{{rev.review}}</li>
         
         </ul>
       </div>
@@ -110,7 +120,8 @@
 </div>
   <!-- /flip-card-container -->
   
-  
+  <app-footer></app-footer>
+<app-scripts></app-scripts>
   
 
           

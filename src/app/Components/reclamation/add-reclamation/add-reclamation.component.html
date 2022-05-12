@@ -1,0 +1,25 @@
+<p>add-reclamation works!</p>
+<form #f="ngForm">
+    <label>Objet</label>
+    <input type="text" name="objet" required  #title="ngModel"  ngModel/> 
+    <span *ngIf="(f.submitted || title.touched) && title.errors?.required" style="color:red;">Please enter a objet</span>
+
+    <label>Message</label>
+    <input type="text" name="message" required  #msg="ngModel"  ngModel/>
+    <span *ngIf="(f.submitted || msg.touched) && msg.errors?.required" style="color:red;">Please enter a title</span>
+
+    <!--<label>Creation Date</label>
+    <input type="date" name="creationDate" ngModel/>
+
+    <label>Processing Date</label>
+    <input type="date" name="processingDate" ngModel/>
+
+    <label>status</label>
+    <input type="text" name="status" ngModel/> 
+
+    <label>Response</label>
+    <input type="text" name="response" ngModel/>-->
+
+    <input type="submit" value="save" (click)="save(f.value)"/> 
+</form>
+

@@ -1,0 +1,73 @@
+<p>post works!</p>
+<app-head></app-head>
+<app-header></app-header>
+  <div class="container" style="margin:100px auto;width:100%;display: flex; font-family: 'Montserrat', sans-serif;">
+    <div class="left_side" style="width:25%;">
+      <div>
+
+      </div>
+      <div style="width:100%;display:flex;flex-direction: column;background-color: white;padding: 30px;border-radius:10px;">
+        <h4 style="font-weight:400;font-size:18px;">Hey Add your Post and share your news with your coworker</h4><br>
+        <img  src="../../../../assets/undraw_new_entries_re_cffr.svg" (click)="addPost()">
+      </div>
+    </div>
+    <div class="right_side" style="width:65%;margin:20px 40px;height:auto;">
+      <div class="publication" *ngFor="let p of postes" style="background-color: rgb(255, 255, 255);padding:20px 30px;border-radius:10px; box-shadow: 0 2px 15px 0 rgb(27 27 27 / 11%);margin:25px 0;">
+        <div class="post_img">
+
+        </div>
+        <div  style="margin:10px;">
+          <p style="width:100%;margin:25px auto;font-weight: 600;">
+            {{p.contenu}}
+          </p>
+        </div>
+        <div style="margin:30px 0 5px 0;display: flex;align-items: baseline;">
+
+          <div>
+
+          </div><span><fa-icon style="color:#1fb79b" [icon]="faCalendar"></fa-icon></span><p style="font-size:15px;margin-left: 10px;">{{p.timeCreation}}</p>
+          <a  [routerLink]="['/afficher-postbyid/',p.idPost]" style="font-size:15px;font-weight: 400;color:#f0bb2b;margin:0 0 0 70%">Show more</a>
+        </div>
+
+
+      </div>
+
+    </div>
+  </div>
+<app-footer></app-footer>
+<app-scripts></app-scripts>
+<!--
+  <div class="d-flex flex-column">
+  <button class="btn btn-primary" [routerLink]="['/add-posts']">Ajouter article</button>
+</div>
+<div class="card" *ngFor="let p of postes">
+  <div class="card-header">
+    <img src="https://c0.wallpaperflare.com/preview/483/210/436/car-green-4x4-jeep.jpg" alt="rover" />
+  </div>
+  <div class="card-body">
+    <span class="tag tag-teal">{{p.contenu}}</span>
+    <h4>
+      {{p.timeCreation}}
+    </h4>
+    <p>
+      {{p.Images}}
+    </p>
+    <p>
+      {{p.nbLike}}
+    </p>
+  </div>
+  <div>
+    <button (click)="deletePost(p.idPost)" class="btn btn-danger mx-2">Delete</button>
+  </div>
+-->
+
+
+    <!--<div class="user">
+      <img src="https://yt3.ggpht.com/a/AGF-l7-0J1G0Ue0mcZMw-99kMeVuBmRxiPjyvIYONg=s900-c-k-c0xffffffff-no-rj-mo" alt="user" />
+      <div class="user-info">
+        <h5>July Dec</h5>
+        <small>2h ago</small>
+      </div>
+    </div>-->
+
+

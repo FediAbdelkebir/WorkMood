@@ -1,8 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CategoryReview } from 'src/app/Models/category-review';
+import { Classification } from 'src/app/Models/classification';
 import { Review } from 'src/app/Models/review';
+import { TypeReview } from 'src/app/Models/type-review';
 import { ReviewService } from 'src/app/Services/review.service';
+import Swal from 'sweetalert2';
+
+
 
 
 @Component({
@@ -17,12 +22,24 @@ export class ReviewComponent implements OnInit {
   keys: string[] = [];
   category!: CategoryReview;
   searchText!:any; 
+  keysclas: string[] = [];
+  keystype: string[] = [];
+  selected!:  CategoryReview;
+  selected2!:Classification;
+  selected3!:TypeReview;
+  classfReviewEnum: any = Classification;
+  typeReviewEnum: any = TypeReview;
+  pages: number = 1;
+  dataset: any[] = ['1','2','3','4','5','6','7','8','9','10'];
 
   constructor(private r : ReviewService,private router: Router) { }
 
   ngOnInit(): void {
+    
     this.getListReview();
     this.keys = Object.keys(this.categoryReviewEnum);
+    this.keysclas = Object.keys(this.classfReviewEnum);
+    this.keystype = Object.keys(this.typeReviewEnum);
   }
 
   getListReview(){
@@ -61,4 +78,29 @@ export class ReviewComponent implements OnInit {
       }
     )
 }
+
+getById(o: any) {
+  Swal.fire({
+    title: '<strong>Do you want to delete this offer ?</strong>',
+    icon: 'error',
+    showCancelButton: true,
+    cancelButtonText: 'Cancel',
+    focusConfirm: true,
+    confirmButtonText: 'Delete',
+    confirmButtonColor: '#1fb79b',
+  }).then((result) => {
+    if (result.isConfirmed) {
+      this.r.deletereview(o.id).subscribe((d) => {
+        () => {
+          Swal.fire('Deleted!', '', 'success');
+          
+        };
+      });
+    
+    }
+  });
+}
+
+
+
 }

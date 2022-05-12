@@ -1,0 +1,22 @@
+.fa-icon{
+  padding-right: 10px;
+  color: #1fb79b;
+}
+/* Image */
+.top_part {
+    width: 100%;
+    height: 450px;
+    background-color: #eee;
+    background-image: url("../../../../assets/Images/reclamation.jpg");
+    background-position: center;
+    position: relative;
+  }
+  .overlay
+  {
+    position: sticky !important;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+  }
+   /* formm */ 
+   

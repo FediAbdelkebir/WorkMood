@@ -79,7 +79,11 @@
 											<div class="col-md-6">
 												<div class="form-group">
 													<label class="label" for="name">CompanyName</label>
-													<input type="text" class="form-control"  id="name" name="societeName" ngModel placeholder="Name">
+													<input type="text" class="form-control"  id="name" name="societeName" required  #title="ngModel" pattern="[a-zA-Z]+$" ngModel placeholder="Name">
+													<span *ngIf="(ss.submitted || title.touched) && title.errors?.required" style="color:red;">Please enter a Companyname</span>
+													<span *ngIf="(ss.submitted || title.touched) && title.errors?.minlength" style="color:red;">Please add min 3 caractere</span>
+													<span *ngIf="(ss.submitted || title.touched) && title.errors?.pattern" style="color:red;">Please add correct CompanyName</span>
+												
 												</div>
 											</div>
                                             
@@ -87,12 +91,14 @@
 												<div class="form-group">
 													<label class="label" for="email">TypeReview</label>
 
-                                                    <select class="form-control" placeholder="TypeReview" id="key3" name="key3"  [(ngModel)]="selected3" >
+                                                    <select class="form-control" placeholder="TypeReview" id="key3" name="key3" required  #type="ngModel"  [(ngModel)]="selected3" >
                                                         
                                                         <option *ngFor="let key3 of keystype" [value]="key3" >      
                                                             {{typeReviewEnum[key3]}} 
                                                         </option>
                                                     </select> 
+													<span *ngIf="(ss.submitted || type.touched) && type.errors?.required" style="color:red;">Please select TypeReview</span>
+
 
 												
 												</div>
@@ -101,19 +107,25 @@
 												<div class="form-group">
 													<label class="label" for="subject">Category: 
                                                     </label>
-                                                    <select class="form-control"   id="key" name="key" placeholder="you should choice correctly"  [(ngModel)]="selected">
+                                                    <select class="form-control"   id="key" name="key" placeholder="you should choice correctly" required  #categorie="ngModel" [(ngModel)]="selected">
                                                         <fa-icon [icon]="faAngleDown"></fa-icon>
                                                         <option [disabled]="true" disabled selected>Select your category</option>
                                                         <option  *ngFor="let key of keys" [value]="key" > 
                                                             {{categoryReviewEnum[key]}} 
                                                         </option>
                                                     </select>
+													<span *ngIf="(ss.submitted || categorie.touched) && categorie.errors?.required" style="color:red;">Please select a category</span>
+
 												</div>
 											</div>
 											<div class="col-md-12">
 												<div class="form-group">
 													<label class="label" for="#">Content</label>
-													<textarea name="message" class="form-control" id="message" cols="30" rows="4" name="contentReview" ngModel placeholder="contentReview"></textarea>
+													<textarea name="message" class="form-control" id="message" cols="30" rows="4" name="contentReview" required  #content="ngModel" pattern="[a-zA-Z]+$" ngModel placeholder="contentReview"></textarea>
+													<span *ngIf="(ss.submitted || content.touched) && content.errors?.required" style="color:red;">Please enter your content</span>
+													<span *ngIf="(ss.submitted || content.touched) && content.errors?.minlength" style="color:red;">Please add min 10 caractere</span>
+													<span *ngIf="(ss.submitted || content.touched) && content.errors?.pattern" style="color:red;">Please dont add number and symboles</span>
+												
 												</div>
 											</div>
 											<div class="col-md-12">

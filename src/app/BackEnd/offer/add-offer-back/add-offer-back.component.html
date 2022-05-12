@@ -1,0 +1,169 @@
+<app-nav></app-nav>
+
+<div class="col-md-6 col-12" style="margin-left: 350px;padding: 120px;">
+    <div class="card" style="height: 100%;">
+        <div class="card-header">
+            <h2>Add Offer</h2>
+        </div>
+        <div class="card-content">
+            <div class="card-body">
+                <form class="form form-horizontal" #f="ngForm">
+                    <div class="form-body">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="form-group row">
+                                    <div class="col-md-4">
+                                        <span>Title</span>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="position-relative has-icon-left">
+                                            <input type="text" class="form-control" placeholder="First Name" id='title'
+                                                name='title' required  #ty="ngModel"  ngModel>
+                                                <span *ngIf="(f.submitted || ty.touched) && ty.errors?.required" style="color:red;">must add this</span>
+                                            <!--value="{{event.title}}"-->
+                                            <div class="form-control-position">
+                                                <i class="feather icon-edit"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group row">
+                                    <div class="col-md-4">
+                                        <span>Description</span>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="position-relative has-icon-left">
+                                            <textarea type="textarea" id="description" class="form-control"
+                                                name="description" required  #ctg="ngModel" minlength="5" ngModel></textarea>
+                                                <span *ngIf="(f.submitted || ctg.touched) && ctg.errors?.minlength" style="color:red;">Please add min 5 caractere</span>
+                                                <span *ngIf="(f.submitted || ctg.touched) && ctg.errors?.required" style="color:red;">must add this </span>
+                                                <div class="form-control-position">
+                                                <i class="feather icon-edit"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group row">
+                                    <div class="col-md-4">
+                                        <span>Address</span>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="position-relative has-icon-left">
+                                            <input type="text" id="address" class="form-control" name="address" required
+                                            required  #address="ngModel"   ngModel />
+                                            <span *ngIf="(f.submitted || address.touched) && title.errors?.required" style="color:red;">must add this</span>
+                                            <div class="form-control-position">
+                                                <i class="feather icon-map-pin"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group row">
+                                    <div class="col-md-4">
+                                        <span>Expiration Date</span>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="position-relative has-icon-left">
+                                            <input type="date" id="date-icon" class="form-control" name="dateExp"
+                                            required  #dateExp="ngModel"  ngModel>
+                                            <span *ngIf="(f.submitted || dateExp.touched) && dateExp.errors?.required" style="color:red;">Please enter a dateExp</span>
+                                            <div class="form-control-position">
+                                                <i class="feather icon-calendar"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group row">
+                                    <div class="col-md-4">
+                                        <span>Category</span>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <select id="key" name="key" required  #title="ngModel"  [(ngModel)]="selected">
+                                            <option *ngFor="let key of keys" [value]="key">
+                                                <div class="form-control-position">
+                                                    <i class="feather icon-list"></i>
+                                                </div>
+                                                {{categoryOfferEnum[key]}}
+                                            </option>
+                                        </select>
+                                        <span *ngIf="(f.submitted || title.touched) && title.errors?.required" style="color:red;">Please enter a category</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group row">
+                                    <div class="col-md-4">
+                                        <span>Point</span>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="position-relative has-icon-left">
+                                            <input type="number" id="pass-icon" class="form-control" name="point"
+                                            required  #pnt="ngModel"     ngModel placeholder="Point of the offer">
+                                            <span *ngIf="(f.submitted || pnt.touched) && pnt.errors?.required" style="color:red;">must add this</span>
+                                            <div class="form-control-position">
+                                                <i class="feather icon-users"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group row">
+                                    <div class="col-md-4">
+                                        <span>Limited Number</span>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="position-relative has-icon-left">
+                                            <input type="number" id="pass-icon" class="form-control"
+                                            required  #lm="ngModel"   name="limitedNumber" ngModel placeholder="Limited number od persons">
+                                            <span *ngIf="(f.submitted || lm.touched) && lm.errors?.required" style="color:red;">must add this</span>
+                                            <div class="form-control-position">
+                                                <i class="feather icon-user-x"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group row">
+                                    <div class="col-md-4">
+                                        <span>Persons Number</span>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="position-relative has-icon-left">
+                                            <input type="number" id="pass-icon" class="form-control"
+                                                name="personsNumber" required  #nn="ngModel"  ngModel placeholder="Number of persons">
+                                                <span *ngIf="(f.submitted || nn.touched) && nn.errors?.required" style="color:red;">must add this</span>
+
+                                                <div class="form-control-position">
+                                                <i class="feather icon-user-check"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-8 offset-md-4">
+                                <button type="submit" class="btn btn-primary mr-1 mb-1 waves-effect waves-light"
+                                    (click)="save(f.value)">
+                                    Save </button>
+                                <button type="submit" class="btn btn-primary mr-1 mb-1 waves-effect"
+                                    [routerLink]="['/Dashboard/Offers']">
+                                    Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-dashboardfooter></app-dashboardfooter>

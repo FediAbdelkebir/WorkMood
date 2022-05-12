@@ -1,0 +1,79 @@
+<app-nav></app-nav>
+<div>
+    <div class="top_part">
+        <h2>Reclamations List</h2>
+        <div class="filter_part">
+            <div class="filter_caat">
+                <input type="text" name="recherche" placeholder="search" [(ngModel)]="searchText" class="recherche">  
+
+                <!--[(ngModel)]="searchText" -->
+                <input type="submit" value="search" name="search" class="submit_bt">
+            </div>
+            <button style="padding: 5px;" (click)="sortByCreationDateAsc()">Expiration Date <fa-icon [icon]="faSortUp"
+                    class="fa-icon"></fa-icon></button>
+            <button style="padding: 5px;" (click)="sortByCreationDateDesc()">Expiration Date <fa-icon
+                    [icon]="faSortDown" class="fa-icon"></fa-icon></button>
+            <button style="padding: 5px;" (click)="sortByProcessingDateAsc()">Processing Date <fa-icon [icon]="faSortUp"
+                    class="fa-icon"></fa-icon></button>
+            <button style="padding: 5px;" (click)="sortByProcessingDateDesc()">Processing Date <fa-icon
+                    [icon]="faSortDown" class="fa-icon"></fa-icon></button>
+        </div>
+    </div>
+
+    <div class="table-wrapper">
+        <table class="fl-table">
+            <thead>
+                <tr>
+                    <th scope="col">Object</th>
+                    <th scope="col">Mesage</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Creation Date</th>
+                    <th scope="col">Processing Date</th>
+                    <th scope="col">Response</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let r of reclamations | paginate: { itemsPerPage: 4, currentPage: pages } | filter:searchText">
+                    <!--| filter:searchText-->
+                    <td>
+                        {{r.objet}}
+                    </td>
+                    <td>
+                        {{r.message}}
+                    </td>
+                    <td>
+                        {{r.status}}
+                    </td>
+                    <td>
+                        {{r.creationDate}}
+                    </td>
+                    <td>
+                        {{r.processingDate}}
+                    </td>
+                    <td>
+                        {{r.response}}
+                    </td>
+                    <!--<td>
+                        {{r.user.emailAddress}}
+                    </td>-->
+                    <td>
+                        <button class="btn btn-outline-danger mr-2" style="padding: 8px" (click)="getById(r)">
+                            Delete
+                        </button>
+                        <!--<button class="btn btn-outline-danger mr-2" style="padding: 8px" >
+                            Show
+                        </button>-->
+                        <button class="btn btn-outline-danger mr-2" style="padding: 8px"
+                            (click)="treat()">
+                            Treat Comaplaint
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <pagination-controls (pageChange)="pages = $event" style="text-align: center;padding: 10px;border: 1px solid black;padding: 10px;">
+    </pagination-controls>
+</div>
+<app-dashboardfooter></app-dashboardfooter>

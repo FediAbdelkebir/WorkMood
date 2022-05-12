@@ -1,0 +1,57 @@
+<app-head></app-head>
+<app-header></app-header>
+<div class="container" style="margin:100px auto;">
+  <div class="publication"  style="width:80%;background-color: rgb(255, 255, 255);padding:20px 30px;border-radius:10px; box-shadow: 0 2px 15px 0 rgb(27 27 27 / 11%);">
+    <div class="post_img">
+
+    </div>
+    <div  style="margin:10px;">
+      <p style="width:100%;margin:25px auto;font-weight: 600;">
+        {{post.contenu}}
+      </p>
+    </div>
+    <div style="margin:30px 0 5px 0;display: flex;align-items: baseline;">
+
+      <div>
+
+      </div><span></span><p style="font-size:15px;margin-left: 10px;">{{post.timeCreation}}</p>
+      <p  style="font-size:20px;font-weight: 400;color:#ed2553;margin:0 0 0 80%">{{post.nbLike}}</p><fa-icon style="font-size: 28px;color:#ed2553;margin:0 0 0 10px" [icon]="faHeart"></fa-icon>
+    </div>
+
+
+  </div>
+
+  <div class="comment-section" style="width:70%">
+    <h3 style="margin-top: 50px;">Add Your Comment</h3>
+    <form #commente="ngForm" >
+      <div class="height:100px;width:80%;border-radius:10px;padding:10px;">
+        <textarea style="width:75%;
+        background-color: #f8f8f8;
+        border-radius: 3px;
+        border: 1px solid #d8d8d8;padding:10px;" placeholder="Tap Here" class="" id="description" name="description" rows="5" ngModel></textarea>
+
+    </div>
+    <div>
+      <input  type="submit" value="save" class="butn_cmt" (click)="Addcommentairearticle(commente.value)">
+    </div>
+
+    </form>
+
+  <div *ngFor="let c of listcomment" class="personal_comment">
+    <div class="comment_img">
+
+    </div>
+     <!--<p style="font-size:14px;font-weight:600;">Oussema Jebari</p>-->
+
+    <div>
+      <p style="font-weight: 300;margin:0 20px;">{{c.description}}</p>
+    </div>
+    <div>
+      <p>{{c.dateComment}}</p>
+    </div>
+    <!--<p>{{c.description}}</p>-->
+
+  </div>
+</div>
+<app-footer></app-footer>
+<app-scripts></app-scripts>

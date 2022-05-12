@@ -1,0 +1,40 @@
+<p>add-offer works!</p>
+<form #f="ngForm">
+    <label>Title</label>
+    <input type="text" name="title" required  #title="ngModel"  ngModel/> 
+    <span *ngIf="(f.submitted || title.touched) && title.errors?.required" style="color:red;">must add this</span>
+
+    <label>Description</label>
+    <input type="text" name="description" required  #des="ngModel"  ngModel/>
+    <span *ngIf="(f.submitted || des.touched) && des.errors?.required" style="color:red;">must add this</span>
+
+    <label>DateExp</label>
+    <input type="date" name="dateExp" required  #date="ngModel"  ngModel/>
+    <span *ngIf="(f.submitted || date.touched) && date.errors?.required" style="color:red;">must add this</span>
+
+    <label>Category</label>
+    <select id="key" name="key" required  #tt="ngModel"  [(ngModel)]="selected">
+        <option *ngFor="let key of keys" [value]="key" > 
+            {{categoryOfferEnum[key]}} 
+        </option>
+    </select> 
+    <span *ngIf="(f.submitted || tt.touched) && tt.errors?.required" style="color:red;">must add this</span>
+
+    <label>Image</label>
+    <input type="text" name="image" required  #fff="ngModel"  ngModel/>
+    <span *ngIf="(f.submitted || fff.touched) && fff.errors?.required" style="color:red;">must add this</span>
+
+    <label>Point</label>
+    <input type="number" name="point" ngModel/>
+
+    <label>Adress</label>
+    <input type="text" name="address" ngModel/>
+
+    <label>LimitedNumber</label>
+    <input type="number" name="limitedNumber" ngModel/>
+
+    <label>PersonsNumber</label>
+    <input type="number" name="personsNumber" ngModel/>
+
+    <input type="submit" value="save" (click)="save(f.value)"/> 
+</form>

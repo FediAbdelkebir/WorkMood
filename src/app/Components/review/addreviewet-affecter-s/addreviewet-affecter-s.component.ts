@@ -5,6 +5,7 @@ import { CategoryReview } from 'src/app/Models/category-review';
 import { Classification } from 'src/app/Models/classification';
 import { TypeReview } from 'src/app/Models/type-review';
 import { ReviewService } from 'src/app/Services/review.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-addreviewet-affecter-s',
@@ -39,9 +40,18 @@ export class AddreviewetAffecterSComponent implements OnInit {
     rr.classf = this.selected2;
     rr.review = this.selected3;
      this.r.addreviewetAffecterS(rr,id).subscribe(res => {
-       this.router.navigate(['afficherreview'])
-     });
- 
+      
+      Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: 'Your Question has been saved',
+        showConfirmButton: false,
+        timer: 1000
+        
+      })
+      this.router.navigate(['choiceadd'])
+    });
+       
    }
 
 }

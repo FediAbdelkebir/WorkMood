@@ -1,0 +1,5 @@
+export enum StatusReclamation {
+    WAITING="WAITING",
+	INPROGRESS="INPROGRESS",
+	PROCESSED="PROCESSED"
+}

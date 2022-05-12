@@ -5,6 +5,7 @@ import { Classification } from 'src/app/Models/classification';
 import { TypeReview } from 'src/app/Models/type-review';
 import { ReviewService } from 'src/app/Services/review.service';
 import {faAngleDown} from '@fortawesome/free-solid-svg-icons';
+import Swal from 'sweetalert2';
 
 
 @Component({
@@ -40,9 +41,39 @@ export class AddreviewetAffecterEComponent implements OnInit {
     rr.classf = this.selected2;
     rr.review = this.selected3;
      this.r.addreviewetAffecterE(rr,id).subscribe(res => {
-       this.router.navigate(['afficherreview'])
-     });
- 
+      Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: 'Your Question has been saved',
+        showConfirmButton: false,
+        timer: 1000
+        
+      })
+      this.router.navigate(['choiceadd'])
+    });
+        
+        
+     
    }
-
+  //  get(o: any) {
+  //   Swal.fire({
+  //     title: '<strong>Do you want to Confirm this  ?</strong>',
+  //     icon: 'error',
+  //     showCancelButton: true,
+  //     cancelButtonText: 'Cancel',
+  //     focusConfirm: true,
+  //     confirmButtonText: 'Confirm',
+  //     confirmButtonColor: '#1fb79b',
+  //   }).then((result) => {
+  //     if (result.isConfirmed) {
+  //       this.r.addreviewetAffecterE(o,o.id).subscribe((d) => {
+  //         () => {
+  //           Swal.fire('Succes to send review with Email!', '', 'success');
+            
+  //         };
+  //       });
+      
+  //     }
+  //   });
+  // }
 }

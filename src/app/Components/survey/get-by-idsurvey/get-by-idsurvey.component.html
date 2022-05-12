@@ -1,6 +1,6 @@
+
+
 <!-- 
-
-
 id: {{idServQuest}}<br>
 content: {{content}} <br>
 dateExp: {{dateExp}} <br>
@@ -88,9 +88,9 @@ dateExp: {{dateExp}} <br>
                                             <div class="col-md-12">
 												<div class="form-group" >
 													<label class="label" for="#">Choice Your Answer! </label><br>
-                                                    <select class="form-control"   [(ngModel)]="selectedOption" >
+                                                    <select class="form-control"   [(ngModel)]="selectedOption" [ngModelOptions]="{standalone: true}" >
                                                         <option [disabled]="true" disabled selected>choice one of answers</option>
-                                                        <option *ngFor="let m of SurveyAnswer" value={{m.id}} >{{m.answer}} </option>
+                                                        <option *ngFor="let m of SurveyAnswer" value={{m.id}} >{{m.answer}}  </option>
                                                       </select>
 													<!-- <textarea name="message" class="form-control" id="message" cols="20" rows="2" name="content" ngModel placeholder="fill your question"></textarea> -->
 												</div>
@@ -102,6 +102,7 @@ dateExp: {{dateExp}} <br>
 													<div class="submitting"></div>
 												</div>
 											</div>
+											
 										</div>
 									</form>
 								</div>

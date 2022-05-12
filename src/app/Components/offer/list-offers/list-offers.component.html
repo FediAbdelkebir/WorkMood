@@ -1,0 +1,170 @@
+<app-head></app-head>
+<app-header></app-header>
+
+<div class="body-innner-content ">
+    <div id="banner-area" class="banner-area bg-overlay banner-bg">
+        <div class="container-fluid" style="background-image:url('../../../../assets/Images/offree.jpg');">
+            <div class="top_part">
+                <div class="overlay">
+                    <h2
+                        style="z-index: 10; position: absolute; top: 60%; left: 20%; font-size: 50px; font-weight: 600; margin-left: 381px;">
+                        Offers
+                    </h2>
+                </div>
+                <div class="filter_part">
+                    <!--<div class="filter_caat">
+                <input type="text" name="recherche" placeholder="search" class="recherche">
+                <input type="submit" value="search" name="search" class="submit_bt">
+            </div>-->
+                    <button style="font-size: 20x; font-weight: 700; margin-left: 200px;" [routerLink]="['/Offers']">All
+                        Offers</button>
+                    <button style="font-size: 20x; font-weight: 700; margin-left: 200px;" [routerLink]="['/MyOffers']">My
+                        Offers</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="home page-template page-template-template page-template-homepage-template page-template-templatehomepage-template-php page page-id-10 sidebar-active elementor-default elementor-kit-2411 elementor-page elementor-page-10 e--ua-firefox"
+        data-elementor-device-mode="desktop">
+        <div class="body-innner-content ">
+            <div data-elementor-type="wp-post" data-elementor-id="10" class="elementor elementor-10"
+                data-elementor-settings="[]">
+                <div class="elementor-inner">
+                    <div class="elementor-section-wrap">
+                        <!-- Offers -->
+                        <section
+                            class="elementor-section elementor-top-section elementor-element elementor-element-b30ff9d elementor-section-boxed elementor-section-height-default elementor-section-height-default animated fadeInUp"
+                            data-id="b30ff9d" data-element_type="section"
+                            data-settings="{&quot;animation_delay&quot;:350,&quot;animation&quot;:&quot;fadeInUp&quot;}"
+                            style="margin-top: 90px;">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="recent-folio-menu" style="margin-bottom: 0px;">
+
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col col-md-8" style="margin-top: 15px;">
+                                                    <select id="key" name="key" [(ngModel)]="category"
+                                                        (change)="onChange()">
+                                                        <option value='' disabled selected>Categoy</option>
+                                                        <option *ngFor="let key of keys" [value]="key"
+                                                            (click)="getByCategory(category)">
+                                                            {{categoryOfferEnum[key]}}
+                                                        </option>
+                                                    </select>
+                                                    <a (click)="sortByDateAsc()"> Asc by Expiration Date </a>
+                                                    <a (click)="sortByDateDesc()"> Desc by Expiration Date </a>
+                                                    <a (click)="sortByPointAsc()"> Asc by Point </a>
+                                                    <a (click)="sortByPointDesc()"> Desc by Point </a>
+                                                </div>
+                                                <div class="col">
+                                                    <aside id="sidebar" class="sidebar" role="complementary">
+                                                        <div id="search-2" class="widget widget_search">
+                                                            <form method="get"
+                                                                action="https://demo.themewinter.com/wp/buildbench/"
+                                                                class="buildbench-serach xs-search-group">
+                                                                <div class="input-group">
+                                                                    <input type="search" class="form-control" name="s"
+                                                                        placeholder="Search" value="">
+                                                                    <button class="input-group-btn search-button"><i
+                                                                            class="icon icon-search1"></i></button>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                    </aside>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div *ngIf="!offers || offers.length === 0">
+                                <div align="center">Il n'y a pas des offres</div>
+                            </div>
+                            <div class="elementor-container elementor-column-gap-default">
+                                <div class="elementor-row">
+                                    <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-8fe6cdb"
+                                        data-id="8fe6cdb" data-element_type="column">
+                                        <div class="elementor-column-wrap elementor-element-populated">
+                                            <div class="elementor-widget-wrap">
+                                                <div class="elementor-element elementor-element-1240ec5 elementor-widget elementor-widget-buildbench-latestnews"
+                                                    data-id="1240ec5" data-element_type="widget"
+                                                    data-widget_type="buildbench-latestnews.default">
+                                                    <div class="elementor-widget-container">
+                                                        <div class="row ts-latest-news">
+                                                            <div class="col-md-4" style="margin-top: 25px"
+                                                                *ngFor="let o of offers">
+                                                                <div class="single-latest-news">
+                                                                    <div class="latest-news-img">
+                                                                        <a
+                                                                            href="https://demo.themewinter.com/wp/buildbench/blog/2019/03/21/support-development-for-more-experience-3/">
+                                                                            <img src="/assets/news_full2.jpg"
+                                                                                alt="Riding with friend is the best feeling">
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="single-news-content">
+                                                                        <div class="post-meta-info">
+                                                                            <div>
+                                                                                {{o.title}}
+                                                                            </div>
+                                                                            <div>
+                                                                                {{o.description}}
+                                                                            </div>
+
+                                                                            <span class="float-right">
+                                                                                <a [routerLink]="['/Offers/Show/',o.idOffer]"
+                                                                                    class="card-link">More Details <i
+                                                                                        class="fa fa-angle-right"></i></a>
+                                                                            </span>
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <app-footer></app-footer>
+    <app-scripts></app-scripts>
+
+
+    <p>list-offers works!</p>
+
+    <select id="key" name="key" [(ngModel)]="category" (change)="onChange()">
+        <option value='' disabled selected>Categoy</option>
+        <option *ngFor="let key of keys" [value]="key" (click)="getByCategory(category)">
+            {{categoryOfferEnum[key]}}
+        </option>
+    </select>
+
+    <a (click)="sortByDateAsc()">Sorting Ascending by Expiration Date </a>
+    <a (click)="sortByDateDesc()">Sorting Descending by Expiration Date </a>
+    <a (click)="sortByPointAsc()">Sorting Ascending by Point </a>
+    <a (click)="sortByPointDesc()">Sorting Descending by Point </a>
+
+
+    <div *ngFor="let o of offers">
+        {{o.description}}
+        {{o.category}}
+        {{o.dateExp}}
+        <a [routerLink]="['/Offers/Delete/',o.idOffer]">Delete</a>
+        <a [routerLink]="['/Offers/Update/',o.idOffer]">Update</a>
+        <a [routerLink]="['/Offers/Show/',o.idOffer]">Detail</a>
+    </div>
+    <a [routerLink]="['/Offers/Add/']">Add</a>

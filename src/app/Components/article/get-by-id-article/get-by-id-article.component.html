@@ -1,0 +1,117 @@
+<app-head></app-head>
+<app-header></app-header>
+<div class="" style="margin:100px;">
+  <div class="" >
+    <nav style="margin: 0 auto;">
+      <a href='/afficher-article/' class="mr-2">Articles</a>
+      <span class="mr-2"><fa-icon [icon]="faAngleRight"></fa-icon></span>
+      <a class="mr-2">{{article.category}}</a>
+      <span class="mr-2"><fa-icon [icon]="faAngleRight"></fa-icon></span>
+      {{article.title}}
+    </nav>
+  </div>
+
+  <div class="d-flex flex-column ">
+    <div class="row col-lg-12 mt-5">
+      <img style="width:70%;border-radius:10px;margin:20px 0 ;" src="../../../../assets/annie-spratt-hCb3lIB8L8E-unsplash.jpg">
+    </div>
+    <div>
+      <div style="display: flex;width: 65%;max-width: 70%;justify-content: space-between; align-items: baseline;">
+        <h3 style="font-size: 30px;">{{article.title}}</h3>
+        <div style="display: flex;align-items: baseline;">
+          <p style="font-size: 22px;font-weight:500;margin:0 10px">{{article.nbLike}}</p>
+          <span><fa-icon style="font-size: 25px"[icon]="faHeart"></fa-icon></span>
+          <span style="font-size: 25px;margin:0 10px 0 50px;;"    [routerLink]="['/update/',article.idArticle]"><fa-icon [icon]="faPenToSquare"></fa-icon></span>
+        </div>
+
+      </div>
+      <p>{{article.category}}
+        <span style="margin-left: 15px;margin-right: 10px;"><fa-icon style="color: #21aba5;" [icon]="faCalendarAlt"></fa-icon></span>
+        <span style="font-size:14px;color:#666">{{article.dateCreation | date}}</span></p>
+      <p>{{article.description}}</p>
+
+    </div>
+    <form  #like="ngForm">
+      <button  type="submit" value="like"  class="butn_like" (click)="Addlikearticle(like.value)">
+        <fa-icon [icon]="faThumbsUp" style="color: white;font-size: 18px;"></fa-icon> Like
+      </button>
+      <button type="submit" value="" style="margin:0 20px;" class="rmv_like">
+        Remove Like <fa-icon [icon]="faThumbsDown" style="color: white;font-size: 18px;"></fa-icon>
+      </button>
+    </form>
+
+  </div>
+
+
+
+  <div class="comment-section" style="width:70%">
+    <h3 style="margin-top: 50px;">Add Your Comment</h3>
+    <form #comment="ngForm" >
+      <div class="height:100px;width:80%;border-radius:10px;padding:10px;">
+        <textarea style="width:75%;
+        background-color: #f8f8f8;
+        border-radius: 3px;
+        border: 1px solid #d8d8d8;padding:10px;" placeholder="Tap Here" class="" id="description" name="description" rows="5" ngModel></textarea>
+
+    </div>
+    <div>
+      <input  type="submit" value="save" class="butn_cmt" (click)="Addcommentairearticle(comment.value)">
+    </div>
+
+    </form>
+
+
+
+    <div *ngFor="let c of listcomment" class="personal_comment">
+      <div style="display: flex;
+      align-content: flex-start;
+      align-items: center;">
+        <div class="comment_img">
+
+        </div>
+         <!--<p style="font-size:14px;font-weight:600;">Oussema Jebari</p>-->
+
+        <div>
+          <p style="font-weight: 300;margin:0 20px;">{{c.description}}</p>
+        </div>
+      </div>
+
+      <div style="    display: flex;
+      justify-content: baseline;
+      margin: 0 20px -90px;
+      align-items: baseline;">
+        <p>{{c.dateComment}}</p><fa-icon style="color: #21aba5;margin:0 10px;" [icon]="faCalendarAlt"></fa-icon>
+      </div>
+      <!--<p>{{c.description}}</p>-->
+
+    </div>
+
+
+  </div>
+
+  <!--<div class="meme_cate">
+    <h2>In The Same Category</h2>
+    <div>
+
+    </div>
+
+  </div>
+-->
+<!--
+
+
+<div>
+  <div *ngFor="let a of articlee">
+    <p> {{a.title}}</p>
+    <p> {{a.description}}</p>
+    <p> {{a.dateCreation}}</p>
+    <p> {{a.category}}</p>
+  </div>
+</div>
+-->
+</div>
+
+
+<app-footer></app-footer>
+<app-scripts></app-scripts>
+

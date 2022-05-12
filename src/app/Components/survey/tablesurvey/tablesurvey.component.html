@@ -21,8 +21,8 @@
          
       </div>
      
-       <button style="font-size:10px;font-weight: 900;margin-left:446px;"  >DateExpAsc</button> 
-      <button style="font-size:10px;font-weight: 900;margin-left:90px;"  >DateExpDesc</button>
+       <button style="font-size:10px;font-weight: 900;margin-left:446px;" (click)="sortByDateAsc()" >DateExpAsc</button> 
+      <button style="font-size:10px;font-weight: 900;margin-left:90px;" (click)="sortByDateDesc()" >DateExpDesc</button>
       </div>
     </div>
 
@@ -38,7 +38,7 @@
         </tr>
       </thead>
 <tbody>
-<tr *ngFor="let m of SurveyQuestion| filter:searchText">
+<tr *ngFor="let m of SurveyQuestion| filter:searchText| paginate: { itemsPerPage: 4, currentPage: pages }">
         
     <td>
         {{m.id}}
@@ -52,11 +52,14 @@
     
 
    
-    <td><button class="btn btn-outline-danger mr-2" (click)="deleteSurvey(m)">Delete </button></td>
+    <td><button class="btn btn-outline-danger mr-2" (click)="getById(m.id)">Delete </button></td>
     
 </tr>
 </tbody>
 </table>
+
 </div>
+<pagination-controls (pageChange)="pages = $event" style="text-align: center;padding: 10px;border: 1px solid black;padding: 10px;">
+</pagination-controls>
 <app-dashboardfooter></app-dashboardfooter>
 

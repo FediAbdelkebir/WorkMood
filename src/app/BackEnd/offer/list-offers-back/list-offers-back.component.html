@@ -1,0 +1,68 @@
+<app-nav></app-nav>
+<div>
+    <div class="top_part">
+            <h2>Offers List</h2>
+        <div class="filter_part">
+            <div class="filter_caat">
+                
+                <input type="text" name="recherche" placeholder="search" [(ngModel)]="searchText" class="recherche">  
+
+                <!--[(ngModel)]="searchText" -->
+                <input type="submit" value="search" name="search" class="submit_bt">
+            </div>
+            <button style="font-size:14px" (click)="sortByDateAsc()">Expiration Date <fa-icon [icon]="faSortUp" class="fa-icon"></fa-icon></button>
+            <button style="font-size:14px" (click)="sortByDateDesc()">Expiration Date <fa-icon [icon]="faSortDown" class="fa-icon"></fa-icon></button>
+            <button style="font-size:14px" (click)="sortByPointAsc()">Point <fa-icon [icon]="faSortUp" class="fa-icon"></fa-icon></button>
+            <button style="font-size:14px" (click)="sortByPointDesc()">Point <fa-icon [icon]="faSortDown" class="fa-icon"></fa-icon></button>
+        </div>
+    </div>
+
+    <div class="table-wrapper">
+        <table class="fl-table">
+            <thead>
+                <tr>
+                    <th scope="col">Title</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">Category</th>
+                    <th scope="col">Point</th>
+                    <th scope="col">Expiration Date</th>
+                    <th scope="col">Persons Number</th>
+                    <th scope="col">Limited Number</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let o of offers | paginate: { itemsPerPage: 4, currentPage: pages } | filter:searchText">
+                    <!--| filter:searchText-->
+                    <td>
+                        {{o.title}}
+                    </td>
+                    <td>
+                        {{o.address}}
+                    </td>
+                    <td>
+                        {{o.category}}
+                    </td>
+                    <td>
+                        {{o.point}}
+                    </td>
+                    <td>
+                        {{o.dateExp}}
+                    </td>
+                    <td>
+                        {{o.personsNumber}}
+                    </td>
+                    <td>
+                        {{o.limitedNumber}}
+                    </td>
+                    <td>
+                        <button class="btn btn-outline-danger mr-2" style="padding: 8px" (click)="getById(o)">Delete</button>
+                        <button class="btn btn-outline-danger mr-2" style="padding: 8px" [routerLink]="['/Dashboard/Offers/Update/', o.idOffer]">Update</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <pagination-controls (pageChange)="pages = $event" style="text-align: center;padding: 10px;border: 1px solid black;padding: 10px;">
+    </pagination-controls>
+    <app-dashboardfooter></app-dashboardfooter>

@@ -1,0 +1,9 @@
+export enum CategoryOffer {
+    SERVICES = "SERVICES",
+	SHOPPING = "SHOPPING",
+	HOBBIES = "HOBBIES",
+	TRAINING = "TRAINING",
+	FOOD = "FOOD",
+	HOME = "HOME",
+	OTHER = "OTHER"
+}

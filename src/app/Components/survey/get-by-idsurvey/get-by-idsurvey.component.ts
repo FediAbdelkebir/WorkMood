@@ -5,6 +5,7 @@ import { SurveyAnswer } from 'src/app/Models/survey-answer';
 import { SurveyQuestion } from 'src/app/Models/survey-question';
 import { AnswerService } from 'src/app/Services/answer.service';
 import { SurveyService } from 'src/app/Services/survey.service';
+import Swal from 'sweetalert2';
 
 
 @Component({
@@ -64,12 +65,15 @@ export class GetByIdsurveyComponent implements OnInit {
   ajouterReponse(f: SurveyQuestion){
   
   console.log(f);
+  
   let iduser=1;
   this.ms.AjouterReponse(f, iduser,this.idd,this.selectedOption).subscribe(
     (h)=>{
-
+      this.router.navigate(['affichersurvey']);
       console.log(h);
     }
   );
 }
+
+
 }
