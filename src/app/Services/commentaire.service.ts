@@ -29,5 +29,12 @@ export class CommentaireService {
   public getCommentByPost(idPost:any):Observable<Commentaire>{
     return this.http.get<Commentaire>('http://localhost:8089/work-mood/comment/retrieve-commentaire/post/'+idPost);
   }
+  
+  public getAllcomment():Observable<Commentaire>{
+    return this.http.get<Commentaire>('http://localhost:8089/WorkMood/comment/retrieve-all-commentaire');
+  }
 
+  public deletecomments(id:any){
+    return this.http.delete<Commentaire[]>('http://localhost:8089/WorkMood/comment/remove-comment/'+id);
+  }
 }

@@ -51,6 +51,7 @@ this.event.trouphy=false
         }
         )
         console.log(data)
+        this.router.navigateByUrl('/Evenements')
       },
       (error)=>{
         Swal.fire({

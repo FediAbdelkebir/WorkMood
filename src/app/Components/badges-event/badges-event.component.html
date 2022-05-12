@@ -1,0 +1,127 @@
+<app-head></app-head>
+<app-header></app-header>
+<div class="home page-template page-template-template page-template-homepage-template page-template-templatehomepage-template-php page page-id-10 sidebar-active elementor-default elementor-kit-2411 elementor-page elementor-page-10 e--ua-firefox" data-elementor-device-mode="desktop">
+    <div class="body-innner-content ">
+        <div data-elementor-type="wp-post" data-elementor-id="10" class="elementor elementor-10" data-elementor-settings="[]">
+            <div class="elementor-inner">
+                <div class="elementor-section-wrap">
+                    <app-evenementsslider></app-evenementsslider>
+                    <section class="elementor-section elementor-top-section elementor-element elementor-element-3f8f733 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="3f8f733" data-element_type="section">
+                        <div class="elementor-container elementor-column-gap-default">
+                            <div class="elementor-row">
+                    <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-c123984" data-id="c123984" data-element_type="column">
+                    <div class="elementor-column-wrap elementor-element-populated">
+                            <div class="elementor-widget-wrap">
+                        <div class="elementor-element elementor-element-f140bdf elementor-widget elementor-widget-buildbench-title" data-id="f140bdf" data-element_type="widget" data-widget_type="buildbench-title.default">
+                    <div class="elementor-widget-container">
+                     <div class="section-heading-content">
+                    <h2 class="section-title">
+                    <span class="sub-title">Join/Quit/Review</span>
+                    Badges List                            </h2>
+                    </div><!-- Section title -->		
+                    
+                    
+                    </div>
+                    </div>
+                        </div>
+                    </div>
+                    </div>
+                                </div>
+                    </div>
+                    </section>
+                    <section class="elementor-section elementor-top-section elementor-element elementor-element-b30ff9d elementor-section-boxed elementor-section-height-default elementor-section-height-default animated fadeInUp" data-id="b30ff9d" data-element_type="section" data-settings="{&quot;animation_delay&quot;:350,&quot;animation&quot;:&quot;fadeInUp&quot;}">
+                       <div class="row">
+
+                          <div class="col-lg-12">
+                            <input
+                            type="text"
+                            class="form-control"
+                            placeholder="Search..."
+                            [(ngModel)]="filterTerm"
+                          />
+                                                 <div class="recent-folio-menu">
+                                 <ul>
+                                                                     
+                                                                                                         <li class="filter active" data-filter=".bridge">Badges</li>
+
+                          
+                                                                     
+                                                               </ul>
+                              </div>
+                                          </div>
+                          </div> 
+                         
+                       <div class="elementor-container elementor-column-gap-default">
+                           
+                            <div class="elementor-row">
+                               
+                    <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-8fe6cdb" data-id="8fe6cdb" data-element_type="column">
+                    <div class="elementor-column-wrap elementor-element-populated">
+                            <div class="elementor-widget-wrap">
+                           
+                        <div class="elementor-element elementor-element-1240ec5 elementor-widget elementor-widget-buildbench-latestnews" data-id="1240ec5" data-element_type="widget" data-widget_type="buildbench-latestnews.default">
+                    <div class="elementor-widget-container">
+                    <div class="row ts-latest-news  ">
+                        <div *ngIf="showLoader"><!-- so this div containing img will be dislpayed only when the showLoader is equal to true-->
+                            <div class='body' style="background-color: #1fb79b;">
+                                <span>
+                                  <span></span>
+                                  <span></span>
+                                  <span></span>
+                                  <span></span>
+                                </span>
+                                <div class='base'>
+                                  <span></span>
+                                  <div class='face'></div>
+                                </div>
+                              </div>
+                              <div class='longfazers'>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                              </div>
+                              <h1>Loading Events</h1>
+                              
+                        </div>            
+                              <div class="col-md-4" *ngFor="let x of listbadges | filter: filterTerm;">
+                        <div class="single-latest-news">
+                                                        <div class="latest-news-img">       
+                              </div>
+                              
+                           <div class="single-news-content">
+                          
+                              <h2 class="ts-post-title"><a href="javascript(void);">{{x.title}}</a></h2>
+                              <div class="post-meta-info">
+                                <span class="category-info">
+        <i class="fa fa-book-open"></i>
+        <a href="javascript(void);" rel="category tag">Price : <b>{{x.cost}}</b></a>                                 </span>
+      
+     <span class="date-info"><i class="fa fa-info"></i> {{x.description}}
+        
+     </span>
+     <button href="javascript:void(0)" class="btn btn p-3" style="background-color: #1fb79b; color:white;width:48%;" (click)="Buy(x.id)" name="{{x.title+'Badge'}}"  id="{{x.title+'Ev'}}"> Buy <i class="fa fa-plus"></i> </button>
+</div>
+                              
+                           </div>
+                        </div>
+                     </div>
+                    
+                    </div> <!-- row end -->
+                    </div>
+                    </div>
+                        </div>
+                    </div>
+                    </div>
+                                </div>
+                    </div>
+                    </section>
+                    
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<app-footer></app-footer>
+<app-scripts></app-scripts> 

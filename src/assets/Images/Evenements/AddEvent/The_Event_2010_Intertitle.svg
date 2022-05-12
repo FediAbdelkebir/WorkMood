@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="623.5px" height="351.5px" viewBox="0 0 623.5 351.5" enable-background="new 0 0 623.5 351.5" xml:space="preserve">
+<radialGradient id="SVGID_1_" cx="311.75" cy="175.75" r="320.7501" gradientUnits="userSpaceOnUse">
+	<stop  offset="0.3905" style="stop-color:#E5E6E5"/>
+	<stop  offset="1" style="stop-color:#969699"/>
+</radialGradient>
+<rect fill="url(#SVGID_1_)" width="623.5" height="351.5"/>
+<polygon points="264.75,118.5 300.25,118.5 300.25,134.5 278.75,134.5 278.75,157.75 297.75,157.75 297.75,173.25 278.75,173.25 
+	278.75,206.75 300.25,206.75 300.25,223 264.75,223 "/>
+<polygon points="302.5,134.5 320,134.5 326.75,196 333.875,134.5 351.375,134.5 336.875,223 316,223 "/>
+<polygon points="391.167,134.5 356.5,134.5 356.5,150.333 373.833,150.333 373.833,169.667 358.5,169.667 358.5,185 373.833,185 
+	373.833,206.75 356.365,206.75 356.501,223.055 391.167,223.055 "/>
+<polygon points="396.834,134.5 413,134.5 426.334,185 426.334,134.5 443,134.5 443,223 427.167,223 413.667,178.5 413.667,223 
+	396.834,223 "/>
+<polygon points="447.501,134.5 491.834,134.5 491.834,150.333 478.167,150.333 478.167,223 460.834,223 460.834,150.333 
+	447.501,150.333 "/>
+<polygon points="246.834,143.5 265.75,143.5 265.75,213 246.834,213 246.834,182 262.834,182 262.834,171.167 246.834,171.167 "/>
+<rect x="222" y="134.5" width="12.833" height="88.5"/>
+<rect x="194.167" y="134.5" width="15.833" height="36.667"/>
+<rect x="194.167" y="182" width="15.833" height="41"/>
+<polygon points="176,134.5 182,134.5 182,223 162.5,223 162.5,143.5 176,143.5 "/>
+<polygon points="131.834,134.5 137,134.5 137,143.5 150,143.5 150,223 131.834,223 "/>
+</svg>

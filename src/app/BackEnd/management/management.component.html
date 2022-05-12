@@ -26,33 +26,25 @@
         </li>
         <li class=" nav-item"><a href="javascript:void(0);"><i class="feather icon-list"></i><span class="menu-title" data-i18n="Data List">CRUD</span><span class="badge badge badge-primary badge-pill float-right mr-2">New</span></a>
             <ul class="menu-content">
-                <li><a href="data-list-view.html"><i class="feather icon-plus-circle"></i><span class="menu-item" data-i18n="List View">Add Offer</span></a>
+                <li><a [routerLink]="['/Dashboard/Offers']"><i class="feather icon-plus-circle"></i><span class="menu-item" data-i18n="List View">List Offer</span></a>
                 </li>
-                <li><a href="data-list-view.html"><i class="feather icon-refresh-ccw"></i><span class="menu-item" data-i18n="List View">Update Offer</span></a>
+                <li><a [routerLink]="['/Dashboard/Offers/Add']"><i class="feather icon-refresh-ccw"></i><span class="menu-item" data-i18n="List View">Add Offer</span></a>
                 </li>
-                <li><a href="data-thumb-view.html"><i class="feather icon-trash"></i><span class="menu-item" data-i18n="Thumb View">Delete Offer</span></a>
-                </li>
+                
             </ul>
         </li>
-        <li class=" nav-item"><a href="javascript:void(0);"><i class="feather icon-settings"></i><span class="menu-title" data-i18n="Charts">Features</span><span class="badge badge badge-pill badge-warning float-right mr-2">Hot</span></a>
-            <ul class="menu-content">
-                <li class=" nav-item"><a href="colors.html"><i class="feather icon-terminal"></i><span class="menu-title" data-i18n="Colors">Affect User to Offer</span></a>
-                </li>
-            </ul>
-        </li>
+        
         <li class=" navigation-header"><span>Reclamations Management</span>
         </li>
         <li class=" nav-item"><a ><i class="feather icon-list"></i><span class="menu-title" data-i18n="Form Elements">CRUD</span></a>
             <ul class="menu-content">
-                <li><a href="form-select.html"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="Select">Add Reclamation</span></a>
+                <li><a href="form-select.html"><i [routerLink]="['/Dashboard/Reclamations']"></i><span class="menu-item" data-i18n="Select">List Reclamation</span></a>
                 </li>
-                <li><a href="form-switch.html"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="Switch">Update Reclamation</span></a>
-                </li>
-                <li><a href="form-checkbox.html"><i class="feather icon-trash"></i><span class="menu-item" data-i18n="Checkbox">Delete Reclamation</span></a>
-                </li>
+             
+                
             </ul>
         </li>
-        <li class=" nav-item"><a href="javascript:void(0);"><i class="feather icon-settings"></i><span class="menu-title" data-i18n="Charts">Features</span><span class="badge badge badge-pill badge-warning float-right mr-2">Hot</span></a>
+        <!-- <li class=" nav-item"><a href="javascript:void(0);"><i class="feather icon-settings"></i><span class="menu-title" data-i18n="Charts">Features</span><span class="badge badge badge-pill badge-warning float-right mr-2">Hot</span></a>
             <ul class="menu-content">
                 <li class=" nav-item"><a href="form-layout.html"><i class="feather icon-terminal"></i><span class="menu-title" data-i18n="Form Layout">Affect User To Relcamation</span></a>
                 </li>
@@ -61,15 +53,15 @@
                 <li class=" nav-item"><a href="form-validation.html"><i class="feather icon-check-circle"></i><span class="menu-title" data-i18n="Form Validation">Verification ReclamationOffer</span></a>
                 </li>
             </ul>
-        </li>
+        </li> -->
         
         <li class=" navigation-header"><span>Articles Management</span>
         </li>
         <li class=" nav-item"><a href="javascript:void(0);"><i class="feather icon-list"></i><span class="menu-title" data-i18n="Charts">CRUD</span><span class="badge badge badge-pill badge-success float-right mr-2">List</span></a>
             <ul class="menu-content">
-                <li><a href="chart-apex.html"><i class="feather icon-plus-circle"></i><span class="menu-item" data-i18n="Apex">Affiche Article</span></a>
+                <li><a [routerLink]="['/Dashboard/afficher-tabarticle']"><i class="feather icon-plus-circle"></i><span class="menu-item" data-i18n="Apex">Affiche Article</span></a>
                 </li>
-                <li><a href="javascript(void);"><i class="feather icon-refresh-ccw"></i><span class="menu-item" data-i18n="Chartjs">Update Article</span></a>
+                <li><a [routerLink]="['update/:id']"><i class="feather icon-refresh-ccw"></i><span class="menu-item" data-i18n="Chartjs">Update Article</span></a>
                 </li>
                 
             </ul>
@@ -98,7 +90,7 @@
         </li>
         <li class=" nav-item"><a href="javascript:void(0);"><i class="feather icon-list"></i><span class="menu-title" data-i18n="Charts">CRUD</span><span class="badge badge badge-pill badge-success float-right mr-2">List</span></a>
             <ul class="menu-content">
-                <li><a href="chart-apex.html"><i class="feather icon-plus-circle"></i><span class="menu-item" data-i18n="Apex">Affiche Comments</span></a>
+                <li><a [routerLink]="['/Dashboard/afficher-tabcomment']"><i class="feather icon-plus-circle"></i><span class="menu-item" data-i18n="Apex">Affiche Comments</span></a>
                 </li>
             </ul>
         </li>
@@ -118,7 +110,7 @@
                 </li>
                 <li class=" nav-item"><a [routerLink]="['/Dashboard/UserLikes']"><i class="feather icon-heart"></i><span class="menu-title" data-i18n="Form Wizard">UserLikes</span></a>
                 </li>
-                <li class=" nav-item"><a href="form-wizard.html"><i class="feather icon-share-2"></i><span class="menu-title" data-i18n="Form Wizard">Send Rewards</span></a>
+                <li class=" nav-item"><a [routerLink]="['/Dashboard/SendRewards']"><i class="feather icon-share-2"></i><span class="menu-title" data-i18n="Form Wizard">Send Rewards</span></a>
                 </li>
             </ul>
         </li>
@@ -127,7 +119,7 @@
         </li>
         <li class=" nav-item"><a href="javascript:void(0);"><i class="feather icon-list"></i><span class="menu-title" data-i18n="Charts">CRUD</span><span class="badge badge badge-pill badge-success float-right mr-2">List</span></a>
             <ul class="menu-content">
-                <li><a href="chart-apex.html"><i class="feather icon-plus-circle"></i><span class="menu-item" data-i18n="Apex">Affiche Post</span></a>
+                <li><a [routerLink]="['/Dashboard/afficher-tabpostes']"><i class="feather icon-plus-circle"></i><span class="menu-item" data-i18n="Apex">Affiche Post</span></a>
                 </li>
             </ul>
         </li>

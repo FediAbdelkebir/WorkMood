@@ -699,3 +699,16 @@ button:hover {
  color: #111;
 }
 
+.box{
+  background-color: #21ABA5;
+      color: white;
+      padding: 10px;
+      width: 234px;
+      border: none;
+      font-size: 10px;
+      box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+      -webkit-appearance: button;
+      appearance: button;
+      outline: none;
+      margin-left: 301px;
+}

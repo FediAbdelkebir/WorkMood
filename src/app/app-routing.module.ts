@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {LandingComponent} from '../app/BackEnd/landing/landing.component'
 import { AddBadgesComponent } from './BackEnd/badges/add-badges/add-badges.component';
@@ -7,6 +7,7 @@ import { ShowUserBadgesComponent } from './BackEnd/badges/show-user-badges/show-
 import { UpdateBadgesComponent } from './BackEnd/badges/update-badges/update-badges.component';
 import { UserBadgesComponent } from './BackEnd/badges/user-badges/user-badges.component';
 import { AddEventComponent } from './BackEnd/Events/add-event/add-event.component';
+import { SendRewardsComponent } from './BackEnd/Events/send-rewards/send-rewards.component';
 import { ShowUsersEventsComponent } from './BackEnd/Events/show-users-events/show-users-events.component';
 import { ShowUsersLikesComponent } from './BackEnd/Events/show-users-likes/show-users-likes.component';
 import { StatsEventsComponent } from './BackEnd/Events/stats-events/stats-events.component';
@@ -31,6 +32,7 @@ import { GetByIdArticleComponent } from './Components/article/get-by-id-article/
 import { PostComponent } from './Components/article/post/post.component';
 import { TableauAdminArticleComponent } from './Components/article/tableau-admin-article/tableau-admin-article.component';
 import { UpdateArticleComponent } from './Components/article/update-article/update-article.component';
+import { BadgesEventComponent } from './Components/badges-event/badges-event.component';
 import { GetByIdPostComponent } from './Components/get-by-id-post/get-by-id-post.component';
 import { HomeComponent } from './Components/home/home.component';
 import { AddOfferComponent } from './Components/offer/add-offer/add-offer.component';
@@ -57,6 +59,7 @@ import { GetByIdsurveyComponent } from './Components/survey/get-by-idsurvey/get-
 import { SurveyComponent } from './Components/survey/survey.component';
 import { TablesurveyComponent } from './Components/survey/tablesurvey/tablesurvey.component';
 import { UpdatesurveyComponent } from './Components/survey/updatesurvey/updatesurvey.component';
+import { TableauAdminCommentaireComponent } from './Components/tableau-admin-commentaire/tableau-admin-commentaire.component';
 import { TableauAdminPostsComponent } from './Components/tableau-admin-posts/tableau-admin-posts.component';
 const routes: Routes = [
   {
@@ -126,8 +129,16 @@ const routes: Routes = [
       component:UsersEventsComponent
   },
   {
+path:'Dashboard/SendRewards',
+  component:SendRewardsComponent
+  },
+  {
     path:'Dashboard/UserLikes',
       component:UserLikesComponent
+  },
+  {
+    path:'Badges',
+      component:BadgesEventComponent
   },
     {path: 'Dashboard/**', redirectTo: '404NotFound'},
 
@@ -200,7 +211,8 @@ const routes: Routes = [
 
   //admin article
   { path:"Dashboard/afficher-tabarticle",component:TableauAdminArticleComponent},
-  { path:"Dashboard/afficher-tabpostes",component:TableauAdminPostsComponent},
+  { path:"Dashboard/afficher-tabpostes",component:TableauAdminPostsComponent}, 
+  { path:"Dashboard/afficher-tabcomment",component:TableauAdminCommentaireComponent},
 
 
 

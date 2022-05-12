@@ -37,7 +37,7 @@ export class EvenementService {
     return this.http.get("http://localhost:8089/work-mood/get-all-users")
   }
   FindUserById(userid: any) {
-    return this.http.get("http://localhost:8089/work-mood/get-user/"+userid)
+    return this.http.get<User>("http://localhost:8089/work-mood/get-user/"+userid)
   }
   /*Ajouter Evenement*/
   public save(event: Event) {
@@ -116,8 +116,8 @@ export class EvenementService {
     return this.http.get<Event>(this.BackEndURL+'LikedUsersByEventId/'+idevent); 
   }
    /* RecommendedEvents By Tags */
-  public RecommendedEvents(Tags:EventTags){
-    return this.http.get<Event>(this.BackEndURL+Tags); 
+  public RecommendedEvents(Tags:any){
+    return this.http.get<Event>(this.BackEndURL+"RecomendedEvents/"+Tags); 
   }
    /* Find RecomendedEvents  */
   public RecomendedEvents (userid:number): Observable<any> {
@@ -129,23 +129,23 @@ export class EvenementService {
   }
     /*TotalNumberEvents*/
     public  TotalNumberEvents (){
-	return this.http.get(this.BackEndURL+'TotalNumberEvents'); 
+	return this.http.get<number>(this.BackEndURL+'TotalNumberEvents'); 
   }
     /*TotalNumberEventsChallenge*/
     public  TotalNumberEventsChallenge (){
-	return this.http.get(this.BackEndURL+'TotalNumberEventsChallenge'); 
+	return this.http.get<number>(this.BackEndURL+'TotalNumberEventsChallenge'); 
   }
     /*TotalNumberEventsFormation*/
     public  TotalNumberEventsFormation (){
-	return this.http.get(this.BackEndURL+'TotalNumberEventsFormation'); 
+	return this.http.get<number>(this.BackEndURL+'TotalNumberEventsFORMATION'); 
   }
     /*TotalNumberEventsTrouphyTrue*/
     public  TotalNumberEventsTrouphyTrue (){
-	return this.http.get(this.BackEndURL+'TotalNumberEventsTrouphyTrue'); 
+	return this.http.get<number>(this.BackEndURL+'TotalNumberEventsTrouphyTrue'); 
   }
      /*TotalNumberEventsTrouphyFalse*/
     public  TotalNumberEventsTrouphyFalse(){
-	return this.http.get(this.BackEndURL+'TotalNumberEventsTrouphyFalse'); 
+	return this.http.get<number>(this.BackEndURL+'TotalNumberEventsTrouphyFalse'); 
   }
   //Multiple Critére Search 
 	/*Events By StartDate And EndDate*/

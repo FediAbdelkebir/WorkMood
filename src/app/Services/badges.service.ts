@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Badge } from '../Models/badge';
+import { User } from '../Models/user';
 const headers = new HttpHeaders()
      .set('Content-Type', 'application/json;charset=UTF-8')  
      let options = { headers : headers };
@@ -30,7 +31,7 @@ export class BadgesService {
     return this.http.get("http://localhost:8089/work-mood/get-all-users")
   }
   FindUserById(userid: any) {
-    return this.http.get("http://localhost:8089/work-mood/get-user/"+userid)
+    return this.http.get<User>("http://localhost:8089/work-mood/get-user/"+userid)
   }
   /*Ajouter Badge*/
   public save(badge: Badge) {

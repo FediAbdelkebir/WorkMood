@@ -18,8 +18,8 @@ listuserbadges:any;
 listbadges:any;
 show=false;
 affectid!:number;
-  ngOnInit(): void {
-    this.bs.FindAllBadges().subscribe((data)=>{
+public async ngOnInit(): Promise<void>{
+  await this.bs.FindAllBadges().subscribe((data)=>{
       this.listbadges=data
     })
     this.userid=this.route.snapshot.paramMap.get('id');
@@ -99,6 +99,7 @@ affectid!:number;
     )
   }
   SelectBadge(t:number){
+    console.log("ttest")
     this.affectid=t;
     console.log(t)
       }

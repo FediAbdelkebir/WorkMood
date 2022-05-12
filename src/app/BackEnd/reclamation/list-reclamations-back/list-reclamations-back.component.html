@@ -8,6 +8,12 @@
 
                 <!--[(ngModel)]="searchText" -->
                 <input type="submit" value="search" name="search" class="submit_bt">
+                <select id="key" name="key"  class="box" [(ngModel)]="status" (change)="onChange()">
+                    <option value='' disabled selected>Status</option>
+                    <option *ngFor="let key of keys" [value]="key" (click)="getByStatus(status)">
+                        {{statusReclamationEnum[key]}}
+                    </option>
+                </select>
             </div>
             <button style="padding: 5px;" (click)="sortByCreationDateAsc()">Expiration Date <fa-icon [icon]="faSortUp"
                     class="fa-icon"></fa-icon></button>
@@ -65,7 +71,7 @@
                             Show
                         </button>-->
                         <button class="btn btn-outline-danger mr-2" style="padding: 8px"
-                            (click)="treat()">
+                            (click)="treat(r)" [disabled]="r.status == 'PROCESSED'">
                             Treat Comaplaint
                         </button>
                     </td>

@@ -48,37 +48,37 @@
                             style="width: 52.65px;"><input _ngcontent-nwj-c61="" type="checkbox"></th>
                         <th _ngcontent-nwj-c61="" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
                             colspan="1" aria-label="title: activate to sort column ascending" class="sorting"
-                            style="width: 162.917px;">title</th>
+                            style="width: 162.917px;" (click)="SortTitle()">title</th>
                         <th _ngcontent-nwj-c61="" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
                             colspan="1" aria-label="dateStart: activate to sort column ascending" class="sorting"
-                            style="width: 144.667px;">dateStart</th>
+                            style="width: 144.667px;" (click)="SortDateStart()">dateStart</th>
                         <th _ngcontent-nwj-c61="" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
                             colspan="1" aria-label="dateEnd: activate to sort column ascending" class="sorting"
-                            style="width: 169.017px;">dateEnd</th>
+                            style="width: 169.017px;" (click)="SortDateEnd()">dateEnd</th>
                         <th _ngcontent-nwj-c61="" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
                             colspan="1" aria-label="npDisponible: activate to sort column ascending" class="sorting"
-                            style="width: 122.233px;">npDisponible</th>
+                            style="width: 122.233px;" (click)="SortnpDisponible()">npDisponible</th>
                         <th _ngcontent-nwj-c61="" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
                             colspan="1" aria-label="npMax: activate to sort column ascending" class="sorting"
-                            style="width: 122.233px;">npMax</th>
+                            style="width: 122.233px;" (click)="SortnpMax()">npMax</th>
                         <th _ngcontent-nwj-c61="" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
                             colspan="1" aria-label="nbrlikes: activate to sort column ascending" class="sorting"
-                            style="width: 122.233px;">nbrlikes</th>
+                            style="width: 122.233px;" (click)="Sortnbrlikes()">nbrlikes</th>
                         <th _ngcontent-nwj-c61="" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
                             colspan="1" aria-label="type: activate to sort column ascending" class="sorting"
-                            style="width: 122.233px;">type</th>
+                            style="width: 122.233px;" (click)="SortType()">type</th>
                         <th _ngcontent-nwj-c61="" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
                             colspan="1" aria-label="eventTags: activate to sort column ascending" class="sorting"
-                            style="width: 122.233px;">eventTags</th>
+                            style="width: 122.233px;" (click)="SortEventTags()">eventTags</th>
                         <th _ngcontent-nwj-c61="" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
                             colspan="1" aria-label="trouphy: activate to sort column ascending" class="sorting"
-                            style="width: 122.233px;">trouphy</th>
+                            style="width: 122.233px;" (click)="SortTrouphy()">trouphy</th>
                         <th _ngcontent-nwj-c61="" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
                             colspan="1" aria-label="eventpoints: activate to sort column ascending" class="sorting"
-                            style="width: 122.233px;">eventpoints</th>
+                            style="width: 122.233px;" (click)="SortEventPoints()">eventpoints</th>
                         <th _ngcontent-nwj-c61="" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
                             colspan="1" aria-label="description: activate to sort column ascending" class="sorting"
-                            style="width: 122.233px;">description</th>
+                            style="width: 122.233px;" (click)="SortDescription()">description</th>
                         <th _ngcontent-nwj-c61="" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
                             colspan="1" aria-label="ACTION: activate to sort column ascending" class="sorting"
                             style="width: 92.6833px;">Update</th>
@@ -130,7 +130,7 @@
                         <td  _ngcontent-nwj-c61="" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
                             colspan="1" aria-label="ACTION: activate to sort column ascending" class="sorting"
                             style="width: 92.6833px;">
-                            <button class="btn btn-warning" [routerLink]="['/UpdateEvent',x.id]"><i class="feather icon-edit d-flex justify-content-center"></i></button>
+                            <button class="btn btn-warning" [routerLink]="['/Dashboard/UpdateEvent/',x.id]"><i class="feather icon-edit d-flex justify-content-center"></i></button>
                              </td >
                              <td  _ngcontent-nwj-c61="" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
                              colspan="1" aria-label="ACTION: activate to sort column ascending" class="sorting"

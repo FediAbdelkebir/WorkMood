@@ -108,6 +108,11 @@ import { CommentaireComponent } from './Components/commentaire/commentaire.compo
 import { GetByIdPostComponent } from './Components/get-by-id-post/get-by-id-post.component';
 import { UpdateAdminArticleComponent } from './Components/update-admin-article/update-admin-article.component';
 import { TableauAdminPostsComponent } from './Components/tableau-admin-posts/tableau-admin-posts.component';
+import { NgChartsModule } from 'ng2-charts';
+import { Chart } from 'chart.js';
+import { SendRewardsComponent } from './BackEnd/Events/send-rewards/send-rewards.component';
+import { BadgesEventComponent } from './Components/badges-event/badges-event.component';
+import { TableauAdminCommentaireComponent } from './Components/tableau-admin-commentaire/tableau-admin-commentaire.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -192,7 +197,7 @@ import { TableauAdminPostsComponent } from './Components/tableau-admin-posts/tab
     UpdatesurveyComponent,
     GetByIdsurveyComponent,
     AddreviewetAffecterEComponent,
-
+    BadgesEventComponent,
     AddreviewetAffecterSComponent,
     GetReviewByUsersComponent,
     GetreviewBadbyusersComponent,
@@ -237,6 +242,8 @@ import { TableauAdminPostsComponent } from './Components/tableau-admin-posts/tab
     TableauAdminArticleComponent,
     TableauAdminPostsComponent,
     UpdateAdminArticleComponent,
+    SendRewardsComponent,
+    TableauAdminCommentaireComponent
 
 
     
@@ -254,6 +261,7 @@ import { TableauAdminPostsComponent } from './Components/tableau-admin-posts/tab
     CarouselModule,
     FontAwesomeModule,
     NgxPaginationModule,
+    NgChartsModule,
     RouterModule.forRoot([
       {
       path:'',

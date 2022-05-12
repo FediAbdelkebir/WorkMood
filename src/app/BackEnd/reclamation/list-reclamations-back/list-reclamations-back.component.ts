@@ -128,8 +128,32 @@ export class ListReclamationsBackComponent implements OnInit {
       }
     );
   }
-  treat(){
+  treat(r: any) {
+    let idUser = 1;
     
+    Swal.fire({
+      input: 'textarea',
+      inputPlaceholder: 'Reponse of the reclamation',
+      showCancelButton: true,
+    }). then(
+      (result) => {
+        if (result.isConfirmed) {
+          r.response=result.value;
+          this.s.treatReclamation(idUser,r.idReclamation,r).subscribe((d) => {
+            () => {
+              Swal.fire('Updated!', '', 'success');
+            };
+          });
+          Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'An email is sent to the user to inform him',
+            showConfirmButton: false,
+            timer: 1000
+          })
+        }
+      })
+   
   }
 
 }

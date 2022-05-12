@@ -41,5 +41,7 @@ export class ReclamationBackService {
   findByProcessingDateDesc():Observable<Reclamation[]>{
     return this.http.get<Reclamation[]>(this.apiUrl+'/FindReclamationByProcessingDateDesc');
   }
-  
+  treatReclamation(idUSer: number, id: number, r: Reclamation):Observable<Reclamation[]>{
+    return this.http.put<Reclamation[]>(this.apiUrl+'/TreatReclamation/'+idUSer+'/'+id, r);
+  }
 }

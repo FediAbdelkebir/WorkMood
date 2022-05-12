@@ -9,6 +9,12 @@
 
                 <!--[(ngModel)]="searchText" -->
                 <input type="submit" value="search" name="search" class="submit_bt">
+                <select id="key" name="key" class="box" [(ngModel)]="category" (change)="onChange()">
+                    <option value='' disabled selected>Categoy</option>
+                    <option *ngFor="let key of keys" [value]="key" (click)="getByCategory(category)">
+                        {{categoryOfferEnum[key]}}
+                    </option>
+                </select>
             </div>
             <button style="font-size:14px" (click)="sortByDateAsc()">Expiration Date <fa-icon [icon]="faSortUp" class="fa-icon"></fa-icon></button>
             <button style="font-size:14px" (click)="sortByDateDesc()">Expiration Date <fa-icon [icon]="faSortDown" class="fa-icon"></fa-icon></button>

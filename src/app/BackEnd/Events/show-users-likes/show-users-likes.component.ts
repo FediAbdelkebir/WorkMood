@@ -18,29 +18,9 @@ listevents:any;
 show=false;
 affectid!:number;
 public async ngOnInit(): Promise<void> {
-    this.FindAllEvents()
+    this.FindAllEvents();
     this.userid=this.route.snapshot.paramMap.get('id');
-    this.bs.LikedEventsByUserId(this.userid).subscribe(
-      (data:any) => {
-        this.showLoader=false;
-        const Toast = Swal.mixin({
-          toast: true,
-          position: 'top-end',
-          showConfirmButton: false,
-          timer: 3000
-        });
-        
-        Toast.fire({
-          icon: 'success',
-          title: 'Users Successfully Loaded From The Database .'
-        })
-        this.listuserlikedevents=data;
-        console.log(this.listuserlikedevents)
-      },
-      (error)=>{
-        console.log(error)
-      }
-      );
+    this.LikedE()
   }
   async FindAllEvents(){
   await this.bs.FindAllEvenements().subscribe((data)=>{
@@ -78,6 +58,29 @@ public async ngOnInit(): Promise<void> {
     })
     
   }
+  LikedE(){
+    this.bs.LikedEventsByUserId(this.userid).subscribe(
+      (data:any) => {
+        this.showLoader=false;
+        const Toast = Swal.mixin({
+          toast: true,
+          position: 'top-end',
+          showConfirmButton: false,
+          timer: 3000
+        });
+        
+        Toast.fire({
+          icon: 'success',
+          title: 'Users Successfully Loaded From The Database .'
+        })
+        this.listuserlikedevents=data;
+        console.log(this.listuserlikedevents)
+      },
+      (error)=>{
+        console.log(error)
+      }
+      );
+  }
   Remove(id:number){
     Swal.fire({
       title: '<strong>Dislike This Event From user?</strong>',
@@ -108,7 +111,8 @@ public async ngOnInit(): Promise<void> {
   Show(reverse:boolean){
 this.show=reverse;
   }
-  Affect(){
+ Affect(){
+
     Swal.fire({
       title: '<strong>Force Like This Event to user?</strong>',
       icon: 'info',
@@ -184,5 +188,46 @@ AddUserEvent(id:number){
     }
     )
   }
+  
+  SortTitle(){
+    
+    this.listuserlikedevents.sort((a:any,b:any)=>(a.title>b.title ? 1:1))
+    const Toast = Swal.mixin({
+      toast: true,
+      position: 'top-end',
+      showConfirmButton: false,
+      timer: 3000
+    });
+    Toast.fire({
+      icon: 'success',
+      title: 'Successfully Sorted the list by Title.'
+    })
+      }
+      SortDateStart(){
+        this.listuserlikedevents.sort((a:any,b:any)=>(a.dateStart>b.dateStart ? 1:1))
+    const Toast = Swal.mixin({
+      toast: true,
+      position: 'top-end',
+      showConfirmButton: false,
+      timer: 3000
+    });
+    Toast.fire({
+      icon: 'success',
+      title: 'Successfully Sorted the list by DateStart.'
+    })
+      }
+      SortDateEnd(){ 
+        this.listuserlikedevents.sort((a:any,b:any)=>(a.dateEnd>b.dateEnd ? 1:1))
+        const Toast = Swal.mixin({
+          toast: true,
+          position: 'top-end',
+          showConfirmButton: false,
+          timer: 3000
+        });
+        Toast.fire({
+          icon: 'success',
+          title: 'Successfully Sorted the list by DateStart.'
+        })
+      }
 
 }
