@@ -1,154 +1,124 @@
 <app-nav></app-nav>
-<div class="app-content content">
-    <div class="content-overlay"></div>
+  <div class="content-overlay"></div>
     <div class="header-navbar-shadow"></div>
-    <div class="content-wrapper">
         <div class="content-header row">
         </div>
-        <div class="content-body">   
-            <div class="col-lg-12">
-                <input
-                type="text"
-                class="form-control"
-                placeholder="Search..."
-                [(ngModel)]="filterTerm"
-              />    
-            <div *ngIf="showLoader"><!-- so this div containing img will be dislpayed only when the showLoader is equal to true-->
-                <div class='body' style="background-color: #1fb79b;">
-                    <span>
-                      <span></span>
-                      <span></span>
-                      <span></span>
-                      <span></span>
-                    </span>
-                    <div class='base'>
-                      <span></span>
-                      <div class='face'></div>
+            <div>
+                <div class="top_part">
+                        <h2>Offers List</h2>
+                    <div class="filter_part">
+                        <div class="filter_caat">
+                            <!--[(ngModel)]="searchText" -->
+                            <input
+                            type="text"
+                            class="form-control"
+                            placeholder="Search..."
+                            [(ngModel)]="filterTerm"
+                          /> 
+                        </div>
+                    <button style="font-size:14px" (click)="SortTitle()">Title<fa-icon [icon]="faSortUp" class="fa-icon"></fa-icon></button>
+                    <button style="font-size:14px" (click)="SortDateStart()">Start<fa-icon [icon]="faSortDown" class="fa-icon"></fa-icon></button>
+                    <button style="font-size:14px" (click)="SortDateEnd()">End <fa-icon [icon]="faSortUp" class="fa-icon"></fa-icon></button>
+                    <button style="font-size:14px" (click)="SortnpDisponible()">Avariable  <fa-icon [icon]="faSortDown" class="fa-icon"></fa-icon></button>  
+                    <button style="font-size:14px" (click)="SortnpMax()">Max Avariable  <fa-icon [icon]="faSortDown" class="fa-icon"></fa-icon></button>  
+                    <button style="font-size:14px" (click)="Sortnbrlikes()">Likes <fa-icon [icon]="faSortDown" class="fa-icon"></fa-icon></button>
+                    <button style="font-size:14px" (click)="SortType()">Type<fa-icon [icon]="faSortDown" class="fa-icon"></fa-icon></button>
+                    <button style="font-size:14px" (click)="SortEventTags()">Tags<fa-icon [icon]="faSortDown" class="fa-icon"></fa-icon></button>
+                    <button style="font-size:14px" (click)="SortTrouphy()">Trouphy <fa-icon [icon]="faSortDown" class="fa-icon"></fa-icon></button>
+                    <button style="font-size:14px" (click)="SortDescription()">Description <fa-icon [icon]="faSortDown" class="fa-icon"></fa-icon></button>
                     </div>
-                  </div>
-                  <div class='longfazers'>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                  </div>
-                  <h1>Loading Events</h1>
-                  
-            </div> 
-<section _ngcontent-nwj-c61="" class="data-list-view-header">
-    <div _ngcontent-nwj-c61="" class="table-responsive">
-        <div _ngcontent-nwj-c61="" id="DataTables_Table_0_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
-            <table _ngcontent-nwj-c61="" id="DataTables_Table_0" role="grid"
-                class="table data-list-view dataTable no-footer dt-checkboxes-select">
-                <thead _ngcontent-nwj-c61="">
-                    <tr _ngcontent-nwj-c61="" role="row">
-                        <th _ngcontent-nwj-c61="" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
-                            colspan="1" data-col="0" aria-label=""
-                            class="dt-checkboxes-cell dt-checkboxes-select-all sorting_disabled"
-                            style="width: 52.65px;"><input _ngcontent-nwj-c61="" type="checkbox"></th>
-                        <th _ngcontent-nwj-c61="" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
-                            colspan="1" aria-label="title: activate to sort column ascending" class="sorting"
-                            style="width: 162.917px;" (click)="SortTitle()">title</th>
-                        <th _ngcontent-nwj-c61="" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
-                            colspan="1" aria-label="dateStart: activate to sort column ascending" class="sorting"
-                            style="width: 144.667px;" (click)="SortDateStart()">dateStart</th>
-                        <th _ngcontent-nwj-c61="" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
-                            colspan="1" aria-label="dateEnd: activate to sort column ascending" class="sorting"
-                            style="width: 169.017px;" (click)="SortDateEnd()">dateEnd</th>
-                        <th _ngcontent-nwj-c61="" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
-                            colspan="1" aria-label="npDisponible: activate to sort column ascending" class="sorting"
-                            style="width: 122.233px;" (click)="SortnpDisponible()">npDisponible</th>
-                        <th _ngcontent-nwj-c61="" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
-                            colspan="1" aria-label="npMax: activate to sort column ascending" class="sorting"
-                            style="width: 122.233px;" (click)="SortnpMax()">npMax</th>
-                        <th _ngcontent-nwj-c61="" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
-                            colspan="1" aria-label="nbrlikes: activate to sort column ascending" class="sorting"
-                            style="width: 122.233px;" (click)="Sortnbrlikes()">nbrlikes</th>
-                        <th _ngcontent-nwj-c61="" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
-                            colspan="1" aria-label="type: activate to sort column ascending" class="sorting"
-                            style="width: 122.233px;" (click)="SortType()">type</th>
-                        <th _ngcontent-nwj-c61="" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
-                            colspan="1" aria-label="eventTags: activate to sort column ascending" class="sorting"
-                            style="width: 122.233px;" (click)="SortEventTags()">eventTags</th>
-                        <th _ngcontent-nwj-c61="" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
-                            colspan="1" aria-label="trouphy: activate to sort column ascending" class="sorting"
-                            style="width: 122.233px;" (click)="SortTrouphy()">trouphy</th>
-                        <th _ngcontent-nwj-c61="" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
-                            colspan="1" aria-label="eventpoints: activate to sort column ascending" class="sorting"
-                            style="width: 122.233px;" (click)="SortEventPoints()">eventpoints</th>
-                        <th _ngcontent-nwj-c61="" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
-                            colspan="1" aria-label="description: activate to sort column ascending" class="sorting"
-                            style="width: 122.233px;" (click)="SortDescription()">description</th>
-                        <th _ngcontent-nwj-c61="" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
-                            colspan="1" aria-label="ACTION: activate to sort column ascending" class="sorting"
-                            style="width: 92.6833px;">Update</th>
-                            <th _ngcontent-nwj-c61="" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
-                            colspan="1" aria-label="ACTION: activate to sort column ascending" class="sorting"
-                            style="width: 92.6833px;">Delete</th>
-                    </tr>
-                </thead>
-                
-                <tbody _ngcontent-nwj-c61="">
-                    <tr _ngcontent-nwj-c61="" role="row" *ngFor="let x of listevenements | filter: filterTerm;">
-                        <td _ngcontent-nwj-c61="" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
-                            colspan="1" data-col="0" aria-label=""
-                            class="dt-checkboxes-cell dt-checkboxes-select-all sorting_disabled"
-                            style="width: 52.65px;"><input _ngcontent-nwj-c61="" type="checkbox"></td>
-                        <td _ngcontent-nwj-c61="" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
-                            colspan="1" aria-label="title: activate to sort column ascending" class="sorting"
-                            style="width: 162.917px;">{{x.title}}</td >
-                        <td  _ngcontent-nwj-c61="" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
-                            colspan="1" aria-label="dateStart: activate to sort column ascending" class="sorting"
-                            style="width: 144.667px;">{{x.dateStart}}</td >
-                        <td  _ngcontent-nwj-c61="" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
-                            colspan="1" aria-label="dateEnd: activate to sort column ascending" class="sorting"
-                            style="width: 169.017px;">{{x.dateEnd}}</td >
-                        <td   _ngcontent-nwj-c61="" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
-                            colspan="1" aria-label="npDisponible: activate to sort column ascending" class="sorting"
-                            style="width: 122.233px;">{{x.npDisponible}}</td >
-                        <td  _ngcontent-nwj-c61="" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
-                            colspan="1" aria-label="npMax: activate to sort column ascending" class="sorting"
-                            style="width: 122.233px;">{{x.npMax}}</td >
-                        <td  _ngcontent-nwj-c61="" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
-                            colspan="1" aria-label="nbrlikes: activate to sort column ascending" class="sorting"
-                            style="width: 122.233px;">{{x.nbrlikes}}</td >
-                        <td  _ngcontent-nwj-c61="" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
-                            colspan="1" aria-label="type: activate to sort column ascending" class="sorting"
-                            style="width: 122.233px;">{{x.type}}</td >
-                        <td  _ngcontent-nwj-c61="" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
-                            colspan="1" aria-label="eventTags: activate to sort column ascending" class="sorting"
-                            style="width: 122.233px;">{{x.eventTags}}</td >
-                        <td  _ngcontent-nwj-c61="" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
-                            colspan="1" aria-label="trouphy: activate to sort column ascending" class="sorting"
-                            style="width: 122.233px;">{{x.trouphy}}</td >
-                        <td _ngcontent-nwj-c61="" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
-                            colspan="1" aria-label="eventpoints: activate to sort column ascending" class="sorting"
-                            style="width: 122.233px;">{{x.eventpoints}}</td >
-                        <td  _ngcontent-nwj-c61="" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
-                            colspan="1" aria-label="description: activate to sort column ascending" class="sorting"
-                            style="width: 122.233px;">{{x.description}}</td >
-                        <td  _ngcontent-nwj-c61="" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
-                            colspan="1" aria-label="ACTION: activate to sort column ascending" class="sorting"
-                            style="width: 92.6833px;">
-                            <button class="btn btn-warning" [routerLink]="['/Dashboard/UpdateEvent/',x.id]"><i class="feather icon-edit d-flex justify-content-center"></i></button>
-                             </td >
-                             <td  _ngcontent-nwj-c61="" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
-                             colspan="1" aria-label="ACTION: activate to sort column ascending" class="sorting"
-                             style="width: 92.6833px;">
-                           
-                        <button class="btn btn-danger" (click)="delete(x.id)"><i class="feather icon-trash d-flex justify-content-center"></i></button>
-                              </td >
-                   
-                    </tr>
-                   
-                </tbody>
-            </table>
-            <div _ngcontent-nwj-c61="" class="bottom">
-                <div _ngcontent-nwj-c61="" class="actions"></div>
-            </div>
-        </div>
-    </div>
-</section>
-  
+                </div>
+            
+                <div class="table-wrapper">
+                    <table class="fl-table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Title</th>
+                                <th scope="col">StartDate</th>
+                                <th scope="col">EndDate</th>
+                                <th scope="col">Avariable</th>
+                                <th scope="col">Max Avariable </th>
+                                <th scope="col">Likes</th>
+                                <th scope="col">Type</th>
+                                <th scope="col">Tags</th>
+                                <th scope="col">Trouphy</th>
+                                <th scope="col">Points</th>
+                                <th scope="col">Description</th>
+                                <th>Update</th>
+                                <th>Delete</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <div *ngIf="showLoader"><!-- so this div containing img will be dislpayed only when the showLoader is equal to true-->
+                                <div class='body' style="background-color: #1fb79b;">
+                                    <span>
+                                      <span></span>
+                                      <span></span>
+                                      <span></span>
+                                      <span></span>
+                                    </span>
+                                    <div class='base'>
+                                      <span></span>
+                                      <div class='face'></div>
+                                    </div>
+                                  </div>
+                                  <div class='longfazers'>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                  </div>
+                                  <h1>Loading Badges</h1>
+                                  
+                            </div>
+                            <tr *ngFor="let o of listevenements | paginate: { itemsPerPage: 4, currentPage: pages } | filter:filterTerm">
+                                <!--| filter:searchText-->
+                                <td>
+                                    {{o.title}}
+                                </td>
+                                <td>
+                                    {{o.dateStart}}
+                                </td>
+                                <td>
+                                    {{o.dateEnd}}
+                                </td>
+                                <td>
+                                    {{o.npDisponible}}
+                                </td>
+                                <td>
+                                    {{o.npMax}}
+                                </td>
+                                <td>
+                                    {{o.nbrlikes}}
+                                </td>
+                                <td>
+                                    {{o.type}}
+                                </td>
+                                <td>
+                                    {{o.eventTags}}
+                                </td>
+                                <td>
+                                    {{o.trouphy}}
+                                </td>
+                                <td>
+                                    {{o.eventpoints}}
+                                </td>
+                                <td>
+                                    {{o.description}}
+                                </td>
+                                <td>
+                                <button class="btn btn-outline-danger mr-2"[routerLink]="['/Dashboard/UpdateEvent/',o.id]"><i class="feather icon-edit d-flex justify-content-center"></i></button>
+                                </td>
+                                <td>   
+                                    <button class="btn btn-outline-danger mr-2" (click)="delete(o.id)"><i class="feather icon-trash d-flex justify-content-center"></i></button>
+                                          </td >
+                                
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <pagination-controls (pageChange)="pages = $event" style="text-align: center;padding: 10px;border: 1px solid black;padding: 10px;">
+                </pagination-controls>
+
 </div>
-</div>
+

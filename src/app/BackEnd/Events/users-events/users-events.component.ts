@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/Models/user';
 import { EvenementService } from 'src/app/Services/evenement.service';
 import Swal from 'sweetalert2';
-
+import { faSortUp } from '@fortawesome/free-solid-svg-icons';
+import { faSortDown } from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-users-events',
   templateUrl: './users-events.component.html',
@@ -14,6 +15,9 @@ export class UsersEventsComponent implements OnInit {
   listusers!:User[];
   iduser=1;
   showLoader = true;
+  pages: number = 1;
+  faSortUp = faSortUp;
+  faSortDown = faSortDown;
   constructor(private es:EvenementService) { }
 
   ngOnInit(): void {

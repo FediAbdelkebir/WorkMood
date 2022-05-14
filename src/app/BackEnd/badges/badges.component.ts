@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Badge } from 'src/app/Models/badge';
 import { BadgesService } from 'src/app/Services/badges.service';
 import Swal from 'sweetalert2';
-
+import { faSortUp } from '@fortawesome/free-solid-svg-icons';
+import { faSortDown } from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-badges',
   templateUrl: './badges.component.html',
@@ -10,9 +11,12 @@ import Swal from 'sweetalert2';
 })
 export class BadgesComponent implements OnInit {
   filterTerm:any;
-  listevenements!:Badge[];
+  listevenements!:any;
   iduser=1;
   showLoader = true;
+  pages: number = 1;
+  faSortUp = faSortUp;
+  faSortDown = faSortDown;
   constructor(private bs:BadgesService) { }
 
   ngOnInit(): void {
@@ -47,7 +51,36 @@ console.log(data)
       }
     )
   }
-  
+  SortTitle(){
+    this.bs.SortBadgeByTitleAsc().subscribe((data)=>{
+      this.listevenements=data
+      const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 3000
+      });
+      Toast.fire({
+        icon: 'success',
+        title: 'Successfully Sorted the list by Title.'
+      })
+    })
+      }
+      SortDescription(){
+        this.bs.SortBadgeByDescriptioneAsc().subscribe((data)=>{
+          this.listevenements=data
+          const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 3000
+          });
+          Toast.fire({
+            icon: 'success',
+            title: 'Successfully Sorted the list by Description.'
+          })
+        })
+          }
   delete(id:any){
     Swal.fire({
       title: '<strong>Delete This Badge ?</strong>',

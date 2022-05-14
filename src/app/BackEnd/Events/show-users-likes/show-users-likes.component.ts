@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { EvenementService } from 'src/app/Services/evenement.service';
 import Swal from 'sweetalert2';
-
+import { faSortUp } from '@fortawesome/free-solid-svg-icons';
+import { faSortDown } from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-show-users-likes',
   templateUrl: './show-users-likes.component.html',
@@ -17,6 +18,9 @@ listuserlikedevents:any;
 listevents:any;
 show=false;
 affectid!:number;
+pages: number = 1;
+faSortUp = faSortUp;
+faSortDown = faSortDown;
 public async ngOnInit(): Promise<void> {
     this.FindAllEvents();
     this.userid=this.route.snapshot.paramMap.get('id');

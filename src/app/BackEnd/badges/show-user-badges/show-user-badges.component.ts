@@ -3,7 +3,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { User } from 'src/app/Models/user';
 import { BadgesService } from 'src/app/Services/badges.service';
 import Swal from 'sweetalert2';
-
+import { faSortUp } from '@fortawesome/free-solid-svg-icons';
+import { faSortDown } from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-show-user-badges',
   templateUrl: './show-user-badges.component.html',
@@ -18,6 +19,9 @@ listuserbadges:any;
 listbadges:any;
 show=false;
 affectid!:number;
+pages: number = 1;
+faSortUp = faSortUp;
+faSortDown = faSortDown;
 public async ngOnInit(): Promise<void>{
   await this.bs.FindAllBadges().subscribe((data)=>{
       this.listbadges=data

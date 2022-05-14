@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { EvenementService } from 'src/app/Services/evenement.service';
 import Swal from 'sweetalert2';
 import { Event } from 'src/app/Models/event';
+import { faSortUp } from '@fortawesome/free-solid-svg-icons';
+import { faSortDown } from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-updateeventlist',
   templateUrl: './updateeventlist.component.html',
@@ -15,6 +17,9 @@ export class UpdateeventlistComponent implements OnInit {
   listevenements!:any;
   iduser=1;
   showLoader = true;
+  pages: number = 1;
+  faSortUp = faSortUp;
+  faSortDown = faSortDown;
   ngOnInit(): void {
     
     this.es.FindAllEvenements().subscribe(

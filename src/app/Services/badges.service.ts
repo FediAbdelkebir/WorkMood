@@ -14,6 +14,7 @@ let httpOptions = { responseType: 'text' };
   providedIn: 'root'
 })
 export class BadgesService {
+ 
   
   
   id:any;
@@ -33,6 +34,8 @@ export class BadgesService {
   FindUserById(userid: any) {
     return this.http.get<User>("http://localhost:8089/work-mood/get-user/"+userid)
   }
+  public SortBadgeByTitleAsc(){return this.http.get<Badge>(this.BackEndURL+'SortBadgesByTitleAsc'); }
+  public SortBadgeByDescriptioneAsc(){return this.http.get<Badge>(this.BackEndURL+'SortBadgesByDescriptionAsc'); }
   /*Ajouter Badge*/
   public save(badge: Badge) {
     console.log(Badge);
