@@ -15,6 +15,7 @@ export class JoinedeventsComponent implements OnInit {
   ListJoined!:Event[];
   iduser=1;
   showLoader = true;
+  pages: number = 1;
   constructor(private router: Router,private route: ActivatedRoute,private es:EvenementService) { }
 
   public async ngOnInit(): Promise<void> {

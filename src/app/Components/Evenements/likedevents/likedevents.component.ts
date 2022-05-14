@@ -16,6 +16,7 @@ export class LikedeventsComponent implements OnInit {
   ListLiked!:Event[];
   iduser=1;
   showLoader = true;
+  pages: number = 1;
   public async ngOnInit(): Promise<void> {
     this.FindAll()
   }

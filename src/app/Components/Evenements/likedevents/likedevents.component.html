@@ -39,18 +39,9 @@
                             placeholder="Search..."
                             [(ngModel)]="filterTerm"
                           />
-                                                 <div class="recent-folio-menu">
-                                 <ul>
-                                                                     
-                                                                                                         <li class="filter active" data-filter=".bridge">Events</li>
-
-                          
-                                                                     
-                                                               </ul>
-                              </div>
                                           </div>
                           </div> 
-                       <div class="elementor-container elementor-column-gap-default">
+                       <div class="elementor elementor-column-gap-default">
                            
                             <div class="elementor-row">
                                
@@ -83,7 +74,7 @@
                               <h1>Loading Your Liked Events</h1>
                               
                         </div>  
-                              <div class="col-md-4" *ngFor="let x of ListLiked| filter: filterTerm;">
+                              <div class="col-md-3" *ngFor="let x of ListLiked| paginate: { itemsPerPage: 4, currentPage: pages } | filter: filterTerm;">
                         <div class="single-latest-news">
                                                         <div class="latest-news-img">
                                  <a href="https://demo.themewinter.com/wp/buildbench/blog/2019/03/21/support-development-for-more-experience-3/">
@@ -128,5 +119,7 @@
 
     </div>
 </div>
+
+<pagination-controls (pageChange)="pages = $event" style="text-align: center;padding: 10px;border: 1px solid black;padding: 10px;">
 <app-footer></app-footer>
 <app-scripts></app-scripts>
